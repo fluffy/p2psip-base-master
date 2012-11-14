@@ -20,7 +20,7 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
 <?rfc rfcedstyle="no" ?>
 <!-- Don't change this. It breaks stuff -->
 <?rfc tocdepth="4"?>
-<rfc category="std" docName="draft-ietf-p2psip-base-23"
+<rfc category="std" docName="draft-ietf-p2psip-base-24"
      ipr="pre5378Trust200902">
   <front>
     <title abbrev="RELOAD Base">REsource LOcation And Discovery (RELOAD) Base
@@ -128,7 +128,7 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
       </address>
     </author>
 
-    <date day="05" month="November" year="2012" />
+    <date day="14" month="November" year="2012" />
 
     <area>RAI</area>
 
