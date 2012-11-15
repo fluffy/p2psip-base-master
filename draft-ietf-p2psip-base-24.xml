@@ -1449,12 +1449,6 @@ Dest=Z
           server's ability to restrict attackers' access to certificates in
           the overlay is one of the cornerstones of RELOAD's security.</t>
         </section>
-
-        <section title="Diagnostics">
-          <t>Significant advice around managing a RELOAD overlay and
-          extensions for diagnostics are described in <xref
-          target="I-D.ietf-p2psip-diagnostics"></xref>.</t>
-        </section>
       </section>
     </section>
 
@@ -1678,6 +1672,26 @@ Dest=Z
         to establish a direct connection with the other node. This new
         connection is separate from the peer protocol connection. It is a
         dedicated UDP or TCP flow used only for the SIP dialog.</t>
+      </section>
+
+      <section title="Operations, Administration and Management">
+        <t>P2P systems in general and RELOAD overlays in particular are
+          complex systems. Even if they are by design capable of
+          self-repairing most network issues, there is a need for tools
+          helping the maintainers or the users of an overlay to diagnose
+          problems.  This specification provides a ping function to test
+          connectivity, a route query function to discover the intermediate
+          peers towards a node and a probe function to retrieve information
+          about a node.</t>
+
+        <t><xref target="I-D.ietf-p2psip-diagnostics" /> extends the ping
+          function with more diagnostic information and adds a new traceroute
+          function to the set of tools available. RELOAD overlays with more
+          than 10^5 nodes MUST implement this extension, although it is
+          RECOMMENDED that all overlays implement it.</t>
+
+        <t>In addition, all RELOAD overlays SHOULD implement
+          <xref target="I-D.ietf-p2psip-self-tuning" />.</t>
       </section>
     </section>
 
@@ -9369,6 +9383,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
                 target="http://www.rfc-editor.org/rfc/rfc5952.txt" type="TXT" />
       </reference>
 
+      <?rfc include="reference.I-D.ietf-p2psip-diagnostics"?>
+      <?rfc include="reference.I-D.ietf-p2psip-self-tuning"?>
+
       <reference anchor="w3c-xml-namespaces">
         <front>
           <title>Namespaces in XML 1.0 (Third Edition)</title>
@@ -9423,8 +9440,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           </author>
         </front>
       </reference>
-
-      <?rfc include="reference.I-D.ietf-p2psip-self-tuning"?>
 
       <?rfc include="reference.I-D.ietf-p2psip-service-discovery"?>
 
