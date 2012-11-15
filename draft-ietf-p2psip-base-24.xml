@@ -336,9 +336,11 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
      | Link Management  |                                                
      +------------------+                                                
  ------------------------------------ Overlay Link Service Boundary
-      +-------+  +------+                                                
-      |TLS    |  |DTLS  |  ...                                           
-      +-------+  +------+                                                
+      +-------+  +-------+
+      |TLS    |  |DTLS   |  ...
+      |Overlay|  |Overlay|
+      |Link   |  |Link   |
+      +-------+  +-------+
              ]]></artwork>
         </figure>
 
