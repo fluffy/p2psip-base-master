@@ -833,15 +833,15 @@ Transport    |      Link       |     +-------+  +------+
           <t></t>
 
           <t hangText="Connection Table:">The set of nodes to which a node is
-          directly connected. This includes nodes with which Attach handshakes
-          have been done but which have not sent any Updates.</t>
+          directly connected, which include nodes that are not yet available
+          for routing.</t>
 
           <t></t>
 
           <t hangText="Routing Table:">The set of peers which a node can use
           to route overlay messages. In general, these peers will all be on
-          the connection table but not vice versa, because some peers will
-          have Attached but not sent updates. Peers may send messages directly
+          the connection table but not vice versa, because some peers may
+          not yet be available for routing. Peers may send messages directly
           to peers that are in the connection table but may only route
           messages to other peers through peers that are in the routing
           table.</t>
