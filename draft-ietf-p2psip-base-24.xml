@@ -802,8 +802,8 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Resource:">An object or group of objects associated
-          with a string identifier. See "Resource Name" below.</t>
+          <t hangText="Resource:">An object or group of objects stored
+          in a P2P network.</t>
 
           <t></t>
 
