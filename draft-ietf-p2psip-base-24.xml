@@ -618,7 +618,7 @@ Transport    |      Link       |     +-------+  +------+
           the Message Transport.</t>
 
           <t>This layer also utilizes a framing header to encapsulate messages
-          as they are forwarding along each hop. This header aids reliability
+          as they are forwarded along each hop. This header aids reliability
           congestion control, flow control, etc. It has meaning only in the
           context of that individual link.</t>
 
