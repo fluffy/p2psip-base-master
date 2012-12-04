@@ -807,7 +807,7 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Resource Name:">The potentially human readable name by
+          <t hangText="Resource Name:">The name by
           which a resource is identified. In unstructured P2P networks, the
           resource name is sometimes used directly as a Resource-ID. In
           structured P2P networks the resource name is typically mapped into a
