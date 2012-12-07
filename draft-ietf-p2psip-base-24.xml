@@ -618,7 +618,7 @@ Transport    |      Link       |     +-------+  +------+
           the Message Transport.</t>
 
           <t>This layer also utilizes a framing header to encapsulate messages
-          as they are forwarding along each hop. This header aids reliability
+          as they are forwarded along each hop. This header aids reliability
           congestion control, flow control, etc. It has meaning only in the
           context of that individual link.</t>
 
@@ -802,12 +802,12 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Resource:">An object or group of objects associated
-          with a string identifier. See "Resource Name" below.</t>
+          <t hangText="Resource:">An object or group of objects stored
+          in a P2P network.</t>
 
           <t></t>
 
-          <t hangText="Resource Name:">The potentially human readable name by
+          <t hangText="Resource Name:">The name by
           which a resource is identified. In unstructured P2P networks, the
           resource name is sometimes used directly as a Resource-ID. In
           structured P2P networks the resource name is typically mapped into a
@@ -833,15 +833,15 @@ Transport    |      Link       |     +-------+  +------+
           <t></t>
 
           <t hangText="Connection Table:">The set of nodes to which a node is
-          directly connected. This includes nodes with which Attach handshakes
-          have been done but which have not sent any Updates.</t>
+          directly connected, which include nodes that are not yet available
+          for routing.</t>
 
           <t></t>
 
           <t hangText="Routing Table:">The set of peers which a node can use
           to route overlay messages. In general, these peers will all be on
-          the connection table but not vice versa, because some peers will
-          have Attached but not sent updates. Peers may send messages directly
+          the connection table but not vice versa, because some peers may
+          not yet be available for routing. Peers may send messages directly
           to peers that are in the connection table but may only route
           messages to other peers through peers that are in the routing
           table.</t>
@@ -5690,7 +5690,7 @@ struct {
         <section title="Find">
           <t>The Find request can be used to explore the Overlay Instance. A
           Find request for a Resource-ID R and a Kind-ID T retrieves the
-          Resource-ID (if any) of the resource of kind T known to the target
+          Resource-ID (if any) of the resource of Kind T known to the target
           peer which is closest to R. This method can be used to walk the
           Overlay Instance by iteratively fetching R_n+1=nearest(1 + R_n).</t>
 
@@ -5729,7 +5729,7 @@ struct {
 
           <section title="Response Definition">
             <t>A response to a successful Find request is a FindAns message
-            containing the closest Resource-ID on the peer for each kind
+            containing the closest Resource-ID on the peer for each Kind
             specified in the request.</t>
 
             <figure>
@@ -5753,14 +5753,14 @@ struct {
 
             <t>For each Kind-ID in the request the response MUST contain a
             FindKindData indicating the closest Resource-ID for that Kind-ID,
-            unless the kind is not allowed to be used with Find in which case
+            unless the Kind is not allowed to be used with Find in which case
             a FindKindData for that Kind-ID MUST NOT be included in the
             response. If a Kind-ID is not known, then the corresponding
             Resource-ID MUST be 0. Note that different Kind-IDs may have
             different closest Resource-IDs.</t>
 
             <t>The response is simply a series of FindKindData elements, one
-            per kind, concatenated end-to-end. The contents of each element
+            per Kind, concatenated end-to-end. The contents of each element
             are:</t>
 
             <t><list style="hanging">
@@ -6875,7 +6875,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         element defines the Kind. The kind-signature is the signature computed
         over the kind element.</t>
 
-        <t>Each kind has either an id attribute or a name attribute. The name
+        <t>Each kind element has either an id attribute or a name attribute. The name
         attribute is a string representing the Kind (the name registered to
         IANA) while the id is an integer Kind-ID allocated out of private
         space.</t>
@@ -6905,8 +6905,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         present.</t>
 
         <t>The kind-block element also MUST contain a "kind-signature"
-        element. This signature is computed across the kind from the beginning
-        of the first &lt; of the kind to the end of the last &gt; of the kind
+        element. This signature is computed across the kind element from the beginning
+        of the first &lt; of the kind element to the end of the last &gt; of the kind element
         in the same way as the signature element described later in this
         section.</t>
 
@@ -6933,7 +6933,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         about the Kind (for example the max size), the new information in the
         configuration files overrides any previously learned information. If
         any Kind data was signed by a node that is no longer allowed to sign
-        kinds, that Kind MUST be discarded along with any stored information
+        Kinds, that Kind MUST be discarded along with any stored information
         of that Kind. Note that forcing an avalanche restart of the overlay
         with a configuration change that requires re-joining the overlay may
         result in serious performance problems, including total collapse of
