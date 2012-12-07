@@ -4705,19 +4705,19 @@ struct {
         using a signature element, as described in <xref
         target="sec-signature"></xref>.</t>
 
-        <t>Note that there is no relationship between the validity
-        window of a certificate and the expiry of the data it is
-        authenticating. When signatures are verified, the current time
-        MUST be compared to the certificate validity period. Stored
-        data MAY be set to expire after the signing certificate's
-        validity period. Such signatures are not considered valid
-        after the signing certificate expires. Implementations may
-        garbage collect such data at their convenience, either purging
-        it automatically (perhaps by setting the upper bound on data
-        storage to the lifetime of the signing certificate) or by
-        simply leaving it in-place until it expires naturally and
-        relying on users of that data to notice the expired signing
-        certificate.</t>
+        <t>Note that there is no necessary relationship between the
+        validity window of a certificate and the expiry of the data it
+        is authenticating. When signatures are verified, the current
+        time MUST be compared to the certificate validity
+        period. Stored data MAY be set to expire after the signing
+        certificate's validity period. Such signatures are not
+        considered valid after the signing certificate
+        expires. Implementations may garbage collect such data at
+        their convenience, either purging it automatically (perhaps by
+        setting the upper bound on data storage to the lifetime of the
+        signing certificate) or by simply leaving it in-place until it
+        expires naturally and relying on users of that data to notice
+        the expired signing certificate.</t>
 
       </section>
 
