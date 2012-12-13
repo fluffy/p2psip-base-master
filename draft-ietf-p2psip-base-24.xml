@@ -372,12 +372,12 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
             <t hangText="Topology Plugin:">The Topology Plugin is responsible
             for implementing the specific overlay algorithm being used. It
             uses the Message Transport component to send and receive overlay
-            management messages, to the Storage component to manage data
-            replication, and directly to the Forwarding Layer to control
-            hop-by-hop message forwarding. This component closely parallels
-            conventional routing algorithms, but is more tightly coupled to
-            the Forwarding Layer because there is no single "routing table"
-            equivalent used by all overlay algorithms.</t>
+            management messages, the Storage component to manage data
+            replication, and the Forwarding Layer to control hop-by-hop message
+            forwarding.  This component closely parallels conventional routing
+            algorithms, but is more tightly coupled to the Forwarding Layer
+            because there is no single "routing table" equivalent used by all
+            overlay algorithms.</t>
 
             <t></t>
 
