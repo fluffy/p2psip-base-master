@@ -904,8 +904,8 @@ Transport    |      Link       |     +-------+  +------+
         <t><list style="symbols">
             <t>To address the node itself.</t>
 
-            <t>To determine its position in the overlay topology when the
-            overlay is structured.</t>
+            <t>To determine its position in the overlay topology (if the
+            overlay is structured; topology plugins are not required to be structured).</t>
 
             <t>To determine the set of resources for which the node is
             responsible.</t>
