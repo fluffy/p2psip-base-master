@@ -336,9 +336,11 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
      | Link Management  |                                                
      +------------------+                                                
  ------------------------------------ Overlay Link Service Boundary
-      +-------+  +------+                                                
-      |TLS    |  |DTLS  |  ...                                           
-      +-------+  +------+                                                
+      +-------+  +-------+
+      |TLS    |  |DTLS   |  ...
+      |Overlay|  |Overlay|
+      |Link   |  |Link   |
+      +-------+  +-------+
              ]]></artwork>
         </figure>
 
@@ -372,12 +374,12 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
             <t hangText="Topology Plugin:">The Topology Plugin is responsible
             for implementing the specific overlay algorithm being used. It
             uses the Message Transport component to send and receive overlay
-            management messages, to the Storage component to manage data
-            replication, and directly to the Forwarding Layer to control
-            hop-by-hop message forwarding. This component closely parallels
-            conventional routing algorithms, but is more tightly coupled to
-            the Forwarding Layer because there is no single "routing table"
-            equivalent used by all overlay algorithms.</t>
+            management messages, the Storage component to manage data
+            replication, and the Forwarding Layer to control hop-by-hop message
+            forwarding.  This component closely parallels conventional routing
+            algorithms, but is more tightly coupled to the Forwarding Layer
+            because there is no single "routing table" equivalent used by all
+            overlay algorithms.</t>
 
             <t></t>
 
@@ -902,8 +904,8 @@ Transport    |      Link       |     +-------+  +------+
         <t><list style="symbols">
             <t>To address the node itself.</t>
 
-            <t>To determine its position in the overlay topology when the
-            overlay is structured.</t>
+            <t>To determine its position in the overlay topology (if the
+            overlay is structured; topology plugins are not required to be structured).</t>
 
             <t>To determine the set of resources for which the node is
             responsible.</t>
