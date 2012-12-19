@@ -1522,7 +1522,10 @@ Dest=Z
         <t>In order to protect stored data from tampering, by other nodes,
         each stored value is individually digitally signed by the node which
         created it. When a value is retrieved, the digital signature can be
-        verified to detect tampering.</t>
+        verified to detect tampering. If the certificate used to sign the
+        stored value expires, the stored value is lost and the creating node
+        will need to store it again if it desires that stored value to continue
+        to be stored.</t>
 
         <section title="Storage Permissions">
           <t>A major issue in peer-to-peer storage networks is minimizing the
