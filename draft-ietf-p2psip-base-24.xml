@@ -7129,7 +7129,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         <t><list style="symbols">
             <t>If authentication is required, there is an form parameter of
             "password" and "username" containing the user's name and password
-            in the clear (hence the need for HTTPS)</t>
+            in the clear (hence the need for HTTPS). The username and password
+            strings are UTF-8 strings compared as binary objects. Applications
+            using RELOAD SHOULD define any needed string preparation as per
+            <xref target="RFC4013"/> or its successor documents.</t>
 
             <t>If more than one Node-ID is required, there is an form
             parameter of "nodeids" containing the number of Node-IDs
@@ -9381,6 +9384,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <?rfc include="reference.I-D.ietf-p2psip-sip"?>
 
       <?rfc include="reference.I-D.ietf-p2psip-diagnostics"?>
+        
+      <?rfc include="reference.RFC.4013"?>
 
       <reference anchor="Sybil">
         <front>
