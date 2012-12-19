@@ -2205,7 +2205,10 @@ Dest=Z
               in multiple overlays and to detect accidental misconfiguration.
               This is not a security critical function. The overlay name MUST
               consist of a sequence of characters what would be allowable as a
-              DNS name.</t>
+              DNS name.
+              Specifically, as it is used in a DNS lookup, it will need to be
+              compliant with the grammar for the domain as specified in section
+              2.3.1 of <xref target="RFC1035"></xref> . </t>
 
               <t></t>
 
@@ -9307,6 +9310,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
     </references>
 
     <references title="Informative References">
+
+      <?rfc include="reference.RFC.1035"?>
+
       <reference anchor="UnixTime" target="http:/wikipedia.org/wiki/Unix_time">
         <front>
           <title>Unix Time</title>
