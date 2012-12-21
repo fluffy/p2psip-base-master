@@ -2015,6 +2015,26 @@ Dest=Z
           254 bytes which corresponds to up to 127 values of two bytes (16
           bits) each.</t>
 
+          <t>A repetitive structure member shares a common notation with a
+          member containing a variable length block of data.  The latter
+          always starts with "opaque" whereas the former does not.  For
+          instance the following denotes a variable block of data:</t>
+
+          <figure>
+              <artwork><![CDATA[
+                  opaque data<0..2^32-1>;
+                  ]]></artwork>
+          </figure>
+
+          <t>whereas the following denotes a list of 0, 1 or more instances
+          of the Name element:</t>
+
+          <figure>
+              <artwork><![CDATA[
+                  Name names<0..2^32-1>;
+                  ]]></artwork>
+          </figure>
+
           <section anchor="sec-definitions" title="Common Definitions">
             <t>The following definitions are used throughout RELOAD and so are
             defined here. They also provide a convenient introduction to how
