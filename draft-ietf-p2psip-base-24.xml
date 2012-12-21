@@ -1442,13 +1442,6 @@ Dest=Z
       </section>
     </section>
 
-    <section anchor="sec-term-2119" title="RFC 2119 Terminology">
-      <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-      "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-      document are to be interpreted as described in <xref
-      target="RFC2119">RFC 2119</xref>.</t>
-    </section>
-
     <section anchor="sec-app-support" title="Application Support Overview">
       <t>RELOAD is not intended to be used alone, but rather as a substrate
       for other applications. These applications can use RELOAD for a variety
@@ -1670,6 +1663,13 @@ Dest=Z
         connection is separate from the peer protocol connection. It is a
         dedicated UDP or TCP flow used only for the SIP dialog.</t>
       </section>
+    </section>
+
+    <section anchor="sec-term-2119" title="RFC 2119 Terminology">
+      <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+      "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+      document are to be interpreted as described in <xref
+      target="RFC2119">RFC 2119</xref>.</t>
     </section>
 
     <section anchor="sec-overlay-protocol" title="Overlay Management Protocol">
