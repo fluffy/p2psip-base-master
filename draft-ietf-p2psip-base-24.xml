@@ -2325,7 +2325,8 @@ Dest=Z
             <t>In order to be part of the overlay, a node MUST have a copy of
             the overlay configuration document. In order to allow for
             configuration document changes, each version of the configuration
-            document has a sequence number which is monotonically increasing
+            document MUST contain a sequence number which MUST be monotonically
+            increasing
             mod 65535. Because the sequence number may in principle wrap,
             greater than or less than are interpreted by modulo arithmetic as
             in TCP.</t>
