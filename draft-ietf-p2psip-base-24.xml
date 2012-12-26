@@ -1723,8 +1723,8 @@ Dest=Z
               <t>If the entry is a Resource-ID, then it MUST be the only entry
               on the destination list. If there are other entries, the message
               MUST be silently dropped. Otherwise, the message is destined for
-              this node and it verify the signature and pass it up to the
-              upper layers.</t>
+              this node so it MUST verify the signature and MUST pass it up
+              to the upper layers.</t>
 
               <t>If the entry is a Node-ID which equals this node's Node-ID,
               then the message is destined for this node. If this is the only
