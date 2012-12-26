@@ -2410,13 +2410,12 @@ Dest=Z
      ]]></artwork>
             </figure>
 
-            <t>If a destination structure has its first bit set to 1, then it
-            is a 16 bit integer. If the first bit is not set, then it is a
-            structure starting with DestinationType. If it is a 16 bit
-            integer, it is treated as if it were a full structure with a
-            DestinationType of opaque_id_type and a opaque_id that was 2 bytes
-            long with the value of the 16 bit integer. When the destination
-            structure is not a 16 bit integer, it is the TLV structure with
+            <t>If the destination structure is a 16 bit integer, then the first
+            bit MUST be set to 1 and it MUST be treated as if it were a full
+            structure with a DestinationType of opaque_id_type and a opaque_id
+            that was 2 bytes long with the value of the 16 bit integer. If the
+            destination structure is starting with DestinationType, then the
+            first bit MUST be set to 0 and it is using the TLV structure with
             the following contents: <list style="hanging">
                 <t></t>
 
