@@ -2501,8 +2501,8 @@ Dest=Z
             To avoid misrouting responses in the event a response is delayed
             and the connection table entry has changed, the identifier SHOULD
             be split between an index and a generation counter for that index.
-            At startup, the generation counters should be initialized to
-            random values. An implementation could use 12 bits for the
+            At startup, the generation counters SHOULD be initialized to
+            random values. An implementation MAY use 12 bits for the
             connection table index and 3 bits for the generation counter.
             (Note that this does not suggest a 4096 entry connection table for
             every peer, only the ability to encode for a larger connection
@@ -2511,10 +2511,10 @@ Dest=Z
             table slots are used on a rotating basis to maximize the time
             interval between uses of the same slot for different connections.
             When routing a message to an entry in the destination list
-            encoding a connection table entry, the peer confirms that the
+            encoding a connection table entry, the peer MUST confirm that the
             generation counter matches the current generation counter of that
             index before forwarding the message. If it does not match, the
-            message is silently dropped.</t>
+            message MUST be silently dropped.</t>
           </section>
 
           <section anchor="sec-forwarding-options" title="Forwarding Option">
