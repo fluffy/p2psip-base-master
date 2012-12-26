@@ -2655,6 +2655,22 @@ struct {
               <t>The contents of the extension (extension-dependent).</t>
             </list></t>
 
+            <t>The subsections in <xref target="sec-topology-methods" />,
+            <xref target="sec-forwarding-link" /> and
+            <xref target="sec-data-protocol" /> describe structures that are
+            inserted inside the message_body member, depending on the value of
+            the message_code value. For example a message_code value of
+            join_req means that the structure named JoinReq is inserted inside
+            message_body.  This document does not contain a mapping
+            between message_code values and structure names as the conversion
+            between the two is obvious.</t>
+
+            <t>Similarly this document uses the name of the structure without
+            the "Req" or "Ans" suffix to mean the execution of a transaction
+            comprised of the matching request and answer. For example when the
+            text says "perform an Attach", it must be understood as performing
+            a transaction composed of an AttachReq and an AttachAns.</t>
+
           <section anchor="sec-response-code"
                    title="Response Codes and Response Errors">
             <t>A node processing a request returns its status in the
@@ -3061,7 +3077,7 @@ struct {
           the peer is responsible changes.</t>
         </section>
 
-        <section title="Methods and types for use by topology plugins">
+        <section anchor="sec-topology-methods" title="Methods and types for use by topology plugins">
           <t>This section describes the methods that topology plugins use to
           join, leave, and maintain the overlay.</t>
 
@@ -3385,7 +3401,7 @@ struct {
         </section>
       </section>
 
-      <section title="Forwarding and Link Management Layer">
+      <section anchor="sec-forwarding-link" title="Forwarding and Link Management Layer">
         <t>Each node maintains connections to a set of other nodes defined by
         the topology plugin. This section defines the methods RELOAD uses to
         form and maintain connections between nodes in the overlay. Three
