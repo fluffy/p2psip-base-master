@@ -2677,13 +2677,14 @@ struct {
 
           <section anchor="sec-response-code"
                    title="Response Codes and Response Errors">
-            <t>A node processing a request returns its status in the
+            <t>A node processing a request MUST return its status in the
             message_code field. If the request was a success, then the message
-            code is the response code that matches the request (i.e., the next
+            code MUST be set to the response code that matches the request
+            (i.e., the next
             code up). The response payload is then as defined in the
             request/response descriptions.</t>
 
-            <t>If the request has failed, then the message code is set to
+            <t>If the request has failed, then the message code MUST be set to
             0xffff (error) and the payload MUST be an error_response message, as
             shown below.</t>
 
