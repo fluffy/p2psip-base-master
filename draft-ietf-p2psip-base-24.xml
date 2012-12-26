@@ -3050,7 +3050,7 @@ struct {
 
         <section title="Topology Plugin Requirements">
           <t>When specifying a new overlay algorithm, at least the following
-          need to be described:</t>
+          MUST be described:</t>
 
           <t><list style="symbols">
               <t>Joining procedures, including the contents of the Join
