@@ -3311,7 +3311,7 @@ struct {
             either case, the target Node-IDs respond with a simple response
             containing some status information.</t>
 
-            <section title="Request Definition">
+            <section anchor="sec-probe-request" title="Request Definition">
               <t>The ProbeReq message contains a list (potentially empty) of
               the pieces of status information that the requester would like
               the responder to provide.</t>
@@ -8111,7 +8111,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section title="Overlay Algorithm Types">
         <t>IANA SHALL create a "RELOAD Overlay Algorithm Type" Registry.
         Entries in this registry are strings denoting the names of overlay
-        algorithms. The registration policy for this registry is RFC 5226 IETF
+        algorithms as described in <xref target="sec-configuration" />.
+        The registration policy for this registry is RFC 5226 IETF
         Review. The initial contents of this registry are:</t>
 
         <t></t>
@@ -8184,7 +8185,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section anchor="sec.iana.app" title="Application-ID">
         <t>IANA SHALL create a "RELOAD Application-ID" Registry. Entries in
-        this registry are 16-bit integers denoting application Kinds. Code
+        this registry are 16-bit integers denoting application-ids as described
+        in <xref target="sec-appattach-details" />. Code
         points in the range 0x0001 to 0x7fff SHALL be registered via RFC 5226
         Standards Action. Code points in the range 0x8000 to 0xf000 SHALL be
         registered via RFC 5226 Expert Review. Code points in the range 0xf001
@@ -8369,7 +8371,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section title="Data Model">
         <t>IANA SHALL create a "RELOAD Data Model" Registry. Entries in this
-        registry denoting data models, as described in <xref
+        registry are strings denoting data models, as described in <xref
         target="sec-kind-model"></xref>. Code points in this registry SHALL be
         registered via RFC 5226 Standards Action. The initial contents of this
         registry are:</t>
@@ -8682,7 +8684,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section anchor="sec-iana-error-codes" title="Error Codes">
         <t>IANA SHALL create a "RELOAD Error Code" Registry. Entries in this
-        registry are 16-bit integers denoting error codes. New entries SHALL
+        registry are 16-bit integers denoting error codes as described in
+        <xref target="sec-response-code" />. New entries SHALL
         be defined via RFC 5226 Standards Action. The initial contents of this
         registry are:</t>
 
@@ -8836,7 +8839,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section anchor="sec-iana-overlay-link" title="Overlay Link Types">
         <t>IANA SHALL create a "RELOAD Overlay Link Registry". For more
-        information on the link types defeind here, see <xref
+        information on the link types defined here, see <xref
         target="sec-overlay-link"></xref>. New entries SHALL be defined via
         RFC 5226 Standards Action. This registry SHALL be initially populated
         with the following values:</t>
@@ -8900,9 +8903,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section anchor="sec.iana-overlay-link-protocols"
                title="Overlay Link Protocols">
-        <t>IANA SHALL create an "Overlay Link Protocol Registry". Entries in
-        this registry SHALL be defined via RFC 5226 Standards Action. This
-        registry SHALL be initially populated with the following valuse:</t>
+        <t>IANA SHALL create an "Overlay Link Protocol Registry".
+        Entries in this registry are strings denoting protocols as described in
+        <xref target="sec-configuration" /> and SHALL be defined via RFC 5226
+        Standards Action. This registry SHALL be initially populated with the
+        following values:</t>
 
         <t></t>
 
@@ -8927,10 +8932,12 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section title="Forwarding Options">
         <t>IANA SHALL create a "Forwarding Option Registry". Entries in this
-        registry between 1 and 127 SHALL be defined via RFC 5226 Standards
-        Action. Entries in this registry between 128 and 254 SHALL be defined
-        via RFC 5226 Specification Required. This registry SHALL be initially
-        populated with the following values:</t>
+        registry are 8-bit integer denoting options as described in
+        <xref target="sec-forwarding-options" />. Values between 1 and 127
+        SHALL be defined via RFC 5226 Standards Action. Entries in this
+        registry between 128 and 254 SHALL be defined via RFC 5226
+        Specification Required. This registry SHALL be initially populated
+        with the following values:</t>
 
         <t></t>
 
@@ -8967,9 +8974,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section title="Probe Information Types">
         <t>IANA SHALL create a "RELOAD Probe Information Type Registry".
-        Entries in this registry SHALL be defined via RFC 5226 Standards
-        Action. This registry SHALL be initially populated with the following
-        values:</t>
+        Entries  are 8-bit integers denoting types as described in
+        <xref target="sec-probe-request" /> and SHALL be defined via RFC 5226
+        Standards Action. This registry SHALL be initially populated with the
+        following values:</t>
 
         <t></t>
 
@@ -9023,9 +9031,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       </section>
 
       <section anchor="sec-message-extensions" title="Message Extensions">
-        <t>IANA SHALL create a "RELOAD Extensions Registry". Entries in this
-        registry SHALL be defined via RFC 5226 Specification Required. This
-        registry SHALL be initially populated with the following values:</t>
+        <t>IANA SHALL create a "RELOAD Extensions Registry".
+        Entries in this registry are 8-bit integers denoting extensions as
+        described in <xref target="sec-contents" /> and SHALL be defined via
+        RFC 5226 Specification Required. This registry SHALL be initially
+        populated with the following values:</t>
 
         <t></t>
 
