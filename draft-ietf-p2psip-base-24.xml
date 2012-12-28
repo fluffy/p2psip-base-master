@@ -1161,7 +1161,8 @@ Transport    |      Link       |     +-------+  +------+
 
             <t hangText="RouteQuery: ">The RouteQuery method allows a node to
             query a peer for the next hop it will use to route a message. This
-            method is useful for diagnostics and for iterative routing.</t>
+            method is useful for diagnostics and for iterative routing
+            (see <xref target="sec-route-query" />).</t>
           </list></t>
 
         <t>The basic routing mechanism used by RELOAD is Symmetric Recursive.
