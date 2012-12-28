@@ -9065,7 +9065,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         used to refer to either:</t>
 
         <t><list style="symbols">
-            <t>A peer.</t>
+            <t>A peer, e.g. as used in a certificate (see <xref target="sec-credentials" />).</t>
 
             <t>A resource inside a peer.</t>
           </list></t>
