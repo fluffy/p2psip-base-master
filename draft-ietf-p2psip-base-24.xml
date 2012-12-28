@@ -1696,8 +1696,8 @@ Dest=Z
                title="Message Receipt and Forwarding">
         <t>When a node receives a message, it first examines the overlay,
         version, and other header fields to determine whether the message is
-        one it can process. If any of these are incorrect (e.g., the message
-        is for an overlay in which the peer does not participate) it is an
+        one it can process. If any of these are incorrect, as defined in
+        <xref target="sec-forwarding-header" />, it is an
         error and the message MUST be discarded. The peer SHOULD generate an
         appropriate error but local policy can override this and cause the
         messages to be silently dropped.</t>
