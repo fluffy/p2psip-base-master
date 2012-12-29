@@ -4510,8 +4510,8 @@ struct {
             then the sending node SHOULD close the connection routing the
             message.</t>
 
-            <t>To determine when a link may be failing without waiting for the
-            final timeout, observe when no ACKs have been received for an
+            <t>To determine when a link might be failing without waiting for
+            the final timeout, observe when no ACKs have been received for an
             entire RTO interval, and then wait for three retransmissions to
             occur beyond that point. If no ACKs have been received by the time
             the third retransmission occurs, it is RECOMMENDED that the link
