@@ -7300,7 +7300,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           the user name is already taken and if so choose another user name.
           Note that this only provides protection against accidental name
           collisions. Name theft is still possible. If protection against name
-          theft is desired, then the enrollment service must be used.</t>
+          theft is desired, then the enrollment service MUST be used.</t>
         </section>
       </section>
 
