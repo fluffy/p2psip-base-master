@@ -4231,8 +4231,8 @@ struct {
 
         <t>Note: We expect future Overlay Link protocols to define
         replacements for all components of these protocols, including the
-        framing header. These protocols have been chosen for simplicity of
-        implementation and reasonable performance.</t>
+        framing header. These three protocols have been chosen for simplicity
+        of implementation and reasonable performance.</t>
 
         <t>Note to implementers: There are inherent tradeoffs in utilizing
         short timeouts to determine when a link has failed. To balance the
