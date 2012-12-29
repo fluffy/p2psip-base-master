@@ -706,9 +706,80 @@ Transport    |      Link       |     +-------+  +------+
       <t><list style="hanging">
           <t></t>
 
+          <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
+          Joining Peer join the Overlay.</t>
+
+          <t></t>
+
+          <t hangText="Bootstrap Node:">A network node used by Joining Peers
+          to help locate the Admitting Peer.</t>
+
+          <t></t>
+
+          <t hangText="Client:">A host that is able to store data in and
+          retrieve data from the overlay but which is not participating in
+          routing or data storage for the overlay.</t>
+
+          <t></t>
+
+          <t hangText="Configuration Document:">An XML document containing all
+          the Overlay Parameters for one overlay instance.</t>
+
+          <t></t>
+
+          <t hangText="Connection Table:">The set of nodes to which a node is
+          directly connected, which include nodes that are not yet available
+          for routing.</t>
+
+          <t></t>
+
+          <t hangText="Destination List:">A list of IDs through which a
+          message is to be routed, in strict order. A single Node-ID or a
+          Resource-ID is a trivial form of destination list. When multiple
+          Node-IDs are specified (no more than one Resource-ID is permitted,
+          and it MUST be the last entry) a Destination List is a loose source
+          route.</t>
+
+          <t></t>
+
           <t hangText="DHT:">A distributed hash table. A DHT is an abstract
           hash table service realized by storing the contents of the hash
           table across a set of peers.</t>
+
+          <t></t>
+
+          <t hangText="ID:">A generic term for any kind of identifiers in an
+          Overlay.  This document specifies an ID as being a Node-ID, a
+          Resource-ID, or an Opaque ID.</t>
+
+          <t></t>
+
+          <t hangText="Joining Peer:">A node that is attempting to become a
+          Peer in a particular Overlay.</t>
+
+          <t></t>
+
+          <t hangText="Kind:">A Kind defines a particular type of data that
+          can be stored in the overlay. Applications define new Kinds to store
+          the data they use. Each Kind is identified with a unique integer
+          called a Kind-ID.</t>
+
+          <t></t>
+
+          <t hangText="Node:">We use the term "Node" to refers to a host that
+          may be either a Peer or a Client. Because RELOAD uses the same
+          protocol for both clients and peers, much of the text applies
+          equally to both. Therefore we use "Node" when the text applies to
+          both Clients and Peers and the more specific term (i.e. client or
+          peer) when the text applies only to Clients or only to Peers.</t>
+
+          <t></t>
+
+          <t hangText="Node-ID:">A fixed-length value that uniquely identifies
+          a node. Node-IDs of all 0s and all 1s are reserved and are invalid
+          Node-IDs. A value of zero is not used in the wire protocol but can
+          be used to indicate an invalid node in implementations and APIs. The
+          Node-ID of all 1s is used on the wire protocol as a wildcard.</t>
 
           <t></t>
 
@@ -727,55 +798,16 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
+          <t hangText="Overlay Parameters:">A set of values that are required to
+          be shared between all nodes in an overlay.  The overlay parameters are
+          distributed in an XML document called the Configuration Document.</t>
+
+          <t></t>
+
           <t hangText="Peer:">A host that is participating in the overlay.
           Peers are responsible for holding some portion of the data that has
           been stored in the overlay and also route messages on behalf of
           other hosts as required by the Overlay Algorithm.</t>
-
-          <t></t>
-
-          <t hangText="Client:">A host that is able to store data in and
-          retrieve data from the overlay but which is not participating in
-          routing or data storage for the overlay.</t>
-
-          <t></t>
-
-          <t hangText="Kind:">A Kind defines a particular type of data that
-          can be stored in the overlay. Applications define new Kinds to store
-          the data they use. Each Kind is identified with a unique integer
-          called a Kind-ID.</t>
-
-          <t></t>
-
-          <t hangText="Node:">We use the term "Node" to refer to a host that
-          may be either a Peer or a Client. Because RELOAD uses the same
-          protocol for both clients and peers, much of the text applies
-          equally to both. Therefore we use "Node" when the text applies to
-          both Clients and Peers and the more specific term (i.e. client or
-          peer) when the text applies only to Clients or only to Peers.</t>
-
-          <t></t>
-
-          <t hangText="Node-ID:">A fixed-length value that uniquely identifies
-          a node. Node-IDs of all 0s and all 1s are reserved and are invalid
-          Node-IDs. A value of zero is not used in the wire protocol but can
-          be used to indicate an invalid node in implementations and APIs. The
-          Node-ID of all 1s is used on the wire protocol as a wildcard.</t>
-
-          <t></t>
-
-          <t hangText="Joining Peer:">A node that is attempting to become a
-          Peer in a particular Overlay.</t>
-
-          <t></t>
-
-          <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
-          Joining Peer join the Overlay.</t>
-
-          <t></t>
-
-          <t hangText="Bootstrap Node:">A network node used by Joining Peers
-          to help locate the Admitting Peer.</t>
 
           <t></t>
 
@@ -825,12 +857,6 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Connection Table:">The set of nodes to which a node is
-          directly connected, which include nodes that are not yet available
-          for routing.</t>
-
-          <t></t>
-
           <t hangText="Routing Table:">The set of peers which a node can use
           to route overlay messages. In general, these peers will all be on
           the connection table but not vice versa, because some peers may
@@ -841,19 +867,9 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="ID:">A generic term for any kind of identifiers in an
-          Overlay.  This document specifies an ID as being a Node-ID, a
-          Resource-ID, or an Opaque ID.</t>
-
-          <t></t>
-
-          <t hangText="Destination List:">A list of IDs through which a
-          message is to be routed, in strict order. A single Node-ID or a
-          Resource-ID is a trivial form of destination list. When multiple
-          Node-IDs are specified (no more than one Resource-ID is permitted,
-          and it MUST be the last entry) a Destination List is a loose source
-          route. The list is reduced hop-by-hop, does not include the source
-          but includes the destination.</t>
+          <t hangText="Transaction ID:">A randomly chosen identifier selected
+          by the originator of a request and used to correlate requests and
+          responses.</t>
 
           <t></t>
 
@@ -861,23 +877,6 @@ Transport    |      Link       |     +-------+  +------+
           the overlay for some purpose. Each application wishing to use the
           overlay defines a set of data Kinds that it wishes to use. The SIP
           usage defines the location data Kind.</t>
-
-          <t></t>
-
-          <t hangText="Transaction ID:">A randomly chosen identifier selected
-          by the originator of a request and used to correlate requests and
-          responses.</t>
-
-          <t></t>
-
-          <t hangText="Overlay Parameters:">A set of values that are required to
-          be shared between all nodes in an overlay.  The overlay parameters are
-          distributed in an XML document called the Configuration Document.</t>
-
-          <t></t>
-
-          <t hangText="Configuration Document:">An XML document containing all
-          the Overlay Parameters for one overlay instance.</t>
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
@@ -1763,7 +1762,7 @@ Dest=Z
               <t>If the entry is a Node-ID which is not equal to this node,
               then the node MUST drop the message silently unless the Node-ID
               corresponds to a node which is directly connected to this node
-              (i.e., a client). In the later case, it MUST forward the message
+              (i.e., a client). In the latter case, it MUST forward the message
               to the destination node as described in the next section.</t>
             </list></t>
 
@@ -2058,9 +2057,8 @@ Dest=Z
           </figure>
 
           <section anchor="sec-definitions" title="Common Definitions">
-            <t>The following definitions are used throughout RELOAD and so are
-            defined here. They also provide a convenient introduction to how
-            to read the presentation language.</t>
+            <t>This section provides an introduction to the presentation
+            language used throughout RELOAD.</t>
 
             <t>An enum represents an enumerated type. The values associated
             with each possibility are represented in parentheses and the
@@ -3770,7 +3768,9 @@ struct {
             <t>However, standardization of additional protocols for use with
             ICE is expected, including <xref
             target="RFC6544">TCP</xref> and protocols such as
-            SCTP and DCCP. UDP encapsulations for SCTP and DCCP would expand
+            <xref target="RFC4960">SCTP</xref> and
+            <xref target="RFC4340">DCCP</xref>. UDP encapsulations for SCTP and
+            DCCP would expand
             the available Overlay Link protocols available for RELOAD. When
             additional protocols are available, the following prioritization
             is RECOMMENDED:</t>
@@ -6538,7 +6538,7 @@ struct {
             implementation SHOULD be capable of increasing the number of
             entries in the finger table to 128 entries.</t>
 
-            <t>Note to implementers: Although log(N) entries are all that are
+            <t>Although log(N) entries are all that are
             required for optimal performance, careful implementation of
             stabilization will result in no additional traffic being generated
             when maintaining a finger table larger than log(N) entries.
@@ -6572,7 +6572,7 @@ struct {
       </section>
 
       <section title="Route query">
-        <t>For this topology plugin, the RouteQueryReq contains no additional
+        <t>For CHORD-RELOAD, the RouteQueryReq contains no additional
         information. The RouteQueryAns contains the single Node-ID of the next
         peer to which the responding peer would have routed the request
         message in recursive routing:</t>
@@ -7384,7 +7384,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       connection is formed but it could also happen before in which case the
       Update would often be routed through other nodes.</t>
 
-      <figure>
+      <figure anchor="example-1">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7436,7 +7436,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       NP, by sending an Attach which gets routed via other nodes. When NP
       responds, JP and NP use ICE and DTLS to set up a connection.</t>
 
-      <figure>
+      <figure anchor="example-2">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7477,7 +7477,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       diagram below shows it sending an Attach halfway around the Chord ring
       to the JP + 2^127.</t>
 
-      <figure>
+      <figure anchor="example-3">
         <artwork><![CDATA[
     JP        NP        XX        TP
      |         |         |         |
@@ -7524,7 +7524,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       section of the overlay. AP can now forget any data which is assigned to
       JP and not AP.</t>
 
-      <figure>
+      <figure anchor="example-4">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7574,7 +7574,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       sends Attaches to them. Below it is shown connecting only to AP's closest
       predecessor, PP.</t>
 
-      <figure>
+      <figure anchor="example-5">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7632,7 +7632,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       Routing Table to tell them it is ready to go. Below, it is shown sending
       such an update to TP.</t>
 
-      <figure>
+      <figure anchor="example-6">
         <artwork><![CDATA[
 
         JP        NP        XX        TP
@@ -9445,6 +9445,14 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <?rfc include="reference.RFC.5054"?>
 
       <?rfc include="reference.RFC.5280"?>
+
+      <?rfc include="reference.RFC.4340"?>
+
+      <?rfc include="reference.RFC.4960"?>
+
+      <!--
+      <?rfc include="reference.I-D.pascual-p2psip-clients"?>
+-->
 
       <?rfc include="reference.RFC.4787"?>
 
