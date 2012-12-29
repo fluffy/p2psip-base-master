@@ -3023,7 +3023,7 @@ struct {
           <t>All RELOAD messages MUST be signed. Upon receipt (and fragment
           reassembly if needed) the destination node MUST verify the signature
           and the authorizing certificate. If the signature fails, the
-          implementation SHOULD simply drop the message and MUST not process
+          implementation SHOULD simply drop the message and MUST NOT process
           it. This check provides a minimal level of assurance that the
           sending node is a valid part of the overlay as well as cryptographic
           authentication of the sending node. In addition, responses MUST be
@@ -6197,7 +6197,7 @@ struct {
             <t>AP MUST send JP an Update explicitly labeling JP as its
             predecessor. At this point, JP is part of the ring and responsible
             for a section of the overlay. AP MAY now forget any data which is
-            assigned to JP and not AP. AP SHOULD not forget any data where AP
+            assigned to JP and not AP. AP SHOULD NOT forget any data where AP
             is the replica set for the data. </t>
 
             <t>The AP MUST send an Update to all of its neighbors with the new
