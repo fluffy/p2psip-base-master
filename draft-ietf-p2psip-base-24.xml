@@ -852,12 +852,19 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
+          <t hangText="ID:">A generic term for any kind of identifiers in an
+          Overlay.  This document specifies an ID as being a Node-ID, a
+          Resource-ID, or an Opaque ID.</t>
+
+          <t></t>
+
           <t hangText="Destination List:">A list of IDs through which a
           message is to be routed, in strict order. A single Node-ID or a
           Resource-ID is a trivial form of destination list. When multiple
           Node-IDs are specified (no more than one Resource-ID is permitted,
           and it MUST be the last entry) a Destination List is a loose source
-          route.</t>
+          route. The list is reduced hop-by-hop, does not include the source
+          but includes the destination.</t>
 
           <t></t>
 
