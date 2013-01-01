@@ -394,12 +394,13 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
             <t></t>
 
             <t hangText="Overlay Link Layer:">Responsible for actually
-            transporting traffic directly between nodes. Each such protocol
-            includes the appropriate provisions for per-hop framing or
-            hop-by-hop ACKs required by unreliable transports. TLS <xref
-            target="RFC5246"></xref> and DTLS <xref target="RFC6347"></xref>
+            transporting traffic directly between nodes. TLS
+            <xref target="RFC5246" /> and DTLS <xref target="RFC6347"></xref>
             are the currently defined "link layer" protocols used by RELOAD
-            for hop-by-hop communication. New protocols can be defined, as
+            for hop-by-hop communication.  Each such protocol includes the
+            appropriate provisions for per-hop framing or hop-by-hop ACKs
+            required by unreliable underlying transports. New protocols can be
+            defined, as
             described in <xref target="sec.future-link"></xref> and <xref
             target="sec-configuration"></xref>. As this document defines only
             TLS and DTLS, we use those terms throughout the remainder of the
