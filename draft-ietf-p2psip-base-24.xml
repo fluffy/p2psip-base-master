@@ -842,7 +842,8 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Routing Table:">The set of peers which a node can use
+          <t hangText="Routing Table:">The set of directly connected peers
+          which a node can use
           to route overlay messages. In general, these peers will all be on
           the connection table but not vice versa, because some peers may
           not yet be available for routing. Peers may send messages directly
