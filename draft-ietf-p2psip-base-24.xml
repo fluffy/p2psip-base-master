@@ -2115,7 +2115,7 @@ Dest=Z
 
               <artwork><![CDATA[
 
-     enum { reservedAddr(0), ipv4_address(1), ipv6_address(2),
+     enum { invalid(0), ipv4_address(1), ipv6_address(2),
           (255) } AddressType;
 
      struct {
@@ -2380,7 +2380,7 @@ Dest=Z
               <!--begin-pdu-->
 
               <artwork><![CDATA[
-  enum { reserved(0), node(1), resource(2), opaque_id_type(3),
+  enum { invalid(0), node(1), resource(2), opaque_id_type(3),
             /* 128-255 not allowed */ (255) }
             DestinationType;
 
@@ -2505,7 +2505,7 @@ Dest=Z
               <!-- begin-pdu-->
 
               <artwork><![CDATA[
- enum { reservedForwarding(0), (255) } 
+ enum { invalid(0), (255) }
    ForwardingOptionType;
 	
  struct {
@@ -2572,7 +2572,7 @@ Dest=Z
             <!--begin-pdu-->
 
             <artwork><![CDATA[
-enum { reservedMessagesExtension(0), (2^16-1) } MessageExtensionType; 
+enum { invalid(0), (2^16-1) } MessageExtensionType;
 
 struct {
   MessageExtensionType  type;
@@ -2919,7 +2919,7 @@ struct {
             <!--begin-pdu-->
 
             <artwork><![CDATA[
-  enum { reservedSignerIdentity(0), 
+  enum { invalid(0),
          cert_hash(1), cert_hash_node_id(2), 
          none(3)
          (255) } SignerIdentityType;
@@ -3307,7 +3307,7 @@ struct {
                 <!--begin-pdu-->
 
                 <artwork><![CDATA[
-     enum { reservedProbeInformation(0), responsible_set(1),
+     enum { invalid(0), responsible_set(1),
             num_resources(2), uptime(3), (255) }
           ProbeInformationType;
 
@@ -3462,11 +3462,11 @@ struct {
               <!--begin-pdu-->
 
               <artwork><![CDATA[
-     enum { reservedOverlayLink(0), DTLS-UDP-SR(1), 
+     enum { invalid(0), DTLS-UDP-SR(1),
              DTLS-UDP-SR-NO-ICE(3), TLS-TCP-FH-NO-ICE(4),
              (255) } OverlayLinkType;
 
-     enum { reservedCand(0), host(1), srflx(2), prflx(3), relay(4), 
+     enum { invalid(0), host(1), srflx(2), prflx(3), relay(4),
           (255) } CandType;
 
      struct {
@@ -4071,7 +4071,7 @@ struct {
               <!--begin-pdu-->
 
               <artwork><![CDATA[
-     enum { reservedConfigUpdate(0), config(1), kind(2), (255) } 
+     enum { invalid(0), config(1), kind(2), (255) }
           ConfigUpdateType;
 
      typedef uint32           KindId;
@@ -6240,7 +6240,7 @@ struct {
           <!--begin-pdu-->
 
           <artwork><![CDATA[
-     enum { reserved(0),
+     enum { invalid(0),
             peer_ready(1), neighbors(2), full(3), (255) }
           ChordUpdateType;
 
@@ -6589,7 +6589,7 @@ struct {
         the Overlay Instance. The overlay_specific_data field MUST contain the
         ChordLeaveData structure defined below: <figure>
             <artwork><![CDATA[
-           enum { reserved(0),
+           enum { invalid(0),
                    from_succ(1), from_pred(2), (255) }
                  ChordLeaveType;
 
@@ -8836,7 +8836,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <ttcol align="right">Specification</ttcol>
 
-          <c>reserved</c>
+          <c>invalid</c>
 
           <c>0</c>
 
