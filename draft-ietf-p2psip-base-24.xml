@@ -7547,9 +7547,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <t>In Chord, JP's neighbor table needs to contain its own predecessors.
       It couldn't connect to them previously because it did not yet know their
-      addresses. However, now that it has received an Update from AP, it has
-      AP's predecessors, which are also its own, so it sends Attaches to them.
-      Below it is shown connecting to AP's closest predecessor, PP.</t>
+      addresses. However, now that it has received an Update from AP, as in the
+      previous diagram, it has AP's predecessors, which are also its own, so it
+      sends Attaches to them. Below it is shown connecting only to AP's closest
+      predecessor, PP.</t>
 
       <figure>
         <artwork><![CDATA[
