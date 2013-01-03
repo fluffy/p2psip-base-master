@@ -871,6 +871,17 @@ Transport    |      Link       |     +-------+  +------+
           <t hangText="Transaction ID:">A randomly chosen identifier selected
           by the originator of a request and used to correlate requests and
           responses.</t>
+
+          <t></t>
+
+          <t hangText="Overlay Parameters:">A set of values that are required to
+          be identical for all nodes in an overlay.  The overlay parameters are
+          distributed in an XML document called the Configuration Document.</t>
+
+          <t></t>
+
+          <t hangText="Configuration Document:">An XML document containing all
+          the Overlay Parameters for one overlay instance.</t>
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
