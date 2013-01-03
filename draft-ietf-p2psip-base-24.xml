@@ -2253,7 +2253,8 @@ Dest=Z
               <t></t>
 
               <t hangText="configuration_sequence:">The sequence number of the
-              configuration file.</t>
+              configuration file. see <xref target="sec.config-seq" /> for
+              details</t>
 
               <t></t>
 
@@ -2302,7 +2303,8 @@ Dest=Z
               order to provide a high probability that transaction IDs are
               unique, they MUST be randomly generated. Responses use the same
               Transaction ID as the request they correspond to. Transaction
-              IDs are also used for fragment reassembly.</t>
+              IDs are also used for fragment reassembly. see
+              <xref target="sec-frag-reass" /> for details.</t>
 
               <t></t>
 
