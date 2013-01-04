@@ -7164,7 +7164,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section anchor="sec-credentials" title="Credentials">
         <t>If the configuration document contains a enrollment-server element,
-        credentials are required to join the Overlay Instance. A peer which
+        credentials are REQUIRED to join the Overlay Instance. A peer which
         does not yet have credentials MUST contact the enrollment server to
         acquire them.</t>
 
