@@ -6088,8 +6088,8 @@ struct {
         </list></t>
 
       <section title="Overview">
-        <t>The algorithm described here is a modified version of the Chord
-        algorithm. In Chord (and in the algorithm described here),
+        <t>The algorithm described here, CHORD-RELOAD, is a modified version of
+        the Chord algorithm. In Chord (and in the algorithm described here),
 	nodes are arranged in a ring with node n being adjacent to
 	nodes n-1 and n+1, with all arithmetic being done
 	modulo 2^{k}, where k is the length of the Node-ID in bits,
