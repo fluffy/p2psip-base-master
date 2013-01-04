@@ -3543,6 +3543,8 @@ struct {
 
                 <t>One or more ICE candidate values, as described below.</t>
 
+                <t></t>
+
                 <t hangText="send_update "></t>
 
                 <t>Has the same meaning as the send_update field in
@@ -3558,14 +3560,14 @@ struct {
             <t><list style="hanging">
                 <t hangText="addr_port"></t>
 
-                <t>corresponds to the connection-address and port
+                <t>corresponds to the ICE connection-address and port
                 productions.</t>
 
                 <t></t>
 
                 <t hangText="overlay_link"></t>
 
-                <t>corresponds to the OverlayLinkType production, Overlay Link
+                <t>corresponds to the ICE transport production, Overlay Link
                 protocols used with No-ICE MUST specify "No-ICE" in their
                 description. Future overlay link values can be added by
                 defining new OverlayLinkType values in the IANA registry in
@@ -3584,25 +3586,25 @@ struct {
 
                 <t hangText="foundation"></t>
 
-                <t>corresponds to the foundation production.</t>
+                <t>corresponds to the ICE foundation production.</t>
 
                 <t></t>
 
                 <t hangText="priority"></t>
 
-                <t>corresponds to the priority production.</t>
+                <t>corresponds to the ICE priority production.</t>
 
                 <t></t>
 
                 <t hangText="type"></t>
 
-                <t>corresponds to the cand-type production.</t>
+                <t>corresponds to the ICE cand-type production.</t>
 
                 <t></t>
 
                 <t hangText="rel_addr_port"></t>
 
-                <t>corresponds to the rel-addr and rel-port productions. Only
+                <t>corresponds to the ICE rel-addr and rel-port productions. Only
                 present for types "relay", "srflx" and "prflx".</t>
 
                 <t></t>
