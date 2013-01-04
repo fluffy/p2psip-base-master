@@ -4199,10 +4199,10 @@ struct {
 
         <t><list style="symbols">
             <t>DTLS <xref target="RFC6347"></xref> over UDP with Simple
-            Reliability (SR) (OverlayLinkType=DTLS-UDP-SR</t>
+            Reliability (SR) (OverlayLinkType=DTLS-UDP-SR)</t>
 
             <t>TLS <xref target="RFC5246"></xref> over TCP with Framing
-            Header, No-ICE (OverlayLinkType=TLS-TCP-FH-NO-ICE</t>
+            Header, No-ICE (OverlayLinkType=TLS-TCP-FH-NO-ICE)</t>
 
             <t>DTLS <xref target="RFC6347"></xref> over UDP with SR, No-ICE
             (OverlayLinkType=DTLS-UDP-SR-NO-ICE)</t>
@@ -4226,8 +4226,12 @@ struct {
         timing when used on a reliable stream-based transport protocol. Simple
         Reliability (SR) makes use of the FH to provide congestion control and
         semi-reliability when using unreliable message-oriented transport
-        protocols. We will first define each of these algorithms, then define
-        overlay link protocols that use them.</t>
+        protocols. We will first define each of these algorithms in
+        <xref target="sec-framing-header" /> and
+        <xref target="sec-reliability" />, then define overlay link protocols
+        that use them in <xref target="sec-dtls-udp-sr" />,
+        <xref target="sec-tls-tcp-fs-no-ice" /> and
+        <xref target="sec-dtls-udp-sr-no-ice" />.</t>
 
         <t>Note: We expect future Overlay Link protocols to define
         replacements for all components of these protocols, including the
