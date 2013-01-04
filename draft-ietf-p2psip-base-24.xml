@@ -1971,14 +1971,16 @@ Dest=Z
             which is used to forward the message between peers and to its
             final destination. This header is the only information that an
             intermediate peer (i.e., one that is not the target of a message)
-            needs to examine.</t>
+            needs to examine. <xref target="sec-forwarding-header" />
+            describes the format of this part.</t>
 
             <t></t>
 
             <t hangText="Message Contents:">The message being delivered
             between the peers. From the perspective of the forwarding layer,
             the contents are opaque, however, they are interpreted by the
-            higher layers.</t>
+            higher layers. <xref target="sec-contents" /> describes the format
+            of this part.</t>
 
             <t></t>
 
@@ -1986,11 +1988,9 @@ Dest=Z
             certificates and a digital signature over the "Message Contents"
             section. Note that this signature can be computed without parsing
             the message contents. All messages MUST be signed by their
-            originator.</t>
+            originator. <xref target="sec-signature" /> describes the format of
+            this part.</t>
           </list></t>
-
-        <t>The following sections describe the format of each part of the
-        message.</t>
 
         <section anchor="sec-presentation-language"
                  title="Presentation Language">
