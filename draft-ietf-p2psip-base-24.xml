@@ -7309,7 +7309,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         file has an multicast-bootstrap element, then the node SHOULD send a
         Ping request over UDP to the address and port found to each
         multicast-bootstrap element found in the configuration document. This
-        MAY be a multicast, broadcast, or anycast address. The Ping should use
+        MAY be a multicast, broadcast, or anycast address. The Ping SHOULD use
         the wildcard Node-ID as the destination Node-ID.</t>
 
         <t>The responder node that receives the Ping request SHOULD check that
