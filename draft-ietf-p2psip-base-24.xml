@@ -2658,9 +2658,9 @@ struct {
 
               <t hangText="critical "></t>
 
-              <t>Whether this extension must be understood in order to process
-              the message. If critical = True and the recipient does not
-              understand the message, it MUST generate an
+              <t>Whether this extension needs to be understood in order to
+              process the message. If critical = True and the recipient does
+              not understand the message, it MUST generate an
               Error_Unknown_Extension error. If critical = False, the
               recipient MAY choose to process the message even if it does not
               understand the extension.</t>
