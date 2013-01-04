@@ -6951,7 +6951,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         IANA) while the id is an integer Kind-ID allocated out of private
         space.</t>
 
-        <t>In addition, the kind element contains the following elements:
+        <t>In addition, the kind element MUST contain the following elements:
         <list style="hanging">
             <t hangText="max-count:">the maximum number of values which
             members of the overlay must support.</t>
@@ -6962,11 +6962,14 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
 
             <t hangText="access-control:">the access control model to be
             used.</t>
+          </list></t>
 
-            <t hangText="max-node-multiple:">This is optional and only used
-            when the access control is NODE-MULTIPLE. This indicates the
-            maximum value for the i counter. This is an integer greater than
-            0.</t>
+        <t>The kind element MAY also contain the following element:
+        <list style="hanging">
+            <t hangText="max-node-multiple:">if the access control is
+            NODE-MULTIPLE, this element MAY be included. This indicates the
+            maximum value for the i counter.  It MUST be an integer greater
+            than 0.</t>
           </list></t>
 
         <t>All of the non optional values MUST be provided. If the Kind is
