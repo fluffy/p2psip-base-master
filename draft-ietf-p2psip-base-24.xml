@@ -4167,7 +4167,9 @@ struct {
             its own configuration document, it SHOULD contact the
             configuration server to get the latest configuration file in order
             to avoid permanent breakage. The details of this are left up to
-            the implementation.</t>
+            the implementation. This allows implementations to get completely
+            new configurations that do not chain back to any currently
+            acceptable signing key.</t>
 
             <t>The response for ConfigUpdate is empty.</t>
           </section>
@@ -6959,7 +6961,9 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         element. This signature is computed across the kind element from the beginning
         of the first &lt; of the kind element to the end of the last &gt; of the kind element
         in the same way as the signature element described later in this
-        section.</t>
+        section. kind-block elements MUST be signed by a node listed in
+        the kind-signers block of the current configuration. Receivers
+        MUST verify the signature prior to accepting a kind-block.</t>
 
         <t>The configuration element needs to be treated as a binary blob that
         cannot be changed - including any whitespace changes - or the
