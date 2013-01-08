@@ -1245,11 +1245,11 @@ Dest=Z
         inverts it to produce the new destination list [B, A] and routes it to
         B.</t>
 
-        <t>RELOAD also supports a basic Iterative routing mode (where the
+        <t>RELOAD also supports a basic Iterative "routing" mode (where the
         intermediate peers merely return a response indicating the next hop,
         but do not actually forward the message to that next hop themselves).
-        Iterative routing is implemented using the RouteQuery method, which
-        requests this behavior. Note that iterative routing is selected only
+        Iterative "routing" is implemented using the RouteQuery method, which
+        requests this behavior. Note that iterative "routing" is selected only
         by the initiating node.</t>
       </section>
 
