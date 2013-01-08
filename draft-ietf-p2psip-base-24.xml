@@ -878,6 +878,11 @@ Transport    |      Link       |     +-------+  +------+
 
           <t hangText="Configuration Document:">An XML document containing all
           the Overlay Parameters for one overlay instance.</t>
+
+          <t></t>
+
+          <t hangText="Responsible Peer:">The peer that is responsible for a
+          specific resource or client, as defined by the plugin algorithm.</t>
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
