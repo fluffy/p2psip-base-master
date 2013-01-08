@@ -1037,7 +1037,7 @@ Transport    |      Link       |     +-------+  +------+
               were a peer, because the responsible peer in the overlay will
               handle the final step of routing to the client. This may require
               a TURN relay in cases where NATs or firewalls prevent a client
-              from forming a direct connections with its responsible peer.
+              from forming a direct connection with its responsible peer.
               Note that clients that choose this option need to process Update
               messages from the peer. Those updates can indicate that the peer
               no longer is responsible for the Client's Node-ID. The client
