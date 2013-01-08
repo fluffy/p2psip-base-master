@@ -1777,7 +1777,7 @@ Dest=Z
           nor an ID the peer if responsible for, then the peer MUST forward the
           message towards this entry.
           This means that it MUST select one of the peers to which it is
-          connected and which is likely to be responsible for the first entry
+          connected and which is presumably closer to the first entry
           on the destination list. If the first entry on the destination list
           is in the peer's connection table, then it SHOULD forward the
           message to that peer directly. Otherwise, the peer consults the
