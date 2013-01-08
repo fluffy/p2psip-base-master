@@ -1264,7 +1264,8 @@ Dest=Z
         establish the connection. It is assumed that the reader is familiar
         with ICE.</t>
 
-        <t>Say that peer A wishes to form a direct connection to peer B. It
+        <t>Say that peer A wishes to form a direct connection to peer B, either
+        to join the overlay or to add more connections in its routing table. It
         gathers ICE candidates and packages them up in an Attach request which
         it sends to B through usual overlay routing procedures. B does its own
         candidate gathering and sends back a response with its candidates. A
@@ -1285,12 +1286,12 @@ Dest=Z
 
         <t>In general, a peer needs to maintain connections to all of the
         peers near it in the Overlay Instance and to enough other peers to
-        have efficient routing (the details, e.g. on what "enough" means,
-        depend on the specific overlay). If a peer cannot form a connection
-        to some other peer, this is not
+        have efficient routing (the details, e.g. on what "enough" or "near"
+        means, depend on the specific overlay). If a peer cannot form a
+        connection to some other peer, this is not
         necessarily a disaster; overlays can route correctly even without
         fully connected links. However, a peer should try to maintain the
-        specified link set defined by the algorithm and if it detects that
+        specified routing table defined by the algorithm and if it detects that
         it has fewer direct
         connections, should form more as required. This also implies that
         peers need to periodically verify that the connected peers are still
