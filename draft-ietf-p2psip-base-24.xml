@@ -1067,7 +1067,7 @@ Transport    |      Link       |     +-------+  +------+
 
         <section title="Minimum Functionality Requirements for Clients">
           <t>A node may act as a client simply because it does not have the
-          resources or even an implementation of the topology plugin required
+          capacity or even an implementation of the topology plugin required
           to act as a peer in the overlay. In order to exchange RELOAD
           messages with a peer, a client MUST meet a minimum level of
           functionality. Such a client MUST:</t>
