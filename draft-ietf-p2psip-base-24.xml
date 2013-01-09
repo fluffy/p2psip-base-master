@@ -7168,7 +7168,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         <t>When a node first enrolls in a new overlay, it starts with a
         discovery process to find a configuration server.</t>
 
-        <t>The node MAY start by determining the overlay name. This value is
+        <t>The node MAY start by determining the overlay name. This value MUST be
         provided by the user or some other out of band provisioning mechanism.
         The out of band mechanisms MAY also provide an optional URL for the
         configuration server. If a URL for the configuration server is not
