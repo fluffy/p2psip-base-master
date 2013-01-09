@@ -3057,10 +3057,9 @@ struct {
       </section>
 
       <section anchor="sec-overlay-topology" title="Overlay Topology">
-        <t>As discussed in previous sections, RELOAD does not itself implement
-        any overlay topology. Rather, it relies on Topology Plugins, which
-        allow a variety of overlay algorithms to be used while maintaining the
-        same RELOAD core. This section describes the requirements for new
+        <t>As discussed in previous sections RELOAD defines a default overlay
+        topology (CHORD-RELOAD) but allows for other topologies through the
+        use of Topology Plugins. This section describes the requirements for new
         topology plugins and the methods that RELOAD provides for overlay
         topology maintenance.</t>
 
