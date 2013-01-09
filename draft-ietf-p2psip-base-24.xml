@@ -378,10 +378,13 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
             uses the Message Transport component to send and receive overlay
             management messages, the Storage component to manage data
             replication, and the Forwarding Layer to control hop-by-hop message
-            forwarding.  This component closely parallels conventional routing
-            algorithms, but is more tightly coupled to the Forwarding Layer
-            because there is no single "routing table" equivalent used by all
-            overlay algorithms.</t>
+            forwarding.  This component superficially parallels conventional
+            routing algorithms, but is more tightly coupled to the Forwarding
+            Layer because there is no single "routing table" equivalent used by
+            all overlay algorithms. The topology plugin has two functions,
+            constructing the local forwarding instructions, and selecting the
+            operational topology (i.e. creating links by sending overlay
+            management messages).</t>
 
             <t></t>
 
