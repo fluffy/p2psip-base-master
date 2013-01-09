@@ -6674,8 +6674,8 @@ If the type of the request is 'from_pred', the contents will be:
           </figure></t>
 
         <t>Any peer which receives a Leave for a peer n in its neighbor set
-        follows procedures as if it had detected a peer failure as described
-        in <xref target="sec-neighbor-failure"></xref>.</t>
+        MUST follow procedures as if it had detected a peer failure as
+        described in <xref target="sec-neighbor-failure"></xref>.</t>
       </section>
     </section>
 
