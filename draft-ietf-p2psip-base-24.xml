@@ -7213,19 +7213,19 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         these objects are defined, none of the existing protocols support
         exactly this model.</t>
 
-        <t>The certificate request protocol is performed over HTTPS. The
-        request is an HTTP POST with the parameters encoded as described in
-        <xref target="RFC2388"></xref> and the following properties:</t>
+        <t>The certificate request protocol MUST be performed over HTTPS. The
+        request MUST be an HTTP POST with the parameters encoded as described
+        in <xref target="RFC2388"></xref> and the following properties:</t>
 
         <t><list style="symbols">
-            <t>If authentication is required, there is an form parameter of
+            <t>If authentication is required, there MUST be form parameters of
             "password" and "username" containing the user's name and password
             in the clear (hence the need for HTTPS). The username and password
-            strings are UTF-8 strings compared as binary objects. Applications
+            strings MUST be UTF-8 strings compared as binary objects. Applications
             using RELOAD SHOULD define any needed string preparation as per
             <xref target="RFC4013"/> or its successor documents.</t>
 
-            <t>If more than one Node-ID is required, there is an form
+            <t>If more than one Node-ID is required, there MUST be a form
             parameter of "nodeids" containing the number of Node-IDs
             required.</t>
 
@@ -7243,9 +7243,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         "multipart/form-data" encoding is so that the password parameter will
         not be encoded in the URL to reduce the chance of accidental leakage
         of the password. If the authentication succeeds and the requested user
-        name is acceptable, the server generates and returns a certificate for
+        name is acceptable, the server MUST generate and return a certificate for
         the certificate signing request in the "csr" parameter of the request.
-        The SubjectAltName field in the certificate contains the following
+        The SubjectAltName field in the certificate MUST contain the following
         values:</t>
 
         <t><list style="symbols">
@@ -7269,7 +7269,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             simply accepting any name provided by the user.</t>
           </list></t>
 
-        <t>The certificate is returned as type "application/pkix-cert" as
+        <t>The certificate MUST be returned as type "application/pkix-cert" as
         defined in <xref target="RFC2585"></xref>, with an HTTP status code of
         200 OK. </t>
 
@@ -7280,7 +7280,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         isn't right and have a question out to the apps AD. ]]</t>
 -->
         <t>
-          Certificate processing errors should result in a HTTP return code of
+          Certificate processing errors SHOULD result in a HTTP return code of
           403 "Forbidden" along with a body of type "text/plain" and body that
           consists of one of the tokens defined in the following list:
          </t>
