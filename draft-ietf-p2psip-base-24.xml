@@ -6219,7 +6219,7 @@ struct {
             <t>JP MUST enter all the peers it has successfully contacted into
             its routing table.</t>
 
-            <t>JP MUST send a Join to AP. The AP sends the response to the
+            <t>JP MUST send a Join to AP. The AP MUST send the response to the
             Join.</t>
 
             <t>AP MUST do a series of Store requests to JP to store the data
@@ -6239,14 +6239,15 @@ struct {
           </list></t>
 
         <t>If JP sends an Attach to AP with send_update, it immediately knows
-        most of its expected neighbors from AP's routing table update and can
+        most of its expected neighbors from AP's routing table update and MAY
         directly connect to them. This is the RECOMMENDED procedure.</t>
 
-        <t>If for some reason JP does not get AP's routing table, it can still
-        populate its neighbor table incrementally. It sends a Ping directed at
-        Resource-ID n+1 (directly after its own Resource-ID). This allows it
-        to discover its own successor. Call that node p0. It then sends a ping
-        to p0+1 to discover its successor (p1). This process can be repeated
+        <t>If for some reason JP does not get AP's routing table, it MAY still
+        populate its neighbor table incrementally. It SHOULD send a Ping
+        directed at Resource-ID n+1 (directly after its own Resource-ID). This
+        allows it to discover its own successor. Call that node p0. It then
+        SHOULD send a ping
+        to p0+1 to discover its successor (p1). This process MAY be repeated
         to discover as many successors as desired. The values for the two
         peers before p will be found at a later stage when n receives an
         Update. An alternate procedure is to send Attaches to those nodes
@@ -6254,8 +6255,8 @@ struct {
         slower if the nodes need to collect ICE candidates, thus reducing
         parallelism.</t>
 
-        <t> In order to set up its i'th finger table entry, JP simply
-        sends an Attach to peer n+2^(128-i). This will be routed to a
+        <t> In order to set up its i'th finger table entry, JP MUST
+        send an Attach to peer n+2^(128-i). This will be routed to a
         peer in approximately the right location around the ring. (Note the
         first entry in the finger table has i=1 and not i=0 in this
         formulation). </t>
