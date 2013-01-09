@@ -413,9 +413,9 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
 
         <figure>
           <artwork><![CDATA[
-             | Internet Model  |                                       
- Real        |   Equivalent    |          Reload                       
-Internet     |   in Overlay    |       Architecture                    
+ Internet    | Internet Model  |
+ Model       |   Equivalent    |          Reload
+             |   in Overlay    |       Architecture
 -------------+-----------------+------------------------------------   
              |                 |    +-------+  +-------+               
              |  Application    |    | SIP   |  | XMPP  |  ...          
@@ -4296,6 +4296,10 @@ struct {
               not involved in the association to determine the contents of
               that traffic.</t>
             </list></t>
+
+          <t>New Overlay Link Protocols do not need to run over classic
+          transport protocol spanning the Internet. With the appropriate
+          encapsulation, they can run over a physical link.</t>
 
           <t>Any new overlay protocol MUST be defined via RFC 5226 Standards
           Action; see <xref
