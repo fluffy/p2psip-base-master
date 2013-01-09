@@ -7007,16 +7007,16 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         in the same way as the signature element described later in this
         section.</t>
 
-        <t>The configuration element needs to be treated as a binary blob that
+        <t>The configuration element MUST be treated as a binary blob that
         cannot be changed - including any whitespace changes - or the
-        signature will break. The signature is computed by taking each
+        signature will break. The signature MUST be computed by taking each
         configuration element and starting from, and including, the first &lt;
         at the start of &lt;configuration&gt; up to and including the &gt; in
-        &lt;/configuration&gt; and treating this as a binary blob that is
+        &lt;/configuration&gt; and treating this as a binary blob that MUST be
         signed using the standard SecurityBlock defined in <xref
-        target="sec-signature"></xref>. The SecurityBlock is base 64 encoded
+        target="sec-signature"></xref>. The SecurityBlock MUST be base 64 encoded
         using the base64 alphabet from <xref target="RFC4648"></xref> and
-        put in the signature element following the configuration object in the
+        MUST be put in the signature element following the configuration object in the
         configuration file. Any configuration file MUST be signed by
         one of the configuration-signer elements from the previous extant configuration.
         Recipients MUST verify the signature prior to accepting the
