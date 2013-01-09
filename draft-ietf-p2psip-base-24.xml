@@ -7232,7 +7232,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             is for the right-hand-side of the user name to match the
             right-hand-side of the overlay name, but there is no requirement
             for this match in this specifications. Applications using this
-            specification MAY define such a requirement, or MAY otehrwise limit
+            specification MAY define such a requirement, or MAY otherwise limit
             the allowed range of allowed user names.</t>
           </list></t>
 
