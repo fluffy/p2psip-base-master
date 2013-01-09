@@ -1826,7 +1826,9 @@ Dest=Z
           able to reconstruct the correct destination list on the return
           route. RELOAD provides explicit support for this functionality in
           the form of opaque IDs, which can replace any number of via list
-          entries. For instance, in the above example, Node D might send E a
+          entries.</t>
+
+          <t>For instance, in the above example, Node D might send E a
           via list containing only the opaque ID I. E would then use the
           destination list [D, I] to send its return message. When D processes
           this destination list, it would detect that I is a opaque ID,
@@ -1846,9 +1848,7 @@ Dest=Z
           <t>Note that if an intermediate peer retains per-transaction state
           instead of modifying the via list, it needs some mechanism for
           timing out that state, otherwise its state database will grow
-          without bound. <!-- Whatever algorithm is used, state MUST be
-          maintained for at least the value of the overlay reliability timer (3
-          seconds) and MAY be kept longer. --> Whatever algorithm is used,
+          without bound. Whatever algorithm is used,
           unless a FORWARD_CRITICAL forwarding option or overlay configuration
           option explicitly indicates this state is not needed, the state MUST
           be maintained for at least the value of the
@@ -1863,13 +1863,12 @@ Dest=Z
           described above (via list or state retention) when processing a
           response message.</t>
 
-          <t>To be precise on the responsibility of the intermediate node,
-          suppose that an intermediate node, A, receives a message from node B
-          with via list [X, Y, Z]. Node A MUST implement an algorithm that ensures
-          that A returns a response to this request to node B with the
-          destination list [B, Z, Y, X], provided that the node to which A forwards
-          the request follows the same contract. Node A normally learns the
-          Node-ID B is using via an Attach, but a node using a certificate
+          <t>An intermediate node receiving a request from another node MUST
+          return a response to this request with a destination list equal to
+          the concatenation of the Node-ID of the node that sent the request
+          with the via list in the request. The intermediate node normally
+          learns the Node-ID the other node is using via an Attach, but a node
+          using a certificate
           with a single Node-ID MAY elect to not send an Attach (see <xref
           target="sec-client-routing"></xref> bullet 2). If a node with a
           certificate with multiple Node-IDs attempts to route a message other
