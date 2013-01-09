@@ -6384,7 +6384,7 @@ struct {
           (as determined by connectivity pings or the failure of some
           request), the peer MUST remove the entry from its neighbor table and
           replace it with the best match it has from the other peers in its
-          routing table. If using reactive recovery, it then sends an
+          routing table. If using reactive recovery, it MUST send an
           immediate Update to all nodes in its Neighbor Table. The update will
           contain all the Node-IDs of the current entries of the table (after
           the failed one has been removed). Note that when replacing a
@@ -6401,17 +6401,17 @@ struct {
           neighbor either by waiting additional time to see if connectivity
           returns or by actively routing a new Attach to the lost peer.
           Details for these procedures are beyond the scope of this document.
-          In no event does an attempt to reestablish connectivity with a lost
-          neighbor allow the peer to remain in the neighbor table. Such a peer
-          is returned to the neighbor table once connectivity is
+          In the case of an attempt to reestablish connectivity with a lost
+          neighbor, the peer MUST be removed from the neighbor table. Such a
+          peer is returned to the neighbor table once connectivity is
           reestablished.</t>
 
           <t>If connectivity is lost to all successor peers in the neighbor
-          table, then this peer should behave as if it is joining the network
-          and use Pings to find a peer and send it a Join. If connectivity is
-          lost to all the peers in the finger table, this peer should assume
+          table, then this peer SHOULD behave as if it is joining the network
+          and MUST use Pings to find a peer and send it a Join. If connectivity
+          is lost to all the peers in the finger table, this peer SHOULD assume
           that it has been disconnected from the rest of the network, and it
-          should periodically try to join the DHT.</t>
+          SHOULD periodically try to join the DHT.</t>
         </section>
 
         <section title="Handling Finger Table Entry Failure">
