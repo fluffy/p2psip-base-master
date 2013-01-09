@@ -6416,12 +6416,12 @@ struct {
 
         <section title="Handling Finger Table Entry Failure">
           <t>If a finger table entry is found to have failed, all references
-          to the failed peer are removed from the finger table and replaced
+          to the failed peer MUST be removed from the finger table and replaced
           with the closest preceding peer from the finger table or neighbor
           table.</t>
 
-          <t>If using reactive recovery, the peer initiates a search for a new
-          finger table entry as described below.</t>
+          <t>If using reactive recovery, the peer MUST initiate a search for a
+          new finger table entry as described below.</t>
         </section>
 
         <section anchor="sec-processing-updates" title="Receiving Updates">
