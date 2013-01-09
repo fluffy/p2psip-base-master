@@ -6158,8 +6158,8 @@ struct {
       <section title="Hash Function">
         <t>For this Chord based topology plugin, the size of the Resource-ID
         is 128 bits. The hash of a Resource-ID MUST be computed using SHA-1
-        <xref target="RFC3174"></xref> then truncating the SHA-1 result to the
-        most significant 128 bits.</t>
+        <xref target="RFC3174"></xref> then the SHA-1 result MUST be truncated
+        to the most significant 128 bits.</t>
       </section>
 
       <section title="Routing">
