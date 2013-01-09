@@ -1751,8 +1751,10 @@ Dest=Z
               the node first modifies the destination list to reinsert the
               saved state, e.g., by unpacking any opaque IDS.</t>
 
-              <t>If the entry is the wildcard Node-ID, the message is destined
-              for this node and it passes it up to the upper layers.</t>
+              <t>If the entry is the wildcard Node-ID (all "1"s), the message
+              is destined for this node and it passes it up to the upper layers.
+              A message with a wildcard Node-ID as first entry is never
+              forwarded and is consumed locally.</t>
 
               <t>If the entry is a Node-ID which is not equal to this node,
               then the node MUST drop the message silently unless the Node-ID
