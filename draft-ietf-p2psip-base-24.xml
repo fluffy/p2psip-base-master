@@ -1015,8 +1015,9 @@ Transport    |      Link       |     +-------+  +------+
         authenticate its messages.</t>
 
         <t>In RELOAD, unlike some other designs, clients are not a first-class
-        entity. From the perspective of a peer, a client is simply a node
-        which has not yet sent any Updates or Joins. It might never do so (if
+        entity. From the perspective of a peer, a client is a node that has
+        connected to the overlay, but has not yet taken steps to insert itself
+        into the overlay topology.  It might never do so (if
         it's a client) or it might eventually do so (if it's just a node
         that's taking a long time to join). The routing and storage rules for
         RELOAD provide for correct behavior by peers regardless of whether
