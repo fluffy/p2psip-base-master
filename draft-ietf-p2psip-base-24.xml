@@ -6877,11 +6877,11 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             element may be present.</t>
 
             <t hangText="clients-permitted ">This element represents whether
-            clients are permitted or whether all nodes must be peers. If it is
-            set to "true" or absent, this indicates that clients are
-            permitted. If it is set to "false" then nodes are not allowed to
-            remain clients after the initial join. There is currently no way
-            for the overlay to enforce this.</t>
+            clients are permitted or whether all nodes must be peers. If
+            clients are permitted, the element MUST be set to "true" or absent.
+            If the nodes are not allowed to remain clients after the initial
+            join, the element MUST be set to "false".  There is currently no
+            way for the overlay to enforce this.</t>
 
             <t hangText="no-ice ">This element represents whether nodes are
             required to use the "No-ICE" Overlay Link protocols in this
