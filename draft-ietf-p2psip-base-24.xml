@@ -1842,9 +1842,11 @@ Dest=Z
           target="I-D.ietf-p2psip-rpr"></xref>, may define mechanisms for
           determining when this state does not need to be retained.</t>
 
-          <t>None of the above mechanisms are required for responses, since
-          there is no need to ensure that subsequent requests follow the same
-          path.</t>
+          <t>There is no requirement to ensure that a request issued after the
+          receipt of a response follows the same path as the response. As a
+          consequence, there is no requirement to use either of the mechanisms
+          described above (via list or state retention) when processing a
+          response message.</t>
 
           <t>To be precise on the responsibility of the intermediate node,
           suppose that an intermediate node, A, receives a message from node B
