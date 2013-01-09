@@ -1284,10 +1284,15 @@ Dest=Z
         it sends to B through usual overlay routing procedures. B does its own
         candidate gathering and sends back a response with its candidates. A
         and B then do ICE connectivity checks on the candidate pairs. The
-        result is a connection between A and B. At this point, A and B can add
-        each other to their routing tables and send messages directly between
-        themselves without going through other overlay peers.</t>
-
+        result is a connection between A and B. At this point, A and B can
+        send messages directly between
+        themselves without going through other overlay peers.
+        In other words, A and B are on each other's connection tables. They
+        MAY then execute an Update process, resulting in additions to each
+        other's routing tables, and be able to route messages through each
+        other to other overlay nodes.
+        </t>
+ 
         <t>There are two cases where Attach is not used. The first is when a
         peer is joining the overlay and is not connected to any peers. In
         order to support this case, some small number of "bootstrap nodes"
