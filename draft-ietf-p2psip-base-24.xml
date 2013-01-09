@@ -979,8 +979,9 @@ Transport    |      Link       |     +-------+  +------+
         centrally-issued Node-IDs provided that the CA re-issues the same
         Node-ID when a new certificate is generated.</t>
 
-        <t>The general principle here is that the security mechanisms (TLS and
-        message signatures) are always used, even if the certificates are
+        <t>The general principle here is that the security mechanisms (TLS at
+        the data link layer and message signatures at the message transport
+        layer) are always used, even if the certificates are
         self-signed. This allows for a single set of code paths in the systems
         with the only difference being whether certificate verification is
         required to chain to a single root of trust.</t>
