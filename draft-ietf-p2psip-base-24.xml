@@ -1784,8 +1784,9 @@ Dest=Z
         </section>
 
         <section anchor="sec-other-id" title="Other ID">
-          <t>If neither of the other three cases applies, then the peer MUST
-          forward the message towards the first entry on the destination list.
+          <t>If the first entry in the destination list is neither an opaque ID
+          nor an ID the peer if responsible for, then the peer MUST forward the
+          message towards this entry.
           This means that it MUST select one of the peers to which it is
           connected and which is presumably closer to the first entry
           on the destination list. If the first entry on the destination list
