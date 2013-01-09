@@ -2942,10 +2942,10 @@ struct {
           <t>The signature is computed over the payload and parts of the
           forwarding header. The payload, in case of a Store, may contain an
           additional signature computed over a StoreReq structure. All
-          signatures are formatted using the Signature element. This element
-          is also used in other contexts where signatures are needed. The
-          input structure to the signature computation varies depending on the
-          data element being signed.</t>
+          signatures MUST be formatted using the Signature element. This
+          element is also used in other contexts where signatures are needed.
+          The input structure to the signature computation MAY vary depending
+          on the data element being signed.</t>
 
           <figure>
             <!--begin-pdu-->
