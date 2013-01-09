@@ -2378,7 +2378,7 @@ Dest=Z
             generate a ConfigUpdate message to update the requesting node.
             This allows new configuration documents to propagate quickly
             throughout the system. The one exception to this rule is that if
-            the configuration_sequence field is equal to 0xffff, and the
+            the configuration_sequence field is equal to 65535, and the
             message type is ConfigUpdate, then the message MUST be accepted
             regardless of the receiving node's configuration sequence number.
             Since 65535 is a special value, peers sending a new configuration
