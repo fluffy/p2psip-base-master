@@ -7710,10 +7710,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         <t>To protect the signaling from attackers pretending to be valid
         nodes (or nodes other than themselves), the first requirement is to
         ensure that all messages are received from authorized members of the
-        overlay. For this reason, RELOAD transports all messages over a secure
+        overlay. For this reason, RELOAD MUST transport all messages over a secure
         channel (TLS and DTLS are defined in this document) which provides
         message integrity and authentication of the directly communicating
-        peer. In addition, messages and data are digitally signed with the
+        peer. In addition, messages and data MUST be digitally signed with the
         sender's private key, providing end-to-end security for
         communications.</t>
       </section>
@@ -7729,8 +7729,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t>When a user enrolls in the Overlay Instance, they request or are
         assigned a unique name, such as "alice@dht.example.net". These names
-        are unique and are meant to be chosen and used by humans much like a
-        SIP Address of Record (AOR) or an email address. The user is also
+        MUST be unique and are meant to be chosen and used by humans much like a
+        SIP Address of Record (AOR) or an email address. The user MUST also be
         assigned one or more Node-IDs by the central enrollment authority.
         Both the name and the Node-IDs are placed in the certificate, along
         with the user's public key.</t>
@@ -7748,7 +7748,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t>Note that since only users of this Overlay Instance need to
         validate a certificate, this usage does not require a global PKI.
-        Instead, certificates are signed by a central enrollment authority
+        Instead, certificates MUST be signed by a central enrollment authority
         which acts as the certificate authority for the Overlay Instance. This
         authority signs each node's certificate. Because each node possesses
         the CA's certificate (which they receive on enrollment) they can
@@ -7775,7 +7775,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t>Note that RELOAD does not itself provide a revocation/status
         mechanism (though certificates may of course include OCSP responder
-        information). Thus, certificate lifetimes should be chosen to balance
+        information). Thus, certificate lifetimes SHOULD be chosen to balance
         the compromise window versus the cost of certificate renewal. Because
         RELOAD is already designed to operate in the face of some fraction of
         malicious nodes, this form of compromise is not fatal.</t>
@@ -7788,7 +7788,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         relies on a single key that is shared among all members of the
         overlay. It is appropriate for small groups that wish to form a
         private network without complexity. In shared secret mode, all the
-        peers share a single symmetric key which is used to key TLS-PSK <xref
+        peers MUST share a single symmetric key which is used to key TLS-PSK <xref
         target="RFC4279"></xref> or TLS-SRP <xref target="RFC5054"></xref>
         mode. A peer which does not know the key cannot form TLS connections
         with any other peer and therefore cannot join the overlay.</t>
@@ -7811,13 +7811,13 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         relatively simple.</t>
 
         <section title="Authorization">
-          <t>When a node wants to store some value, it first digitally signs
+          <t>When a node wants to store some value, it MUST first digitally sign
           the value with its own private key. It then sends a Store request
           that contains both the value and the signature towards the storing
           peer (which is defined by the Resource Name construction algorithm
           for that particular Kind of value).</t>
 
-          <t>When the storing peer receives the request, it must determine
+          <t>When the storing peer receives the request, it MUST determine
           whether the storing node is authorized to store at this
           Resource-ID/Kind-ID pair. Determining this requires comparing the
           user's identity to the requirements of the access control model (see
@@ -7879,7 +7879,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           time at which the data is valid and thus limits (though does not
           completely prevent) the ability of the storing node to perform a
           rollback attack on retrievers. In order to prevent a rollback attack
-          at the time of the Store request, we require that storage times be
+          at the time of the Store request, it is REQUIRED that storage times be
           monotonically increasing. Storing peers MUST reject Store requests
           with storage times smaller than or equal to those they are currently
           storing. In addition, a fetching node which receives a data value
@@ -7954,7 +7954,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           the following only applies when self-signed certificates are not
           used.) Whenever a peer connects to another peer, each side
           automatically checks that the other has a suitable certificate.
-          These Node-IDs are randomly assigned by the central enrollment
+          These Node-IDs MUST be randomly assigned by the central enrollment
           server. This has two benefits:</t>
 
           <t><list style="symbols">
