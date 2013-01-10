@@ -203,7 +203,8 @@ Check if the qualicom IPR issueed and if anything can be done
           network, you combine RELOAD with a specific overlay algorithm, which
           defines how to construct the overlay topology and route messages
           efficiently within it. This specification also defines how RELOAD is
-          used with the Chord based DHT algorithm, which is mandatory to
+          used with the <xref target="Chord" >Chord</xref> based DHT algorithm,
+          which is mandatory to
           implement. Specifying a default "must implement" overlay algorithm
           promotes interoperability, while extensibility allows selection of
           overlay algorithms optimized for a particular application.</t>
