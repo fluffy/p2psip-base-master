@@ -4208,12 +4208,14 @@ struct {
 
             <t>If an implementation receives repeated ConfigUpdates which it
             cannot verify with sequence numbers substantially in advance of
-            its own configuration document, it SHOULD contact the
+            its own configuration document, it MAY contact the
             configuration server to get the latest configuration file in order
             to avoid permanent breakage. The details of this are left up to
             the implementation. This allows implementations to get completely
             new configurations that do not chain back to any currently
-            acceptable signing key.</t>
+            acceptable signing key but in some cases might introduce additional 
+            denial of service attacks if the node can not contact the 
+            configuration server. </t>
 
             <t>The response for ConfigUpdate is empty.</t>
           </section>
