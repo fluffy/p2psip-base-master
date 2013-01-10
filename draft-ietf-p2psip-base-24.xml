@@ -4692,7 +4692,8 @@ struct {
 
           <t>If a node attempting to store new data in response to a user
           request (rather than as an overlay maintenance operation such as
-          occurs during unpartitioning) is rejected with an Error_Data_Too_Old
+          occurs when healing the overlay from a partition) is rejected with an
+          Error_Data_Too_Old
           error, the node MAY elect to perform its store using a storage_time
           that increments the value used with the previous store. This
           situation may occur when the clocks of nodes storing to this
