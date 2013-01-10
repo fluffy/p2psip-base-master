@@ -1923,7 +1923,9 @@ Dest=Z
           same transaction identifier. The request MAY be retransmitted up to
           4 times (for a total of 5 messages). After the timer for the fifth
           transmission fires, the message SHALL be considered to have failed.
-          Note that this retransmission procedure is not followed by
+          Although the originating node will be doing both end-to-end and
+          hop-by-hop retransmissions, the end-by-end retransmission procedure
+          is not followed by
           intermediate nodes. They follow the hop-by-hop reliability procedure
           described in <xref target="sec-reliability"></xref>.</t>
 
