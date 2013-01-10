@@ -825,6 +825,13 @@ Transport    |      Link       |     +-------+  +------+
           identified by its AOR which is an example of a Resource Name.</t>
 
           <t></t>
+          
+          <t hangText="User Name:">A name identifying a user of the overlay,
+              typically used as a Resource Name, or as a label on a Resource
+              that identifies the user owning the resource.</t>
+          
+          <t></t>
+                  
 
           <t hangText="Resource-ID:">A value that identifies some resources
           and which is used as a key for storing and retrieving the resource.
@@ -1442,7 +1449,7 @@ Dest=Z
           target="RFC2818"></xref> to download a configuration document which
           contains the basic overlay configuration parameters as well as a set
           of bootstrap nodes which can be used to join the overlay. The
-          expected domain name for HTTPS is the name of the overlay.</t>
+          usual domain name for HTTPS is the name of the overlay.</t>
 
           <t>If a node already has the valid configuration document that it
           received by some out of band method, this step can be skipped. Note
@@ -7262,10 +7269,15 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             the same Node-IDs, thus avoiding the need for implementations to
             re-store all their data when their certificates expire.</t>
 
-            <t>A single name this user is allowed to use in the overlay, using
+            <t>A single name (the "user name") that this user is allowed to use in the overlay, using
             type rfc822Name. Enrollment servers SHOULD take care to only allow
             legal characters in the name (e.g., no embedded NULs), rather than
-            simply accepting any name provided by the user.</t>
+            simply accepting any name provided by the user. The typical usage
+            is for the right-hand-side of the user name to match the
+            right-hand-side of the overlay name, but there is no requirement
+            for this match in this specifications. Applications using this
+            specification MAY define such a requirement, or MAY otherwise limit
+            the allowed range of allowed user names.</t>
           </list></t>
 
         <t>The certificate is returned as type "application/pkix-cert" as
