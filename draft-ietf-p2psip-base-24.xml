@@ -1448,14 +1448,15 @@ Dest=Z
           can then connect to this server with HTTPS <xref
           target="RFC2818"></xref> to download a configuration document which
           contains the basic overlay configuration parameters as well as a set
-          of bootstrap nodes which can be used to join the overlay. The
-          usual domain name for HTTPS is the name of the overlay.</t>
+          of bootstrap nodes which can be used to join the overlay. 
+          The details of the relations between names in the HTTPS certificates, 
+          and the overlay names are described in <xref target="sec-discovery"/>.</t>
 
           <t>If a node already has the valid configuration document that it
           received by some out of band method, this step can be skipped. Note
           that that out of band method must provide authentication and
           integrity, because the configuration document contains the trust
-          anchors for the system.</t>
+          anchors used by the overlay.</t>
         </section>
 
         <section title="Enrollment">
@@ -6809,7 +6810,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         configuration element has the following attributes:</t>
 
         <t><list style="hanging">
-            <t hangText="instance-name:">name of the overlay</t>
+            <t hangText="instance-name:"> the name of the overlay 
+            (referred to as "overlay name" in this specification) </t>
 
             <t hangText="expiration:">time in the future at which this overlay
             configuration is no longer valid. The node SHOULD retrieve a new
@@ -7186,12 +7188,22 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         "https://example.com/.well-known/reload-config".</t>
 
         <t>Once an address and URL for the configuration server is determined,
-        the peer MUST form an HTTPS connection to that IP address. The
+        the peer MUST form an HTTPS connection to that IP address. 
+        If an optional URL for the configuration server was provided, the
+        certificate MUST match the domain name from the URL as described in <xref
+        target="RFC2818"></xref>;
+        otherwise the
         certificate MUST match the overlay name as described in <xref
-        target="RFC2818"></xref>. Then the node MUST fetch a new copy of the
+        target="RFC2818"></xref>.
+        If the HTTPS certificates passes the name matching, 
+        the node MUST fetch a new copy of the
         configuration file. To do this, the peer performs a GET to the URL.
         The result of the HTTP GET is an XML configuration file described
-        above, which MUST replace any previously learned configuration file
+        above. If the XML is not valid, or the instance-name attribute of 
+        the overlay-element in the XML does not match the overlay name, this 
+        configurations file SHOULD be discarded.
+        Otherwise, the new configuration 
+        MUST replace any previously learned configuration file
         for this overlay.</t>
 
         <t>For overlays that do not use a configuration server, nodes need to
@@ -7272,9 +7284,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             <t>A single name (the "user name") that this user is allowed to use in the overlay, using
             type rfc822Name. Enrollment servers SHOULD take care to only allow
             legal characters in the name (e.g., no embedded NULs), rather than
-            simply accepting any name provided by the user. The typical usage
-            is for the right-hand-side of the user name to match the
-            right-hand-side of the overlay name, but there is no requirement
+            simply accepting any name provided by the user. In some usages,
+            the right-hand-side of the user name will match
+            the overlay name, but there is no requirement
             for this match in this specifications. Applications using this
             specification MAY define such a requirement, or MAY otherwise limit
             the allowed range of allowed user names.</t>
