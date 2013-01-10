@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="US-ASCII"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
-<!-- $Id: draft-ietf-p2psip-base.xml 4998 2012-07-16 21:23:28Z fluffy $ -->
+
 <!-- TODO Items 
 Check if the qualicom IPR issueed and if anything can be done 
-
-in NODE-MULTIPLE, you need to gen and text all i which seems lame 
-
-JoinReq and LeaveReq have a node ID in them and it is a potential confusing and useless - shouild we remove this. 
-
 --> 
 
 <?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?>
@@ -148,19 +143,6 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
       protocol. RELOAD also allows access from "client" nodes that do not need
       to route traffic or store data for others.</t>
     </abstract>
-
-    <!--
-      <note title="Legal">
-        <t>THIS DOCUMENT AND THE INFORMATION CONTAINED THEREIN ARE PROVIDED ON
-        AN &ldquo;AS IS&rdquo; BASIS AND THE CONTRIBUTOR, THE ORGANIZATION
-        HE/SHE REPRESENTS OR IS SPONSORED BY (IF ANY), THE INTERNET SOCIETY, THE
-        IETF TRUST, AND THE INTERNET ENGINEERING TASK FORCE, DISCLAIM ALL
-        WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY
-        WARRANTY THAT THE USE OF THE INFORMATION THEREIN WILL NOT INFRINGE ANY
-        RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
-        PARTICULAR PURPOSE.</t>
-       </note>
-     -->
   </front>
 
   <middle>
@@ -233,14 +215,12 @@ JoinReq and LeaveReq have a node ID in them and it is a potential confusing and 
       critical usages for NAT traversal and security. The SIP Usage itself is
       described separately in <xref target="I-D.ietf-p2psip-sip"></xref>.
       RELOAD is not limited to usage by SIP and could serve as a tool for
-      supporting other P2P applications with similar needs.<!--RELOAD is also
-      based on the concepts introduced in <xref
-      target="I-D.ietf-p2psip-concepts"></xref>. --></t>
+      supporting other P2P applications with similar needs. </t>
 
       <section title="Basic Setting">
         <t>In this section, we provide a brief overview of the operational
-        setting for RELOAD. <!-- See the concepts document<xref
-        target="I-D.ietf-p2psip-concepts"></xref> for more details. --> A
+        setting for RELOAD. 
+        A
         RELOAD Overlay Instance consists of a set of nodes arranged in a
         partly connected graph. Each node in the overlay is assigned a numeric
         Node-ID which, together with the specific overlay algorithm in use,
@@ -719,9 +699,7 @@ Transport    |      Link       |     +-------+  +------+
     </section>
 
     <section anchor="sec-term" title="Terminology">
-      <t><!--We use the terminology and definitions from the <xref
-      target="I-D.ietf-p2psip-concepts">Concepts and Terminology for Peer to
-      Peer SIP</xref> draft extensively in this document. Other -->Terms used
+      <t>Terms used
       in this document are defined inline when used and are also defined below
       for reference.</t>
 
@@ -1850,9 +1828,7 @@ Dest=Z
           <t>Note that if an intermediate peer retains per-transaction state
           instead of modifying the via list, it needs some mechanism for
           timing out that state, otherwise its state database will grow
-          without bound. <!-- Whatever algorithm is used, state MUST be
-          maintained for at least the value of the overlay reliability timer (3
-          seconds) and MAY be kept longer. --> Whatever algorithm is used,
+          without bound. Whatever algorithm is used,
           unless a FORWARD_CRITICAL forwarding option or overlay configuration
           option explicitly indicates this state is not needed, the state MUST
           be maintained for at least the value of the
@@ -5638,11 +5614,7 @@ struct {
             break the signature. In order to avoid this issue, the index value
             in the array is set to zero before the signature is computed. This
             implies that malicious storing nodes can reorder array entries
-            without being detected.<!-- [[ We've considered a number of alternate
-           designs here that would preserve security against this attack if the
-           storing node did not use the append feature.  However, they are more
-           complicated for one or both sides. If this attack is considered
-           serious, we can introduce one of them.]]  --></t>
+            without being detected.</t>
           </section>
         </section>
 
@@ -7272,12 +7244,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         defined in <xref target="RFC2585"></xref>, with an HTTP status code of
         200 OK. </t>
 
-<!--
-        <t>Certificate processing errors should be treated as HTTP errors
-        and have appropriate HTTP status codes. In particular, password errors
-        SHOULD be returned as 401 Unauthorized. [[ OPEN ISSUE: We know this
-        isn't right and have a question out to the apps AD. ]]</t>
--->
         <t>
           Certificate processing errors should result in a HTTP return code of
           403 "Forbidden" along with a body of type "text/plain" and body that
@@ -8200,13 +8166,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>RFC-AAAA</c>
 
-          <!--
-           <t>USER-MATCH-WITH-ANONYMOUS-CREATE</t>
-
-           <t>USER-KEY-MATCH</t>
-
-           <t>NODE-KEY-MATCH</t>
--->
         </texttable>
 
         <t>The value EXP-MATCH has been made available for the purposes of
@@ -9454,10 +9413,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <?rfc include="reference.RFC.5694"?>
 
-      <!--
-      <?rfc include="reference.I-D.ietf-p2psip-concepts"?>
--->
-
       <?rfc include="reference.RFC.1122"?>
 
       <?rfc include="reference.RFC.4145"?>
@@ -9467,10 +9422,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <?rfc include="reference.RFC.5054"?>
 
       <?rfc include="reference.RFC.5280"?>
-
-      <!--
-      <?rfc include="reference.I-D.pascual-p2psip-clients"?>
--->
 
       <?rfc include="reference.RFC.4787"?>
 
@@ -9975,12 +9926,3 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
     </section>
   </back>
 </rfc>
-<!-- TODO: 20110426 
-
-From list:
-
-Other
-Go over audio
-
-See "new issues" below.
--->
