@@ -9294,6 +9294,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       Keranen, John Buford, Michael Chen, Frederic-Philippe Met, Mary Barnes,
       Roland Bless, and David Bryan. Special thanks to Marc Petit-Huguenin who
       provided an amazing amount of detailed review.</t>
+
+      <t> Dean Willis and Marc Petit-Huguenin help resolve and provided text to
+      fix many comments received during IESG review.  </t>
+
     </section>
   </middle>
 
