@@ -765,7 +765,8 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Node-ID:">A fixed-length value that uniquely identifies
+          <t hangText="Node-ID:">A value of fixed but configurable length that
+          uniquely identifies
           a node. Node-IDs of all 0s and all 1s are reserved and are invalid
           Node-IDs. A value of zero is not used in the wire protocol but can
           be used to indicate an invalid node in implementations and APIs. The
