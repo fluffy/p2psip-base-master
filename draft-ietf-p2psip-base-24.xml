@@ -6119,7 +6119,8 @@ struct {
         new peers into the list structure. Keeping multiple predecessor and
         successor pointers makes it possible to maintain the integrity of the
         data structure even when consecutive peers simultaneously fail. The
-        finger table forms a skip list, so that entries in the linked list can
+        finger table forms a <xref target="wikiSkiplist">skip list</xref>, so
+        that entries in the linked list can
         be found in O(log(N)) time instead of the typical O(N) time that a
         linked list would provide where N represents the number of nodes in
         the DHT. </t>
@@ -9417,6 +9418,17 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
                  target="http://en.wikipedia.org/wiki/Chord_(peer-to-peer)">
         <front>
           <title>Chord (peer-to-peer)</title>
+
+          <author>
+            <organization>Wikipedia</organization>
+          </author>
+        </front>
+      </reference>
+
+      <reference anchor="wikiSkiplist"
+                 target="http://en.wikipedia.org/wiki/Skip_list">
+        <front>
+          <title>Skip list</title>
 
           <author>
             <organization>Wikipedia</organization>
