@@ -5535,12 +5535,6 @@ struct {
             expected state of the storing peer. If the generation counter in
             the request matches the stored counter, then the storing peer
             returns a response with no StoredData values.</t>
-
-            <t>Note that because the certificate for a user is typically
-            stored at the same location as any data stored for that user, a
-            requesting node that does not already have the user's certificate
-            should request the certificate in the Fetch as an
-            optimization.</t>
           </section>
 
           <section title="Response Definition">
