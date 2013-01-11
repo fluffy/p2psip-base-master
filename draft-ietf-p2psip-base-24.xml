@@ -184,7 +184,7 @@ Check if the qualicom IPR issueed and if anything can be done
 
           <t></t>
 
-          <t hangText="High Performance Routing:">The very nature of overlay
+          <t hangText="Optimized Routing:">The very nature of overlay
           algorithms introduces a requirement that peers participating in the
           P2P network route requests on behalf of other peers in the network.
           This introduces a load on those other peers, in the form of
