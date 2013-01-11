@@ -750,6 +750,12 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
+          <t hangText="Kind-ID:">A unique 32 bit value identifying a Kind.
+          Kind-IDs are either private or allocated by IANA (see
+          <xref target="sec.iana.kindid" />).</t>
+
+          <t></t>
+
           <t hangText="Node:">We use the term "Node" to refer to a host that
           may be either a Peer or a Client. Because RELOAD uses the same
           protocol for both clients and peers, much of the text applies
@@ -8251,7 +8257,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         </texttable>
       </section>
 
-      <section title="Data Kind-ID">
+      <section anchor="sec.iana.kindid" title="Data Kind-ID">
         <t>IANA SHALL create a "RELOAD Data Kind-ID" Registry. Entries in this
         registry are 32-bit integers denoting data Kinds, as described in
         <xref target="sec-usages"></xref>. Code points in the range 0x00000001
