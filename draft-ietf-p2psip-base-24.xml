@@ -4206,16 +4206,13 @@ struct {
             circumstances, exiting and reentering the overlay, if, for
             instance, the DHT algorithm has changed.</t>
 
-            <t>If an implementation receives repeated ConfigUpdates which it
-            cannot verify with sequence numbers substantially in advance of
-            its own configuration document, it MAY contact the
-            configuration server to get the latest configuration file in order
-            to avoid permanent breakage. The details of this are left up to
-            the implementation. This allows implementations to get completely
-            new configurations that do not chain back to any currently
-            acceptable signing key but in some cases might introduce additional 
-            denial of service attacks if the node can not contact the 
-            configuration server. </t>
+            <t>If an implementation misses enough ConfigUpdates which include
+            key changes, it is possible that it will no longer be able to verify
+            new valid ConfigUpdates. In that case, the only available recovery
+            mechanism is to attempt to retrieve a new configuration document,
+            typically by the mechanisms it would use for initial
+            bootstrapping. It is up to implementors whether or how to decide to
+            employ this sort of recovery mechanism. </t>
 
             <t>The response for ConfigUpdate is empty.</t>
           </section>
