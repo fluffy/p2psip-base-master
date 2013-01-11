@@ -878,6 +878,12 @@ Transport    |      Link       |     +-------+  +------+
 
           <t hangText="Configuration Document:">An XML document containing all
           the Overlay Parameters for one overlay instance.</t>
+
+          <t></t>
+
+          <t hangText="User:">A user is a physical person who owns one or more
+          nodes through the user name stored in the certificates assigned to
+          these nodes.</t>
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
