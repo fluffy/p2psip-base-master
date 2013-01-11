@@ -6774,6 +6774,11 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         this specification is urn:ietf:params:xml:ns:p2p:config-base and
         urn:ietf:params:xml:ns:p2p:config-chord".</t>
 
+        <t>Whitespace and case processing follows the rules of
+        <xref target="OASIS.relax_ng" /> and
+        <xref target="W3C.REC-xmlschema-2-20041028">XML Schema Datatypes</xref>
+        .</t>
+
         <t>The file can contain multiple "configuration" elements where each
         one contains the configuration information for a different overlay.
         Each configuration element may be followed by signature elements that
@@ -7017,7 +7022,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         problem, but for large overlays should be avoided in almost all
         circumstances.</t>
 
-        <section title="Relax NG Grammar">
+        <section title="RELAX NG Grammar">
           <t>The grammar for the configuration data is:</t>
 
           <figure>
@@ -9397,6 +9402,24 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <format target="http://www.w3.org/TR/REC-xml-names/" type="HTML" />
       </reference>
+
+      <reference anchor="OASIS.relax_ng">
+        <front>
+          <title>RELAX NG Specification</title>
+
+          <author initials="T" surname="Bray">
+            <organization>Textuality</organization>
+          </author>
+
+          <author initials="M" surname="Murata">
+            <organization>Contivo Inc.</organization>
+          </author>
+        </front>
+
+        <format target="http://relaxng.org/spec-20011203.html" type="HTML" />
+      </reference>
+
+      <?rfc include="reference.W3C.REC-xmlschema-2-20041028"?>
     </references>
 
     <references title="Informative References">
