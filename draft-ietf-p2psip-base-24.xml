@@ -6570,9 +6570,9 @@ struct {
             <t>To detect that a partitioning has occurred and to heal the
             overlay, a peer P MUST periodically repeat the discovery process
             used in the initial join for the overlay to locate an appropriate
-            bootstrap node, B. P should then send a Ping for its own Node-ID
+            bootstrap node, B. P SHOULD then send a Ping for its own Node-ID
             routed through B. If a response is received from a peer S', which
-            is not P's successor, then the overlay is partitioned and P should
+            is not P's successor, then the overlay is partitioned and P SHOULD
             send an Attach to S' routed through B, followed by an Update sent
             to S'. (Note that S' may not be in P's neighbor table once the
             overlay is healed, but the connection will allow S' to discover
