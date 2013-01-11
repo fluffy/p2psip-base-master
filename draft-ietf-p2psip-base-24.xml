@@ -1075,7 +1075,7 @@ Transport    |      Link       |     +-------+  +------+
               Destination List required to reach it must be learnable via
               other mechanisms, such as being stored in the overlay by a
               usage. A client connected this way using a certificate with only
-              a single Node-ID MAY proceed to use the connection without
+              a single Node-ID can proceed to use the connection without
               performing an Attach. A client wishing to connect using this
               mechanism with a certificate with multiple Node-IDs can use a
               Ping to probe the Node-ID of the node to which it is connected
@@ -1087,8 +1087,8 @@ Transport    |      Link       |     +-------+  +------+
           <t>A node may act as a client simply because it does not have the
           capacity or even an implementation of the topology plugin required
           to act as a peer in the overlay. In order to exchange RELOAD
-          messages with a peer, a client MUST meet a minimum level of
-          functionality. Such a client MUST:</t>
+          messages with a peer, a client will meet a minimum level of
+          functionality. Such a client will :</t>
 
           <t><list style="symbols">
               <t>Implement RELOAD's connection-management operations that are
@@ -1345,7 +1345,7 @@ Dest=Z
 
         <section anchor="sec-join-leave-maint"
                  title="Joining, Leaving, and Maintenance Overview">
-          <t>When a new peer wishes to join the Overlay Instance, it MUST have
+          <t>When a new peer wishes to join the Overlay Instance, it will need
           a Node-ID that it is allowed to use and a set of credentials which
           match that Node-ID. When an enrollment server is used that Node-ID
           will be in the certificate the node received from the enrollment
@@ -1365,7 +1365,7 @@ Dest=Z
 
           <t>The first thing the peer needs to do is to form a connection to
           some "bootstrap node". Because this is the first connection the peer
-          makes, these nodes MUST have public IP addresses so that they can be
+          makes, these nodes will need public IP addresses so that they can be
           connected to directly. Once a peer has connected to one or more
           bootstrap nodes, it can form connections in the usual way by routing
           Attach messages through the overlay to other nodes. Once a peer has
