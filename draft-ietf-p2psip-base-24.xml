@@ -7179,8 +7179,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t>For overlays that do not use a configuration server, nodes need to
         obtain the configuration information needed to join the overlay
-        through some out of band approach such an XML configuration file sent
-        over email.</t>
+        through some out of band approach such as an XML configuration file
+        sent over email.</t>
       </section>
 
       <section anchor="sec-credentials" title="Credentials">
