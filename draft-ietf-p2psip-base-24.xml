@@ -6433,7 +6433,7 @@ struct {
               entries in the neighbor table.</t>
             </list></t>
 
-          <t>In the first case, no change is needed.</t>
+          <t>In the first case, no change is REQUIRED.</t>
 
           <t>In the second case, x MUST attempt to Attach to the new peers and
           if it is successful it MUST adjust its neighbor set accordingly.
@@ -6441,7 +6441,7 @@ struct {
           it MUST remember the closer ones.</t>
 
           <t>After any Pings and Attaches are done, if the neighbor table
-          changes and the peer is using reactive recovery, the peer sends an
+          changes and the peer is using reactive recovery, the peer MUST send an
           Update request to each member of its Connection Table. These Update
           requests are what end up filling in the predecessor/successor tables
           of peers that this peer is a neighbor to. A peer MUST NOT enter
