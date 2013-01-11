@@ -2649,11 +2649,17 @@ struct {
 
                   <t></t>
 
+                  <t hangText="0x8000 .. 0xfffe">Reserved</t>
+
+                  <t></t>
+
                   <t hangText="0xffff">Error</t>
                 </list></t>
 
               <t>The message codes are defined in <xref
               target="sec-iana-messages-codes"></xref></t>
+
+              <t></t>
 
               <t hangText="message_body "></t>
 
@@ -2662,6 +2668,8 @@ struct {
               value. See the sections describing the various RELOAD methods
               (Join, Update, Attach, Store, Fetch, etc.) for the definitions
               of the payload contents.</t>
+
+              <t></t>
 
               <t hangText="extensions "></t>
 
