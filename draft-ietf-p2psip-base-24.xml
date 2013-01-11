@@ -501,7 +501,8 @@ Transport    |      Link       |     +-------+  +------+
           the transaction.</t>
 
           <t>The Message Transport Service is similar to those described as
-          providing "Key based routing" (KBR), although as RELOAD supports
+          providing "Key based routing" (<xref target="wikiKBR">KBR</xref>),
+          although as RELOAD supports
           different overlay algorithms (including non-DHT overlay algorithms)
           that calculate keys (storage indices, not encryption keys) in
           different ways, the actual interface must
@@ -9426,6 +9427,17 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
                  target="http://en.wikipedia.org/wiki/Chord_(peer-to-peer)">
         <front>
           <title>Chord (peer-to-peer)</title>
+
+          <author>
+            <organization>Wikipedia</organization>
+          </author>
+        </front>
+      </reference>
+
+      <reference anchor="wikiKBR"
+                 target="http://en.wikipedia.org/wiki/Chord_(peer-to-peer)">
+        <front>
+          <title>Key-based routing</title>
 
           <author>
             <organization>Wikipedia</organization>
