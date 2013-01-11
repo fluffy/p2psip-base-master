@@ -7213,7 +7213,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         these objects are defined, none of the existing protocols support
         exactly this model.</t>
 
-        <t>The certificate request protocol is performed over HTTPS. The
+        <t>The certificate request protocol is performed over HTTPS. The server
+        certificate MUST match the overlay name as described in
+        <xref target="RFC2818" />. The
         request is an HTTP POST with the parameters encoded as described in
         <xref target="RFC2388"></xref> and the following properties:</t>
 
