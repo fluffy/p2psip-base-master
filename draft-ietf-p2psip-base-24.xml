@@ -6788,9 +6788,9 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         this specification is urn:ietf:params:xml:ns:p2p:config-base and
         urn:ietf:params:xml:ns:p2p:config-chord".</t>
 
-        <t>The file can contain multiple "configuration" elements where each
+        <t>The file MAY contain multiple "configuration" elements where each
         one contains the configuration information for a different overlay.
-        Each configuration element may be followed by signature elements that
+        Each configuration element MAY be followed by signature elements that
         provides a signature over the preceding configuration element. Each
         configuration element has the following attributes:</t>
 
@@ -6829,14 +6829,14 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             <t hangText="enrollment-server ">This element contains the URL at
             which the enrollment server can be reached in a "url" element.
             This URL MUST be of type "https:". More than one enrollment-server
-            element may be present. Note that there is no necessary
+            element MAY be present. Note that there is no necessary
             relationship between the overlay name/configuration server name
             and the enrollment server name.</t>
 
             <t hangText="self-signed-permitted ">This element indicates
             whether self-signed certificates are permitted. If it is set to
             "true", then self-signed certificates are allowed, in which case
-            the enrollment-server and root-cert elements may be absent.
+            the enrollment-server and root-cert elements MAY be absent.
             Otherwise, it SHOULD be absent, but MAY be set to "false". This
             element also contains an attribute "digest" which indicates the
             digest to be used to compute the Node-ID. Valid values for this
@@ -6852,7 +6852,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             "port" that represents the port and defaults to 6084. The IPv6
             address is in typical hexadecimal form using standard period and
             colon separators as specified in <xref target="RFC5952"></xref>.
-            More than one bootstrap-peer element may be present.</t>
+            More than one bootstrap-peer element MAY be present.</t>
 
             <t hangText="turn-density ">This element is a positive integer
             that represents the approximate reciprocal of density of nodes
@@ -6867,7 +6867,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             address. It has an attribute called "address" that represents the
             IP address and an optional attribute called "port" that represents
             the port and defaults to 6084. More than one "multicast-bootstrap"
-            element may be present.</t>
+            element MAY be present.</t>
 
             <t hangText="clients-permitted ">This element represents whether
             clients are permitted or whether all nodes must be peers. If it is
@@ -6877,7 +6877,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             for the overlay to enforce this.</t>
 
             <t hangText="no-ice ">This element represents whether nodes are
-            required to use the "No-ICE" Overlay Link protocols in this
+            REQUIRED to use the "No-ICE" Overlay Link protocols in this
             overlay. If it is absent, it is treated as if it were set to
             "false".</t>
 
@@ -6889,7 +6889,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             Chord-reload topology plugin (see <xref
             target="sec-chord-algorithm"></xref>).</t>
 
-            <t hangText="chord-reactive ">Whether reactive recovery should be
+            <t hangText="chord-reactive ">Whether reactive recovery SHOULD be
             used for this overlay. Set to "true" or "false". Default if
             missing is "true". (see <xref
             target="sec-chord-algorithm"></xref>).</t>
@@ -6951,11 +6951,11 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             indicate that it may be used in the future. Note that the
             namespace is case-sensitive, as specified in <xref
             target="w3c-xml-namespaces"></xref> Section 2.3. More than one
-            mandatory-extension element may be present.</t>
+            mandatory-extension element MAY be present.</t>
           </list></t>
 
-        <t>Inside each configuration element, the required-kinds element can also
-        occur. This element indicates the Kinds that members must support and
+        <t>Inside each configuration element, the required-kinds element MAY also
+        occur. This element indicates the Kinds that members MUST support and
         contains multiple kind-block elements that each define a single Kind
         that MUST be supported by nodes in the overlay. Each kind-block
         consists of a single kind element and a kind-signature. The kind
