@@ -267,8 +267,8 @@ Check if the qualicom IPR issueed and if anything can be done
         number of hops.</t>
 
         <t>The RELOAD network is not only a messaging network. It is also a
-        storage network, albeit one designed for small-scale storage rather
-        than for bulk storage of large objects. Records are stored under
+        storage network, albeit one designed for small-scale transient storage
+        rather than for bulk storage of large objects. Records are stored under
         numeric addresses which occupy the same space as node identifiers.
         Peers are responsible for storing the data associated with some set of
         addresses as determined by their Node-ID. For instance, we might say
