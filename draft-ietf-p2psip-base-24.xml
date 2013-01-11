@@ -1424,7 +1424,7 @@ Dest=Z
           overlay configuration parameters. The node does a DNS SRV lookup on
           the overlay name to get the address of a configuration server. It
           can then connect to this server with HTTPS <xref
-          target="RFC2818"></xref> to download a configuration document which
+          target="RFC6125"></xref> to download a configuration document which
           contains the basic overlay configuration parameters as well as a set
           of bootstrap nodes which can be used to join the overlay. 
           The details of the relations between names in the HTTPS certificates, 
@@ -7165,7 +7165,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         target="RFC2818"></xref>;
         otherwise the
         certificate MUST match the overlay name as described in <xref
-        target="RFC2818"></xref>.
+        target="RFC6125"></xref>.
         If the HTTPS certificates passes the name matching, 
         the node MUST fetch a new copy of the
         configuration file. To do this, the peer performs a GET to the URL.
@@ -9321,7 +9321,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <?rfc include="reference.RFC.4395"?>
 
-      <?rfc include="reference.RFC.2818"?>
+      <?rfc include="reference.RFC.6125"?>
 
       <?rfc include="reference.RFC.3447"?>
 
