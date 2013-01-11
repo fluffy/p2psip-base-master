@@ -6496,7 +6496,9 @@ struct {
         its neighbor set. A peer MUST attempt to maintain at least three
         predecessors and three successors, even though this will not be
         possible if the ring is very small. It is RECOMMENDED that O(log(N))
-        predecessors and successors be maintained in the neighbor set.</t>
+        predecessors and successors be maintained in the neighbor set. See
+        <xref target="I-D.ietf-p2psip-self-tuning" /> for methods to estimate
+        the overlay size, N.</t>
 
         <section anchor="sec-neighbor-failure"
                  title="Handling Neighbor Failures">
