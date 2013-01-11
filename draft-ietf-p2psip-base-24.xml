@@ -1906,11 +1906,11 @@ Dest=Z
 
         <section anchor="sec-request-origination" title="Request Origination">
           <t>In order to originate a message to a given Node-ID or
-          Resource-ID, a node constructs an appropriate destination list. The
-          simplest such destination list is a single entry containing the
-          Node-ID or Resource-ID. The resulting message uses the normal
+          Resource-ID, a node MUST construct an appropriate destination list.
+          The simplest such destination list is a single entry containing the
+          Node-ID or Resource-ID. The resulting message MUST use the normal
           overlay routing mechanisms to forward the message to that
-          destination. The node can also construct a more complicated
+          destination. The node MAY also construct a more complicated
           destination list for source routing.</t>
 
           <t>Once the message is constructed, the node sends the message to
@@ -1932,13 +1932,13 @@ Dest=Z
           multiple next hops and the request would be routed to all of
           them.</t>
 
-          <t>Because messages may be lost in transit through the overlay,
+          <t>Because messages can be lost in transit through the overlay,
           RELOAD incorporates an end-to-end reliability mechanism. When an
           originating node transmits a request it MUST set a timer to the
           current overlay-reliability-timer. If a response has not been
-          received when the timer fires, the request is retransmitted with the
-          same transaction identifier. The request MAY be retransmitted up to
-          4 times (for a total of 5 messages). After the timer for the fifth
+          received when the timer fires, the request MUST be retransmitted with
+          the same transaction identifier. The request MAY be retransmitted up
+          to 4 times (for a total of 5 messages). After the timer for the fifth
           transmission fires, the message SHALL be considered to have failed.
           Note that this retransmission procedure is not followed by
           intermediate nodes. They follow the hop-by-hop reliability procedure
