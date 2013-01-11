@@ -502,7 +502,8 @@ Transport    |      Link       |     +-------+  +------+
           <t>The Message Transport Service is similar to those described as
           providing "Key based routing" (KBR), although as RELOAD supports
           different overlay algorithms (including non-DHT overlay algorithms)
-          that calculate keys in different ways, the actual interface must
+          that calculate keys (storage indices, not encryption keys) in
+          different ways, the actual interface must
           accept Resource Names rather than actual keys.</t>
 
           <t>Stability of the underlying network supporting the overlay (the
