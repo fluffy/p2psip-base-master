@@ -4,13 +4,13 @@
 P2PSIP                                                       C. Jennings
 Internet-Draft                                                     Cisco
 Intended status:  Standards Track                       B. Lowekamp, Ed.
-Expires:  July 14, 2013                                            Skype
+Expires:  July 15, 2013                                            Skype
                                                              E. Rescorla
                                                               RTFM, Inc.
                                                                 S. Baset
                                                           H. Schulzrinne
                                                      Columbia University
-                                                        January 10, 2013
+                                                        January 11, 2013
 
 
          REsource LOcation And Discovery (RELOAD) Base Protocol
@@ -47,12 +47,12 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 14, 2013.
+   This Internet-Draft will expire on July 15, 2013.
 
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 1]
+Jennings, et al.          Expires July 15, 2013                 [Page 1]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -108,7 +108,7 @@ Copyright Notice
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 2]
+Jennings, et al.          Expires July 15, 2013                 [Page 2]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -131,7 +131,7 @@ Table of Contents
        3.1.1.   Shared-Key Security  . . . . . . . . . . . . . . . .  23
      3.2.   Clients  . . . . . . . . . . . . . . . . . . . . . . . .  23
        3.2.1.   Client Routing . . . . . . . . . . . . . . . . . . .  24
-       3.2.2.   Minimum Functionality Requirements for Clients . . .  24
+       3.2.2.   Minimum Functionality Requirements for Clients . . .  25
      3.3.   Routing  . . . . . . . . . . . . . . . . . . . . . . . .  25
      3.4.   Connectivity Management  . . . . . . . . . . . . . . . .  28
      3.5.   Overlay Algorithm Support  . . . . . . . . . . . . . . .  29
@@ -164,7 +164,7 @@ Table of Contents
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 3]
+Jennings, et al.          Expires July 15, 2013                 [Page 3]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -220,7 +220,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 4]
+Jennings, et al.          Expires July 15, 2013                 [Page 4]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -276,7 +276,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 5]
+Jennings, et al.          Expires July 15, 2013                 [Page 5]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -289,69 +289,69 @@ Internet-Draft                 RELOAD Base                  January 2013
      11.2.  Discovery Through Configuration Server . . . . . . . . . 131
      11.3.  Credentials  . . . . . . . . . . . . . . . . . . . . . . 132
        11.3.1.  Self-Generated Credentials . . . . . . . . . . . . . 134
-     11.4.  Searching for a Bootstrap Node . . . . . . . . . . . . . 134
-     11.5.  Contacting a Bootstrap Node  . . . . . . . . . . . . . . 134
+     11.4.  Searching for a Bootstrap Node . . . . . . . . . . . . . 135
+     11.5.  Contacting a Bootstrap Node  . . . . . . . . . . . . . . 135
    12. Message Flow Example  . . . . . . . . . . . . . . . . . . . . 135
-   13. Security Considerations . . . . . . . . . . . . . . . . . . . 141
-     13.1.  Overview . . . . . . . . . . . . . . . . . . . . . . . . 141
-     13.2.  Attacks on P2P Overlays  . . . . . . . . . . . . . . . . 142
-     13.3.  Certificate-based Security . . . . . . . . . . . . . . . 142
-     13.4.  Shared-Secret Security . . . . . . . . . . . . . . . . . 143
-     13.5.  Storage Security . . . . . . . . . . . . . . . . . . . . 144
-       13.5.1.  Authorization  . . . . . . . . . . . . . . . . . . . 144
-       13.5.2.  Distributed Quota  . . . . . . . . . . . . . . . . . 145
-       13.5.3.  Correctness  . . . . . . . . . . . . . . . . . . . . 145
-       13.5.4.  Residual Attacks . . . . . . . . . . . . . . . . . . 145
-     13.6.  Routing Security . . . . . . . . . . . . . . . . . . . . 146
-       13.6.1.  Background . . . . . . . . . . . . . . . . . . . . . 146
-       13.6.2.  Admissions Control . . . . . . . . . . . . . . . . . 147
-       13.6.3.  Peer Identification and Authentication . . . . . . . 147
-       13.6.4.  Protecting the Signaling . . . . . . . . . . . . . . 148
-       13.6.5.  Routing Loops and Dos Attacks  . . . . . . . . . . . 148
-       13.6.6.  Residual Attacks . . . . . . . . . . . . . . . . . . 148
-   14. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 149
-     14.1.  Well-Known URI Registration  . . . . . . . . . . . . . . 149
-     14.2.  Port Registrations . . . . . . . . . . . . . . . . . . . 149
-     14.3.  Overlay Algorithm Types  . . . . . . . . . . . . . . . . 150
-     14.4.  Access Control Policies  . . . . . . . . . . . . . . . . 150
-     14.5.  Application-ID . . . . . . . . . . . . . . . . . . . . . 151
-     14.6.  Data Kind-ID . . . . . . . . . . . . . . . . . . . . . . 151
-     14.7.  Data Model . . . . . . . . . . . . . . . . . . . . . . . 152
-     14.8.  Message Codes  . . . . . . . . . . . . . . . . . . . . . 152
-     14.9.  Error Codes  . . . . . . . . . . . . . . . . . . . . . . 154
-     14.10. Overlay Link Types . . . . . . . . . . . . . . . . . . . 154
-     14.11. Overlay Link Protocols . . . . . . . . . . . . . . . . . 155
-     14.12. Forwarding Options . . . . . . . . . . . . . . . . . . . 155
-     14.13. Probe Information Types  . . . . . . . . . . . . . . . . 156
-     14.14. Message Extensions . . . . . . . . . . . . . . . . . . . 156
-     14.15. reload URI Scheme  . . . . . . . . . . . . . . . . . . . 157
-       14.15.1. URI Registration . . . . . . . . . . . . . . . . . . 158
-     14.16. Media Type Registration  . . . . . . . . . . . . . . . . 158
-     14.17. XML Name Space Registration  . . . . . . . . . . . . . . 159
-       14.17.1. Config URL . . . . . . . . . . . . . . . . . . . . . 159
+   13. Security Considerations . . . . . . . . . . . . . . . . . . . 142
+     13.1.  Overview . . . . . . . . . . . . . . . . . . . . . . . . 142
+     13.2.  Attacks on P2P Overlays  . . . . . . . . . . . . . . . . 143
+     13.3.  Certificate-based Security . . . . . . . . . . . . . . . 143
+     13.4.  Shared-Secret Security . . . . . . . . . . . . . . . . . 144
+     13.5.  Storage Security . . . . . . . . . . . . . . . . . . . . 145
+       13.5.1.  Authorization  . . . . . . . . . . . . . . . . . . . 145
+       13.5.2.  Distributed Quota  . . . . . . . . . . . . . . . . . 146
+       13.5.3.  Correctness  . . . . . . . . . . . . . . . . . . . . 146
+       13.5.4.  Residual Attacks . . . . . . . . . . . . . . . . . . 146
+     13.6.  Routing Security . . . . . . . . . . . . . . . . . . . . 147
+       13.6.1.  Background . . . . . . . . . . . . . . . . . . . . . 147
+       13.6.2.  Admissions Control . . . . . . . . . . . . . . . . . 148
+       13.6.3.  Peer Identification and Authentication . . . . . . . 148
+       13.6.4.  Protecting the Signaling . . . . . . . . . . . . . . 149
+       13.6.5.  Routing Loops and Dos Attacks  . . . . . . . . . . . 149
+       13.6.6.  Residual Attacks . . . . . . . . . . . . . . . . . . 149
+   14. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 150
+     14.1.  Well-Known URI Registration  . . . . . . . . . . . . . . 150
+     14.2.  Port Registrations . . . . . . . . . . . . . . . . . . . 150
+     14.3.  Overlay Algorithm Types  . . . . . . . . . . . . . . . . 151
+     14.4.  Access Control Policies  . . . . . . . . . . . . . . . . 151
+     14.5.  Application-ID . . . . . . . . . . . . . . . . . . . . . 152
+     14.6.  Data Kind-ID . . . . . . . . . . . . . . . . . . . . . . 152
+     14.7.  Data Model . . . . . . . . . . . . . . . . . . . . . . . 153
+     14.8.  Message Codes  . . . . . . . . . . . . . . . . . . . . . 153
+     14.9.  Error Codes  . . . . . . . . . . . . . . . . . . . . . . 155
+     14.10. Overlay Link Types . . . . . . . . . . . . . . . . . . . 155
+     14.11. Overlay Link Protocols . . . . . . . . . . . . . . . . . 156
+     14.12. Forwarding Options . . . . . . . . . . . . . . . . . . . 156
+     14.13. Probe Information Types  . . . . . . . . . . . . . . . . 157
+     14.14. Message Extensions . . . . . . . . . . . . . . . . . . . 157
+     14.15. reload URI Scheme  . . . . . . . . . . . . . . . . . . . 158
+       14.15.1. URI Registration . . . . . . . . . . . . . . . . . . 159
+     14.16. Media Type Registration  . . . . . . . . . . . . . . . . 159
+     14.17. XML Name Space Registration  . . . . . . . . . . . . . . 160
+       14.17.1. Config URL . . . . . . . . . . . . . . . . . . . . . 160
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 6]
+Jennings, et al.          Expires July 15, 2013                 [Page 6]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
-       14.17.2. Config Chord URL . . . . . . . . . . . . . . . . . . 159
-   15. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . 160
-   16. References  . . . . . . . . . . . . . . . . . . . . . . . . . 160
-     16.1.  Normative References . . . . . . . . . . . . . . . . . . 160
-     16.2.  Informative References . . . . . . . . . . . . . . . . . 162
-   Appendix A.  Routing Alternatives . . . . . . . . . . . . . . . . 165
-     A.1.   Iterative vs Recursive . . . . . . . . . . . . . . . . . 166
-     A.2.   Symmetric vs Forward response  . . . . . . . . . . . . . 166
-     A.3.   Direct Response  . . . . . . . . . . . . . . . . . . . . 167
-     A.4.   Relay Peers  . . . . . . . . . . . . . . . . . . . . . . 168
-     A.5.   Symmetric Route Stability  . . . . . . . . . . . . . . . 168
-   Appendix B.  Why Clients? . . . . . . . . . . . . . . . . . . . . 169
-     B.1.   Why Not Only Peers?  . . . . . . . . . . . . . . . . . . 169
-     B.2.   Clients as Application-Level Agents  . . . . . . . . . . 169
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 170
+       14.17.2. Config Chord URL . . . . . . . . . . . . . . . . . . 160
+   15. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . 161
+   16. References  . . . . . . . . . . . . . . . . . . . . . . . . . 161
+     16.1.  Normative References . . . . . . . . . . . . . . . . . . 161
+     16.2.  Informative References . . . . . . . . . . . . . . . . . 163
+   Appendix A.  Routing Alternatives . . . . . . . . . . . . . . . . 166
+     A.1.   Iterative vs Recursive . . . . . . . . . . . . . . . . . 167
+     A.2.   Symmetric vs Forward response  . . . . . . . . . . . . . 167
+     A.3.   Direct Response  . . . . . . . . . . . . . . . . . . . . 168
+     A.4.   Relay Peers  . . . . . . . . . . . . . . . . . . . . . . 169
+     A.5.   Symmetric Route Stability  . . . . . . . . . . . . . . . 169
+   Appendix B.  Why Clients? . . . . . . . . . . . . . . . . . . . . 170
+     B.1.   Why Not Only Peers?  . . . . . . . . . . . . . . . . . . 170
+     B.2.   Clients as Application-Level Agents  . . . . . . . . . . 170
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 171
 
 
 
@@ -388,7 +388,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 7]
+Jennings, et al.          Expires July 15, 2013                 [Page 7]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -444,7 +444,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 8]
+Jennings, et al.          Expires July 15, 2013                 [Page 8]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -500,7 +500,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                 [Page 9]
+Jennings, et al.          Expires July 15, 2013                 [Page 9]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -556,7 +556,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 10]
+Jennings, et al.          Expires July 15, 2013                [Page 10]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -612,7 +612,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 11]
+Jennings, et al.          Expires July 15, 2013                [Page 11]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -668,7 +668,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 12]
+Jennings, et al.          Expires July 15, 2013                [Page 12]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -724,7 +724,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 13]
+Jennings, et al.          Expires July 15, 2013                [Page 13]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -780,7 +780,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 14]
+Jennings, et al.          Expires July 15, 2013                [Page 14]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -836,7 +836,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 15]
+Jennings, et al.          Expires July 15, 2013                [Page 15]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -892,7 +892,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 16]
+Jennings, et al.          Expires July 15, 2013                [Page 16]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -948,7 +948,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 17]
+Jennings, et al.          Expires July 15, 2013                [Page 17]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1004,7 +1004,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 18]
+Jennings, et al.          Expires July 15, 2013                [Page 18]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1060,7 +1060,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 19]
+Jennings, et al.          Expires July 15, 2013                [Page 19]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1076,6 +1076,10 @@ Internet-Draft                 RELOAD Base                  January 2013
       P2P networks are described in [RFC5694].  A SIP resource, for
       example, is often identified by its AOR which is an example of a
       Resource Name.
+
+   User Name:  A name identifying a user of the overlay, typically used
+      as a Resource Name, or as a label on a Resource that identifies
+      the user owning the resource.
 
    Resource-ID:  A value that identifies some resources and which is
       used as a key for storing and retrieving the resource.  Often this
@@ -1109,18 +1113,16 @@ Internet-Draft                 RELOAD Base                  January 2013
       trivial form of destination list.  When multiple Node-IDs are
       specified (no more than one Resource-ID is permitted, and it MUST
       be the last entry) a Destination List is a loose source route.
-      The list is reduced hop-by-hop, does not include the source but
-      includes the destination.
 
 
 
-
-
-Jennings, et al.          Expires July 14, 2013                [Page 20]
+Jennings, et al.          Expires July 15, 2013                [Page 20]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+      The list is reduced hop-by-hop, does not include the source but
+      includes the destination.
 
    Usage:  A usage is an application that wishes to use the overlay for
       some purpose.  Each application wishing to use the overlay defines
@@ -1167,15 +1169,16 @@ Internet-Draft                 RELOAD Base                  January 2013
    updates are via digital signatures tracing back to the initial
    configuration document.
 
-   Every node in the RELOAD overlay is identified by a Node-ID.  The
-   Node-ID is used for three major purposes:
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 21]
+Jennings, et al.          Expires July 15, 2013                [Page 21]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
+
+   Every node in the RELOAD overlay is identified by a Node-ID.  The
+   Node-ID is used for three major purposes:
 
    o  To address the node itself.
    o  To determine its position in the overlay topology (if the overlay
@@ -1222,17 +1225,17 @@ Internet-Draft                 RELOAD Base                  January 2013
    server.  RELOAD supports the use of self-generated, self-signed
    certificates.  When self-signed certificates are used, the node also
    generates its own Node-ID and username.  The Node-ID is computed as a
-   digest of the public key, to prevent Node-ID theft.  Note that the
-   relevant cryptographic property for the digest is preimage
-   resistance.  Collision-resistance is not required since an attacker
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 22]
+Jennings, et al.          Expires July 15, 2013                [Page 22]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   digest of the public key, to prevent Node-ID theft.  Note that the
+   relevant cryptographic property for the digest is preimage
+   resistance.  Collision-resistance is not required since an attacker
    who can create two nodes with the same Node-ID but different public
    key obtains no advantage.  This model is still subject to a number of
    known attacks (most notably Sybil attacks [Sybil]) and can only be
@@ -1278,17 +1281,17 @@ Internet-Draft                 RELOAD Base                  January 2013
    used to identify the particular client as a member of the overlay and
    to authenticate its messages.
 
-   In RELOAD, unlike some other designs, clients are not a first-class
-   entity.  From the perspective of a peer, a client is a node that has
-   connected to the overlay, but has not yet taken steps to insert
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 23]
+Jennings, et al.          Expires July 15, 2013                [Page 23]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   In RELOAD, unlike some other designs, clients are not a first-class
+   entity.  From the perspective of a peer, a client is a node that has
+   connected to the overlay, but has not yet taken steps to insert
    itself into the overlay topology.  It might never do so (if it's a
    client) or it might eventually do so (if it's just a node that's
    taking a long time to join).  The routing and storage rules for
@@ -1333,18 +1336,19 @@ Internet-Draft                 RELOAD Base                  January 2013
       with multiple Node-IDs can use a Ping to probe the Node-ID of the
       node to which it is connected before doing the Attach.
 
-3.2.2.  Minimum Functionality Requirements for Clients
-
-   A node may act as a client simply because it does not have the
-   capacity or even an implementation of the topology plugin required to
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 24]
+
+Jennings, et al.          Expires July 15, 2013                [Page 24]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+3.2.2.  Minimum Functionality Requirements for Clients
+
+   A node may act as a client simply because it does not have the
+   capacity or even an implementation of the topology plugin required to
    act as a peer in the overlay.  In order to exchange RELOAD messages
    with a peer, a client MUST meet a minimum level of functionality.
    Such a client MUST:
@@ -1388,19 +1392,18 @@ Internet-Draft                 RELOAD Base                  January 2013
       messages between two different overlays by building a destination
       list that includes a peer (or client) with connectivity to both
       networks.
-   NAT Traversal:    RELOAD supports establishing and using connections
-      between nodes separated by one or more NATs, including locating
-      peers behind NATs for those overlays allowing/requiring it.
 
 
 
 
-
-Jennings, et al.          Expires July 14, 2013                [Page 25]
+Jennings, et al.          Expires July 15, 2013                [Page 25]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   NAT Traversal:    RELOAD supports establishing and using connections
+      between nodes separated by one or more NATs, including locating
+      peers behind NATs for those overlays allowing/requiring it.
    Low state:    RELOAD's routing algorithms do not require significant
       state (i.e., state linear or greater in the number of outstanding
       messages that have passed through it) to be stored on intermediate
@@ -1449,10 +1452,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-
-
-
-Jennings, et al.          Expires July 14, 2013                [Page 26]
+Jennings, et al.          Expires July 15, 2013                [Page 26]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1508,7 +1508,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 27]
+Jennings, et al.          Expires July 15, 2013                [Page 27]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1564,7 +1564,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 28]
+Jennings, et al.          Expires July 15, 2013                [Page 28]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1620,7 +1620,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 29]
+Jennings, et al.          Expires July 15, 2013                [Page 29]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1676,7 +1676,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 30]
+Jennings, et al.          Expires July 15, 2013                [Page 30]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1727,21 +1727,23 @@ Internet-Draft                 RELOAD Base                  January 2013
    then connect to this server with HTTPS [RFC2818] to download a
    configuration document which contains the basic overlay configuration
    parameters as well as a set of bootstrap nodes which can be used to
-   join the overlay.  The expected domain name for HTTPS is the name of
-   the overlay.
+   join the overlay.  The details of the relations between names in the
+   HTTPS certificates, and the overlay names are described in
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 31]
+Jennings, et al.          Expires July 15, 2013                [Page 31]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
+
+   Section 11.2.
 
    If a node already has the valid configuration document that it
    received by some out of band method, this step can be skipped.  Note
    that that out of band method must provide authentication and
    integrity, because the configuration document contains the trust
-   anchors for the system.
+   anchors used by the overlay.
 
 3.6.2.  Enrollment
 
@@ -1786,9 +1788,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-
-
-Jennings, et al.          Expires July 14, 2013                [Page 32]
+Jennings, et al.          Expires July 15, 2013                [Page 32]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1844,7 +1844,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 33]
+Jennings, et al.          Expires July 15, 2013                [Page 33]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1900,7 +1900,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 34]
+Jennings, et al.          Expires July 15, 2013                [Page 34]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -1956,7 +1956,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 35]
+Jennings, et al.          Expires July 15, 2013                [Page 35]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2012,7 +2012,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 36]
+Jennings, et al.          Expires July 15, 2013                [Page 36]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2068,7 +2068,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 37]
+Jennings, et al.          Expires July 15, 2013                [Page 37]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2124,7 +2124,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 38]
+Jennings, et al.          Expires July 15, 2013                [Page 38]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2180,7 +2180,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 39]
+Jennings, et al.          Expires July 15, 2013                [Page 39]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2236,7 +2236,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 40]
+Jennings, et al.          Expires July 15, 2013                [Page 40]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2292,7 +2292,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 41]
+Jennings, et al.          Expires July 15, 2013                [Page 41]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2348,7 +2348,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 42]
+Jennings, et al.          Expires July 15, 2013                [Page 42]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2404,7 +2404,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 43]
+Jennings, et al.          Expires July 15, 2013                [Page 43]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2460,7 +2460,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 44]
+Jennings, et al.          Expires July 15, 2013                [Page 44]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2516,7 +2516,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 45]
+Jennings, et al.          Expires July 15, 2013                [Page 45]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2572,7 +2572,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 46]
+Jennings, et al.          Expires July 15, 2013                [Page 46]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2628,7 +2628,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 47]
+Jennings, et al.          Expires July 15, 2013                [Page 47]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2684,7 +2684,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 48]
+Jennings, et al.          Expires July 15, 2013                [Page 48]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2740,7 +2740,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 49]
+Jennings, et al.          Expires July 15, 2013                [Page 49]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2796,7 +2796,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 50]
+Jennings, et al.          Expires July 15, 2013                [Page 50]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2852,7 +2852,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 51]
+Jennings, et al.          Expires July 15, 2013                [Page 51]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2908,7 +2908,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 52]
+Jennings, et al.          Expires July 15, 2013                [Page 52]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -2964,7 +2964,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 53]
+Jennings, et al.          Expires July 15, 2013                [Page 53]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3020,7 +3020,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 54]
+Jennings, et al.          Expires July 15, 2013                [Page 54]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3076,7 +3076,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 55]
+Jennings, et al.          Expires July 15, 2013                [Page 55]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3132,7 +3132,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 56]
+Jennings, et al.          Expires July 15, 2013                [Page 56]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3188,7 +3188,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 57]
+Jennings, et al.          Expires July 15, 2013                [Page 57]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3244,7 +3244,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 58]
+Jennings, et al.          Expires July 15, 2013                [Page 58]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3300,7 +3300,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 59]
+Jennings, et al.          Expires July 15, 2013                [Page 59]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3356,7 +3356,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 60]
+Jennings, et al.          Expires July 15, 2013                [Page 60]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3412,7 +3412,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 61]
+Jennings, et al.          Expires July 15, 2013                [Page 61]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3468,7 +3468,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 62]
+Jennings, et al.          Expires July 15, 2013                [Page 62]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3524,7 +3524,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 63]
+Jennings, et al.          Expires July 15, 2013                [Page 63]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3580,7 +3580,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 64]
+Jennings, et al.          Expires July 15, 2013                [Page 64]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3636,7 +3636,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 65]
+Jennings, et al.          Expires July 15, 2013                [Page 65]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3692,7 +3692,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 66]
+Jennings, et al.          Expires July 15, 2013                [Page 66]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3748,7 +3748,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 67]
+Jennings, et al.          Expires July 15, 2013                [Page 67]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3804,7 +3804,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 68]
+Jennings, et al.          Expires July 15, 2013                [Page 68]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3860,7 +3860,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 69]
+Jennings, et al.          Expires July 15, 2013                [Page 69]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3916,7 +3916,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 70]
+Jennings, et al.          Expires July 15, 2013                [Page 70]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -3972,7 +3972,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 71]
+Jennings, et al.          Expires July 15, 2013                [Page 71]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4028,7 +4028,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 72]
+Jennings, et al.          Expires July 15, 2013                [Page 72]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4084,7 +4084,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 73]
+Jennings, et al.          Expires July 15, 2013                [Page 73]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4140,7 +4140,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 74]
+Jennings, et al.          Expires July 15, 2013                [Page 74]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4196,7 +4196,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 75]
+Jennings, et al.          Expires July 15, 2013                [Page 75]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4252,7 +4252,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 76]
+Jennings, et al.          Expires July 15, 2013                [Page 76]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4308,7 +4308,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 77]
+Jennings, et al.          Expires July 15, 2013                [Page 77]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4347,13 +4347,13 @@ Internet-Draft                 RELOAD Base                  January 2013
    exiting and reentering the overlay, if, for instance, the DHT
    algorithm has changed.
 
-   If an implementation receives repeated ConfigUpdates which it cannot
-   verify with sequence numbers substantially in advance of its own
-   configuration document, it SHOULD contact the configuration server to
-   get the latest configuration file in order to avoid permanent
-   breakage.  The details of this are left up to the implementation.
-   This allows implementations to get completely new configurations that
-   do not chain back to any currently acceptable signing key.
+   If an implementation misses enough ConfigUpdates which include key
+   changes, it is possible that it will no longer be able to verify new
+   valid ConfigUpdates.  In that case, the only available recovery
+   mechanism is to attempt to retrieve a new configuration document,
+   typically by the mechanisms it would use for initial bootstrapping.
+   It is up to implementors whether or how to decide to employ this sort
+   of recovery mechanism.
 
    The response for ConfigUpdate is empty.
 
@@ -4364,7 +4364,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 78]
+Jennings, et al.          Expires July 15, 2013                [Page 78]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4420,7 +4420,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 79]
+Jennings, et al.          Expires July 15, 2013                [Page 79]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4476,7 +4476,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 80]
+Jennings, et al.          Expires July 15, 2013                [Page 80]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4532,7 +4532,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 81]
+Jennings, et al.          Expires July 15, 2013                [Page 81]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4588,7 +4588,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 82]
+Jennings, et al.          Expires July 15, 2013                [Page 82]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4644,7 +4644,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 83]
+Jennings, et al.          Expires July 15, 2013                [Page 83]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4700,7 +4700,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 84]
+Jennings, et al.          Expires July 15, 2013                [Page 84]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4756,7 +4756,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 85]
+Jennings, et al.          Expires July 15, 2013                [Page 85]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4812,7 +4812,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 86]
+Jennings, et al.          Expires July 15, 2013                [Page 86]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4868,7 +4868,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 87]
+Jennings, et al.          Expires July 15, 2013                [Page 87]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4924,7 +4924,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 88]
+Jennings, et al.          Expires July 15, 2013                [Page 88]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -4980,7 +4980,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 89]
+Jennings, et al.          Expires July 15, 2013                [Page 89]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5036,7 +5036,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 90]
+Jennings, et al.          Expires July 15, 2013                [Page 90]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5092,7 +5092,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 91]
+Jennings, et al.          Expires July 15, 2013                [Page 91]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5148,7 +5148,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 92]
+Jennings, et al.          Expires July 15, 2013                [Page 92]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5204,7 +5204,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 93]
+Jennings, et al.          Expires July 15, 2013                [Page 93]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5260,7 +5260,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 94]
+Jennings, et al.          Expires July 15, 2013                [Page 94]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5316,7 +5316,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 95]
+Jennings, et al.          Expires July 15, 2013                [Page 95]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5372,7 +5372,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 96]
+Jennings, et al.          Expires July 15, 2013                [Page 96]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5428,7 +5428,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 97]
+Jennings, et al.          Expires July 15, 2013                [Page 97]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5484,7 +5484,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 98]
+Jennings, et al.          Expires July 15, 2013                [Page 98]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5540,7 +5540,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013                [Page 99]
+Jennings, et al.          Expires July 15, 2013                [Page 99]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5596,7 +5596,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 100]
+Jennings, et al.          Expires July 15, 2013               [Page 100]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5652,7 +5652,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 101]
+Jennings, et al.          Expires July 15, 2013               [Page 101]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5708,7 +5708,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 102]
+Jennings, et al.          Expires July 15, 2013               [Page 102]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5764,7 +5764,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 103]
+Jennings, et al.          Expires July 15, 2013               [Page 103]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5820,7 +5820,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 104]
+Jennings, et al.          Expires July 15, 2013               [Page 104]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5876,7 +5876,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 105]
+Jennings, et al.          Expires July 15, 2013               [Page 105]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5932,7 +5932,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 106]
+Jennings, et al.          Expires July 15, 2013               [Page 106]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -5988,7 +5988,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 107]
+Jennings, et al.          Expires July 15, 2013               [Page 107]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6044,7 +6044,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 108]
+Jennings, et al.          Expires July 15, 2013               [Page 108]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6100,7 +6100,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 109]
+Jennings, et al.          Expires July 15, 2013               [Page 109]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6156,7 +6156,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 110]
+Jennings, et al.          Expires July 15, 2013               [Page 110]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6212,7 +6212,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 111]
+Jennings, et al.          Expires July 15, 2013               [Page 111]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6268,7 +6268,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 112]
+Jennings, et al.          Expires July 15, 2013               [Page 112]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6324,7 +6324,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 113]
+Jennings, et al.          Expires July 15, 2013               [Page 113]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6380,7 +6380,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 114]
+Jennings, et al.          Expires July 15, 2013               [Page 114]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6436,7 +6436,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 115]
+Jennings, et al.          Expires July 15, 2013               [Page 115]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6492,7 +6492,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 116]
+Jennings, et al.          Expires July 15, 2013               [Page 116]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6548,7 +6548,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 117]
+Jennings, et al.          Expires July 15, 2013               [Page 117]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6604,7 +6604,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 118]
+Jennings, et al.          Expires July 15, 2013               [Page 118]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6660,7 +6660,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 119]
+Jennings, et al.          Expires July 15, 2013               [Page 119]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6716,7 +6716,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 120]
+Jennings, et al.          Expires July 15, 2013               [Page 120]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6772,7 +6772,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 121]
+Jennings, et al.          Expires July 15, 2013               [Page 121]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6828,7 +6828,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 122]
+Jennings, et al.          Expires July 15, 2013               [Page 122]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6884,7 +6884,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 123]
+Jennings, et al.          Expires July 15, 2013               [Page 123]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6940,7 +6940,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 124]
+Jennings, et al.          Expires July 15, 2013               [Page 124]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -6948,7 +6948,8 @@ Internet-Draft                 RELOAD Base                  January 2013
    provides a signature over the preceding configuration element.  Each
    configuration element has the following attributes:
 
-   instance-name:  name of the overlay
+   instance-name:  the name of the overlay (referred to as "overlay
+      name" in this specification)
    expiration:  time in the future at which this overlay configuration
       is no longer valid.  The node SHOULD retrieve a new copy of the
       configuration at a randomly selected time that is before the
@@ -6992,15 +6993,15 @@ Internet-Draft                 RELOAD Base                  January 2013
       distinguished) and an optional attribute called "port" that
       represents the port and defaults to 6084.  The IPv6 address is in
       typical hexadecimal form using standard period and colon
-      separators as specified in [RFC5952].  More than one bootstrap-
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 125]
+Jennings, et al.          Expires July 15, 2013               [Page 125]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+      separators as specified in [RFC5952].  More than one bootstrap-
       peer element may be present.
    turn-density   This element is a positive integer that represents the
       approximate reciprocal of density of nodes that can act as TURN
@@ -7048,15 +7049,15 @@ Internet-Draft                 RELOAD Base                  January 2013
       arbitrary number of these elements may appear.  If none appear,
       then this implies the default value, "TLS", which refers to the
       use of TLS and DTLS.  If one or more elements appear, then no
-      default value applies.
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 126]
+Jennings, et al.          Expires July 15, 2013               [Page 126]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+      default value applies.
    kind-signer   This contains a single Node-ID in hexadecimal and
       indicates that the certificate with this Node-ID is allowed to
       sign Kinds.  Identifying kind-signer by Node-ID instead of
@@ -7100,19 +7101,20 @@ Internet-Draft                 RELOAD Base                  January 2013
    of private space.
 
    In addition, the kind element contains the following elements:
-   max-count:  the maximum number of values which members of the overlay
-      must support.
 
 
 
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 127]
+
+Jennings, et al.          Expires July 15, 2013               [Page 127]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   max-count:  the maximum number of values which members of the overlay
+      must support.
    data-model:  the data model to be used.
    max-size:  the maximum size of individual values.
    access-control:  the access control model to be used.
@@ -7159,16 +7161,16 @@ Internet-Draft                 RELOAD Base                  January 2013
    no longer allowed to sign Kinds, that Kind MUST be discarded along
    with any stored information of that Kind.  Note that forcing an
    avalanche restart of the overlay with a configuration change that
-   requires re-joining the overlay may result in serious performance
-   problems, including total collapse of the network if configuration
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 128]
+Jennings, et al.          Expires July 15, 2013               [Page 128]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   requires re-joining the overlay may result in serious performance
+   problems, including total collapse of the network if configuration
    parameters are not properly considered.  Such an event may be
    necessary in case of a compromised CA or similar problem, but for
    large overlays should be avoided in almost all circumstances.
@@ -7215,16 +7217,16 @@ Internet-Draft                 RELOAD Base                  January 2013
    parameter &= element topology-plugin { topology-plugin-type }?
    topology-plugin-type |= xsd:string # topo plugin extensions
    parameter &= element max-message-size { xsd:unsignedInt }?
-   parameter &= element initial-ttl { xsd:int }?
-   parameter &= element root-cert { xsd:base64Binary }*
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 129]
+Jennings, et al.          Expires July 15, 2013               [Page 129]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   parameter &= element initial-ttl { xsd:int }?
+   parameter &= element root-cert { xsd:base64Binary }*
    parameter &= element required-kinds { kind-block* }?
    parameter &= element enrollment-server { xsd:anyURI }*
    parameter &= element kind-signer {  xsd:string }*
@@ -7271,15 +7273,15 @@ Internet-Draft                 RELOAD Base                  January 2013
 
    kind-parameter &= element max-count { xsd:int }
    kind-parameter &= element max-size { xsd:int }
-   kind-parameter &= element max-node-multiple { xsd:int }?
 
 
 
-
-Jennings, et al.          Expires July 14, 2013               [Page 130]
+Jennings, et al.          Expires July 15, 2013               [Page 130]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
+
+   kind-parameter &= element max-node-multiple { xsd:int }?
 
    kind-parameter &= element data-model { data-model-type }
    data-model-type |= "SINGLE"
@@ -7326,20 +7328,26 @@ Internet-Draft                 RELOAD Base                  January 2013
    "https://example.com/.well-known/reload-config".
 
    Once an address and URL for the configuration server is determined,
-   the peer MUST form an HTTPS connection to that IP address.  The
-   certificate MUST match the overlay name as described in [RFC2818].
-   Then the node MUST fetch a new copy of the configuration file.  To do
+   the peer MUST form an HTTPS connection to that IP address.  If an
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 131]
+Jennings, et al.          Expires July 15, 2013               [Page 131]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
-   this, the peer performs a GET to the URL.  The result of the HTTP GET
-   is an XML configuration file described above, which MUST replace any
-   previously learned configuration file for this overlay.
+   optional URL for the configuration server was provided, the
+   certificate MUST match the domain name from the URL as described in
+   [RFC2818]; otherwise the certificate MUST match the overlay name as
+   described in [RFC2818].  If the HTTPS certificates passes the name
+   matching, the node MUST fetch a new copy of the configuration file.
+   To do this, the peer performs a GET to the URL.  The result of the
+   HTTP GET is an XML configuration file described above.  If the XML is
+   not valid, or the instance-name attribute of the overlay-element in
+   the XML does not match the overlay name, this configurations file
+   SHOULD be discarded.  Otherwise, the new configuration MUST replace
+   any previously learned configuration file for this overlay.
 
    For overlays that do not use a configuration server, nodes need to
    obtain the configuration information needed to join the overlay
@@ -7375,6 +7383,16 @@ Internet-Draft                 RELOAD Base                  January 2013
       password strings are UTF-8 strings compared as binary objects.
       Applications using RELOAD SHOULD define any needed string
       preparation as per [RFC4013] or its successor documents.
+
+
+
+
+
+Jennings, et al.          Expires July 15, 2013               [Page 132]
+
+Internet-Draft                 RELOAD Base                  January 2013
+
+
    o  If more than one Node-ID is required, there is an form parameter
       of "nodeids" containing the number of Node-IDs required.
    o  There MUST be a form parameter of "csr" with a content type of
@@ -7385,14 +7403,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    The enrollment server MUST authenticate the request using the
    provided user name and password.  The reason for using the RFC 2388
    "multipart/form-data" encoding is so that the password parameter will
-
-
-
-Jennings, et al.          Expires July 14, 2013               [Page 132]
-
-Internet-Draft                 RELOAD Base                  January 2013
-
-
    not be encoded in the URL to reduce the chance of accidental leakage
    of the password.  If the authentication succeeds and the requested
    user name is acceptable, the server generates and returns a
@@ -7412,10 +7422,15 @@ Internet-Draft                 RELOAD Base                  January 2013
       user returns (e.g., to have their certificate re-issued) return
       the same Node-IDs, thus avoiding the need for implementations to
       re-store all their data when their certificates expire.
-   o  A single name this user is allowed to use in the overlay, using
-      type rfc822Name.  Enrollment servers SHOULD take care to only
-      allow legal characters in the name (e.g., no embedded NULs),
-      rather than simply accepting any name provided by the user.
+   o  A single name (the "user name") that this user is allowed to use
+      in the overlay, using type rfc822Name.  Enrollment servers SHOULD
+      take care to only allow legal characters in the name (e.g., no
+      embedded NULs), rather than simply accepting any name provided by
+      the user.  In some usages, the right-hand-side of the user name
+      will match the overlay name, but there is no requirement for this
+      match in this specification.  Applications using this
+      specification MAY define such a requirement, or MAY otherwise
+      limit the allowed range of allowed user names.
 
    The certificate is returned as type "application/pkix-cert" as
    defined in [RFC2585], with an HTTP status code of 200 OK.
@@ -7423,6 +7438,16 @@ Internet-Draft                 RELOAD Base                  January 2013
    Certificate processing errors should result in a HTTP return code of
    403 "Forbidden" along with a body of type "text/plain" and body that
    consists of one of the tokens defined in the following list:
+
+
+
+
+
+
+Jennings, et al.          Expires July 15, 2013               [Page 133]
+
+Internet-Draft                 RELOAD Base                  January 2013
+
 
    failed_authentication  The user name and password combination was not
       correct.
@@ -7441,14 +7466,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    The client MUST check that the certificate returned chains back to
    one of the certificates received in the "root-cert" list of the
    overlay configuration data (including PKIX BasicConstraints checks.)
-
-
-
-Jennings, et al.          Expires July 14, 2013               [Page 133]
-
-Internet-Draft                 RELOAD Base                  January 2013
-
-
    The node then reads the certificate to find the Node-ID it can use.
 
 11.3.1.  Self-Generated Credentials
@@ -7477,6 +7494,17 @@ Internet-Draft                 RELOAD Base                  January 2013
    possible.  If protection against name theft is desired, then the
    enrollment service MUST be used.
 
+
+
+
+
+
+
+Jennings, et al.          Expires July 15, 2013               [Page 134]
+
+Internet-Draft                 RELOAD Base                  January 2013
+
+
 11.4.  Searching for a Bootstrap Node
 
    If no cached bootstrap nodes are available and the configuration file
@@ -7497,14 +7525,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    the overlay.  Typically this means contacting the bootstrap nodes,
    since they are reachable by the local peer or have public IP
    addresses.  If the joining node has cached a list of peers it has
-
-
-
-Jennings, et al.          Expires July 14, 2013               [Page 134]
-
-Internet-Draft                 RELOAD Base                  January 2013
-
-
    previously been connected with in this overlay, as an optimization it
    MAY attempt to use one or more of them as bootstrap nodes before
    falling back to the bootstrap nodes listed in the configuration file.
@@ -7533,6 +7553,14 @@ Internet-Draft                 RELOAD Base                  January 2013
    JP = joining peer, AP = admitting peer, NP = next peer after the AP,
    NNP = next next peer which is the peer after NP, PP = previous peer
    before the AP, PPP = previous previous peer which is the peer before
+
+
+
+Jennings, et al.          Expires July 15, 2013               [Page 135]
+
+Internet-Draft                 RELOAD Base                  January 2013
+
+
    the PP, BP = bootstrap peer.
 
    In the following example, we assume that JP has formed a connection
@@ -7556,7 +7584,35 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 135]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jennings, et al.          Expires July 15, 2013               [Page 136]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7612,7 +7668,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 136]
+Jennings, et al.          Expires July 15, 2013               [Page 137]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7668,7 +7724,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 137]
+Jennings, et al.          Expires July 15, 2013               [Page 138]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7724,7 +7780,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 138]
+Jennings, et al.          Expires July 15, 2013               [Page 139]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7780,7 +7836,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 139]
+Jennings, et al.          Expires July 15, 2013               [Page 140]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7836,7 +7892,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 140]
+Jennings, et al.          Expires July 15, 2013               [Page 141]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7892,7 +7948,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 141]
+Jennings, et al.          Expires July 15, 2013               [Page 142]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -7948,7 +8004,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 142]
+Jennings, et al.          Expires July 15, 2013               [Page 143]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8004,7 +8060,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 143]
+Jennings, et al.          Expires July 15, 2013               [Page 144]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8060,7 +8116,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 144]
+Jennings, et al.          Expires July 15, 2013               [Page 145]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8116,7 +8172,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 145]
+Jennings, et al.          Expires July 15, 2013               [Page 146]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8172,7 +8228,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 146]
+Jennings, et al.          Expires July 15, 2013               [Page 147]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8228,7 +8284,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 147]
+Jennings, et al.          Expires July 15, 2013               [Page 148]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8284,7 +8340,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 148]
+Jennings, et al.          Expires July 15, 2013               [Page 149]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8340,7 +8396,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 149]
+Jennings, et al.          Expires July 15, 2013               [Page 150]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8396,7 +8452,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 150]
+Jennings, et al.          Expires July 15, 2013               [Page 151]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8452,7 +8508,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 151]
+Jennings, et al.          Expires July 15, 2013               [Page 152]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8508,7 +8564,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 152]
+Jennings, et al.          Expires July 15, 2013               [Page 153]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8564,7 +8620,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 153]
+Jennings, et al.          Expires July 15, 2013               [Page 154]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8620,7 +8676,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 154]
+Jennings, et al.          Expires July 15, 2013               [Page 155]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8676,7 +8732,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 155]
+Jennings, et al.          Expires July 15, 2013               [Page 156]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8732,7 +8788,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 156]
+Jennings, et al.          Expires July 15, 2013               [Page 157]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8788,7 +8844,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 157]
+Jennings, et al.          Expires July 15, 2013               [Page 158]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8844,7 +8900,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 158]
+Jennings, et al.          Expires July 15, 2013               [Page 159]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8900,7 +8956,7 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 159]
+Jennings, et al.          Expires July 15, 2013               [Page 160]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -8936,6 +8992,9 @@ Internet-Draft                 RELOAD Base                  January 2013
    Marc Petit-Huguenin who provided an amazing amount of detailed
    review.
 
+   Dean Willis and Marc Petit-Huguenin help resolve and provided text to
+   fix many comments received during IESG review.
+
 
 16.  References
 
@@ -8951,16 +9010,15 @@ Internet-Draft                 RELOAD Base                  January 2013
    [RFC2388]  Masinter, L., "Returning Values from Forms:  multipart/
               form-data", RFC 2388, August 1998.
 
-   [RFC2585]  Housley, R. and P. Hoffman, "Internet X.509 Public Key
-              Infrastructure Operational Protocols: FTP and HTTP",
 
 
-
-Jennings, et al.          Expires July 14, 2013               [Page 160]
+Jennings, et al.          Expires July 15, 2013               [Page 161]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   [RFC2585]  Housley, R. and P. Hoffman, "Internet X.509 Public Key
+              Infrastructure Operational Protocols: FTP and HTTP",
               RFC 2585, May 1999.
 
    [RFC2818]  Rescorla, E., "HTTP Over TLS", RFC 2818, May 2000.
@@ -9007,16 +9065,16 @@ Internet-Draft                 RELOAD Base                  January 2013
    [RFC5273]  Schaad, J. and M. Myers, "Certificate Management over CMS
               (CMC): Transport Protocols", RFC 5273, June 2008.
 
-   [RFC5389]  Rosenberg, J., Mahy, R., Matthews, P., and D. Wing,
-              "Session Traversal Utilities for NAT (STUN)", RFC 5389,
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 161]
+Jennings, et al.          Expires July 15, 2013               [Page 162]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   [RFC5389]  Rosenberg, J., Mahy, R., Matthews, P., and D. Wing,
+              "Session Traversal Utilities for NAT (STUN)", RFC 5389,
               October 2008.
 
    [RFC5405]  Eggert, L. and G. Fairhurst, "Unicast UDP Usage Guidelines
@@ -9063,16 +9121,16 @@ Internet-Draft                 RELOAD Base                  January 2013
    [I-D.ietf-hip-reload-instance]
               Keranen, A., Camarillo, G., and J. Maenpaa, "Host Identity
               Protocol-Based Overlay Networking Environment (HIP BONE)
-              Instance Specification for REsource LOcation And Discovery
-              (RELOAD)", draft-ietf-hip-reload-instance-05 (work in
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 162]
+Jennings, et al.          Expires July 15, 2013               [Page 163]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+              Instance Specification for REsource LOcation And Discovery
+              (RELOAD)", draft-ietf-hip-reload-instance-05 (work in
               progress), April 2012.
 
    [I-D.ietf-p2psip-diagnostics]
@@ -9119,15 +9177,15 @@ Internet-Draft                 RELOAD Base                  January 2013
               and Passwords", RFC 4013, February 2005.
 
    [RFC4086]  Eastlake, D., Schiller, J., and S. Crocker, "Randomness
-              Requirements for Security", BCP 106, RFC 4086, June 2005.
 
 
 
-
-Jennings, et al.          Expires July 14, 2013               [Page 163]
+Jennings, et al.          Expires July 15, 2013               [Page 164]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
+
+              Requirements for Security", BCP 106, RFC 4086, June 2005.
 
    [RFC4145]  Yon, D. and G. Camarillo, "TCP-Based Media Transport in
               the Session Description Protocol (SDP)", RFC 4145,
@@ -9176,15 +9234,14 @@ Internet-Draft                 RELOAD Base                  January 2013
 
    [Sybil]    Douceur, J., "The Sybil Attack", IPTPS 02, March 2002.
 
-   [UnixTime]
 
 
-
-Jennings, et al.          Expires July 14, 2013               [Page 164]
+Jennings, et al.          Expires July 15, 2013               [Page 165]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   [UnixTime]
               Wikipedia, "Unix Time", <http:/wikipedia.org/wiki/
               Unix_time>.
 
@@ -9232,15 +9289,15 @@ Appendix A.  Routing Alternatives
    Significant discussion has been focused on the selection of a routing
    algorithm for P2PSIP.  This section discusses the motivations for
    selecting symmetric recursive routing for RELOAD and describes the
-   extensions that would be required to support additional routing
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 165]
+Jennings, et al.          Expires July 15, 2013               [Page 166]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   extensions that would be required to support additional routing
    algorithms.
 
 A.1.  Iterative vs Recursive
@@ -9291,8 +9348,7 @@ A.2.  Symmetric vs Forward response
 
 
 
-
-Jennings, et al.          Expires July 14, 2013               [Page 166]
+Jennings, et al.          Expires July 15, 2013               [Page 167]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -9348,7 +9404,7 @@ A.3.  Direct Response
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 167]
+Jennings, et al.          Expires July 15, 2013               [Page 168]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -9404,7 +9460,7 @@ A.5.  Symmetric Route Stability
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 168]
+Jennings, et al.          Expires July 15, 2013               [Page 169]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -9460,7 +9516,7 @@ B.2.  Clients as Application-Level Agents
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 169]
+Jennings, et al.          Expires July 15, 2013               [Page 170]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -9516,7 +9572,7 @@ Authors' Addresses
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 170]
+Jennings, et al.          Expires July 15, 2013               [Page 171]
 
 Internet-Draft                 RELOAD Base                  January 2013
 
@@ -9572,5 +9628,5 @@ Internet-Draft                 RELOAD Base                  January 2013
 
 
 
-Jennings, et al.          Expires July 14, 2013               [Page 171]
+Jennings, et al.          Expires July 15, 2013               [Page 172]
 
