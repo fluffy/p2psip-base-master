@@ -1798,8 +1798,10 @@ Dest=Z
           nor an ID the peer is responsible for, then the peer MUST forward the
           message towards this entry.
           This means that it MUST select one of the peers to which it is
-          connected and which is likely to be responsible for the first entry
-          on the destination list. If the first entry on the destination list
+          connected and which is most likely to be responsible for the first entry
+          on the destination list. 
+          For the CHORD-RELOAD topology, the routing to the most likely responsible node is explained in <xref target="sec.chord.routing"/>.
+          If the first entry on the destination list
           is in the peer's connection table, then it MUST forward the
           message to that peer directly. Otherwise, the peer consults the
           routing table to forward the message.</t>
@@ -6198,7 +6200,7 @@ struct {
         to the most significant 128 bits.</t>
       </section>
 
-      <section title="Routing">
+      <section title="Routing" anchor="sec.chord.routing">
         <t>The routing table is conceptually the union of the neighbor table
         and the finger table.</t>
 
