@@ -1229,7 +1229,7 @@ Dest=Z
         <t>This figure shows use of full via lists by intermediate peers B and
         X. However, if B and/or X are willing to store state, then they may
         elect to truncate the lists, save that information internally (keyed
-        by the transaction id), and return the response message along the path
+        by the transaction ID), and return the response message along the path
         from which it was received when the response is received. This option
         requires greater state to be stored on intermediate peers but saves a
         small amount of bandwidth and reduces the need for modifying the
@@ -1832,7 +1832,7 @@ Dest=Z
           message from node C with transaction ID X and via list [A, B], it
           could store [X, C] in its state database and forward the message
           with the via list unchanged. When D receives the response, it
-          consults its state database for transaction id X, determines that
+          consults its state database for transaction ID X, determines that
           the request came from C, and forwards the response to C.</t>
 
           <t>Intermediate peers which modify the via list are not required to
@@ -1957,7 +1957,7 @@ Dest=Z
           <t>The above algorithm can result in multiple requests being
           delivered to a node. Receiving nodes MUST generate semantically
           equivalent responses to retransmissions of the same request (this
-          can be determined by transaction id) if the request is received
+          can be determined by transaction ID) if the request is received
           within the maximum request lifetime (15 seconds). For some requests
           (e.g., Fetch) this can be accomplished merely by processing the
           request again. For other requests, (e.g., Store) it may be necessary
