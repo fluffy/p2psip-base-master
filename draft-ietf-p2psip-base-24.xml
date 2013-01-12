@@ -709,37 +709,56 @@ Transport    |      Link       |     +-------+  +------+
       <t><list style="hanging">
           <t></t>
 
-          <t hangText="DHT:">A distributed hash table. A DHT is an abstract
-          hash table service realized by storing the contents of the hash
-          table across a set of peers.</t>
+          <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
+          Joining Peer join the Overlay.</t>
 
           <t></t>
 
-          <t hangText="Overlay Algorithm:">An overlay algorithm defines the
-          rules for determining which peers in an overlay store a particular
-          piece of data and for determining a topology of interconnections
-          amongst peers in order to find a piece of data.</t>
-
-          <t></t>
-
-          <t hangText="Overlay Instance:">A specific overlay algorithm and the
-          collection of peers that are collaborating to provide read and write
-          access to it. There can be any number of overlay instances running
-          in an IP network at a time, and each operates in isolation of the
-          others.</t>
-
-          <t></t>
-
-          <t hangText="Peer:">A host that is participating in the overlay.
-          Peers are responsible for holding some portion of the data that has
-          been stored in the overlay and also route messages on behalf of
-          other hosts as required by the Overlay Algorithm.</t>
+          <t hangText="Bootstrap Node:">A network node used by Joining Peers
+          to help locate the Admitting Peer.</t>
 
           <t></t>
 
           <t hangText="Client:">A host that is able to store data in and
           retrieve data from the overlay but which is not participating in
           routing or data storage for the overlay.</t>
+
+          <t></t>
+
+          <t hangText="Configuration Document:">An XML document containing all
+          the Overlay Parameters for one overlay instance.</t>
+
+          <t></t>
+
+          <t hangText="Connection Table:">The set of nodes to which a node is
+          directly connected, which include nodes that are not yet available
+          for routing.</t>
+
+          <t></t>
+
+          <t hangText="Destination List:">A list of IDs through which a
+          message is to be routed, in strict order. A single Node-ID or a
+          Resource-ID is a trivial form of destination list. When multiple
+          Node-IDs are specified (no more than one Resource-ID is permitted,
+          and it MUST be the last entry) a Destination List is a loose source
+          route.</t>
+
+          <t></t>
+
+          <t hangText="DHT:">A distributed hash table. A DHT is an abstract
+          hash table service realized by storing the contents of the hash
+          table across a set of peers.</t>
+
+          <t></t>
+
+          <t hangText="ID:">A generic term for any kind of identifiers in an
+          Overlay.  This document specifies an ID as being a Node-ID, a
+          Resource-ID, or an Opaque ID.</t>
+
+          <t></t>
+
+          <t hangText="Joining Peer:">A node that is attempting to become a
+          Peer in a particular Overlay.</t>
 
           <t></t>
 
@@ -774,18 +793,31 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Joining Peer:">A node that is attempting to become a
-          Peer in a particular Overlay.</t>
+          <t hangText="Overlay Algorithm:">An overlay algorithm defines the
+          rules for determining which peers in an overlay store a particular
+          piece of data and for determining a topology of interconnections
+          amongst peers in order to find a piece of data.</t>
 
           <t></t>
 
-          <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
-          Joining Peer join the Overlay.</t>
+          <t hangText="Overlay Instance:">A specific overlay algorithm and the
+          collection of peers that are collaborating to provide read and write
+          access to it. There can be any number of overlay instances running
+          in an IP network at a time, and each operates in isolation of the
+          others.</t>
 
           <t></t>
 
-          <t hangText="Bootstrap Node:">A network node used by Joining Peers
-          to help locate the Admitting Peer.</t>
+          <t hangText="Overlay Parameters:">A set of values that are required to
+          be shared between all nodes in an overlay.  The overlay parameters are
+          distributed in an XML document called the Configuration Document.</t>
+
+          <t></t>
+
+          <t hangText="Peer:">A host that is participating in the overlay.
+          Peers are responsible for holding some portion of the data that has
+          been stored in the overlay and also route messages on behalf of
+          other hosts as required by the Overlay Algorithm.</t>
 
           <t></t>
 
@@ -813,14 +845,7 @@ Transport    |      Link       |     +-------+  +------+
           identified by its AOR which is an example of a Resource Name.</t>
 
           <t></t>
-          
-          <t hangText="User Name:">A name identifying a user of the overlay,
-              typically used as a Resource Name, or as a label on a Resource
-              that identifies the user owning the resource.</t>
-          
-          <t></t>
                   
-
           <t hangText="Resource-ID:">A value that identifies some resources
           and which is used as a key for storing and retrieving the resource.
           Often this is not human friendly/readable. One way to generate a
@@ -835,12 +860,6 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Connection Table:">The set of nodes to which a node is
-          directly connected, which include nodes that are not yet available
-          for routing.</t>
-
-          <t></t>
-
           <t hangText="Routing Table:">The set of directly connected peers
           which a node can use
           to route overlay messages. In general, these peers will all be on
@@ -852,19 +871,9 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="ID:">A generic term for any kind of identifiers in an
-          Overlay.  This document specifies an ID as being a Node-ID, a
-          Resource-ID, or an Opaque ID.</t>
-
-          <t></t>
-
-          <t hangText="Destination List:">A list of IDs through which a
-          message is to be routed, in strict order. A single Node-ID or a
-          Resource-ID is a trivial form of destination list. When multiple
-          Node-IDs are specified (no more than one Resource-ID is permitted,
-          and it MUST be the last entry) a Destination List is a loose source
-          route. The list is reduced hop-by-hop, does not include the source
-          but includes the destination.</t>
+          <t hangText="Transaction ID:">A randomly chosen identifier selected
+          by the originator of a request and used to correlate requests and
+          responses.</t>
 
           <t></t>
 
@@ -878,26 +887,15 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t>
 
-          <t hangText="Transaction ID:">A randomly chosen identifier selected
-          by the originator of a request and used to correlate requests and
-          responses.</t>
-
-          <t></t>
-
-          <t hangText="Overlay Parameters:">A set of values that are required to
-          be shared between all nodes in an overlay.  The overlay parameters are
-          distributed in an XML document called the Configuration Document.</t>
-
-          <t></t>
-
-          <t hangText="Configuration Document:">An XML document containing all
-          the Overlay Parameters for one overlay instance.</t>
-
-          <t></t>
-
           <t hangText="User:">A user is a physical person who owns one or more
           nodes through the user name stored in the certificates assigned to
           these nodes.</t>
+
+          <t></t>
+
+          <t hangText="User Name:">A name identifying a user of the overlay,
+              typically used as a Resource Name, or as a label on a Resource
+              that identifies the user owning the resource.</t>
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
