@@ -1803,7 +1803,7 @@ Dest=Z
           This means that it MUST select one of the peers to which it is
           connected and which is likely to be responsible for the first entry
           on the destination list. If the first entry on the destination list
-          is in the peer's connection table, then it SHOULD forward the
+          is in the peer's connection table, then it MUST forward the
           message to that peer directly. Otherwise, the peer consults the
           routing table to forward the message.</t>
 
