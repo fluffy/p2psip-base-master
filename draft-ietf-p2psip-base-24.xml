@@ -1095,8 +1095,8 @@ Transport    |      Link       |     +-------+  +------+
 
         <section title="Minimum Functionality Requirements for Clients">
           <t>A node may act as a client simply because it does not have the
-          capacity or even an implementation of the
-          <xref target="sec.overlay-topology.req">topology plugin</xref>
+          capacity or even an implementation of the topology plugin, 
+          defined in <xref target="sec.overlay-topology.req"/>,
           required to act as a peer in the overlay. In order to exchange RELOAD
           messages with a peer, a client will meet a minimum level of
           functionality. Such a client will :</t>
