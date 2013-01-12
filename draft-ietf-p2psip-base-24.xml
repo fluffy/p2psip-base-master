@@ -941,7 +941,8 @@ Transport    |      Link       |     +-------+  +------+
           </list></t>
 
         <t>Each node has a certificate <xref target="RFC5280"></xref>
-        containing this Node-ID, which is unique within an overlay instance.</t>
+        containing this Node-ID in a subjectAltName extension, which is unique
+        within an overlay instance.</t>
 
         <t>The certificate serves multiple purposes:</t>
 
