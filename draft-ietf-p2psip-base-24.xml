@@ -1574,7 +1574,8 @@ Dest=Z
         verified to detect tampering. If the certificate used to sign the
         stored value expires, it can no longer be retrieved
 	(though may not be immediately garbage collected by the storing node) 
-	and the creating node will need to store it again if it desires that stored value to continue
+	and the creating node will need to store it again
+        if it desires that stored value to continue
         to be available.</t>
 
         <section title="Storage Permissions">
@@ -1805,7 +1806,8 @@ Dest=Z
           This means that it MUST select one of the peers to which it is
           connected and which is most likely to be responsible for the first entry
           on the destination list. 
-          For the CHORD-RELOAD topology, the routing to the most likely responsible node is explained in <xref target="sec.chord.routing"/>.
+          For the CHORD-RELOAD topology, the routing to the most likely
+          responsible node is explained in <xref target="sec.chord.routing"/>.
           If the first entry on the destination list
           is in the peer's connection table, then it MUST forward the
           message to that peer directly. Otherwise, the peer consults the
@@ -2512,7 +2514,8 @@ Dest=Z
 
                 <t hangText="opaque"></t>
 
-                <t>A compressed list of Node-IDs and an eventual Resource-ID. Because
+                <t>A compressed list of Node-IDs and an eventual Resource-ID. 
+                Because
                 this value was compressed by one of the peers, it is only
                 meaningful to that peer and cannot be decoded by other peers.
                 Thus, it is represented as an opaque string.</t>
@@ -3080,7 +3083,9 @@ struct {
           <t>The input to signatures over data values is different, and is
           described in <xref target="sec-data-sig"></xref>.</t>
 
-          <t>All RELOAD messages MUST be signed. Intermediate nodes do not verify signatures. Upon receipt (and fragment
+          <t>All RELOAD messages MUST be signed. 
+          Intermediate nodes do not verify signatures. 
+          Upon receipt (and fragment
           reassembly if needed) the destination node MUST verify the signature
           and the authorizing certificate. If the signature fails, the
           implementation SHOULD simply drop the message and MUST NOT process
@@ -3151,7 +3156,8 @@ struct {
           the peer is responsible changes.</t>
         </section>
 
-        <section anchor="sec-topology-methods" title="Methods and types for use by topology plugins">
+        <section anchor="sec-topology-methods" 
+                 title="Methods and types for use by topology plugins">
           <t>This section describes the methods that topology plugins use to
           join, leave, and maintain the overlay.</t>
 
@@ -3475,7 +3481,8 @@ struct {
         </section>
       </section>
 
-      <section anchor="sec-forwarding-link" title="Forwarding and Link Management Layer">
+      <section anchor="sec-forwarding-link" 
+               title="Forwarding and Link Management Layer">
         <t>Each node maintains connections to a set of other nodes defined by
         the topology plugin. This section defines the methods RELOAD uses to
         form and maintain connections between nodes in the overlay. Three
@@ -7327,7 +7334,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             the same Node-IDs, thus avoiding the need for implementations to
             re-store all their data when their certificates expire.</t>
 
-            <t>A single name (the "user name") that this user is allowed to use in the overlay, using
+            <t>A single name (the "user name") that this user is allowed to use 
+            in the overlay, using
             type rfc822Name. Enrollment servers SHOULD take care to only allow
             legal characters in the name (e.g., no embedded NULs), rather than
             simply accepting any name provided by the user. In some usages,
@@ -7350,20 +7358,24 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
          
          <t><list style="hanging">
            
-           <t hangText="failed_authentication"> The user name and password combination was not correct.  </t>
+           <t hangText="failed_authentication"> The user name and password 
+           combination was not correct.  </t>
            
            <t></t>
-           <t hangText="username_not_available"> The requested userName for the certificate was not acceptable.  </t>
+           <t hangText="username_not_available"> The requested userName for 
+           the certificate was not acceptable.  </t>
            
            <t></t>
-           <t hangText="Node-IDs_not_available"> The number of Node-IDs requested was not acceptable.  </t>
+           <t hangText="Node-IDs_not_available"> The number of Node-IDs 
+           requested was not acceptable.  </t>
            
            <t></t>
            <t hangText="bad_CSR"> There was a problem with the CSR.  </t>
            
          </list></t>
          
-         <t> If the client receives an unknown token in the body, it SHOULD treat it as a failure for an unknown reason. </t>
+         <t> If the client receives an unknown token in the body, it 
+         SHOULD treat it as a failure for an unknown reason. </t>
 
         <t>The client MUST check that the certificate returned chains back to
         one of the certificates received in the "root-cert" list of the
