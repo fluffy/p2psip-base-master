@@ -2422,7 +2422,8 @@ Dest=Z
               <!--begin-pdu-->
 
               <artwork><![CDATA[
-  enum { invalidDestinationType(0), node(1), resource(2), opaque_id_type(3),
+  enum { invalidDestinationType(0), node(1), resource(2),
+            opaque_id_type(3),
             /* 128-255 not allowed */ (255) }
             DestinationType;
 
@@ -2613,7 +2614,8 @@ Dest=Z
             <!--begin-pdu-->
 
             <artwork><![CDATA[
-enum { invalidMessageExtensionType(0), (2^16-1) } MessageExtensionType;
+enum { invalidMessageExtensionType(0), (2^16-1) }
+  MessageExtensionType;
 
 struct {
   MessageExtensionType  type;
@@ -3525,8 +3527,8 @@ struct {
              DTLS-UDP-SR-NO-ICE(3), TLS-TCP-FH-NO-ICE(4),
              (255) } OverlayLinkType;
 
-     enum { invalidCandType(0), host(1), srflx(2), prflx(3), relay(4),
-          (255) } CandType;
+     enum { invalidCandType(0), host(1), srflx(2), prflx(3),
+          relay(4), (255) } CandType;
 
      struct {
        opaque                name<0..2^16-1>;
