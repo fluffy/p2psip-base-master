@@ -2342,7 +2342,8 @@ Dest=Z
               identifies this transaction and also allows receivers to
               disambiguate transactions which are otherwise identical. In
               order to provide a high probability that transaction IDs are
-              unique, they MUST be randomly generated. Responses use the same
+              unique, they MUST be randomly generated <xref target="RFC4086" />.
+              Responses use the same
               Transaction ID as the request they correspond to. Transaction
               IDs are also used for fragment reassembly. See
               <xref target="sec-frag-reass" /> for details.</t>
