@@ -1423,9 +1423,9 @@ Dest=Z
           part of the overlay. However, the first node in the overlay can
           obviously not connect to other nodes. In order to support this case,
           potential first nodes (which must also serve as bootstrap nodes
-          initially) must somehow be instructed (perhaps by configuration
-          settings) that they are the entire overlay, rather than not part of
-          it.</t>
+          initially) must somehow be instructed (e.g. by comparing their IP
+          address to the bootstrap IP addresses in the configuration file)
+          that they are the entire overlay, rather than not part of it.</t>
 
           <t>Note that clients do not perform either of these operations.</t>
         </section>
