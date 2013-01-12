@@ -708,7 +708,7 @@ Transport    |      Link       |     +-------+  +------+
     <section anchor="sec-term" title="Terminology">
       <t>Terms used in this document are defined inline when used and are also
       defined below for reference. The definitions in this section use terminology and
-      concepts that are not explianed until later in the specification. </t>
+      concepts that are not explained until later in the specification. </t>
 
       <t><list style="hanging">
           <t></t> <!-- Defn #1.0 --> 
@@ -1140,7 +1140,7 @@ Transport    |      Link       |     +-------+  +------+
 
         <t><list style="hanging">
             <t hangText="Resource-based routing: ">RELOAD supports routing
-            messages based soley on the name of the resource. Such messages
+            messages based solely on the name of the resource. Such messages
             are delivered to a node that is responsible for that resource.
             Both structured and unstructured overlays are supported, so the
             route may not be deterministic for all Topology Plugins.</t>
@@ -3908,7 +3908,7 @@ struct {
                 example of such a protocol.</t>
               </list></t>
 
-            <t>Head of line blocking is undesireable in an Overlay Link
+            <t>Head of line blocking is undesirable in an Overlay Link
             protocol because the messages carried on a RELOAD link are
             independent, rather than stream-oriented. Therefore, if message N
             on a link is lost, delaying message N+1 on that same link until N
@@ -7509,7 +7509,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           the Node-ID MUST be computed by applying the digest specified in
           the self-signed-permitted element to the DER representation of the
           user's public key (more specifically the subjectPublicKeyInfo) and
-          taking the high order bits. For self-signed certficates containing
+          taking the high order bits. For self-signed certificates containing
           multiple Node-IDs, the index of the Node-ID (from 1 to the number
           of Node-IDs needed) must be prepended as a 4 bytes big endian integer
           to the DER representation of the user's public key and taking the
