@@ -6578,7 +6578,8 @@ struct {
             Implementers are encouraged to make use of RouteQuery and
             algorithms for determining where new finger table entries may be
             found. Complete details of possible implementations are outside
-            the scope of this specification.</t>
+            the scope of this specification (see e.g.
+            <xref target="optimizing-finger-hotp2p06" />).</t>
 
             <t>A simple approach to sizing the finger table is to ensure the
             finger table is large enough to contain at least the final
@@ -9776,6 +9777,34 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         <seriesInfo name="" value="SIGCOMM 2006" />
 
         <format target="http://www.cs.berkeley.edu/~pbg/churn.pdf" type="PDF" />
+      </reference>
+
+      <reference anchor="optimizing-finger-hotp2p06">
+        <front>
+          <title>Optimizing the finger table in Chord-like DHTs</title>
+
+          <author initials="G." surname="Chiola">
+            <organization />
+          </author>
+
+          <author initials="G." surname="Cordasco">
+            <organization />
+          </author>
+
+          <author initials="L." surname="Gardano">
+            <organization />
+          </author>
+
+          <author initials="A." surname="Negro">
+            <organization />
+          </author>
+
+          <author initials="V." surname="Scarano">
+            <organization />
+          </author>
+        </front>
+
+        <seriesInfo name="" value="HotP2P 2006" />
       </reference>
     </references>
 
