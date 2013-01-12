@@ -137,7 +137,7 @@ Check if the qualicom IPR issueed and if anything can be done
       overlay network. RELOAD is designed to support a P2P Session Initiation
       Protocol (P2PSIP) network, but can be utilized by other applications
       with similar requirements by defining new usages that specify the kinds
-      of data that must be stored for a particular application. RELOAD defines
+      of data that needs to be stored for a particular application. RELOAD defines
       a security model based on a certificate enrollment service that provides
       unique identities. NAT traversal is a fundamental service of the
       protocol. RELOAD also allows access from "client" nodes that do not need
@@ -191,7 +191,7 @@ Check if the qualicom IPR issueed and if anything can be done
           This introduces a load on those other peers, in the form of
           bandwidth and processing power. RELOAD has been defined with a
           simple, lightweight forwarding header, thus minimizing the amount of
-          effort required by intermediate peers.</t>
+          effort for intermediate peers.</t>
 
           <t></t>
 
@@ -199,14 +199,14 @@ Check if the qualicom IPR issueed and if anything can be done
           with an abstract interface to the overlay layer to simplify
           implementing a variety of structured (e.g., distributed hash tables)
           and unstructured overlay algorithms. The idea here is that RELOAD
-          provides a generic structure that should fit most types of overlay
+          provides a generic structure that can fit most types of overlay
           topologies (ring, hyperspace, etc.). To instantiate an actual
           network, you combine RELOAD with a specific overlay algorithm, which
           defines how to construct the overlay topology and route messages
           efficiently within it. This specification also defines how RELOAD is
           used with the <xref target="Chord" >Chord</xref> based DHT algorithm,
           which is mandatory to
-          implement. Specifying a default "must implement" overlay algorithm
+          implement. Specifying a default "mandatory to implement" overlay algorithm
           promotes interoperability, while extensibility allows selection of
           overlay algorithms optimized for a particular application.</t>
         </list></t>
@@ -384,7 +384,7 @@ Check if the qualicom IPR issueed and if anything can be done
             are the currently defined "link layer" protocols used by RELOAD
             for hop-by-hop communication.  Each such protocol includes the
             appropriate provisions for per-hop framing or hop-by-hop ACKs
-            required by unreliable underlying transports. New protocols can be
+            needed by unreliable underlying transports. New protocols can be
             defined, as
             described in <xref target="sec.future-link"></xref> and <xref
             target="sec-configuration"></xref>. As this document defines only
@@ -506,7 +506,7 @@ Transport    |      Link       |     +-------+  +------+
           although as RELOAD supports
           different overlay algorithms (including non-DHT overlay algorithms)
           that calculate keys (storage indices, not encryption keys) in
-          different ways, the actual interface must
+          different ways, the actual interface needs to 
           accept Resource Names rather than actual keys.</t>
 
           <t>Stability of the underlying network supporting the overlay (the
@@ -548,7 +548,7 @@ Transport    |      Link       |     +-------+  +------+
           peer is responsible for that Resource-ID. The Storage component is
           notified by the Topology Plugin when the Resource-IDs for which it
           is responsible change, and the Storage component is then responsible
-          for migrating resources to other peers, as required.</t>
+          for migrating resources to other peers.</t>
         </section>
 
         <section title="Topology Plugin">
@@ -585,7 +585,7 @@ Transport    |      Link       |     +-------+  +------+
           <t>The Forwarding and Link Management Layer is responsible for
           getting a message to the next peer, as determined by the Topology
           Plugin. This Layer establishes and maintains the network connections
-          as required by the Topology Plugin. This layer is also responsible
+          as needed by the Topology Plugin. This layer is also responsible
           for setting up connections to other peers through NATs and firewalls
           using ICE, and it can elect to forward traffic using relays for NAT
           and firewall traversal.</t>
@@ -740,8 +740,7 @@ Transport    |      Link       |     +-------+  +------+
           <t hangText="Destination List:">A list of IDs through which a
           message is to be routed, in strict order. A single Node-ID or a
           Resource-ID is a trivial form of destination list. When multiple
-          Node-IDs are specified (no more than one Resource-ID is permitted,
-          and it MUST be the last entry) a Destination List is a loose source
+          Node-IDs are specified, a Destination List is a loose source
           route. The list is reduced hop-by-hop, does not include the source
           but includes the destination.</t>
 
@@ -816,8 +815,8 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #16.0 --> 
 
-          <t hangText="Overlay Parameters:">A set of values that are required to
-          be shared between all nodes in an overlay.  The overlay parameters are
+          <t hangText="Overlay Parameters:">A set of values that are 
+          shared between all nodes in an overlay.  The overlay parameters are
           distributed in an XML document called the Configuration Document.</t>
 
           <t></t> <!-- Defn #17.0 --> 
@@ -825,7 +824,7 @@ Transport    |      Link       |     +-------+  +------+
           <t hangText="Peer:">A host that is participating in the overlay.
           Peers are responsible for holding some portion of the data that has
           been stored in the overlay and also route messages on behalf of
-          other hosts as required by the Overlay Algorithm.</t>
+          other hosts as needed by the Overlay Algorithm.</t>
 
           <t></t> <!-- Defn #18.0 --> 
 
@@ -927,7 +926,7 @@ Transport    |      Link       |     +-------+  +------+
                title="Security and Identification">
         <t>The overlay parameters are specified in a configuration document.
         Because the parameters include security critical information such as
-        the certificate signing trust anchors, the configuration document must
+        the certificate signing trust anchors, the configuration document needs to
         be retrieved securely. The initial configuration document is either
         initially fetched over HTTPS or manually provisioned; subsequent
         configuration document updates are received either by periodically
@@ -943,7 +942,7 @@ Transport    |      Link       |     +-------+  +------+
             <t>To address the node itself.</t>
 
             <t>To determine its position in the overlay topology (if the
-            overlay is structured; topology plugins are not required to be structured).</t>
+            overlay is structured; topology plugins do not need to be structured).</t>
 
             <t>To determine the set of resources for which the node is
             responsible.</t>
@@ -994,14 +993,14 @@ Transport    |      Link       |     +-------+  +------+
         node also generates its own Node-ID and username. The Node-ID is
         computed as a digest of the public key, to prevent Node-ID theft. Note
         that the relevant cryptographic property for the digest is preimage
-        resistance. Collision-resistance is not required since an attacker who
+        resistance. Collision-resistance is not needed since an attacker who
         can create two nodes with the same Node-ID but different public key
         obtains no advantage. This model is still subject to a number of known
         attacks (most notably Sybil attacks <xref target="Sybil"></xref>) and
         can only be safely used in closed networks where users are mutually
         trusting. Another drawback of this approach is that user's data is
         then tied to their keys, so if a key is changed any data stored under
-        their Node-ID must then be re-stored. This is not an issue for
+        their Node-ID needs to be re-stored. This is not an issue for
         centrally-issued Node-IDs provided that the CA re-issues the same
         Node-ID when a new certificate is generated.</t>
 
@@ -1010,7 +1009,7 @@ Transport    |      Link       |     +-------+  +------+
         layer) are always used, even if the certificates are
         self-signed. This allows for a single set of code paths in the systems
         with the only difference being whether certificate verification is
-        required to chain to a single root of trust.</t>
+        used to chain to a single root of trust.</t>
 
         <section anchor="sec-shared-key" title="Shared-Key Security">
           <t>RELOAD also provides an admission control system based on shared
@@ -1049,7 +1048,7 @@ Transport    |      Link       |     +-------+  +------+
         that's taking a long time to join). The routing and storage rules for
         RELOAD provide for correct behavior by peers regardless of whether
         other nodes attached to them are clients or peers. Of course, a client
-        implementation must know that it intends to be a client, but this
+        implementation needs to know that it intends to be a client, but this
         localizes complexity only to that node.</t>
 
         <t>For more discussion of the motivation for RELOAD's client support,
@@ -1085,7 +1084,7 @@ Transport    |      Link       |     +-------+  +------+
               current location can reach it, but the client is not directly
               reachable using only its Node-ID. If the client is to receive
               incoming requests from other members of the overlay, the
-              Destination List required to reach it must be learnable via
+              Destination List needed to reach the client needs to be learnable via
               other mechanisms, such as being stored in the overlay by a
               usage. A client connected this way using a certificate with only
               a single Node-ID can proceed to use the connection without
@@ -1099,11 +1098,11 @@ Transport    |      Link       |     +-------+  +------+
 
         <section title="Minimum Functionality Requirements for Clients">
           <t>A node may act as a client simply because it does not have the
-          capacity or even an implementation of the topology plugin, 
+          capacity, or even an implementation of the topology plugin
           defined in <xref target="sec.overlay-topology.req"/>,
-          required to act as a peer in the overlay. In order to exchange RELOAD
-          messages with a peer, a client will meet a minimum level of
-          functionality. Such a client will :</t>
+          needed to act as a peer in the overlay. In order to exchange RELOAD
+          messages with a peer, a client needs to meet a minimum level of
+          functionality. Such a client will:</t>
 
           <t><list style="symbols">
               <t>Implement RELOAD's connection-management operations that are
@@ -1114,7 +1113,7 @@ Transport    |      Link       |     +-------+  +------+
 
               <t>Be able to calculate Resource-IDs used by the overlay.</t>
 
-              <t>Possess security credentials required by the overlay it is
+              <t>Possess security credentials needed by the overlay it is
               implementing.</t>
             </list></t>
 
@@ -1182,7 +1181,7 @@ Transport    |      Link       |     +-------+  +------+
             possible to just inject a message into the overlay with a single
             Node-ID as the destination, RELOAD provides a source routing
             capability in the form of "Destination Lists". A Destination List
-            provides a list of the nodes through which a message must flow in
+            provides a list of the nodes through which a message flows in
             order (i.e., it is loose source routed). The minimal destination
             list contains just a single value.</t>
 
@@ -1332,10 +1331,11 @@ Dest=Z
         means, depend on the specific overlay). If a peer cannot form a
         connection to some other peer, this is not
         necessarily a disaster; overlays can route correctly even without
-        fully connected links. However, a peer should try to maintain the
-        specified routing table defined by the algorithm and if it detects that
+        fully connected links. However, a peer needs to try to maintain the
+        specified routing table defined by the topology plugin algorithm and 
+        needs to form new connections if it detects that
         it has fewer direct
-        connections, should form more as required. This also implies that
+        connections that the specified by the algorithm. This also implies that
         peers, in accord with the topology plugin algorithm, need to
         periodically verify that the connected peers are still
         alive and if not try to reform the connection or form an alternate
@@ -1439,10 +1439,11 @@ Dest=Z
           cannot form connections to the bootstrap nodes, then they are not
           part of the overlay. However, the first node in the overlay can
           obviously not connect to other nodes. In order to support this case,
-          potential first nodes (which must also serve as bootstrap nodes
-          initially) must somehow be instructed (e.g. by comparing their IP
-          address to the bootstrap IP addresses in the configuration file)
-          that they are the entire overlay, rather than not part of it.</t>
+          potential first nodes (which can also serve as bootstrap nodes
+          initially) need to somehow be instructed 
+          that they are the entire overlay, rather than not part of it.
+          (e.g. by comparing their IP
+          address to the bootstrap IP addresses in the configuration file) </t>
 
           <t>Note that clients do not perform either of these operations.</t>
         </section>
@@ -1456,7 +1457,7 @@ Dest=Z
         and perhaps a username and password, and leverage that into having a
         working peer with minimal user intervention. This helps avoid the
         problems that have been experienced with conventional SIP clients
-        where users are required to manually configure a large number of
+        where users need to manually configure a large number of
         settings.</t>
 
         <section title="Initial Configuration">
@@ -1474,7 +1475,7 @@ Dest=Z
 
           <t>If a node already has the valid configuration document that it
           received by some out of band method, this step can be skipped. Note
-          that that out of band method must provide authentication and
+          that that out of band method needs to provide authentication and
           integrity, because the configuration document contains the trust
           anchors used by the overlay.</t>
         </section>
@@ -1591,7 +1592,7 @@ Dest=Z
         <section title="Storage Permissions">
           <t>A major issue in peer-to-peer storage networks is minimizing the
           burden of becoming a peer, and in particular minimizing the amount
-          of data which any peer is required to store for other nodes. RELOAD
+          of data which any peer needs to to store for other nodes. RELOAD
           addresses this issue by only allowing any given node to store data
           at a small number of locations in the overlay, with those locations
           being determined by the node's certificate. When a peer uses a Store
@@ -1646,7 +1647,7 @@ Dest=Z
           strategies are determined by the overlay algorithm, which can base
           the replication strategy on its particular topology. For example,
           Chord places replicas on successor peers, which will take over
-          responsibility should the responsible peer fail <xref
+          responsibility if the responsible peer fail <xref
           target="Chord"></xref>.</t>
 
           <t>If additional replication is needed, for example if data
@@ -1663,7 +1664,7 @@ Dest=Z
       <section anchor="sec-usages" title="Usages">
         <t>By itself, the distributed storage layer just provides
         infrastructure on which applications are built. In order to do
-        anything useful, a usage must be defined. Each Usage needs to specify
+        anything useful, a usage needs to be defined. Each Usage needs to specify
         several things:</t>
 
         <t><list style="symbols">
@@ -1673,7 +1674,7 @@ Dest=Z
             <t>Defines the data structure for each of the Kinds (the value
             member in <xref target="sec-kind-model" />). If the data
             structure contains character string, conversion rules between
-            characters and the binary storage must be specified.</t>
+            characters and the binary storage need to be specified.</t>
 
             <t>Define access control rules for each of the Kinds
             (<xref target="sec.access_control" />).</t>
@@ -1701,7 +1702,7 @@ Dest=Z
       </section>
 
       <section title="Application Connectivity">
-        <t>There is no requirement that a RELOAD usage must use RELOAD's
+        <t>There is no requirement that a RELOAD usage needs to use RELOAD's
         primitives for establishing its own communication if it already
         possesses its own means of establishing connections. For example, one
         could design a RELOAD-based resource discovery protocol which used
@@ -1968,7 +1969,7 @@ Dest=Z
           received when the timer fires, the request MUST be retransmitted with
           the same transaction identifier. The request MAY be retransmitted up
           to 4 times (for a total of 5 messages). After the timer for the fifth
-          transmission fires, the message SHALL be considered to have failed.
+          transmission fires, the message MUST be considered to have failed.
           Although the originating node will be doing both end-to-end and
           hop-by-hop retransmissions, the end-by-end retransmission procedure
           is not followed by
