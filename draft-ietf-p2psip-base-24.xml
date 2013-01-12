@@ -1479,8 +1479,9 @@ Dest=Z
           server which can be used to obtain such a certificate. The
           enrollment server may (and probably will) require some sort of
           username and password before issuing the certificate. The enrollment
-          server's ability to restrict attackers' access to certificates in
-          the overlay is one of the cornerstones of RELOAD's security.</t>
+          server's ability to ensure attackers can not get a large number of
+          certificates for the overlay is one of the cornerstones of RELOAD's
+          security. </t>
         </section>
 
         <section title="Diagnostics">
