@@ -1787,7 +1787,7 @@ Dest=Z
               <t>If the entry is a Node-ID which is not equal to this node,
               then the node MUST drop the message silently unless the Node-ID
               corresponds to a node which is directly connected to this node
-              (i.e., a client). In the later case, it MUST forward the message
+              (i.e., a client). In the latter case, it MUST forward the message
               to the destination node as described in the next section.</t>
             </list></t>
 
@@ -2085,9 +2085,8 @@ Dest=Z
           </figure>
 
           <section anchor="sec-definitions" title="Common Definitions">
-            <t>The following definitions are used throughout RELOAD and so are
-            defined here. They also provide a convenient introduction to how
-            to read the presentation language.</t>
+            <t>This section provides an introduction to the presentation
+            language used throughout RELOAD.</t>
 
             <t>An enum represents an enumerated type. The values associated
             with each possibility are represented in parentheses and the
@@ -3807,7 +3806,9 @@ struct {
             <t>However, standardization of additional protocols for use with
             ICE is expected, including <xref
             target="RFC6544">TCP</xref> and protocols such as
-            SCTP and DCCP. UDP encapsulations for SCTP and DCCP would expand
+            <xref target="RFC4960">SCTP</xref> and
+            <xref target="RFC4340">DCCP</xref>. UDP encapsulations for SCTP and
+            DCCP would expand
             the available Overlay Link protocols available for RELOAD. When
             additional protocols are available, the following prioritization
             is RECOMMENDED:</t>
@@ -6571,7 +6572,7 @@ struct {
             implementation SHOULD be capable of increasing the number of
             entries in the finger table to 128 entries.</t>
 
-            <t>Note to implementers: Although log(N) entries are all that are
+            <t>Although log(N) entries are all that are
             required for optimal performance, careful implementation of
             stabilization will result in no additional traffic being generated
             when maintaining a finger table larger than log(N) entries.
@@ -6605,7 +6606,7 @@ struct {
       </section>
 
       <section title="Route query">
-        <t>For this topology plugin, the RouteQueryReq contains no additional
+        <t>For CHORD-RELOAD, the RouteQueryReq contains no additional
         information. The RouteQueryAns contains the single Node-ID of the next
         peer to which the responding peer would have routed the request
         message in recursive routing:</t>
@@ -7419,7 +7420,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       connection is formed but it could also happen before in which case the
       Update would often be routed through other nodes.</t>
 
-      <figure>
+      <figure anchor="example-1">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7473,7 +7474,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       NP, by sending an Attach which gets routed via other nodes. When NP
       responds, JP and NP use ICE and DTLS to set up a connection.</t>
 
-      <figure>
+      <figure anchor="example-2">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7514,7 +7515,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       diagram below shows it sending an Attach halfway around the Chord ring
       to the JP + 2^127.</t>
 
-      <figure>
+      <figure anchor="example-3">
         <artwork><![CDATA[
     JP        NP        XX        TP
      |         |         |         |
@@ -7561,7 +7562,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       section of the overlay. AP can now forget any data which is assigned to
       JP and not AP.</t>
 
-      <figure>
+      <figure anchor="example-4">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7611,7 +7612,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       sends Attaches to them. Below it is shown connecting only to AP's closest
       predecessor, PP.</t>
 
-      <figure>
+      <figure anchor="example-5">
         <artwork><![CDATA[
     JP        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
@@ -7669,7 +7670,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       Routing Table to tell them it is ready to go. Below, it is shown sending
       such an update to TP.</t>
 
-      <figure>
+      <figure anchor="example-6">
         <artwork><![CDATA[
 
         JP        NP        XX        TP
@@ -9493,6 +9494,14 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <?rfc include="reference.RFC.5054"?>
 
       <?rfc include="reference.RFC.5280"?>
+
+      <?rfc include="reference.RFC.4340"?>
+
+      <?rfc include="reference.RFC.4960"?>
+
+      <!--
+      <?rfc include="reference.I-D.pascual-p2psip-clients"?>
+-->
 
       <?rfc include="reference.RFC.4787"?>
 
