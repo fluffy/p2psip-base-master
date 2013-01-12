@@ -502,7 +502,7 @@ Transport    |      Link       |     +-------+  +------+
           the transaction.</t>
 
           <t>The Message Transport Service is similar to those described as
-          providing "Key based routing" (<xref target="wikiKBR">KBR</xref>),
+          providing "Key based routing" (KBR)<xref target="wikiKBR"/>,
           although as RELOAD supports
           different overlay algorithms (including non-DHT overlay algorithms)
           that calculate keys (storage indices, not encryption keys) in
@@ -1342,7 +1342,7 @@ Dest=Z
         implement this DHT is fully contained in this specification but it is
         easier to understand if you are familiar with <xref
         target="Chord">Chord</xref> based DHTs. A nice tutorial can be found
-        at <xref target="wikiChord"></xref>.</t>
+        at <xref target="wikiChord"/>. </t>
 
         <section title="Support for Pluggable Overlay Algorithms">
           <t>RELOAD defines three methods for overlay maintenance: Join,
@@ -6190,7 +6190,7 @@ struct {
         new peers into the list structure. Keeping multiple predecessor and
         successor pointers makes it possible to maintain the integrity of the
         data structure even when consecutive peers simultaneously fail. The
-        finger table forms a <xref target="wikiSkiplist">skip list</xref>, so
+        finger table forms a skip list<xref target="wikiSkiplist"/>, so
         that entries in the linked list can
         be found in O(log(N)) time instead of the typical O(N) time that a
         linked list would provide where N represents the number of nodes in
