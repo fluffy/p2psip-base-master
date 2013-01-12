@@ -3099,7 +3099,8 @@ struct {
       <section anchor="sec-overlay-topology" title="Overlay Topology">
         <t>As discussed in previous sections RELOAD defines a default overlay
         topology (CHORD-RELOAD) but allows for other topologies through the
-        use of Topology Plugins. This section describes the requirements for new
+        use of Topology Plugins. An example is <xref target="I-D.peng-p2psip-one-hop-plugin">One-Hop Plugin</xref>.
+        This section describes the requirements for new
         topology plugins and the methods that RELOAD provides for overlay
         topology maintenance.</t>
 
@@ -9472,6 +9473,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         </front>
       </reference>
 
+     
+      <?rfc include="reference.I-D.peng-p2psip-one-hop-plugin"?>
+     
       <?rfc include="reference.I-D.ietf-p2psip-self-tuning"?>
 
       <?rfc include="reference.I-D.ietf-p2psip-service-discovery"?>
