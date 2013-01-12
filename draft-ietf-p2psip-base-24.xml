@@ -1810,7 +1810,7 @@ Dest=Z
           <t>Any intermediate peer which forwards a RELOAD request MUST ensure
           that if it receives a response to that message the response can be
           routed back through the set of nodes through which the request
-          passed. There are two major ways of accomplishing this:</t>
+          passed. The peer selects one of these approaches:</t>
 
           <t><list style="symbols">
               <t>The peer can add an entry to the via list in the forwarding
