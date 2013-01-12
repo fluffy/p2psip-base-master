@@ -1066,7 +1066,9 @@ Transport    |      Link       |     +-------+  +------+
               <t>Establish a connection with an arbitrary peer in the overlay
               (perhaps based on network proximity or an inability to establish
               a direct connection with the responsible peer). In this case,
-              the client will rely on RELOAD's Destination List feature to
+              the client will rely on RELOAD's
+              <xref target="sec.dest-via-list">Destination List</xref> feature
+              to
               ensure reachability. The client can initiate requests, and any
               node in the overlay that knows the Destination List to its
               current location can reach it, but the client is not directly
@@ -1078,8 +1080,9 @@ Transport    |      Link       |     +-------+  +------+
               a single Node-ID can proceed to use the connection without
               performing an Attach. A client wishing to connect using this
               mechanism with a certificate with multiple Node-IDs can use a
-              Ping to probe the Node-ID of the node to which it is connected
-              before doing the Attach.</t>
+              <xref target="sec.ping">Ping</xref> to probe the Node-ID of the
+              node to which it is connected before doing the
+              <xref target="sec-connect-details">Attach</xref>.</t>
             </list></t>
         </section>
 
@@ -4050,7 +4053,7 @@ struct {
           </section>
         </section>
 
-        <section title="Ping">
+        <section anchor="sec.ping" title="Ping">
           <t>Ping is used to test connectivity along a path. A ping can be
           addressed to a specific Node-ID, to the peer controlling a given
           location (by using a Resource-ID), or to the broadcast Node-ID
