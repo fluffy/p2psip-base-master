@@ -39,8 +39,6 @@ Check if the qualicom IPR issueed and if anything can be done
           <country>USA</country>
         </postal>
 
-        <phone>+1 408 421-9990</phone>
-
         <email>fluffy@cisco.com</email>
       </address>
     </author>
@@ -635,10 +633,15 @@ Transport    |      Link       |     +-------+  +------+
             secured with TLS, DTLS, or potentially some to be defined future
             protocol.</t>
 
+            <t></t>
+
             <t hangText="Message Level: ">Each RELOAD message is signed.</t>
+
+            <t></t>
 
             <t hangText="Object Level: ">Stored objects are signed by the
             creating node.</t>
+
           </list></t>
 
         <t>These three levels of security work together to allow nodes to
@@ -1142,12 +1145,18 @@ Transport    |      Link       |     +-------+  +------+
             Both structured and unstructured overlays are supported, so the
             route may not be deterministic for all Topology Plugins.</t>
 
+            <t></t>
+
             <t hangText="Node-based routing: ">RELOAD supports routing
             messages to a specific node in the overlay.</t>
+
+            <t></t>
 
             <t hangText="Clients: ">RELOAD supports requests from and to
             clients that do not participate in overlay routing, located via
             either of the mechanisms described above.</t>
+
+            <t></t>
 
             <t hangText="Bridging overlays: ">Similar to how a Destination
             List is used to reach a client attached via an arbitrary peer,
@@ -1155,15 +1164,21 @@ Transport    |      Link       |     +-------+  +------+
             building a destination list that includes a peer (or client) with
             connectivity to both networks.</t>
 
+            <t></t>
+
             <t hangText="NAT Traversal: ">RELOAD supports establishing and
             using connections between nodes separated by one or more NATs,
             including locating peers behind NATs for those overlays
             allowing/requiring it.</t>
 
+            <t></t>
+
             <t hangText="Low state: ">RELOAD's routing algorithms do not
             require significant state (i.e., state linear or greater in the
             number of outstanding messages that have passed through it) to be
             stored on intermediate peers.</t>
+
+            <t></t>
 
             <t hangText="Routability in unstable topologies: ">Overlay
             topology changes constantly in an overlay of moderate size due to
@@ -1172,6 +1187,7 @@ Transport    |      Link       |     +-------+  +------+
             detected, and replies can be returned to the requesting node as
             long as the peers that originally forwarded the successful request
             do not fail before the response is returned.</t>
+
           </list></t>
 
         <t>RELOAD's routing utilizes three basic mechanisms:</t>
@@ -1185,16 +1201,21 @@ Transport    |      Link       |     +-------+  +------+
             order (i.e., it is loose source routed). The minimal destination
             list contains just a single value.</t>
 
+            <t></t>
+
             <t hangText="Via Lists: ">In order to allow responses to follow
             the same path as requests, each message also contains a "Via
             List", which is appended to by each node a message traverses. This
             via list can then be inverted and used as a destination list for
             the response.</t>
 
+            <t></t>
+
             <t hangText="RouteQuery: ">The RouteQuery method allows a node to
             query a peer for the next hop it will use to route a message. This
             method is useful for diagnostics and for iterative routing
             (see <xref target="sec-route-query" />).</t>
+
           </list></t>
 
         <t>The basic routing mechanism used by RELOAD is Symmetric Recursive.
@@ -1630,11 +1651,16 @@ Dest=Z
               <t hangText="persistence: ">if the responsible peer crashes
               and/or if the storing peer leaves the overlay</t>
 
+              <t></t>
+             
               <t hangText="security: ">to guard against DoS attacks by the
               responsible peer or routing attacks to that responsible peer</t>
-
+              
+              <t></t>
+            
               <t hangText="load balancing: ">to balance the load of queries
               for popular resources.</t>
+
             </list></t>
 
           <t>A variety of schemes are used in P2P overlays to achieve some of
@@ -1931,8 +1957,8 @@ Dest=Z
         routing algorithm. An overlay MAY be configured to use alternative
         routing algorithms, and alternative routing algorithms MAY be selected
         on a per-message basis. I.e., a node in an overlay which supports SRR
-		and routing algorithm <xref target="I-D.ietf-p2psip-rpr">RPR</xref>
-        might use SRR some of the time and RPR some of the time.</t>
+		and some other routing algorithm called XXX
+        might use SRR some of the time and XXX some of the time.</t>
 
         <section anchor="sec-request-origination" title="Request Origination">
           <t>In order to originate a message to a given Node-ID or
@@ -2047,6 +2073,7 @@ Dest=Z
             the message contents. All messages MUST be signed by their
             originator. <xref target="sec-signature" /> describes the format of
             this part.</t>
+
           </list></t>
 
         <section anchor="sec-presentation-language"
@@ -2219,6 +2246,8 @@ Dest=Z
 
             <t><list style="hanging">
                 <t hangText="type:">the type of address (v4 or v6).</t>
+
+                <t></t>
 
                 <t hangText="length:">the length of the rest of the
                 structure.</t>
@@ -2890,30 +2919,34 @@ struct {
                 a request with an unknown Kind-ID. See <xref
                 target="sec-store-resp"></xref>.</t>
 
-                <t hangText=""></t>
+                <t></t>
 
                 <t hangText="Error_In_Progress:">An Attach is already in
                 progress to this peer. See <xref
                 target="sec-attach-resp"></xref>.</t>
 
-                <t hangText=""></t>
+                <t></t>
 
                 <t hangText="Error_Unknown_Extension:">A destination node
                 received a request with an unknown extension.</t>
 
-                <t hangText=""></t>
+                <t></t>
 
                 <t hangText="Error_Invalid_Message:">Something about this
                 message is invalid but it doesn't fit the other error codes.
                 When this message is sent, implementations SHOULD provide some
                 meaningful description in error_info to aid in debugging.</t>
                 
+                <t></t>
+
                 <t hangText="Error_Exp_A:">For the purposes of experimentation.
-                Not meant for vendor specific use of any sort and MUST NOT be 
+                Not meant for vendor specific use of any sort and MUST NOT be
                 used for operational deployments.</t>
  
-                 <t hangText="Error_Exp_B:">For the purposes of experimentation.
-                Not meant for vendor specific use of any sort and MUST NOT be 
+                <t></t>
+
+                <t hangText="Error_Exp_B:">For the purposes of experimentation.
+                Not meant for vendor specific use of any sort and MUST NOT be
                 used for operational deployments.</t>
  
               </list></t>
@@ -3504,6 +3537,7 @@ struct {
         methods are defined:</t>
 
         <t><list style="hanging">
+
             <t hangText="Attach: ">used to form RELOAD connections between
             nodes using ICE for NAT traversal. When node A wants to connect to
             node B, it sends an Attach message to node B through the overlay.
@@ -3512,8 +3546,12 @@ struct {
             Attach also allows two nodes to connect via No-ICE instead of full
             ICE.</t>
 
+            <t></t>
+
             <t hangText="AppAttach: ">used to form application layer
             connections between nodes.</t>
+
+            <t></t>
 
             <t hangText="Ping: ">is a simple request/response which is used to
             verify connectivity of the target peer.</t>
@@ -6508,7 +6546,7 @@ struct {
               entries in the neighbor table.</t>
             </list></t>
 
-          <t>In the first case, no change is REQUIRED.</t>
+          <t>In the first case, no change is needed.</t>
 
           <t>In the second case, x MUST attempt to Attach to the new peers and
           if it is successful it MUST adjust its neighbor set accordingly.
@@ -6880,6 +6918,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             <t hangText="instance-name:"> the name of the overlay 
             (referred to as "overlay name" in this specification) </t>
 
+            <t></t>
+            
             <t hangText="expiration:">time in the future at which this overlay
             configuration is no longer valid. The node SHOULD retrieve a new
             copy of the configuration at a randomly selected time that is
@@ -6887,6 +6927,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             before a new configuration is retried, the node will not be able
             to validate the configuration file. All times MUST be in UTC.</t>
 
+            <t></t>
+            
             <t hangText="sequence:">a monotonically increasing sequence number
             between 0 and 2^16-2</t>
           </list></t>
@@ -6898,16 +6940,22 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             algorithm being used. If missing the default is
             "CHORD-RELOAD".</t>
 
-            <t hangText="node-id-length">This element contains the length of a
+             <t></t>
+            
+           <t hangText="node-id-length">This element contains the length of a
             NodeId (NodeIdLength) in bytes. This value MUST be between 16 (128
             bits) and 20 (160 bits). If this element is not present, the
             default of 16 is used.</t>
 
+            <t></t>
+            
             <t hangText="root-cert ">This element contains a base-64 encoded
             X.509v3 certificate that is a root trust anchor used to sign all
             certificates in this overlay. There can be more than one root-cert
             element.</t>
 
+            <t></t>
+            
             <t hangText="enrollment-server ">This element contains the URL at
             which the enrollment server can be reached in a "url" element.
             This URL MUST be of type "https:". More than one enrollment-server
@@ -6915,6 +6963,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             relationship between the overlay name/configuration server name
             and the enrollment server name.</t>
 
+            <t></t>
+            
             <t hangText="self-signed-permitted ">This element indicates
             whether self-signed certificates are permitted. If it is set to
             "true", then self-signed certificates are allowed, in which case
@@ -6927,6 +6977,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             target="RFC6234"></xref> respectively. Implementations MUST
             support both of these algorithms.</t>
 
+            <t></t>
+            
             <t hangText="bootstrap-node ">This element represents the address
             of one of the bootstrap nodes. It has an attribute called
             "address" that represents the IP address (either IPv4 or IPv6,
@@ -6936,6 +6988,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             colon separators as specified in <xref target="RFC5952"></xref>.
             More than one bootstrap-peer element MAY be present.</t>
 
+            <t></t>
+            
             <t hangText="turn-density ">This element is a positive integer
             that represents the approximate reciprocal of density of nodes
             that can act as TURN servers. For example, if 5% of the nodes can
@@ -6943,6 +6997,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             present, the default value is 1. If there are no TURN servers in
             the overlay, it is set to zero.</t>
 
+            <t></t>
+            
             <t hangText="multicast-bootstrap ">This element represents the
             address of a multicast, broadcast, or anycast address and port
             that may be used for bootstrap. Nodes SHOULD listen on the
@@ -6951,6 +7007,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             the port and defaults to 6084. More than one "multicast-bootstrap"
             element MAY be present.</t>
 
+            <t></t>
+            
             <t hangText="clients-permitted ">This element represents whether
             clients are permitted or whether all nodes must be peers. If
             clients are permitted, the element MUST be set to "true" or absent.
@@ -6958,24 +7016,34 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             join, the element MUST be set to "false".  There is currently no
             way for the overlay to enforce this.</t>
 
+            <t></t>
+            
             <t hangText="no-ice ">This element represents whether nodes are
             REQUIRED to use the "No-ICE" Overlay Link protocols in this
             overlay. If it is absent, it is treated as if it were set to
             "false".</t>
 
+            <t></t>
+            
             <t hangText="chord-update-interval ">The update frequency for the
             CHORD-RELOAD topology plugin (see <xref
             target="sec-chord-algorithm"></xref>).</t>
 
+            <t></t>
+            
             <t hangText="chord-ping-interval ">The ping frequency for the
             CHORD-RELOAD topology plugin (see <xref
             target="sec-chord-algorithm"></xref>).</t>
 
+            <t></t>
+            
             <t hangText="chord-reactive ">Whether reactive recovery SHOULD be
             used for this overlay. Set to "true" or "false". Default if
             missing is "true". (see <xref
             target="sec-chord-algorithm"></xref>).</t>
 
+            <t></t>
+            
             <t hangText="shared-secret">If shared secret mode is used, this
             contains the shared secret. The security guarantee here is that
             any agent which is able to access the configuration document
@@ -6983,18 +7051,26 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             network topology) is able to recover the shared secret and hence
             join the overlay.</t>
 
+            <t></t>
+            
             <t hangText="max-message-size">Maximum size in bytes of any
             message in the overlay. If this value is not present, the default
             is 5000.</t>
 
+            <t></t>
+            
             <t hangText="initial-ttl">Initial default TTL (time to live, see
             <xref target="sec-forwarding-header"></xref>) for messages. If
             this value is not present, the default is 100.</t>
 
+            <t></t>
+            
             <t hangText="overlay-reliability-timer">Default value for the
             end-to-end retransmission timer for messages, in milliseconds. If
             not present, the default value is 3000.</t>
 
+            <t></t>
+            
             <t hangText="overlay-link-protocol">Indicates a permissible
             overlay link protocol (see <xref target="sec.future-link"></xref>
             for requirements for such protocols). An arbitrary number of these
@@ -7002,6 +7078,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             value, "TLS", which refers to the use of TLS and DTLS. If one or
             more elements appear, then no default value applies.</t>
 
+            <t></t>
+            
             <t hangText="kind-signer ">This contains a single Node-ID in
             hexadecimal and indicates that the certificate with this Node-ID
             is allowed to sign Kinds. Identifying kind-signer by Node-ID
@@ -7009,6 +7087,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             without constantly having to provide an updated configuration
             file.</t>
 
+            <t></t>
+            
             <t hangText="configuration-signer ">This contains a single Node-ID
             in hexadecimal and indicates that the certificate with this
             Node-ID is allowed to sign configurations for this instance-name.
@@ -7016,6 +7096,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             the use of short lived certificates without constantly having to
             provide an updated configuration file.</t>
 
+            <t></t>
+            
             <t hangText="bad-node ">This contains a single Node-ID in
             hexadecimal and indicates that the certificate with this Node-ID
             MUST NOT be considered valid. This allows certificate revocation.
@@ -7026,6 +7108,8 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             the requirement for Node-IDs to be pseudo randomly generated gives
             this event a vanishing probability.</t>
 
+            <t></t>
+            
             <t hangText="mandatory-extension ">This element contains the name
             of an XML namespace that a node joining the overlay MUST support.
             The presence of a mandatory-extension element does not require the
@@ -7034,6 +7118,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             namespace is case-sensitive, as specified in <xref
             target="w3c-xml-namespaces"></xref> Section 2.3. More than one
             mandatory-extension element MAY be present.</t>
+
           </list></t>
 
         <t>Inside each configuration element, the required-kinds element MAY also
@@ -7054,12 +7139,19 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             <t hangText="max-count:">the maximum number of values which
             members of the overlay must support.</t>
 
+            <t></t>
+            
             <t hangText="data-model:">the data model to be used.</t>
 
+            <t></t>
+            
             <t hangText="max-size:">the maximum size of individual values.</t>
 
+            <t></t>
+            
             <t hangText="access-control:">the access control model to be
             used.</t>
+
           </list></t>
 
         <t>The kind element MAY also contain the following element:
@@ -7381,14 +7473,17 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
            combination was not correct.  </t>
            
            <t></t>
+
            <t hangText="username_not_available"> The requested userName for 
            the certificate was not acceptable.  </t>
            
            <t></t>
+
            <t hangText="Node-IDs_not_available"> The number of Node-IDs 
            requested was not acceptable.  </t>
            
            <t></t>
+
            <t hangText="bad_CSR"> There was a problem with the CSR.  </t>
            
          </list></t>
@@ -9251,31 +9346,48 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <t><list style="hanging">
               <t hangText="URI Scheme Name:">reload</t>
 
+            <t></t>
+            
               <t hangText="Status: ">permanent</t>
 
+            <t></t>
+            
               <t hangText="URI Scheme Syntax:">see <xref
               target="sec-reload-uri"></xref> of RFC-AAAA</t>
 
+            <t></t>
+            
               <t hangText="URI Scheme Semantics:">The reload URI is intended
               to be used as a reference to a RELOAD peer or resource.</t>
 
+            <t></t>
+            
               <t hangText="Encoding Considerations:">The reload URI is not
               intended to be human-readable text, so it is encoded entirely in
               US-ASCII.</t>
 
-              <t
-              hangText="Applications/protocols that use this URI scheme:">The
+            <t></t>
+            
+              <t hangText="Applications/protocols that use this URI scheme:">The
               RELOAD protocol described in RFC-AAAA.</t>
 
               <t hangText="Interoperability considerations:">See RFC-AAAA.</t>
 
+            <t></t>
+            
               <t hangText="Security considerations:">See RFC-AAAA</t>
 
+            <t></t>
+            
               <t hangText="Contact:">Cullen Jennings
               &lt;fluffy@cisco.com&gt;</t>
 
+            <t></t>
+            
               <t hangText="Author/Change controller:">IESG</t>
 
+            <t></t>
+            
               <t hangText="References:">RFC-AAAA</t>
             </list></t>
         </section>
@@ -9327,13 +9439,13 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         <t>Macintosh file type code(s): none</t>
 
         <t>Person &amp; email address to contact for further information:
-        Cullen Jennings &lt;c.jennings@ieee.org&gt;</t>
+        Cullen Jennings &lt;fluffy@cisco.com&gt;</t>
 
         <t>Intended usage: COMMON</t>
 
         <t>Restrictions on usage: None</t>
 
-        <t>Author: Cullen Jennings &lt;c.jennings@ieee.org&gt;</t>
+        <t>Author: Cullen Jennings &lt;fluffy@cisco.com&gt;</t>
 
         <t>Change controller: IESG</t>
       </section>
