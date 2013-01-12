@@ -1647,29 +1647,22 @@ Dest=Z
         several things:</t>
 
         <t><list style="symbols">
-            <t>Registers Kind-ID code points for any Kinds that the Usage
-            defines.</t>
+            <t>Register Kind-ID code points for any Kinds that the Usage
+            defines (<xref target="sec.iana.kindid" />).</t>
 
-            <t>Defines the data structure for each of the Kinds.</t>
+            <t>Defines the data structure for each of the Kinds (the value
+            member in <xref target="sec-kind-model" />). If the data
+            structure contains character string, conversion rules between
+            characters and the binary storage must be specified.</t>
 
-            <t>Defines access control rules for each of the Kinds.</t>
+            <t>Define access control rules for each of the Kinds
+            (<xref target="sec.access_control" />).</t>
 
-            <t>Defines how the Resource Name is hashed to form
+            <t>Define how the Resource Name is used to form
             the Resource-ID where each Kind is stored.</t>
 
-            <t>Describes how values will be merged after a network partition.
-            Unless otherwise specified, the default merging rule is to act as
-            if all the values that need to be merged were stored and as if the
-            order they were stored in corresponds to the stored time values
-            associated with (and carried in) their values. Because the stored
-            time values are those associated with the peer which did the
-            writing, clock skew is generally not an issue. If two nodes are on
-            different partitions, write to the same location, and have clock
-            skew, this can create merge conflicts. However because RELOAD
-            deliberately segregates storage so that data from different users
-            and peers is stored in different locations, and a single peer will
-            typically only be in a single network partition, this case will
-            generally not arise.</t>
+            <t>Describe how values will be merged when a network partition is
+            being healed.</t>
           </list></t>
 
         <t>The Kinds defined by a usage may also be applied to other usages.
@@ -5249,6 +5242,20 @@ struct {
             the peer MUST fetch the newer data from the peer generating the
             error and use that to replace its own copy. This rule allows
             resynchronization after partitions heal.</t>
+
+            <t>When a network partition is being healed and unless otherwise
+            specified, the default merging rule is to act as
+            if all the values that need to be merged were stored and as if the
+            order they were stored in corresponds to the stored time values
+            associated with (and carried in) their values. Because the stored
+            time values are those associated with the peer which did the
+            writing, clock skew is generally not an issue. If two nodes are on
+            different partitions, write to the same location, and have clock
+            skew, this can create merge conflicts. However because RELOAD
+            deliberately segregates storage so that data from different users
+            and peers is stored in different locations, and a single peer will
+            typically only be in a single network partition, this case will
+            generally not arise.</t>
 
             <t>The properties of stores for each data model are as follows:
             <list style="hanging">
