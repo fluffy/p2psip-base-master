@@ -2884,6 +2884,15 @@ struct {
                 message is invalid but it doesn't fit the other error codes.
                 When this message is sent, implementations SHOULD provide some
                 meaningful description in error_info to aid in debugging.</t>
+                
+                <t hangText="Error_Exp_A:">For the purposes of experimentation.
+                Not meant for vendor specific use of any sort and MUST NOT be 
+                used for operational deployments.</t>
+ 
+                 <t hangText="Error_Exp_B:">For the purposes of experimentation.
+                Not meant for vendor specific use of any sort and MUST NOT be 
+                used for operational deployments.</t>
+ 
               </list></t>
           </section>
         </section>
