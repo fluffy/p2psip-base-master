@@ -1832,8 +1832,9 @@ Dest=Z
           message from node C with transaction ID X and via list [A, B], it
           could store [X, C] in its state database and forward the message
           with the via list unchanged. When D receives the response, it
-          consults its state database for transaction id X, determines that
-          the request came from C, and forwards the response to C.</t>
+          consults its state database for transaction ID X, determines that
+          the request came from C, and forwards the response to C. Note that
+          the transaction ID is created by the initiator of the message.</t>
 
           <t>Intermediate peers which modify the via list are not required to
           simply add entries. The only requirement is that the peer MUST be
