@@ -898,6 +898,11 @@ Transport    |      Link       |     +-------+  +------+
           <t hangText="User:">A user is a physical person who owns one or more
           nodes through the user name stored in the certificates assigned to
           these nodes.</t>
+
+          <t></t>
+
+          <t hangText="Responsible Peer:">The peer that is responsible for a
+          specific resource, as defined by the plugin algorithm.</t>
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
