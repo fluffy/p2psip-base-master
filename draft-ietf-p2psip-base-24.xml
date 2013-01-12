@@ -1007,8 +1007,8 @@ Transport    |      Link       |     +-------+  +------+
         <section anchor="sec-shared-key" title="Shared-Key Security">
           <t>RELOAD also provides an admission control system based on shared
           keys. In this model, the peers all share a single key which is used
-          to authenticate the peer-to-peer connections via
-          TLS-PSK/TLS-SRP.</t>
+          to authenticate the peer-to-peer connections via TLS-PSK
+          <xref target="RFC4279" /> or TLS-SRP <xref target="RFC5054" />.</t>
         </section>
       </section>
 
@@ -7843,8 +7843,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         relies on a single key that is shared among all members of the
         overlay. It is appropriate for small groups that wish to form a
         private network without complexity. In shared secret mode, all the
-        peers MUST share a single symmetric key which is used to key TLS-PSK <xref
-        target="RFC4279"></xref> or TLS-SRP <xref target="RFC5054"></xref>
+        peers MUST share a single symmetric key which is used to key TLS-PSK or
+        TLS-SRP
         mode. A peer which does not know the key cannot form TLS connections
         with any other peer and therefore cannot join the overlay.</t>
 
