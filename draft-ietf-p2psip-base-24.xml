@@ -398,9 +398,9 @@ Check if the qualicom IPR issueed and if anything can be done
 
         <figure>
           <artwork><![CDATA[
-             | Internet Model  |                                       
- Real        |   Equivalent    |          Reload                       
-Internet     |   in Overlay    |       Architecture                    
+ Internet    | Internet Model  |
+ Model       |   Equivalent    |          Reload
+             |   in Overlay    |       Architecture
 -------------+-----------------+------------------------------------   
              |                 |    +-------+  +-------+               
              |  Application    |    | SIP   |  | XMPP  |  ...          
