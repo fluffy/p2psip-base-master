@@ -9509,10 +9509,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <?rfc include="reference.RFC.4960"?>
 
-      <!--
-      <?rfc include="reference.I-D.pascual-p2psip-clients"?>
--->
-
       <?rfc include="reference.RFC.4787"?>
 
       <?rfc include="reference.RFC.2311"?>
