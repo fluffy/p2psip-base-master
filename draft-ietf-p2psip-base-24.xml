@@ -7060,7 +7060,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         problem, but for large overlays should be avoided in almost all
         circumstances.</t>
 
-        <section title="Relax NG Grammar">
+        <section title="RELAX NG Grammar">
           <t>The grammar for the configuration data is:</t>
 
           <figure>
