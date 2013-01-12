@@ -1054,7 +1054,8 @@ Transport    |      Link       |     +-------+  +------+
               from/to the client using its Node-ID in the same manner as if it
               were a peer, because the responsible peer in the overlay will
               handle the final step of routing to the client. This may require
-              a TURN relay in cases where NATs or firewalls prevent a client
+              a <xref target="RFC5766">TURN</xref> relay in cases where NATs or
+              firewalls prevent a client
               from forming a direct connection with its responsible peer.
               Note that clients that choose this option need to process Update
               messages from the peer. Those updates can indicate that the peer
