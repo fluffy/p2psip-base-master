@@ -707,54 +707,74 @@ Transport    |      Link       |     +-------+  +------+
       for reference.</t>
 
       <t><list style="hanging">
-          <t></t>
+          <t></t> <!-- Defn #1.0 --> 
+  
+          <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
+          Joining Peer join the Overlay.</t>
 
-          <t hangText="DHT:">A distributed hash table. A DHT is an abstract
-          hash table service realized by storing the contents of the hash
-          table across a set of peers.</t>
+          <t></t> <!-- Defn #2.0 --> 
 
-          <t></t>
+          <t hangText="Bootstrap Node:">A network node used by Joining Peers
+          to help locate the Admitting Peer.</t>
 
-          <t hangText="Overlay Algorithm:">An overlay algorithm defines the
-          rules for determining which peers in an overlay store a particular
-          piece of data and for determining a topology of interconnections
-          amongst peers in order to find a piece of data.</t>
-
-          <t></t>
-
-          <t hangText="Overlay Instance:">A specific overlay algorithm and the
-          collection of peers that are collaborating to provide read and write
-          access to it. There can be any number of overlay instances running
-          in an IP network at a time, and each operates in isolation of the
-          others.</t>
-
-          <t></t>
-
-          <t hangText="Peer:">A host that is participating in the overlay.
-          Peers are responsible for holding some portion of the data that has
-          been stored in the overlay and also route messages on behalf of
-          other hosts as required by the Overlay Algorithm.</t>
-
-          <t></t>
+          <t></t> <!-- Defn #3.0 --> 
 
           <t hangText="Client:">A host that is able to store data in and
           retrieve data from the overlay but which is not participating in
           routing or data storage for the overlay.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #4.0 --> 
+          
+          <t hangText="Configuration Document:">An XML document containing all
+          the Overlay Parameters for one overlay instance.</t>
+
+          <t></t> <!-- Defn #5.0 --> 
+
+          <t hangText="Connection Table:">The set of nodes to which a node is
+          directly connected, which include nodes that are not yet available
+          for routing.</t>
+    
+          <t></t> <!-- Defn #6.0 --> 
+
+          <t hangText="Destination List:">A list of IDs through which a
+          message is to be routed, in strict order. A single Node-ID or a
+          Resource-ID is a trivial form of destination list. When multiple
+          Node-IDs are specified (no more than one Resource-ID is permitted,
+          and it MUST be the last entry) a Destination List is a loose source
+          route. The list is reduced hop-by-hop, does not include the source
+          but includes the destination.</t>
+
+          <t></t> <!-- Defn #7.0 --> 
+
+          <t hangText="DHT:">A distributed hash table. A DHT is an abstract
+          hash table service realized by storing the contents of the hash
+          table across a set of peers.</t>
+
+          <t></t> <!-- Defn #8.0 --> 
+
+          <t hangText="ID:">A generic term for any kind of identifiers in an
+          Overlay.  This document specifies an ID as being a Node-ID, a
+          Resource-ID, or an Opaque ID.</t>
+
+          <t></t> <!-- Defn #9.0 --> 
+
+          <t hangText="Joining Peer:">A node that is attempting to become a
+          Peer in a particular Overlay.</t>
+
+          <t></t> <!-- Defn #10.0 --> 
 
           <t hangText="Kind:">A Kind defines a particular type of data that
           can be stored in the overlay. Applications define new Kinds to store
           the data they use. Each Kind is identified with a unique integer
           called a Kind-ID.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #11.0 --> 
 
           <t hangText="Kind-ID:">A unique 32 bit value identifying a Kind.
           Kind-IDs are either private or allocated by IANA (see
           <xref target="sec.iana.kindid" />).</t>
 
-          <t></t>
+          <t></t> <!-- Defn #12.0 --> 
 
           <t hangText="Node:">We use the term "Node" to refer to a host that
           may be either a Peer or a Client. Because RELOAD uses the same
@@ -763,7 +783,7 @@ Transport    |      Link       |     +-------+  +------+
           both Clients and Peers and the more specific term (i.e. client or
           peer) when the text applies only to Clients or only to Peers.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #13.0 --> 
 
           <t hangText="Node-ID:">A value of fixed but configurable length that
           uniquely identifies
@@ -772,22 +792,35 @@ Transport    |      Link       |     +-------+  +------+
           be used to indicate an invalid node in implementations and APIs. The
           Node-ID of all 1s is used on the wire protocol as a wildcard.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #14.0 --> 
 
-          <t hangText="Joining Peer:">A node that is attempting to become a
-          Peer in a particular Overlay.</t>
+          <t hangText="Overlay Algorithm:">An overlay algorithm defines the
+          rules for determining which peers in an overlay store a particular
+          piece of data and for determining a topology of interconnections
+          amongst peers in order to find a piece of data.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #15.0 --> 
 
-          <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
-          Joining Peer join the Overlay.</t>
+          <t hangText="Overlay Instance:">A specific overlay algorithm and the
+          collection of peers that are collaborating to provide read and write
+          access to it. There can be any number of overlay instances running
+          in an IP network at a time, and each operates in isolation of the
+          others.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #16.0 --> 
 
-          <t hangText="Bootstrap Node:">A network node used by Joining Peers
-          to help locate the Admitting Peer.</t>
+          <t hangText="Overlay Parameters:">A set of values that are required to
+          be shared between all nodes in an overlay.  The overlay parameters are
+          distributed in an XML document called the Configuration Document.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #17.0 --> 
+
+          <t hangText="Peer:">A host that is participating in the overlay.
+          Peers are responsible for holding some portion of the data that has
+          been stored in the overlay and also route messages on behalf of
+          other hosts as required by the Overlay Algorithm.</t>
+
+          <t></t> <!-- Defn #18.0 --> 
 
           <t hangText="Peer Admission:">The act of admitting a peer (the
           "Joining Peer" ) into an Overlay. After the admission process is
@@ -796,31 +829,13 @@ Transport    |      Link       |     +-------+  +------+
           credentials to prove that it has sufficient authority to join the
           overlay.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #19.0 --> 
 
           <t hangText="Resource:">An object or group of objects stored
           in a P2P network.</t>
 
-          <t></t>
-
-          <t hangText="Resource Name:">The name by
-          which a resource is identified. In unstructured P2P networks, the
-          resource name is sometimes used directly as a Resource-ID. In
-          structured P2P networks the resource name is typically mapped into a
-          Resource-ID by using the string as the input to hash function.
-          Structured and unstructured P2P networks are described in <xref
-          target="RFC5694"></xref>. A SIP resource, for example, is often
-          identified by its AOR which is an example of a Resource Name.</t>
-
-          <t></t>
+          <t></t> <!-- Defn #20.0 --> 
           
-          <t hangText="User Name:">A name identifying a user of the overlay,
-              typically used as a Resource Name, or as a label on a Resource
-              that identifies the user owning the resource.</t>
-          
-          <t></t>
-                  
-
           <t hangText="Resource-ID:">A value that identifies some resources
           and which is used as a key for storing and retrieving the resource.
           Often this is not human friendly/readable. One way to generate a
@@ -833,13 +848,18 @@ Transport    |      Link       |     +-------+  +------+
           In unstructured networks, resource names may be used directly as
           Resource-IDs and may be variable lengths.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #21.0 --> 
 
-          <t hangText="Connection Table:">The set of nodes to which a node is
-          directly connected, which include nodes that are not yet available
-          for routing.</t>
+          <t hangText="Resource Name:">The name by
+          which a resource is identified. In unstructured P2P networks, the
+          resource name is sometimes used directly as a Resource-ID. In
+          structured P2P networks the resource name is typically mapped into a
+          Resource-ID by using the string as the input to hash function.
+          Structured and unstructured P2P networks are described in <xref
+          target="RFC5694"></xref>. A SIP resource, for example, is often
+          identified by its AOR which is an example of a Resource Name.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #22.0 --> 
 
           <t hangText="Routing Table:">The set of directly connected peers
           which a node can use
@@ -850,24 +870,14 @@ Transport    |      Link       |     +-------+  +------+
           messages to other peers through peers that are in the routing
           table.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #23.0 --> 
 
-          <t hangText="ID:">A generic term for any kind of identifiers in an
-          Overlay.  This document specifies an ID as being a Node-ID, a
-          Resource-ID, or an Opaque ID.</t>
+          <t hangText="Transaction ID:">A randomly chosen identifier selected
+          by the originator of a request and used to correlate requests and
+          responses.</t>
 
-          <t></t>
-
-          <t hangText="Destination List:">A list of IDs through which a
-          message is to be routed, in strict order. A single Node-ID or a
-          Resource-ID is a trivial form of destination list. When multiple
-          Node-IDs are specified (no more than one Resource-ID is permitted,
-          and it MUST be the last entry) a Destination List is a loose source
-          route. The list is reduced hop-by-hop, does not include the source
-          but includes the destination.</t>
-
-          <t></t>
-
+          <t></t> <!-- Defn #24.0 --> 
+ 
           <t hangText="Usage:">An usage is the definition of a set of data
           structures (data Kinds) that an application wants to store in the
           overlay. An usage may also define a set of network protocols
@@ -876,28 +886,18 @@ Transport    |      Link       |     +-------+  +------+
           contains information on how to reach a SIP endpoint and two
           application IDs corresponding to the SIP and SIPS protocols.</t>
 
-          <t></t>
-
-          <t hangText="Transaction ID:">A randomly chosen identifier selected
-          by the originator of a request and used to correlate requests and
-          responses.</t>
-
-          <t></t>
-
-          <t hangText="Overlay Parameters:">A set of values that are required to
-          be shared between all nodes in an overlay.  The overlay parameters are
-          distributed in an XML document called the Configuration Document.</t>
-
-          <t></t>
-
-          <t hangText="Configuration Document:">An XML document containing all
-          the Overlay Parameters for one overlay instance.</t>
-
-          <t></t>
+          <t></t> <!-- Defn #25.0 --> 
 
           <t hangText="User:">A user is a physical person who owns one or more
           nodes through the user name stored in the certificates assigned to
           these nodes.</t>
+
+          <t></t> <!-- Defn #26.0 --> 
+
+          <t hangText="User Name:">A name identifying a user of the overlay,
+              typically used as a Resource Name, or as a label on a Resource
+              that identifies the user owning the resource.</t>
+          
         </list></t>
 
       <t>The term "maximum request lifetime" is the maximum time a request
