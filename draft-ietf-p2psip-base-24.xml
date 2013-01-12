@@ -179,8 +179,8 @@ Check if the qualicom IPR issueed and if anything can be done
           <t hangText="NAT Traversal:">RELOAD is designed to function in
           environments where many if not most of the nodes are behind NATs or
           firewalls. Operations for NAT traversal are part of the base design,
-          including using ICE to establish new RELOAD or application protocol
-          connections.</t>
+          including using <xref target="RFC5245">ICE</xref> to establish new
+          RELOAD or application protocol connections.</t>
 
           <t></t>
 
