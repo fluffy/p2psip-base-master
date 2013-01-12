@@ -1447,7 +1447,8 @@ Dest=Z
         <section title="Initial Configuration">
           <t>In the first phase of the process, the user starts out with the
           name of the overlay and uses this to download an initial set of
-          overlay configuration parameters. The node does a DNS SRV lookup on
+          overlay configuration parameters. The node does a
+          <xref target="RFC2782">DNS SRV</xref> lookup on
           the overlay name to get the address of a configuration server. It
           can then connect to this server with HTTPS <xref
           target="RFC2818"></xref> to download a configuration document which
@@ -9400,6 +9401,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <?rfc include="reference.RFC.3023"?>
 
       <?rfc include="reference.RFC.5405"?>
+
+      <?rfc include="reference.RFC.2782"?>
 
       <reference anchor="RFC5952">
         <front>
