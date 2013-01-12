@@ -1201,7 +1201,12 @@ Transport    |      Link       |     +-------+  +------+
         <t>Symmetric recursive routing requires that a request message follow
         a path through the overlay to the destination: each peer forwards the
         message closer to its destination. The return path of the response is
-        then the same path followed in reverse. For example, a message
+        then the same path followed in reverse.
+        If there is a failure on the reverse path caused by topology change
+        since the request was sent, this will be handled by the end-to-end
+        retransmission of the response as described in <xref
+        target="sec-request-origination"/>.
+        For example, a message
         following a route from A to Z through B and X:</t>
 
         <figure>
@@ -4674,8 +4679,8 @@ struct {
         and processed. In order to mitigate denial of service attacks,
         receivers SHOULD time out incomplete fragments after maximum request
         lifetime (15 seconds). Note this time was derived from looking at the
-        end to end retransmission time and saving fragments long enough for
-        the full end to end retransmissions to take place. Ideally the
+        end-to-end retransmission time and saving fragments long enough for
+        the full end-to-end retransmissions to take place. Ideally the
         receiver would have enough buffer space to deal with as many fragments
         as can arrive in the maximum request lifetime. However, if the
         receiver runs out of buffer space to reassemble the messages it MUST
