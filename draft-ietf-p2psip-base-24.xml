@@ -6807,6 +6807,11 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         this specification is urn:ietf:params:xml:ns:p2p:config-base and
         urn:ietf:params:xml:ns:p2p:config-chord".</t>
 
+        <t>Note that elements or attributes that are defined as type
+        xsd:boolean in the RELAX NG <xref target="sec.grammar">schema</xref>
+        have two lexical representations, "1" or "true" for the concept true
+        and "0" or "false" for the concept false.</t>
+
         <t>The file MAY contain multiple "configuration" elements where each
         one contains the configuration information for a different overlay.
         Each configuration element MAY be followed by signature elements that
@@ -7050,7 +7055,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         problem, but for large overlays should be avoided in almost all
         circumstances.</t>
 
-        <section title="Relax NG Grammar">
+        <section anchor="sec.grammar" title="Relax NG Grammar">
           <t>The grammar for the configuration data is:</t>
 
           <figure>
