@@ -6850,7 +6850,10 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         <t>Note that elements or attributes that are defined as type xsd:boolean
         in the RELAX NG <xref target="sec.grammar">schema</xref> have two
         lexical representations, "1" or "true" for the concept true and "0" or
-        "false" for the concept false.</t>
+        "false" for the concept false. Whitespace and case processing follows
+        the rules of <xref target="OASIS.relax_ng" /> and
+        <xref target="W3C.REC-xmlschema-2-20041028">XML Schema Datatypes</xref>
+        .</t>
 
         <t>The file MAY contain multiple "configuration" elements where each
         one contains the configuration information for a different overlay.
@@ -9489,6 +9492,24 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <format target="http://www.w3.org/TR/REC-xml-names/" type="HTML" />
       </reference>
+
+      <reference anchor="OASIS.relax_ng">
+        <front>
+          <title>RELAX NG Specification</title>
+
+          <author initials="T" surname="Bray">
+            <organization>Textuality</organization>
+          </author>
+
+          <author initials="M" surname="Murata">
+            <organization>Contivo Inc.</organization>
+          </author>
+        </front>
+
+        <format target="http://relaxng.org/spec-20011203.html" type="HTML" />
+      </reference>
+
+      <?rfc include="reference.W3C.REC-xmlschema-2-20041028"?>
     </references>
 
     <references title="Informative References">
