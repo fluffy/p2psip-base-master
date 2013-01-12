@@ -711,11 +711,11 @@ Transport    |      Link       |     +-------+  +------+
           <t></t> <!-- Defn #1.0 --> 
   
           <t hangText="Admitting Peer:">A Peer in the Overlay which helps the
-          Joining Peer join the Overlay.</t>
+          Joining Node join the Overlay.</t>
 
           <t></t> <!-- Defn #2.0 --> 
 
-          <t hangText="Bootstrap Node:">A network node used by Joining Peers
+          <t hangText="Bootstrap Node:">A network node used by Joining Nodes
           to help locate the Admitting Peer.</t>
 
           <t></t> <!-- Defn #3.0 --> 
@@ -759,7 +759,7 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #9.0 --> 
 
-          <t hangText="Joining Peer:">A node that is attempting to become a
+          <t hangText="Joining Node:">A node that is attempting to become a
           Peer in a particular Overlay.</t>
 
           <t></t> <!-- Defn #10.0 --> 
@@ -823,10 +823,10 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #18.0 --> 
 
-          <t hangText="Peer Admission:">The act of admitting a peer (the
-          "Joining Peer" ) into an Overlay. After the admission process is
-          over, the joining peer is a fully-functional peer of the overlay.
-          During the admission process, the joining peer may need to present
+          <t hangText="Peer Admission:">The act of admitting a node (the
+          "Joining Node") into an Overlay. After the admission process is
+          over, the joining node is a fully-functional peer of the overlay.
+          During the admission process, the joining node may need to present
           credentials to prove that it has sufficient authority to join the
           overlay.</t>
 
@@ -1407,23 +1407,23 @@ Dest=Z
           algorithm involved, but a typical case would be:</t>
 
           <t><list style="numbers">
-              <t>JP (Joining Peer) sends a Join request to AP (Admitting Peer)
+              <t>JN (Joining Node) sends a Join request to AP (Admitting Peer)
               announcing its intention to join.</t>
 
               <t>AP sends a Join response.</t>
 
-              <t>AP does a sequence of Stores to JP to give it the data it
+              <t>AP does a sequence of Stores to JN to give it the data it
               will need.</t>
 
-              <t>AP does Updates to JP and to other peers to tell it about its
-              own routing table. At this point, both JP and AP consider JP
+              <t>AP does Updates to JN and to other peers to tell it about its
+              own routing table. At this point, both JN and AP consider JN
               responsible for some section of the Overlay Instance.</t>
 
-              <t>JP makes its own connections to the appropriate peers in the
+              <t>JN makes its own connections to the appropriate peers in the
               Overlay Instance.</t>
             </list></t>
 
-          <t>After this process is completed, JP is a full member of the
+          <t>After this process is completed, JN is a full member of the
           Overlay Instance and can process Store/Fetch requests.</t>
 
           <t>Note that the first node is a special case. When ordinary nodes
@@ -3191,7 +3191,7 @@ struct {
             <t>Because joins may only be executed between nodes which are
             directly adjacent, receiving peers MUST verify that any JoinReq
             they receive arrives from a transport channel that is bound to the
-            Node-ID to be assumed by the joining peer.) This also prevents
+            Node-ID to be assumed by the joining node. This also prevents
             replay attacks provided that DTLS anti-replay is used.</t>
 
             <t>If the request succeeds, the responding peer responds with a
@@ -3209,7 +3209,7 @@ struct {
 
             <t>If the request succeeds, the responding peer MUST follow up by
             executing the right sequence of Stores and Updates to transfer the
-            appropriate section of the overlay space to the joining peer. In
+            appropriate section of the overlay space to the joining node. In
             addition, overlay algorithms MAY define data to appear in the
             response payload that provides additional info.</t>
 
@@ -6250,49 +6250,49 @@ struct {
       </section>
 
       <section title="Joining">
-        <t>The join process for a joining party (JP) with Node-ID n is as
+        <t>The join process for a Joining Node (JN) with Node-ID n is as
         follows.</t>
 
         <t><list style="numbers">
-            <t>JP MUST connect to its chosen bootstrap node.</t>
+            <t>JN MUST connect to its chosen bootstrap node.</t>
 
-            <t>JP SHOULD send an Attach request to the admitting peer (AP) for
+            <t>JN SHOULD send an Attach request to the admitting peer (AP) for
             Node-ID n. The "send_update" flag can be used to acquire the
             routing table for AP.</t>
 
-            <t>JP SHOULD send Attach requests to initiate connections to each
+            <t>JN SHOULD send Attach requests to initiate connections to each
             of the peers in the neighbor table as well as to the desired
             finger table entries. Note that this does not populate their
-            routing tables, but only their connection tables, so JP will not
+            routing tables, but only their connection tables, so JN will not
             get messages that it is expected to route to other nodes.</t>
 
-            <t>JP MUST enter all the peers it has successfully contacted into
+            <t>JN MUST enter all the peers it has successfully contacted into
             its routing table.</t>
 
-            <t>JP MUST send a Join to AP. The AP MUST send the response to the
+            <t>JN MUST send a Join to AP. The AP MUST send the response to the
             Join.</t>
 
-            <t>AP MUST do a series of Store requests to JP to store the data
-            that JP will be responsible for.</t>
+            <t>AP MUST do a series of Store requests to JN to store the data
+            that JN will be responsible for.</t>
 
-            <t>AP MUST send JP an Update explicitly labeling JP as its
-            predecessor. At this point, JP is part of the ring and responsible
+            <t>AP MUST send JN an Update explicitly labeling JN as its
+            predecessor. At this point, JN is part of the ring and responsible
             for a section of the overlay. AP MAY now forget any data which is
-            assigned to JP and not AP. AP SHOULD NOT forget any data where AP
+            assigned to JN and not AP. AP SHOULD NOT forget any data where AP
             is the replica set for the data. </t>
 
             <t>The AP MUST send an Update to all of its neighbors with the new
-            values of its neighbor set (including JP).</t>
+            values of its neighbor set (including JN).</t>
 
-            <t>The JP MUST send Updates to all the peers in its neighbor
+            <t>The JN MUST send Updates to all the peers in its neighbor
             table.</t>
           </list></t>
 
-        <t>If JP sends an Attach to AP with send_update, it immediately knows
+        <t>If JN sends an Attach to AP with send_update, it immediately knows
         most of its expected neighbors from AP's routing table update and MAY
         directly connect to them. This is the RECOMMENDED procedure.</t>
 
-        <t>If for some reason JP does not get AP's routing table, it MAY still
+        <t>If for some reason JN does not get AP's routing table, it MAY still
         populate its neighbor table incrementally. It SHOULD send a Ping
         directed at Resource-ID n+1 (directly after its own Resource-ID). This
         allows it to discover its own successor. Call that node p0. It then
@@ -6305,13 +6305,13 @@ struct {
         slower if the nodes need to collect ICE candidates, thus reducing
         parallelism.</t>
 
-        <t> In order to set up its i'th finger table entry, JP MUST
+        <t> In order to set up its i'th finger table entry, JN MUST
         send an Attach to peer n+2^(128-i). This will be routed to a
         peer in approximately the right location around the ring. (Note the
         first entry in the finger table has i=1 and not i=0 in this
         formulation). </t>
 
-        <t>The joining peer MUST NOT send any Update message placing itself in
+        <t>The joining node MUST NOT send any Update message placing itself in
         the overlay until it has successfully completed an Attach with each
         peer that should be in its neighbor table.</t>
       </section>
@@ -7455,37 +7455,37 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
     </section>
 
     <section anchor="sec-msgflow" title="Message Flow Example">
-      <t>The following abbreviations are used in the message flow diagrams: JP
-      = joining peer, AP = admitting peer, NP = next peer after the AP, NNP =
+      <t>The following abbreviations are used in the message flow diagrams: JN
+      = joining node, AP = admitting peer, NP = next peer after the AP, NNP =
       next next peer which is the peer after NP, PP = previous peer before the
       AP, PPP = previous previous peer which is the peer before the PP, BP =
       bootstrap peer.</t>
 
-      <t>In the following example, we assume that JP has formed a connection
-      to one of the bootstrap nodes. JP then sends an Attach through that peer
-      to a resource ID of itself (JP). It gets routed to the admitting peer
-      (AP) because JP is not yet part of the overlay. When AP responds, JP and
+      <t>In the following example, we assume that JN has formed a connection
+      to one of the bootstrap nodes. JN then sends an Attach through that peer
+      to a resource ID of itself (JN). It gets routed to the admitting peer
+      (AP) because JN is not yet part of the overlay. When AP responds, JN and
       AP use ICE to set up a connection and then set up DTLS. Once AP has
-      connected to JP, AP sends to JP an Update to populate its Routing Table.
+      connected to JN, AP sends to JN an Update to populate its Routing Table.
       The following example shows the Update happening after the DTLS
       connection is formed but it could also happen before in which case the
       Update would often be routed through other nodes.</t>
 
       <figure anchor="example-1">
         <artwork><![CDATA[
-    JP        PPP       PP        AP        NP        NNP       BP
+    JN        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |Attach Dest=JP     |         |         |         |         |
+     |Attach Dest=JN     |         |         |         |         |
      |---------------------------------------------------------->|
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |         |         |Attach Dest=JP     |         |         |
+     |         |         |Attach Dest=JN     |         |         |
      |         |         |<--------------------------------------|
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |         |         |Attach Dest=JP     |         |         |
+     |         |         |Attach Dest=JN     |         |         |
      |         |         |-------->|         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7521,13 +7521,13 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>The JP then forms connections to the appropriate neighbors, such as
+      <t>The JN then forms connections to the appropriate neighbors, such as
       NP, by sending an Attach which gets routed via other nodes. When NP
-      responds, JP and NP use ICE and DTLS to set up a connection.</t>
+      responds, JN and NP use ICE and DTLS to set up a connection.</t>
 
       <figure anchor="example-2">
         <artwork><![CDATA[
-    JP        PPP       PP        AP        NP        NNP       BP
+    JN        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7561,26 +7561,26 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>JP also needs to populate its finger table (for the Chord based DHT).
+      <t>JN also needs to populate its finger table (for the Chord based DHT).
       It issues an Attach to a variety of locations around the overlay. The
       diagram below shows it sending an Attach halfway around the Chord ring
-      to the JP + 2^127.</t>
+      to the JN + 2^127.</t>
 
       <figure anchor="example-3">
         <artwork><![CDATA[
-    JP        NP        XX        TP
+    JN        NP        XX        TP
      |         |         |         |
      |         |         |         |
      |         |         |         |
-     |Attach JP+2<<126   |         |
+     |Attach JN+2<<126   |         |
      |-------->|         |         |
      |         |         |         |
      |         |         |         |
-     |         |Attach JP+2<<126   |
+     |         |Attach JN+2<<126   |
      |         |-------->|         |
      |         |         |         |
      |         |         |         |
-     |         |         |Attach JP+2<<126
+     |         |         |Attach JN+2<<126
      |         |         |-------->|
      |         |         |         |
      |         |         |         |
@@ -7605,17 +7605,17 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>Once JP has a reasonable set of connections, it is ready to take its
+      <t>Once JN has a reasonable set of connections, it is ready to take its
       place in the DHT. It does this by sending a Join to AP. AP does a series
-      of Store requests to JP to store the data that JP will be responsible
-      for. AP then sends JP an Update explicitly labeling JP as its
-      predecessor. At this point, JP is part of the ring and responsible for a
+      of Store requests to JN to store the data that JN will be responsible
+      for. AP then sends JN an Update explicitly labeling JN as its
+      predecessor. At this point, JN is part of the ring and responsible for a
       section of the overlay. AP can now forget any data which is assigned to
-      JP and not AP.</t>
+      JN and not AP.</t>
 
       <figure anchor="example-4">
         <artwork><![CDATA[
-    JP        PPP       PP        AP        NP        NNP       BP
+    JN        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7656,7 +7656,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>In Chord, JP's neighbor table needs to contain its own predecessors.
+      <t>In Chord, JN's neighbor table needs to contain its own predecessors.
       It couldn't connect to them previously because it did not yet know their
       addresses. However, now that it has received an Update from AP, as in the
       previous diagram, it has AP's predecessors, which are also its own, so it
@@ -7665,7 +7665,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <figure anchor="example-5">
         <artwork><![CDATA[
-    JP        PPP       PP        AP        NP        NNP       BP
+    JN        PPP       PP        AP        NP        NNP       BP
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7716,7 +7716,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>Finally, now that JP has a copy of all the data and is ready to route
+      <t>Finally, now that JN has a copy of all the data and is ready to route
       messages and receive requests, it sends Updates to everyone in its
       Routing Table to tell them it is ready to go. Below, it is shown sending
       such an update to TP.</t>
@@ -7724,7 +7724,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <figure anchor="example-6">
         <artwork><![CDATA[
 
-        JP        NP        XX        TP
+        JN        NP        XX        TP
          |         |         |         |
          |         |         |         |
          |         |         |         |
