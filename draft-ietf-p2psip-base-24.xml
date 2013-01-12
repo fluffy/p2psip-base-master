@@ -1769,13 +1769,15 @@ Dest=Z
               <t>If the entry is a Resource-ID, then it MUST be the only entry
               on the destination list. If there are other entries, the message
               MUST be silently dropped. Otherwise, the message is destined for
-              this node so it MUST verify the signature as described in <xref target="sec-data-sig"/> and MUST pass it up
-              to the upper layers.</t>
+              this node so it MUST verify the signature as described in
+              <xref target="sec-data-sig"/> and MUST pass it up to the
+              application using RELOAD.</t>
 
               <t>If the entry is a Node-ID which equals this node's Node-ID,
               then the message is destined for this node. If this is the only
               entry on the destination list, the message is destined for this
-              node and so the node passes it up to the upper layers. Otherwise
+              node and so the node passes it up to the application using RELOAD.
+              Otherwise
               the node removes the entry from the destination list and repeats
               the routing process with the next entry on the destination list.
               If the message is a response and list compression was used, then
@@ -1783,7 +1785,8 @@ Dest=Z
               saved state, e.g., by unpacking any opaque IDS.</t>
 
               <t>If the entry is the wildcard Node-ID (all "1"s), the message
-              is destined for this node and it passes it up to the upper layers.
+              is destined for this node and it passes it up to the application
+              using RELOAD.
               A message with a wildcard Node-ID as first entry is never
               forwarded and is consumed locally.</t>
 
