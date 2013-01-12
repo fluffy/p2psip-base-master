@@ -290,7 +290,7 @@ Check if the qualicom IPR issueed and if anything can be done
         services.</t>
       </section>
 
-      <section title="Architecture">
+      <section title="Architecture" anchor="sec.arch" >
         <t>RELOAD is fundamentally an overlay network. The following figure
         shows the layered RELOAD architecture.</t>
 
@@ -1770,8 +1770,12 @@ Dest=Z
               <t>If the entry is a Resource-ID, then it MUST be the only entry
               on the destination list. If there are other entries, the message
               MUST be silently dropped. Otherwise, the message is destined for
-              this node so it MUST verify the signature as described in <xref target="sec-data-sig"/> and MUST pass it up
-              to the upper layers.</t>
+              this node so it MUST verify the signature as described in
+              <xref target="sec-data-sig"/> and MUST pass it up
+              to the upper layers. 
+              "Upper layers" is used here to mean the components above the
+              "Overlay Link Service Boundary" line in the figure in <xref
+              target="sec.arch"/>. </t>
 
               <t>If the entry is a Node-ID which equals this node's Node-ID,
               then the message is destined for this node. If this is the only
