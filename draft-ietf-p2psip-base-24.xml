@@ -981,7 +981,7 @@ Transport    |      Link       |     +-------+  +------+
         term ad hoc network without going to the trouble of setting up an
         enrollment server. RELOAD supports the use of self-generated,
         self-signed certificates. When self-signed certificates are used, the
-        node also generates its own Node-ID and username. The Node-ID is
+        node also generates its own Node-ID and user name. The Node-ID is
         computed as a digest of the public key, to prevent Node-ID theft. Note
         that the relevant cryptographic property for the digest is preimage
         resistance. Collision-resistance is not required since an attacker who
@@ -1436,7 +1436,7 @@ Dest=Z
         connected. This section provides an overview of how users get
         connected to the overlay for the first time. RELOAD is designed so
         that users can start with the name of the overlay they wish to join
-        and perhaps a username and password, and leverage that into having a
+        and perhaps a user name and password, and leverage that into having a
         working peer with minimal user intervention. This helps avoid the
         problems that have been experienced with conventional SIP clients
         where users are required to manually configure a large number of
@@ -1469,7 +1469,7 @@ Dest=Z
           configuration document will contain the address of an enrollment
           server which can be used to obtain such a certificate. The
           enrollment server may (and probably will) require some sort of
-          username and password before issuing the certificate. The enrollment
+          user name and password before issuing the certificate. The enrollment
           server's ability to restrict attackers' access to certificates in
           the overlay is one of the cornerstones of RELOAD's security.</t>
         </section>
@@ -7313,7 +7313,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
            <t hangText="failed_authentication"> The user name and password combination was not correct.  </t>
            
            <t></t>
-           <t hangText="username_not_available"> The requested userName for the certificate was not acceptable.  </t>
+           <t hangText="username_not_available"> The requested user name for the certificate was not acceptable.  </t>
            
            <t></t>
            <t hangText="Node-IDs_not_available"> The number of Node-IDs requested was not acceptable.  </t>
