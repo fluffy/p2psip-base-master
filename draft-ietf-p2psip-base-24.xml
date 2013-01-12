@@ -123,7 +123,7 @@ Check if the qualicom IPR issueed and if anything can be done
       </address>
     </author>
 
-    <date day="11" month="January" year="2013" />
+    <date day="12" month="January" year="2013" />
 
     <area>RAI</area>
 
@@ -703,9 +703,9 @@ Transport    |      Link       |     +-------+  +------+
     </section>
 
     <section anchor="sec-term" title="Terminology">
-      <t>Terms used
-      in this document are defined inline when used and are also defined below
-      for reference.</t>
+      <t>Terms used in this document are defined inline when used and are also
+      defined below for reference. The definitions in this section use terminology and
+      concepts that are not explianed until later in the specification. </t>
 
       <t><list style="hanging">
           <t></t> <!-- Defn #1.0 --> 
@@ -754,7 +754,8 @@ Transport    |      Link       |     +-------+  +------+
           <t></t> <!-- Defn #8.0 --> 
 
           <t hangText="ID:">A generic term for any kind of identifiers in an
-          Overlay.  This document specifies an ID as being a Node-ID, a
+          Overlay.  This document specifies an ID as being a Application-ID,
+          Kind-ID , Node-ID, Transaction ID, component ID, response ID,
           Resource-ID, or an Opaque ID.</t>
 
           <t></t> <!-- Defn #9.0 --> 
@@ -782,7 +783,7 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #12.0 --> 
 
-          <t hangText="Node:">We use the term "Node" to refer to a host that
+          <t hangText="Node:"> The term "Node" is used to refer to a host that
           may be either a Peer or a Client. Because RELOAD uses the same
           protocol for both clients and peers, much of the text applies
           equally to both. Therefore we use "Node" when the text applies to
@@ -880,7 +881,7 @@ Transport    |      Link       |     +-------+  +------+
           tables but may only forward messages to peers that are not in their
           connection table through peers that are in the routing table.</t>
 
-          <t></t>
+          <t></t> <!-- Defn #22.5 --> 
 
           <t hangText="Successor Replacement Hold-Down Time:">The amount of
           time to wait before starting replication when a new successor is
@@ -904,9 +905,8 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #25.0 --> 
 
-          <t hangText="User:">A user is a physical person who owns one or more
-          nodes through the user name stored in the certificates assigned to
-          these nodes.</t>
+          <t hangText="User:">A user is a physical person identified by the by
+          the certificates assigned to them.</t>
 
           <t></t> <!-- Defn #26.0 --> 
 
