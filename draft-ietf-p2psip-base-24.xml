@@ -3065,7 +3065,7 @@ struct {
           <t>The input to signatures over data values is different, and is
           described in <xref target="sec-data-sig"></xref>.</t>
 
-          <t>All RELOAD messages MUST be signed. Upon receipt (and fragment
+          <t>All RELOAD messages MUST be signed. Intermediate nodes do not verify signatures. Upon receipt (and fragment
           reassembly if needed) the destination node MUST verify the signature
           and the authorizing certificate. If the signature fails, the
           implementation SHOULD simply drop the message and MUST NOT process
