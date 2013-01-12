@@ -2423,9 +2423,9 @@ Dest=Z
               <!--begin-pdu-->
 
               <artwork><![CDATA[
-  enum { invalidDestinationType(0), node(1), resource(2), opaque_id_type(3),
-            /* 128-255 not allowed */ (255) }
-            DestinationType;
+  enum { invalidDestinationType(0), node(1), resource(2), 
+         opaque_id_type(3), /* 128-255 not allowed */ (255) }
+       DestinationType;
 
   select (destination_type) {
    case node:
@@ -2614,7 +2614,8 @@ Dest=Z
             <!--begin-pdu-->
 
             <artwork><![CDATA[
-enum { invalidMessageExtensionType(0), (2^16-1) } MessageExtensionType;
+enum { invalidMessageExtensionType(0), 
+       (2^16-1) } MessageExtensionType;
 
 struct {
   MessageExtensionType  type;
@@ -3523,11 +3524,12 @@ struct {
 
               <artwork><![CDATA[
      enum { invalidOverlayLinkType(0), DTLS-UDP-SR(1),
-             DTLS-UDP-SR-NO-ICE(3), TLS-TCP-FH-NO-ICE(4),
-             (255) } OverlayLinkType;
+            DTLS-UDP-SR-NO-ICE(3), TLS-TCP-FH-NO-ICE(4),
+            (255) } OverlayLinkType;
 
-     enum { invalidCandType(0), host(1), srflx(2), prflx(3), relay(4),
-          (255) } CandType;
+     enum { invalidCandType(0), 
+            host(1), srflx(2), prflx(3), relay(4),
+            (255) } CandType;
 
      struct {
        opaque                name<0..2^16-1>;
@@ -6828,6 +6830,11 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         this specification is urn:ietf:params:xml:ns:p2p:config-base and
         urn:ietf:params:xml:ns:p2p:config-chord".</t>
 
+        <t>Note that elements or attributes that are defined as type xsd:boolean
+        in the RELAX NG <xref target="sec.grammar">schema</xref> have two
+        lexical representations, "1" or "true" for the concept true and "0" or
+        "false" for the concept false.</t>
+
         <t>The file MAY contain multiple "configuration" elements where each
         one contains the configuration information for a different overlay.
         Each configuration element MAY be followed by signature elements that
@@ -7074,7 +7081,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
         problem, but for large overlays should be avoided in almost all
         circumstances.</t>
 
-        <section title="RELAX NG Grammar">
+        <section title="RELAX NG Grammar" anchor="sec.grammar" >
           <t>The grammar for the configuration data is:</t>
 
           <figure>
