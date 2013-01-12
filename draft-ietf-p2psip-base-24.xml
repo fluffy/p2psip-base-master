@@ -775,6 +775,11 @@ Transport    |      Link       |     +-------+  +------+
           Kind-IDs are either private or allocated by IANA (see
           <xref target="sec.iana.kindid" />).</t>
 
+          <t></t>
+
+          <t hangText="Maximum Request Lifetime:">The maximum time a request
+          will wait for a response; it defaults to 15 seconds.</t>
+
           <t></t> <!-- Defn #12.0 --> 
 
           <t hangText="Node:">We use the term "Node" to refer to a host that
@@ -876,6 +881,12 @@ Transport    |      Link       |     +-------+  +------+
           messages to other peers through peers that are in the routing
           table.</t>
 
+          <t></t>
+
+          <t hangText="Successor Replacement Hold-Down Time:">The amount of
+          time to wait before starting replication when a new successor is
+          found; it defaults to 30 seconds.</t>
+
           <t></t> <!-- Defn #23.0 --> 
 
           <t hangText="Transaction ID:">A randomly chosen identifier selected
@@ -903,14 +914,7 @@ Transport    |      Link       |     +-------+  +------+
           <t hangText="User Name:">A name identifying a user of the overlay,
               typically used as a Resource Name, or as a label on a Resource
               that identifies the user owning the resource.</t>
-          
         </list></t>
-
-      <t>The term "maximum request lifetime" is the maximum time a request
-      will wait for a response; it defaults to 15 seconds. The term "successor
-      replacement hold-down time" is the amount of time to wait before
-      starting replication when a new successor is found; it defaults to 30
-      seconds.</t>
     </section>
 
     <section anchor="sec-overlay-overview" title="Overlay Management Overview">
