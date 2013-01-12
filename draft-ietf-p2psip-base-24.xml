@@ -7829,7 +7829,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         verify the certificates of the other entities in the overlay without
         further communication. Because the certificates contain the
         user/node's public key, communications from the user/node can be
-        verified in turn.</t>
+        verified in turn. Note that the central enrollment authority is
+        susceptible to standard attacks.</t>
 
         <t>If self-signed certificates are used, then the security provided is
         significantly decreased, since attackers can mount Sybil attacks. In
