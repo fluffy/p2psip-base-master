@@ -1320,7 +1320,8 @@ Dest=Z
         specified routing table defined by the algorithm and if it detects that
         it has fewer direct
         connections, should form more as required. This also implies that
-        peers need to periodically verify that the connected peers are still
+        peers, in accord with the topology plugin algorithm, need to
+        periodically verify that the connected peers are still
         alive and if not try to reform the connection or form an alternate
         one. See <xref target="sec-finger-table-size" /> for an example on
         how a specific overlay algorithm implements these constraints.</t>
