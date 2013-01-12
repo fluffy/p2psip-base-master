@@ -2964,8 +2964,9 @@ struct {
             </list></t>
 
           <t>The signature is computed over the payload and parts of the
-          forwarding header. The payload, in case of a Store, may contain an
-          additional signature computed over a StoreReq structure. All
+          forwarding header. In case of a Store the payload MUST contain a
+          additional signature computed as described in
+          <xref target="sec-data-sig" />. All
           signatures MUST be formatted using the Signature element. This
           element is also used in other contexts where signatures are needed.
           The input structure to the signature computation MAY vary depending
