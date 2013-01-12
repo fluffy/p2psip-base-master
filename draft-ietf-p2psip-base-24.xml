@@ -1650,7 +1650,9 @@ Dest=Z
             <t>Registers Kind-ID code points for any Kinds that the Usage
             defines.</t>
 
-            <t>Defines the data structure for each of the Kinds.</t>
+            <t>Defines the data structure for each of the Kinds. If the data
+            structure contains character string, conversion rules between
+            characters and the binary storage must be specified.</t>
 
             <t>Defines access control rules for each of the Kinds.</t>
 
