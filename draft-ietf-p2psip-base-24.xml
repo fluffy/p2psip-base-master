@@ -6162,7 +6162,7 @@ struct {
         first entry in the finger table contains the peer half-way around the
         ring from this peer; the second entry contains the peer that is 1/4 of
         the way around; the third entry contains the peer that is 1/8th of the
-        way around, and so on. Fundamentally, the chord DHT can be thought of
+        way around, and so on. Fundamentally, the Chord DHT can be thought of
         a doubly-linked list formed by knowing the successors and predecessor
         peers in the neighbor table, sorted by the Node-ID. As long as the
         successor peers are correct, the DHT will return the correct result.
@@ -6920,11 +6920,11 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             "false".</t>
 
             <t hangText="chord-update-interval ">The update frequency for the
-            Chord-reload topology plugin (see <xref
+            CHORD-RELOAD topology plugin (see <xref
             target="sec-chord-algorithm"></xref>).</t>
 
             <t hangText="chord-ping-interval ">The ping frequency for the
-            Chord-reload topology plugin (see <xref
+            CHORD-RELOAD topology plugin (see <xref
             target="sec-chord-algorithm"></xref>).</t>
 
             <t hangText="chord-reactive ">Whether reactive recovery SHOULD be
