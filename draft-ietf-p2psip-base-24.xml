@@ -179,8 +179,9 @@ Check if the qualicom IPR issueed and if anything can be done
           <t hangText="NAT Traversal:">RELOAD is designed to function in
           environments where many if not most of the nodes are behind NATs or
           firewalls. Operations for NAT traversal are part of the base design,
-          including using <xref target="RFC5245">ICE</xref> to establish new
-          RELOAD or application protocol connections.</t>
+          including using <xref target="RFC5245">Interactive Connectivity
+          Establishment (ICE)</xref> to establish new RELOAD or application
+          protocol connections.</t>
 
           <t></t>
 
@@ -1282,9 +1283,9 @@ Dest=Z
         set of direct connections to other peers in the Overlay Instance. Due
         to the presence of NATs, these connections often cannot be formed
         directly. Instead, we use the Attach request to establish a
-        connection. Attach uses ICE <xref target="RFC5245"></xref> to
-        establish the connection. It is assumed that the reader is familiar
-        with ICE.</t>
+        connection. Attach uses <xref target="RFC5245">Interactive
+        Connectivity Establishment (ICE)</xref> to establish the connection. It
+        is assumed that the reader is familiar with ICE.</t>
 
         <t>Say that peer A wishes to form a direct connection to peer B, either
         to join the overlay or to add more connections in its routing table. It
