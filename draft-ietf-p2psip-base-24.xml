@@ -1647,17 +1647,21 @@ Dest=Z
         several things:</t>
 
         <t><list style="symbols">
-            <t>Registers Kind-ID code points for any Kinds that the Usage
-            defines.</t>
+            <t>Register Kind-ID code points for any Kinds that the Usage
+            defines (<xref target="sec.iana.kindid" />).</t>
 
-            <t>Defines the data structure for each of the Kinds.</t>
+            <t>Defines the data structure for each of the Kinds (the value
+            member in <xref target="sec-kind-model" />). If the data
+            structure contains character string, conversion rules between
+            characters and the binary storage must be specified.</t>
 
-            <t>Defines access control rules for each of the Kinds.</t>
+            <t>Define access control rules for each of the Kinds
+            (<xref target="sec.access_control" />).</t>
 
-            <t>Defines how the Resource Name is hashed to form
+            <t>Define how the Resource Name is used to form
             the Resource-ID where each Kind is stored.</t>
 
-            <t>Describes how values will be merged after a network partition.
+            <t>Describe how values will be merged after a network partition.
             Unless otherwise specified, the default merging rule is to act as
             if all the values that need to be merged were stored and as if the
             order they were stored in corresponds to the stored time values
