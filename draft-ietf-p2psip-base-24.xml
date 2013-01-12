@@ -1862,8 +1862,9 @@ Dest=Z
           <t>Note that if an intermediate peer retains per-transaction state
           instead of modifying the via list, it needs some mechanism for
           timing out that state, otherwise its state database will grow
-          without bound. Whatever algorithm is used,
-          unless a FORWARD_CRITICAL forwarding option or overlay configuration
+          without bound. Whatever algorithm is used, unless a FORWARD_CRITICAL
+          forwarding option (<xref target="sec-forwarding-options" />) or
+          overlay configuration
           option explicitly indicates this state is not needed, the state MUST
           be maintained for at least the value of the
           overlay-reliability-timer configuration parameter and MAY be kept
