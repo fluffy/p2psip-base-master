@@ -179,8 +179,8 @@ Check if the qualicom IPR issueed and if anything can be done
           <t hangText="NAT Traversal:">RELOAD is designed to function in
           environments where many if not most of the nodes are behind NATs or
           firewalls. Operations for NAT traversal are part of the base design,
-          including using ICE to establish new RELOAD or application protocol
-          connections.</t>
+          including using <xref target="RFC5245">ICE</xref> to establish new
+          RELOAD or application protocol connections.</t>
 
           <t></t>
 
@@ -1054,7 +1054,8 @@ Transport    |      Link       |     +-------+  +------+
               from/to the client using its Node-ID in the same manner as if it
               were a peer, because the responsible peer in the overlay will
               handle the final step of routing to the client. This may require
-              a TURN relay in cases where NATs or firewalls prevent a client
+              a <xref target="RFC5766">TURN</xref> relay in cases where NATs or
+              firewalls prevent a client
               from forming a direct connection with its responsible peer.
               Note that clients that choose this option need to process Update
               messages from the peer. Those updates can indicate that the peer
@@ -1066,7 +1067,9 @@ Transport    |      Link       |     +-------+  +------+
               <t>Establish a connection with an arbitrary peer in the overlay
               (perhaps based on network proximity or an inability to establish
               a direct connection with the responsible peer). In this case,
-              the client will rely on RELOAD's Destination List feature to
+              the client will rely on RELOAD's
+              <xref target="sec.dest-via-list">Destination List</xref> feature
+              to
               ensure reachability. The client can initiate requests, and any
               node in the overlay that knows the Destination List to its
               current location can reach it, but the client is not directly
@@ -1078,8 +1081,9 @@ Transport    |      Link       |     +-------+  +------+
               a single Node-ID can proceed to use the connection without
               performing an Attach. A client wishing to connect using this
               mechanism with a certificate with multiple Node-IDs can use a
-              Ping to probe the Node-ID of the node to which it is connected
-              before doing the Attach.</t>
+              <xref target="sec.ping">Ping</xref> to probe the Node-ID of the
+              node to which it is connected before doing the
+              <xref target="sec-connect-details">Attach</xref>.</t>
             </list></t>
         </section>
 
@@ -2880,6 +2884,15 @@ struct {
                 message is invalid but it doesn't fit the other error codes.
                 When this message is sent, implementations SHOULD provide some
                 meaningful description in error_info to aid in debugging.</t>
+                
+                <t hangText="Error_Exp_A:">For the purposes of experimentation.
+                Not meant for vendor specific use of any sort and MUST NOT be 
+                used for operational deployments.</t>
+ 
+                 <t hangText="Error_Exp_B:">For the purposes of experimentation.
+                Not meant for vendor specific use of any sort and MUST NOT be 
+                used for operational deployments.</t>
+ 
               </list></t>
           </section>
         </section>
@@ -3061,7 +3074,7 @@ struct {
           <t>The input to signatures over data values is different, and is
           described in <xref target="sec-data-sig"></xref>.</t>
 
-          <t>All RELOAD messages MUST be signed. Upon receipt (and fragment
+          <t>All RELOAD messages MUST be signed. Intermediate nodes do not verify signatures. Upon receipt (and fragment
           reassembly if needed) the destination node MUST verify the signature
           and the authorizing certificate. If the signature fails, the
           implementation SHOULD simply drop the message and MUST NOT process
@@ -4050,7 +4063,7 @@ struct {
           </section>
         </section>
 
-        <section title="Ping">
+        <section anchor="sec.ping" title="Ping">
           <t>Ping is used to test connectivity along a path. A ping can be
           addressed to a specific Node-ID, to the peer controlling a given
           location (by using a Resource-ID), or to the broadcast Node-ID
