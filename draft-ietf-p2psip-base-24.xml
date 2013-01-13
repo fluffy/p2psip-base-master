@@ -5291,7 +5291,7 @@ struct {
                 ("anonymous" and "none"), the StoreReq MUST be rejected with
                 an Error_forbidden error. Only synthesized data returned by
                 the storage can use these values (see
-                <xref target="fetch-response-definition">Fetch Response Definition</xref>)</t>
+                <xref target="fetch-response-definition"/>)</t>
               </list></t>
 
             <t>If all these checks succeed, the peer MUST attempt to store the

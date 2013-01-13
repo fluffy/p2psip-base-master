@@ -1925,8 +1925,8 @@ Internet-Draft                 RELOAD Base                  January 2013
    The most natural rule is that a certificate authorizes a user to
    store data keyed with their user name X. Thus, only a user with a
    certificate for "alice@example.org" could write to that location in
-   the overlay.  However, other usages can define any rules they choose,
-   including publicly writable values.
+   the overlay (see Section 11.3).  However, other usages can define any
+   rules they choose, including publicly writable values.
 
    The digital signature over the data serves two purposes.  First, it
    allows the peer responsible for storing the data to verify that this
@@ -2149,12 +2149,13 @@ Internet-Draft                 RELOAD Base                  January 2013
    nor an ID the peer is responsible for, then the peer MUST forward the
    message towards this entry.  This means that it MUST select one of
    the peers to which it is connected and which is most likely to be
-   responsible for the first entry on the destination list.  For the
-   CHORD-RELOAD topology, the routing to the most likely responsible
-   node is explained in Section 10.3.  If the first entry on the
-   destination list is in the peer's connection table, then it MUST
-   forward the message to that peer directly.  Otherwise, the peer
-   consults the routing table to forward the message.
+   responsible (according to the topology plugin) for the first entry on
+   the destination list.  For the CHORD-RELOAD topology, the routing to
+   the most likely responsible node is explained in Section 10.3.  If
+   the first entry on the destination list is in the peer's connection
+   table, then it MUST forward the message to that peer directly.
+   Otherwise, the peer consults the routing table to forward the
+   message.
 
    Any intermediate peer which forwards a RELOAD request MUST ensure
    that if it receives a response to that message the response can be
@@ -2176,7 +2177,6 @@ Internet-Draft                 RELOAD Base                  January 2013
 
    As an example of the second strategy, if node D receives a message
    from node C with transaction ID X and via list [A, B], it could store
-   [X, C] in its state database and forward the message with the via
 
 
 
@@ -2185,6 +2185,7 @@ Jennings, et al.          Expires July 16, 2013                [Page 39]
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   [X, C] in its state database and forward the message with the via
    list unchanged.  When D receives the response, it consults its state
    database for transaction ID X, determines that the request came from
    C, and forwards the response to C.
@@ -2232,7 +2233,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    An intermediate node receiving a request from another node MUST
    return a response to this request with a destination list equal to
    the concatenation of the Node-ID of the node that sent the request
-   with the via list in the request.  The intermediate node normally
 
 
 
@@ -2241,6 +2241,7 @@ Jennings, et al.          Expires July 16, 2013                [Page 40]
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   with the via list in the request.  The intermediate node normally
    learns the Node-ID the other node is using via an Attach, but a node
    using a certificate with a single Node-ID MAY elect to not send an
    Attach (see Section 3.2.1 bullet 2).  If a node with a certificate
@@ -2288,7 +2289,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    Parallel requests for a resource are a common solution to improve
    reliability in the face of churn or of subversive peers.  Parallel
    searches for usage-specified replicas are managed by the usage layer,
-   for instance by having the usage store data at multiple Resource-IDs
 
 
 
@@ -2297,6 +2297,7 @@ Jennings, et al.          Expires July 16, 2013                [Page 41]
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+   for instance by having the usage store data at multiple Resource-IDs
    with the requesting node sending requests to each of those Resource-
    IDs.  However, a single request MAY also be routed through multiple
    adjacent peers, even when known to be sub-optimal, to improve
@@ -2344,7 +2345,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    just define these in a fixed position, as adding a type and length
    for them is unnecessary and would simply increase bandwidth and
    introduces new potential for interoperability issues.
-
 
 
 
@@ -3283,7 +3283,7 @@ Internet-Draft                 RELOAD Base                  January 2013
         opaque                        signature_value<0..2^16-1>;
      } Signature;
 
-   The signature construct contains the following values:
+   The Signature construct contains the following values:
 
 
    algorithm
@@ -3309,6 +3309,9 @@ Internet-Draft                 RELOAD Base                  January 2013
 
    signature_value
       The value of the signature.
+      Note that storage operations allow for special values of algorithm
+      and identity.  See Store Request Definition (Section 7.4.1.1) and
+      Fetch Response Definition (Section 7.4.2.2).
 
    There are two permitted identity formats, one for a certificate with
    only one Node-ID and one for a certificate with multiple Node-IDs.
@@ -3350,9 +3353,6 @@ Internet-Draft                 RELOAD Base                  January 2013
    2.  The response to a message sent to a Resource-ID MUST have been
        sent by a Node-ID which is as close to or closer to the target
        Resource-ID than any node in the requesting node's neighbor
-       table.
-
-   The second condition serves as a primitive check for responses from
 
 
 
@@ -3361,6 +3361,9 @@ Jennings, et al.          Expires July 16, 2013                [Page 60]
 Internet-Draft                 RELOAD Base                  January 2013
 
 
+       table.
+
+   The second condition serves as a primitive check for responses from
    wildly wrong nodes but is not a complete check.  Note that in periods
    of churn, it is possible for the requesting node to obtain a closer
    neighbor while the request is outstanding.  This will cause the
@@ -3405,9 +3408,6 @@ Internet-Draft                 RELOAD Base                  January 2013
 
    This section describes the methods that topology plugins use to join,
    leave, and maintain the overlay.
-
-
-
 
 
 
@@ -5424,7 +5424,7 @@ Internet-Draft                 RELOAD Base                  January 2013
       SignatureAndHashAlgorithm values set to {0, 0} ("anonymous" and
       "none"), the StoreReq MUST be rejected with an Error_forbidden
       error.  Only synthesized data returned by the storage can use
-      these values
+      these values (see Fetch Response Definition (Section 7.4.2.2))
 
 
 
