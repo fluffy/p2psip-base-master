@@ -2831,7 +2831,8 @@ struct {
                 specified, this will be a UTF-8 text string providing further
                 information about what went wrong. Developers are encouraged
                 to put enough diagnostic information to be useful in
-                error_info.</t>
+                error_info. The specific text to be used and any relevant
+                language or encoding thereof is left to the implementation.</t>
               </list></t>
 
             <t>The following error code values are defined. The numeric values
