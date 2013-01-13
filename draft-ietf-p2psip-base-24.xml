@@ -2431,8 +2431,8 @@ Dest=Z
               <t hangText="via_list:">The via_list contains the sequence of
               destinations through which the message has passed. The via_list
               starts out empty and grows as the message traverses each peer. In
-              stateless cases, the previos hop that the message is from is
-              appeneded to the via list as specified in <xref
+              stateless cases, the previous hop that the message is from is
+              appended to the via list as specified in <xref
               target="sec-other-id"/>. </t>
 
               <t></t>
