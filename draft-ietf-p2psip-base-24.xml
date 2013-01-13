@@ -1297,7 +1297,7 @@ Dest=Z
              ]]></artwork>
         </figure>
 
-        <t>As before, when B receives the message, he creates a via list
+        <t>As before, when B receives the message, B creates a via list
         consisting of [A]. However, instead of sending [A, B], X creates an
         opaque ID X1 which maps internally to [A, B] (perhaps by being an
         encryption of [A, B] and forwards to Z with only X1 as the via list.
@@ -1849,7 +1849,8 @@ Dest=Z
           nor an ID the peer is responsible for, then the peer MUST forward the
           message towards this entry.
           This means that it MUST select one of the peers to which it is
-          connected and which is most likely to be responsible (according to the topology plugin) for the first entry
+          connected and which is most likely to be responsible 
+          (according to the topology plugin) for the first entry
           on the destination list. 
           For the CHORD-RELOAD topology, the routing to the most likely
           responsible node is explained in <xref target="sec.chord.routing"/>.
@@ -1865,7 +1866,9 @@ Dest=Z
 
           <t><list style="symbols">
               <t>The peer can add an entry to the via list in the forwarding
-              header that will enable it to determine the correct node.</t>
+              header that will enable it to determine the correct node. 
+              This is done by apending to the via list the Node-ID of
+              the node that sent the request to this node. </t>
 
               <t>The peer can keep per-transaction state which will allow it
               to determine the correct node.</t>
@@ -2427,8 +2430,10 @@ Dest=Z
 
               <t hangText="via_list:">The via_list contains the sequence of
               destinations through which the message has passed. The via_list
-              starts out empty and grows as the message traverses each
-              peer.</t>
+              starts out empty and grows as the message traverses each peer. In
+              stateless cases, the previos hop that the message is from is
+              appeneded to the via list as specified in <xref
+              target="sec-other-id"/>. </t>
 
               <t></t>
 
@@ -8167,10 +8172,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           (provided the enrollment server uses strict rate limiting policies).
           The second property deters but does not completely prevent Eclipse
           attacks. Because an Eclipse attacker must impersonate peers on the
-          other side of the attacker, he must have a certificate for suitable
+          other side of the attacker, the attacker must have a certificate for suitable
           Node-IDs, which requires him to repeatedly query the enrollment
           server for new certificates, which will match only by chance. From
-          the attacker's perspective, the difficulty is that if he only has a
+          the attacker's perspective, the difficulty is that if the attacker only has a
           small number of certificates, the region of the Overlay Instance he
           is impersonating appears to be very sparsely populated by comparison
           to the victim's local region.</t>
