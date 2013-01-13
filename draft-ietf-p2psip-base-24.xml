@@ -3080,7 +3080,7 @@ struct {
       ]]></artwork>
           </figure>
 
-          <t>The signature construct contains the following values:</t>
+          <t>The Signature construct contains the following values:</t>
 
           <t><list style="hanging">
               <t></t>
@@ -3104,6 +3104,11 @@ struct {
               <t hangText="signature_value "></t>
 
               <t>The value of the signature.</t>
+              
+              <t>Note that storage operations allow for special values of
+              algorithm and identity. See <xref target="sec-store-req">
+              Store Request Definition</xref> and <xref target="fetch-response-definition">
+              Fetch Response Definition</xref>.</t>
             </list></t>
 
           <t>There are two permitted identity formats, one for a certificate
@@ -5285,7 +5290,8 @@ struct {
                 and/or SignatureAndHashAlgorithm values set to {0, 0}
                 ("anonymous" and "none"), the StoreReq MUST be rejected with
                 an Error_forbidden error. Only synthesized data returned by
-                the storage can use these values</t>
+                the storage can use these values (see
+                <xref target="fetch-response-definition">Fetch Response Definition</xref>)</t>
               </list></t>
 
             <t>If all these checks succeed, the peer MUST attempt to store the
@@ -5670,7 +5676,7 @@ struct {
             returns a response with no StoredData values.</t>
           </section>
 
-          <section title="Response Definition">
+          <section anchor="fetch-response-definition" title="Response Definition">
             <t>The response to a successful Fetch request is a FetchAns
             message containing the data requested by the requester.</t>
 
