@@ -1628,9 +1628,9 @@ Dest=Z
 
           <t>The most natural rule is that a certificate authorizes a user to
           store data keyed with their user name X. Thus, only a user with a
-          certificate for the rfc822Name "alice@example.org" (see
-          <xref target="sec-credentials" />) could write to that location in
-          the overlay. However, other usages can define any rules they choose,
+          certificate for "alice@example.org" could write to that location in
+          the overlay (see <xref target="sec-credentials" />). 
+          However, other usages can define any rules they choose,
           including publicly writable values.</t>
 
           <t>The digital signature over the data serves two purposes. First,
