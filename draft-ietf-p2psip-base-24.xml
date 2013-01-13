@@ -993,7 +993,7 @@ Transport    |      Link       |     +-------+  +------+
         term ad hoc network without going to the trouble of setting up an
         enrollment server. RELOAD supports the use of self-generated,
         self-signed certificates. When self-signed certificates are used, the
-        node also generates its own Node-ID and username. The Node-ID is
+        node also generates its own Node-ID and user name. The Node-ID is
         computed as a digest of the public key, to prevent Node-ID theft. Note
         that the relevant cryptographic property for the digest is preimage
         resistance. Collision-resistance is not needed since an attacker who
@@ -1389,11 +1389,11 @@ Dest=Z
                  title="Joining, Leaving, and Maintenance Overview">
           <t>When a new peer wishes to join the Overlay Instance, it will need
           a Node-ID that it is allowed to use and a set of credentials which
-          match that Node-ID. When an enrollment server is used that Node-ID
-          will be in the certificate the node received from the enrollment
+          match that Node-ID. When an enrollment server is used, the Node-ID used
+          is the Node-ID found in the certificate received from the enrollment
           server. The details of the joining procedure are defined by the
           overlay algorithm, but the general steps for joining an Overlay
-          Instance are:</t>
+          Instance are: </t>
 
           <t><list style="symbols">
               <t>Forming connections to some other peers.</t>
@@ -1475,7 +1475,7 @@ Dest=Z
         connected. This section provides an overview of how users get
         connected to the overlay for the first time. RELOAD is designed so
         that users can start with the name of the overlay they wish to join
-        and perhaps a username and password, and leverage that into having a
+        and perhaps an account name and password, and leverage that into having a
         working peer with minimal user intervention. This helps avoid the
         problems that have been experienced with conventional SIP clients
         where users need to manually configure a large number of
@@ -1511,7 +1511,8 @@ Dest=Z
           contain the trust anchor, so this document must be retrieved securely
           (see <xref target="sec-discovery" />). The
           enrollment server may (and probably will) require some sort of
-          username and password before issuing the certificate. The enrollment
+          account name for the user and password before issuing the certificate. 
+          The enrollment
           server's ability to ensure attackers can not get a large number of
           certificates for the overlay is one of the cornerstones of RELOAD's
           security. </t>
@@ -7410,7 +7411,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t><list style="symbols">
             <t>If authentication is required, there MUST be form parameters of
-            "password" and "username" containing the user's name and password
+            "password" and "username" containing the user's account name and password
             in the clear (hence the need for HTTPS). The username and password
             strings MUST be UTF-8 strings compared as binary objects. Applications
             using RELOAD SHOULD define any needed string preparation as per
@@ -7422,7 +7423,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
             <t>There MUST be a form parameter of "csr" with a content type of
             "application/pkcs10", as defined in <xref
-            target="RFC2311"></xref>.</t>
+            target="RFC2311"></xref> that contains the certificate signing request (CSR).</t>
 
             <t>The Accept header MUST contain the type
             "application/pkix-cert", indicating the type that is expected in
@@ -7430,12 +7431,12 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           </list></t>
 
         <t>The enrollment server MUST authenticate the request using the
-        provided user name and password. The reason for using the RFC 2388
+        provided account name and password. The reason for using the RFC 2388
         "multipart/form-data" encoding is so that the password parameter will
         not be encoded in the URL to reduce the chance of accidental leakage
         of the password. If the authentication succeeds and the requested user
-        name is acceptable, the server MUST generate and return a certificate for
-        the certificate signing request in the "csr" parameter of the request.
+        name in the CSR is acceptable, the server MUST generate and return a certificate for
+        the CSR in the "csr" parameter of the request.
         The SubjectAltName field in the certificate MUST contain the following
         values:</t>
 
@@ -7478,13 +7479,13 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
          
          <t><list style="hanging">
            
-           <t hangText="failed_authentication"> The user name and password 
-           combination was not correct.  </t>
+           <t hangText="failed_authentication"> The account name and password 
+           combination used in the HTTPS request was not valid.  </t>
            
            <t></t>
 
-           <t hangText="username_not_available"> The requested userName for 
-           the certificate was not acceptable.  </t>
+           <t hangText="username_not_available"> The requested user name in 
+           the CSR was not acceptable.  </t>
            
            <t></t>
 
@@ -7493,7 +7494,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
            
            <t></t>
 
-           <t hangText="bad_CSR"> There was a problem with the CSR.  </t>
+           <t hangText="bad_CSR"> There was some other problem with the CSR.  </t>
            
          </list></t>
          
