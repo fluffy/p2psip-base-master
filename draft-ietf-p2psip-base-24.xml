@@ -1847,7 +1847,7 @@ Dest=Z
           nor an ID the peer is responsible for, then the peer MUST forward the
           message towards this entry.
           This means that it MUST select one of the peers to which it is
-          connected and which is most likely to be responsible for the first entry
+          connected and which is most likely to be responsible (according to the topology plugin) for the first entry
           on the destination list. 
           For the CHORD-RELOAD topology, the routing to the most likely
           responsible node is explained in <xref target="sec.chord.routing"/>.
