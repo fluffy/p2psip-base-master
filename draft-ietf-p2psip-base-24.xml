@@ -1880,7 +1880,7 @@ Dest=Z
           list will contain [C, B, A].</t>
 
           <t>As an example of the second strategy, if node D receives a
-          message from node C with transaction ID X and via list [A, B], it
+          message from node C with transaction ID X (as assigned by A) and via list [A, B], it
           could store [X, C] in its state database and forward the message
           with the via list unchanged. When D receives the response, it
           consults its state database for transaction ID X, determines that
