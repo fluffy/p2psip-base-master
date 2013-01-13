@@ -3011,7 +3011,7 @@ struct {
       ]]></artwork>
           </figure>
 
-          <t>The signature construct contains the following values:</t>
+          <t>The Signature construct contains the following values:</t>
 
           <t><list style="hanging">
               <t></t>
@@ -3035,6 +3035,11 @@ struct {
               <t hangText="signature_value "></t>
 
               <t>The value of the signature.</t>
+              
+              <t>Note that storage operations allow for special values of
+              algorithm and identity. See <xref target="store-request-definition">
+              Store Request Definition</xref> and <xref target="store-response-definition">
+              Store Response Definition</xref>.</t>
             </list></t>
 
           <t>There are two permitted identity formats, one for a certificate
@@ -3338,7 +3343,7 @@ struct {
                 </list></t>
             </section>
 
-            <section title="Response Definition">
+            <section anchor="store-response-definition" title="Response Definition">
               <t>A response to a successful RouteQueryReq request is a
               RouteQueryAns message. This is completely overlay specific.</t>
             </section>
@@ -5204,7 +5209,8 @@ struct {
                 and/or SignatureAndHashAlgorithm values set to {0, 0}
                 ("anonymous" and "none"), the StoreReq MUST be rejected with
                 an Error_forbidden error. Only synthesized data returned by
-                the storage can use these values</t>
+                the storage can use these values (see
+                <xref target="store-response-definition">Response Definition</xref>)</t>
               </list></t>
 
             <t>If all these checks succeed, the peer MUST attempt to store the
@@ -5449,7 +5455,7 @@ struct {
           given Resource-ID. A single Fetch request can retrieve multiple
           different Kinds.</t>
 
-          <section title="Request Definition">
+          <section anchor="store-request-definition" title="Request Definition">
             <figure>
               <!--begin-pdu-->
 
