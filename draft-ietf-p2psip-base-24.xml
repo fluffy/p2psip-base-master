@@ -2426,7 +2426,7 @@ Dest=Z
 
               <t hangText="via_list:">The via_list contains the sequence of
               destinations through which the message has passed. The via_list
-              starts out empty and grows as the message traverses each
+              starts out empty and grows to the right as the message traverses each
               peer.</t>
 
               <t></t>
