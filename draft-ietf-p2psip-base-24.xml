@@ -1754,6 +1754,13 @@ Dest=Z
       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
       document are to be interpreted as described in <xref
       target="RFC2119">RFC 2119</xref>.</t>
+
+      <t>"SHOULD", "SHOULD NOT", "RECOMMENDED", and "NOT RECOMMENDED" are
+      appropriate when valid exceptions to a general requirement are known
+      to exist or appear to exist, and it is infeasible or impractical to
+      enumerate all of them. However, they should not be interpreted as
+      permitting implementors to fail to implement the general requirement
+      when such failure would result in interoperability failure."</t>
     </section>
 
     <section anchor="sec-overlay-protocol" title="Overlay Management Protocol">
