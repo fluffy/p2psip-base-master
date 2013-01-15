@@ -1158,14 +1158,6 @@ Transport    |      Link       |     +-------+  +------+
 
             <t></t>
 
-            <t hangText="Bridging overlays: ">Similar to how a Destination
-            List is used to reach a client attached via an arbitrary peer,
-            RELOAD can route messages between two different overlays by
-            building a destination list that includes a peer (or client) with
-            connectivity to both networks.</t>
-
-            <t></t>
-
             <t hangText="NAT Traversal: ">RELOAD supports establishing and
             using connections between nodes separated by one or more NATs,
             including locating peers behind NATs for those overlays
