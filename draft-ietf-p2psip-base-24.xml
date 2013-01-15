@@ -599,10 +599,9 @@ Transport    |      Link       |     +-------+  +------+
           Internet paths used to form the link in the overlay. Additionally,
           retransmission is performed to improve the reliability of end-to-end
           transactions. 
-          <!-- The relationship between this layer and the Message
-          Transport Layer is similar to the relationship between link-level
+          This layer is to the Message Transport Layer as link-level
           congestion control and retransmission in modern wireless networks is
-          to Internet transport protocols. --> </t>
+          to Internet transport protocols.</t>
 
           <t>This layer provides a generic interface that allows the topology
           plugin to control the overlay and resource operations and messages.
