@@ -3423,9 +3423,8 @@ struct {
 
           <section title="Probe">
             <t>Probe provides primitive "exploration" services: it allows a node
-            to determine which resources another node is responsible for; and
-            it allows some discovery services using multicast, anycast, or
-            broadcast. A probe can be addressed to a specific Node-ID, or the
+            to determine which resources another node is responsible for. A
+            probe can be addressed to a specific Node-ID, or the
             peer controlling a given location (by using a Resource-ID). In
             either case, the target Node-IDs respond with a simple response
             containing some status information.</t>
@@ -4143,8 +4142,7 @@ struct {
         <section anchor="sec.ping" title="Ping">
           <t>Ping is used to test connectivity along a path. A ping can be
           addressed to a specific Node-ID, to the peer controlling a given
-          location (by using a Resource-ID), or to the broadcast Node-ID
-          (2^128-1).</t>
+          location (by using a Resource-ID) or to the wildcard Node-ID.</t>
 
           <section title="Request Definition">
             <figure>
@@ -6839,8 +6837,6 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
        <bootstrap-node address="192.0.2.2" port="6084" />
        <bootstrap-node address="2001:DB8::1" port="6084" />
        <turn-density> 20 </turn-density>
-       <multicast-bootstrap address="192.0.0.1" />  
-       <multicast-bootstrap address="233.252.0.1" port="6084" />
        <clients-permitted> false </clients-permitted>
        <no-ice> false </no-ice>
        <chord:chord-update-interval>
@@ -7005,16 +7001,6 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             act as TURN servers, this would be set to 20. If it is not
             present, the default value is 1. If there are no TURN servers in
             the overlay, it is set to zero.</t>
-
-            <t></t>
-            
-            <t hangText="multicast-bootstrap ">This element represents the
-            address of a multicast, broadcast, or anycast address and port
-            that may be used for bootstrap. Nodes SHOULD listen on the
-            address. It has an attribute called "address" that represents the
-            IP address and an optional attribute called "port" that represents
-            the port and defaults to 6084. More than one "multicast-bootstrap"
-            element MAY be present.</t>
 
             <t></t>
             
@@ -7289,11 +7275,6 @@ parameter &= element bootstrap-node {
                 attribute port { xsd:int }?
              }*
 
-parameter &= element multicast-bootstrap { 
-                attribute address {  xsd:string },     
-                attribute port { xsd:int }?
-             }*
-
 kind-block = element kind-block {
     element kind {
         (  attribute name { kind-names }
@@ -7532,20 +7513,6 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           collisions. Name theft is still possible. If protection against name
           theft is desired, then the enrollment service MUST be used.</t>
         </section>
-      </section>
-
-      <section title="Searching for a Bootstrap Node">
-        <t>If no cached bootstrap nodes are available and the configuration
-        file has an multicast-bootstrap element, then the node SHOULD send a
-        Ping request over UDP to the address and port found to each
-        multicast-bootstrap element found in the configuration document. This
-        MAY be a multicast, broadcast, or anycast address. The Ping SHOULD use
-        the wildcard Node-ID as the destination Node-ID.</t>
-
-        <t>The responder node that receives the Ping request SHOULD check that
-        the overlay name is correct and that the requester peer sending the
-        request has appropriate credentials for the overlay before responding
-        to the Ping request even if the response is only an error.</t>
       </section>
 
       <section title="Contacting a Bootstrap Node">
