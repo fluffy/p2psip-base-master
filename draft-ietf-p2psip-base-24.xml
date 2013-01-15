@@ -740,9 +740,10 @@ Transport    |      Link       |     +-------+  +------+
     
           <t></t> <!-- Defn #6.0 --> 
 
-          <t hangText="Destination List:">A list of IDs through which a
-          message is to be routed, in strict order. A single Node-ID or a
-          Resource-ID is a trivial form of destination list. When multiple
+          <t hangText="Destination List:">A list of Node-IDs, Resource-ID and
+          Opaque IDs through which a message is to be routed, in strict order.
+          A single Node-ID, Resource-ID or Opaque ID is a trivial form of
+          destination list. When multiple
           Node-IDs are specified, a Destination List is a loose source
           route. The list is reduced hop-by-hop, does not include the source
           but includes the destination.</t>
