@@ -219,7 +219,7 @@ Check if the qualicom IPR issueed and if anything can be done
       <t>These properties were designed specifically to meet the requirements
       for a P2P protocol to support SIP. This document defines the base
       protocol for the distributed storage and location service, as well as
-      critical usages for NAT traversal and security. The SIP Usage itself is
+      critical usage for NAT traversal. The SIP Usage itself is
       described separately in <xref target="I-D.ietf-p2psip-sip"></xref>.
       RELOAD is not limited to usage by SIP and could serve as a tool for
       supporting other P2P applications with similar needs. </t>
@@ -694,7 +694,7 @@ Transport    |      Link       |     +-------+  +------+
             RELOAD.</t>
 
             <t><xref target="sec-store-usage"></xref> defines the Certificate
-            Store Usage that is fundamental to RELOAD security.</t>
+            Store Usages.</t>
 
             <t><xref target="sec-turn-server"></xref> defines the TURN Server
             Usage needed to locate TURN servers for NAT traversal.</t>
@@ -3008,15 +3008,11 @@ struct {
           some certificates MAY be omitted. However, unless an alternative
           mechanism for immediately generating certificates, such as shared
           secret security (<xref target="sec-shared-secret"></xref>) is used,
-          it is strongly RECOMMENDED that implementors include all referenced
-          certificates, otherwise there is the possibility that messages may
-          not be immediately verifiable because certificates must first be
-          retrieved.</t>
+          implementors MUST include all referenced certificates.</t>
 
           <t>NOTE TO IMPLEMENTERS: This requirement implies that a peer
           storing data is obligated to retain certificates for the data it
-          holds regardless of whether it is responsible for or actually
-          holding the certificates for the Certificate Store usage.</t>
+          holds.</t>
 
           <t>Each certificate is represented by a GenericCertificate
           structure, which has the following contents:</t>
@@ -6031,11 +6027,10 @@ struct {
     </section>
 
     <section anchor="sec-store-usage" title="Certificate Store Usage">
-      <t>The Certificate Store usage allows a peer to store its certificate in
-      the overlay, thus avoiding the need to send a certificate in each
-      message.</t>
+      <t>The Certificate Store usage allows a node to store its certificate in
+      the overlay.</t>
 
-      <t>A user/peer MUST store its certificate at Resource-IDs derived from
+      <t>A user/node MUST store its certificate at Resource-IDs derived from
       two Resource Names:</t>
 
       <t><list style="symbols">
@@ -6044,13 +6039,12 @@ struct {
           <t>The Node-ID in the certificate.</t>
         </list></t>
 
-      <t>Note that in the second case the certificate is not stored at the
-      peer's Node-ID but rather at a hash of the peer's Node-ID. The intention
+      <t>Note that in the second case the certificate for a peer is not stored
+      at the its Node-ID but rather at a hash of its Node-ID. The intention
       here (as is common throughout RELOAD) is to avoid making a peer
       responsible for its own data.</t>
 
-      <t>A peer MUST ensure that the user's certificates are stored in the
-      Overlay Instance. New certificates are stored at the end of the list.
+      <t>New certificates are stored at the end of the list.
       This structure allows users to store an old and a new certificate that
       both have the same Node-ID, which allows for migration of certificates
       when they are renewed.</t>
@@ -6176,8 +6170,7 @@ struct {
       too low, this approach will result in finding a server relatively
       quickly.</t>
 
-      <t>NOTE TO IMPLEMENTERS: As the access control for this usage is not
-      CERTIFICATE_BY_NODE or CERTIFICATE_BY_USER, the certificates used by
+      <t>Note to implementers: The certificates used by
       TurnServer entries need to be retained as described in <xref
       target="sec-signature"></xref>.</t>
     </section>
@@ -7514,9 +7507,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           match. This prevents Node-ID theft.</t>
 
           <t>Once the node has constructed a self-signed certificate, it MAY
-          join the overlay. Before storing its certificate in the overlay
-          (<xref target="sec-store-usage"></xref>) it SHOULD look to see if
-          the user name is already taken and if so choose another user name.
+          join the overlay. It MUST store its certificate in the overlay
+          (<xref target="sec-store-usage"></xref>) but SHOULD look to see if
+          the user name is already taken before and if so choose another user
+          name.
           Note that this only provides protection against accidental name
           collisions. Name theft is still possible. If protection against name
           theft is desired, then the enrollment service MUST be used.</t>
