@@ -207,6 +207,13 @@ Check if the qualicom IPR issueed and if anything can be done
           implement. Specifying a default "mandatory to implement" overlay algorithm
           promotes interoperability, while extensibility allows selection of
           overlay algorithms optimized for a particular application.</t>
+
+          <t></t>
+
+          <t hangText="Support for Clients:">RELOAD clients differ from RELOAD
+          peers primarily in that they do not store information on behalf of
+          other nodes in the overlay, but only use the overlay to locate users
+          and resources as well as store information.</t>
         </list></t>
 
       <t>These properties were designed specifically to meet the requirements
