@@ -1860,7 +1860,7 @@ Dest=Z
           <t><list style="symbols">
               <t>The peer can add an entry to the via list in the forwarding
               header that will enable it to determine the correct node. 
-              This is done by apending to the via list the Node-ID of
+              This is done by appending to the via list the Node-ID of
               the node that sent the request to this node. </t>
 
               <t>The peer can keep per-transaction state which will allow it
@@ -2147,7 +2147,7 @@ Dest=Z
               <!--begin-pdu-->
 
               <artwork><![CDATA[
-      enum { false (0), true(1), (255) } Boolean;
+      enum { false(0), true(1), (255) } Boolean;
 
     ]]></artwork>
             </figure>
@@ -2599,7 +2599,7 @@ Dest=Z
 
           <section anchor="sec-forwarding-options" title="Forwarding Option">
             <t>The Forwarding header can be extended with forwarding header
-            options, which are a series of ForwardingOptions structures:</t>
+            options, which are a series of ForwardingOption structures:</t>
 
             <figure>
               <!-- begin-pdu-->
@@ -3967,7 +3967,7 @@ struct {
           </section>
 
           <section title="Full ICE">
-            <t>When the overlay uses ICE , connectivity checks and nominations
+            <t>When the overlay uses ICE, connectivity checks and nominations
             are used as in regular ICE.</t>
 
             <section title="Connectivity Checks">
@@ -6995,7 +6995,7 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             "port" that represents the port and defaults to 6084. The IPv6
             address is in typical hexadecimal form using standard period and
             colon separators as specified in <xref target="RFC5952"></xref>.
-            More than one bootstrap-peer element MAY be present.</t>
+            More than one bootstrap-node element MAY be present.</t>
 
             <t></t>
             
@@ -9437,7 +9437,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t>Additional information: The syntax for this media type is specified
         in <xref target="sec-configuration"></xref> of RFC-AAAA. The contents
-        MUST be valid XML compliant with the relax NG grammar specified in
+        MUST be valid XML compliant with the RELAX NG grammar specified in
         RFC-AAAA and use the UTF-8<xref target="RFC3629"></xref> character
         encoding.</t>
 
