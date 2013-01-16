@@ -230,7 +230,7 @@ Check if the qualicom IPR issueed and if anything can be done
         A
         RELOAD Overlay Instance consists of a set of nodes arranged in a
         partly connected graph. Each node in the overlay is assigned a numeric
-        Node-ID with the same lifetime than the node which, together with the
+        Node-ID for the lifetime of the node which, together with the
         specific overlay algorithm in use,
         determines its position in the graph and the set of nodes it connects
         to. The Node-ID is also tightly coupled to the certificate (see
