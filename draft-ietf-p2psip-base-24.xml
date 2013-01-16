@@ -209,7 +209,6 @@ Check if the qualicom IPR issueed and if anything can be done
           overlay algorithms optimized for a particular application.</t>
 
           <t></t>
-
           <t hangText="Support for Clients:">RELOAD clients differ from RELOAD
           peers primarily in that they do not store information on behalf of
           other nodes in the overlay, but only use the overlay to locate users
@@ -5067,6 +5066,11 @@ struct {
 
               <t>The stored data.</t>
             </list></t>
+
+            <t> Attempts to access an key that does not exist in a dictionary
+            results in no DictionaryEntry record for that key being returned in
+            the result.  </t>
+
         </section>
       </section>
 
