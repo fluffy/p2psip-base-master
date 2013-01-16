@@ -6487,11 +6487,11 @@ struct {
 
         <t>A peer MUST maintain an association (via Attach) to every member of
         its neighbor set. A peer MUST attempt to maintain at least three
-        predecessors and three successors, even though this will not be
-        possible if the ring is very small. It is RECOMMENDED that O(log(N))
-        predecessors and successors be maintained in the neighbor set. See
-        <xref target="I-D.ietf-p2psip-self-tuning" /> for methods to estimate
-        the overlay size, N.</t>
+        predecessors and three successors, even though this will not be possible
+        if the ring is very small. It is RECOMMENDED that O(log(N)) predecessors
+        and successors be maintained in the neighbor set.  There are many ways
+        to estimate N, some of which are discussed in <xref
+        target="I-D.ietf-p2psip-self-tuning" />.</t>
 
         <section anchor="sec-neighbor-failure"
                  title="Handling Neighbor Failures">
