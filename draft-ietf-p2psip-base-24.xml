@@ -2640,12 +2640,6 @@ Dest=Z
 
                 <t></t>
 
-                <t hangText="length"></t>
-
-                <t>The length of the rest of the structure.</t>
-
-                <t></t>
-
                 <t hangText="flags"></t>
 
                 <t>Three flags are defined FORWARD_CRITICAL(0x01),
@@ -2664,6 +2658,14 @@ Dest=Z
                 flags MUST be cleared.</t>
 
                 <t></t>
+
+                <t hangText="length"></t>
+
+                <t>The length of the rest of the structure. Note that a 0 length
+		may be reasonable if the mere presence of the option is meaningful
+		and no value is required.</t>
+                <t></t>
+
 
                 <t hangText="option"></t>
 
