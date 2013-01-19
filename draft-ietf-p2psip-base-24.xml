@@ -121,7 +121,7 @@ Check if the qualicom IPR issueed and if anything can be done
       </address>
     </author>
 
-    <date day="16" month="January" year="2013" />
+    <date day="19" month="January" year="2013" />
 
     <area>RAI</area>
 
@@ -3096,7 +3096,7 @@ struct {
               <t>The signature algorithm in use. The algorithm definitions are
               found in the IANA TLS SignatureAlgorithm and
               HashAlgorithm Registries. All implementations MUST support
-              RSASSA-PKCS1-v1_5 <xref target="RFC3447"></xref> signatures with
+              RSASSA-PKCS1-v1_5 <xref target="RFC3447"/> signatures with
               SHA-256 hashes.</t>
 
               <t></t>
