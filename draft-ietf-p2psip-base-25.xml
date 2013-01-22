@@ -3103,7 +3103,7 @@ struct {
 
               <t hangText="identity "></t>
 
-              <t>The identity, as defined in the two paragraphes following this
+              <t>The identity, as defined in the two paragraphs following this
               list, used to form the signature.</t>
 
               <t></t>
@@ -3504,7 +3504,6 @@ struct {
             uint32              uptime;
 
           /* This type may be extended */
-
         };
       } ProbeInformationData;
 
@@ -6043,7 +6042,7 @@ struct {
         </list></t>
 
       <t>Note that in the second case the certificate for a peer is not stored
-      at the its Node-ID but rather at a hash of its Node-ID. The intention
+      at its Node-ID but rather at a hash of its Node-ID. The intention
       here (as is common throughout RELOAD) is to avoid making a peer
       responsible for its own data.</t>
 
@@ -6761,7 +6760,7 @@ struct {
                    NodeId            successors<0..2^16-1>;
 
                  case from_pred:
-                    NodeId           predecessors<0..2^16-1>;
+                   NodeId           predecessors<0..2^16-1>;
                };
             } ChordLeaveData;
 ]]></artwork>
