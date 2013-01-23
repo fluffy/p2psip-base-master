@@ -6935,7 +6935,9 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             copy of the configuration at a randomly selected time that is
             before the expiration time. Note that if the certificates expire
             before a new configuration is retried, the node will not be able
-            to validate the configuration file. All times MUST be in UTC.</t>
+            to validate the configuration file. All times MUST conform to the
+            Internet Date/Time Format defined in <xref target="RFC3339" /> and
+            be specified using Coordinated Universal Time (UTC).</t>
 
             <t></t>
             
@@ -9536,6 +9538,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <?rfc include="reference.RFC.5405"?>
 
       <?rfc include="reference.RFC.2782"?>
+
+      <?rfc include="reference.RFC.3339"?>
 
       <reference anchor="RFC5952">
         <front>
