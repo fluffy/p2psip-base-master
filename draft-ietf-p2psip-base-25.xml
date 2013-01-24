@@ -9601,6 +9601,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="Henry S. Thompson">
             <organization>University of Edinburgh and W3C</organization>
           </author>
+
+          <date day="8" month="December" year="2008" />
         </front>
 
         <format target="http://www.w3.org/TR/REC-xml-names/" type="HTML" />
@@ -9617,6 +9619,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="M" surname="Murata">
             <organization>Contivo Inc.</organization>
           </author>
+
+          <date day="3" month="December" year="2001" />
         </front>
 
         <format target="http://relaxng.org/spec-20011203.html" type="HTML" />
@@ -9636,6 +9640,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author>
             <organization>Wikipedia</organization>
           </author>
+
+          <date year="2013" />
         </front>
       </reference>
 
@@ -9647,6 +9653,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author>
             <organization>Wikipedia</organization>
           </author>
+
+          <date year="2013" />
         </front>
       </reference>
 
@@ -9658,6 +9666,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author>
             <organization>Wikipedia</organization>
           </author>
+
+          <date year="2013" />
         </front>
       </reference>
 
@@ -9669,6 +9679,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author>
             <organization>Wikipedia</organization>
           </author>
+
+          <date year="2013" />
         </front>
       </reference>
 
@@ -9782,6 +9794,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="I." surname="Stoica">
             <organization />
           </author>
+
+          <date year="2005" />
         </front>
 
         <seriesInfo name="" value="WORLDS'05" />
@@ -9803,6 +9817,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="K.-W." surname="Ng">
             <organization />
           </author>
+
+          <date year="2006" />
         </front>
 
         <seriesInfo name="" value="IEEE P2P'06" />
@@ -9824,6 +9840,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="M." surname="Zangrilli">
             <organization />
           </author>
+
+          <date year="2008" />
         </front>
 
         <seriesInfo name="" value="Hot-P2P'08" />
@@ -9864,6 +9882,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="H." surname="Yu">
             <organization />
           </author>
+
+          <date year="2005" />
         </front>
 
         <seriesInfo name="" value="SIGCOMM'05" />
@@ -9904,6 +9924,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
                   surname="Balakrishnan">
             <organization>MIT Laboratory for Computer Science</organization>
           </author>
+
+          <date year="2001" />
         </front>
 
         <seriesInfo name="IEEE/ACM Transactions on Networking"
@@ -9925,6 +9947,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="L." surname="Liu">
             <organization />
           </author>
+
+          <date year="2004" />
         </front>
 
         <seriesInfo name="" value="ACSAC 2004" />
@@ -9951,6 +9975,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="J." surname="Kubiatowicz">
             <organization />
           </author>
+
+          <date year="2004" />
         </front>
 
         <seriesInfo name="In Proc. of the USENIX Annual Technical Conference June 2004"
@@ -9975,6 +10001,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
           <author initials="I." surname="Stoica">
             <organization />
           </author>
+
+          <date year="2006" />
         </front>
 
         <seriesInfo name="" value="SIGCOMM 2006" />
