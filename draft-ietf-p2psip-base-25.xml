@@ -2271,14 +2271,14 @@ Dest=Z
             IPv4AddrPort or an IPv6AddrPort. Both of these simply consist of
             an address represented as an integer and a 16-bit port. As an
             example, here is the wire representation of the IPv4 address
-            "192.0.2.1" with port "6100".</t>
+            "192.0.2.1" with port "6084".</t>
 
             <figure>
               <artwork><![CDATA[
           01           ; type    = IPv4
           06           ; length  = 6
           c0 00 02 01  ; address = 192.0.2.1
-          17 d4        ; port    = 6100
+          17 c4        ; port    = 6084
           ]]></artwork>
             </figure>
 
