@@ -1133,7 +1133,7 @@ Transport    |      Link       |     +-------+  +------+
           calculate Resource-IDs, and signs its requests in the same manner as
           peers. While a client does not necessarily require a full
           implementation of the overlay algorithm, calculating the Resource-ID
-          requires an implementation of the appropriate algorithm for the
+          requires an implementation of an appropriate algorithm for the
           overlay.</t>
         </section>
       </section>
