@@ -371,7 +371,7 @@ Check if the qualicom IPR issueed and if anything can be done
             Layer because there is no single "routing table" equivalent used by
             all overlay algorithms. The topology plugin has two functions,
             constructing the local forwarding instructions, and selecting the
-            operational topology (i.e. creating links by sending overlay
+            operational topology (i.e., creating links by sending overlay
             management messages).</t>
 
             <t></t>
@@ -798,7 +798,7 @@ Transport    |      Link       |     +-------+  +------+
           may be either a Peer or a Client. Because RELOAD uses the same
           protocol for both clients and peers, much of the text applies
           equally to both. Therefore we use "Node" when the text applies to
-          both Clients and Peers and the more specific term (i.e. client or
+          both Clients and Peers and the more specific term (i.e., client or
           peer) when the text applies only to Clients or only to Peers.</t>
 
           <t></t> <!-- Defn #13.0 --> 
@@ -910,7 +910,7 @@ Transport    |      Link       |     +-------+  +------+
           structures (data Kinds) that an application wants to store in the
           overlay. An usage may also define a set of network protocols
           (application IDs) that can be used over direct connections between
-          nodes.  E.g. the SIP usage defines a SIP registration data Kind that
+          nodes.  E.g., the SIP usage defines a SIP registration data Kind that
           contains information on how to reach a SIP endpoint and two
           application IDs corresponding to the SIP and SIPS protocols.</t>
 
@@ -1349,7 +1349,7 @@ Dest=Z
 
         <t>In general, a peer needs to maintain connections to all of the
         peers near it in the Overlay Instance and to enough other peers to
-        have efficient routing (the details, e.g. on what "enough" or "near"
+        have efficient routing (the details, e.g., on what "enough" or "near"
         means, depend on the specific overlay). If a peer cannot form a
         connection to some other peer, this is not
         necessarily a disaster; overlays can route correctly even without
@@ -1464,7 +1464,7 @@ Dest=Z
           potential first nodes (which can also serve as bootstrap nodes
           initially) need to somehow be instructed 
           that they are the entire overlay, rather than not part of it.
-          (e.g. by comparing their IP
+          (e.g., by comparing their IP
           address to the bootstrap IP addresses in the configuration file) </t>
 
           <t>Note that clients do not perform either of these operations.</t>
@@ -2527,23 +2527,20 @@ Dest=Z
             the following contents: <list style="hanging">
                 <t></t>
 
-                <t hangText="type "></t>
-
-                <t>The type of the DestinationData Payload Data Unit (PDU).
+                <t hangText="type"><vspace blankLines='0'/>
+                The type of the DestinationData Payload Data Unit (PDU).
                 This may be one of "node", "resource", or
                 "opaque_id_type".</t>
 
                 <t></t>
 
-                <t hangText="length "></t>
-
-                <t>The length of the destination_data.</t>
+                <t hangText="length"><vspace blankLines='0'/>
+                The length of the destination_data.</t>
 
                 <t></t>
 
-                <t hangText="destination_data "></t>
-
-                <t>The destination value itself, which is an encoded
+                <t hangText="destination_data"><vspace blankLines='0'/>
+                The destination value itself, which is an encoded
                 DestinationData structure, depending on the value of
                 "type".</t>
               </list></t>
@@ -2560,15 +2557,13 @@ Dest=Z
                 style="hanging">
                 <t></t>
 
-                <t hangText="node"></t>
-
-                <t>A Node-ID.</t>
+                <t hangText="node"><vspace blankLines='0'/>
+                A Node-ID.</t>
 
                 <t></t>
 
-                <t hangText="opaque"></t>
-
-                <t>A compressed list of Node-IDs and an eventual Resource-ID. 
+                <t hangText="opaque"><vspace blankLines='0'/>
+                A compressed list of Node-IDs and an eventual Resource-ID.
                 Because
                 this value was compressed by one of the peers, it is only
                 meaningful to that peer and cannot be decoded by other peers.
@@ -2576,9 +2571,8 @@ Dest=Z
 
                 <t></t>
 
-                <t hangText="resource"></t>
-
-                <t>The Resource-ID of the resource which is desired. This type
+                <t hangText="resource"><vspace blankLines='0'/>
+                The Resource-ID of the resource which is desired. This type
                 MUST only appear in the final location of a destination list
                 and MUST NOT appear in a via list. It is meaningless to try to
                 route through a resource.</t>
@@ -2633,16 +2627,14 @@ Dest=Z
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="type"></t>
-
-                <t>The type of the option. This structure allows for unknown
+                <t hangText="type"><vspace blankLines='0'/>
+                The type of the option. This structure allows for unknown
                 options types.</t>
 
                 <t></t>
 
-                <t hangText="flags"></t>
-
-                <t>Three flags are defined FORWARD_CRITICAL(0x01),
+                <t hangText="flags"><vspace blankLines='0'/>
+                Three flags are defined FORWARD_CRITICAL(0x01),
                 DESTINATION_CRITICAL(0x02), and RESPONSE_COPY(0x04). These
                 flags MUST NOT be set in a response. If the FORWARD_CRITICAL
                 flag is set, any peer that would forward the message but does
@@ -2659,17 +2651,14 @@ Dest=Z
 
                 <t></t>
 
-                <t hangText="length"></t>
-
-                <t>The length of the rest of the structure. Note that a 0 length
+                <t hangText="length"><vspace blankLines='0'/>
+                The length of the rest of the structure. Note that a 0 length
 		may be reasonable if the mere presence of the option is meaningful
 		and no value is required.</t>
                 <t></t>
 
-
-                <t hangText="option"></t>
-
-                <t>The option value.</t>
+                <t hangText="option"><vspace blankLines='0'/>
+                The option value.</t>
               </list></t>
           </section>
         </section>
@@ -2704,9 +2693,8 @@ struct {
               style="hanging">
               <t></t>
 
-              <t hangText="message_code "></t>
-
-              <t>This indicates the message that is being sent. The code space
+              <t hangText="message_code"><vspace blankLines='0'/>
+              This indicates the message that is being sent. The code space
               is broken up as follows. <list style="hanging">
                   <t></t>
 
@@ -2734,9 +2722,8 @@ struct {
 
               <t></t>
 
-              <t hangText="message_body "></t>
-
-              <t>The message body itself, represented as a variable-length
+              <t hangText="message_body"><vspace blankLines='0'/>
+              The message body itself, represented as a variable-length
               string of bytes. The bytes themselves are dependent on the code
               value. See the sections describing the various RELOAD methods
               (Join, Update, Attach, Store, Fetch, etc.) for the definitions
@@ -2744,9 +2731,8 @@ struct {
 
               <t></t>
 
-              <t hangText="extensions "></t>
-
-              <t>Extensions to the message. Currently no extensions are
+              <t hangText="extensions"><vspace blankLines='0'/>
+              Extensions to the message. Currently no extensions are
               defined, but new extensions can be defined by the process
               described in <xref target="sec-message-extensions"></xref>.</t>
             </list></t>
@@ -2756,15 +2742,13 @@ struct {
           <t><list style="hanging">
               <t></t>
 
-              <t hangText="type "></t>
-
-              <t>The extension type.</t>
+              <t hangText="type"><vspace blankLines='0'/>
+              The extension type.</t>
 
               <t></t>
 
-              <t hangText="critical "></t>
-
-              <t>Whether this extension needs to be understood in order to
+              <t hangText="critical"><vspace blankLines='0'/>
+              Whether this extension needs to be understood in order to
               process the message. If critical = True and the recipient does
               not understand the message, it MUST generate an
               Error_Unknown_Extension error. If critical = False, the
@@ -2773,9 +2757,8 @@ struct {
 
               <t></t>
 
-              <t hangText="extension_contents "></t>
-
-              <t>The contents of the extension (extension-dependent).</t>
+              <t hangText="extension_contents"><vspace blankLines='0'/>
+              The contents of the extension (extension-dependent).</t>
             </list></t>
 
             <t>The subsections in <xref target="sec-topology-methods" />,
@@ -2827,16 +2810,14 @@ struct {
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="error_code "></t>
-
-                <t>A numeric error code indicating the error that
+                <t hangText="error_code"><vspace blankLines='0'/>
+                A numeric error code indicating the error that
                 occurred.</t>
 
                 <t></t>
 
-                <t hangText="error_info "></t>
-
-                <t>An optional arbitrary byte string. Unless otherwise
+                <t hangText="error_info"><vspace blankLines='0'/>
+                An optional arbitrary byte string. Unless otherwise
                 specified, this will be a UTF-8 text string providing further
                 information about what went wrong. Developers are encouraged
                 to put enough diagnostic information to be useful in
@@ -2990,15 +2971,13 @@ struct {
           <t><list style="hanging">
               <t></t>
 
-              <t hangText="certificates"></t>
-
-              <t>A bucket of certificates.</t>
+              <t hangText="certificates"><vspace blankLines='0'/>
+              A bucket of certificates.</t>
 
               <t></t>
 
-              <t hangText="signature"></t>
-
-              <t>A signature.</t>
+              <t hangText="signature"><vspace blankLines='0'/>
+              A signature.</t>
             </list></t>
 
           <t>The certificates bucket SHOULD contain all the certificates
@@ -3023,17 +3002,15 @@ struct {
           <t><list style="hanging">
               <t></t>
 
-              <t hangText="type"></t>
-
-              <t>The type of the certificate, as defined in <xref
+              <t hangText="type"><vspace blankLines='0'/>
+              The type of the certificate, as defined in <xref
               target="RFC6091"></xref>. Only the use of X.509 certificates is
               defined in this document.</t>
 
               <t></t>
 
-              <t hangText="certificate"></t>
-
-              <t>The encoded version of the certificate. For X.509
+              <t hangText="certificate"><vspace blankLines='0'/>
+              The encoded version of the certificate. For X.509
               certificates, it is the DER form.</t>
             </list></t>
 
@@ -3091,9 +3068,8 @@ struct {
           <t><list style="hanging">
               <t></t>
 
-              <t hangText="algorithm "></t>
-
-              <t>The signature algorithm in use. The algorithm definitions are
+              <t hangText="algorithm"><vspace blankLines='0'/>
+              The signature algorithm in use. The algorithm definitions are
               found in the IANA TLS SignatureAlgorithm and
               HashAlgorithm Registries. All implementations MUST support
               RSASSA-PKCS1-v1_5 <xref target="RFC3447"/> signatures with
@@ -3101,16 +3077,14 @@ struct {
 
               <t></t>
 
-              <t hangText="identity "></t>
-
-              <t>The identity, as defined in the two paragraphs following this
+              <t hangText="identity"><vspace blankLines='0'/>
+              The identity, as defined in the two paragraphs following this
               list, used to form the signature.</t>
 
               <t></t>
 
-              <t hangText="signature_value "></t>
-
-              <t>The value of the signature.</t>
+              <t hangText="signature_value"><vspace blankLines='0'/>
+              The value of the signature.</t>
               
               <t>Note that storage operations allow for special values of
               algorithm and identity. See <xref target="sec-store-req">
@@ -3399,26 +3373,23 @@ struct {
               <t><list style="hanging">
                   <t></t>
 
-                  <t hangText="send_update "></t>
-
-                  <t>A single byte. This may be set to True to indicate that
+                  <t hangText="send_update"><vspace blankLines='0'/>
+                  A single byte. This may be set to True to indicate that
                   the requester wishes the responder to initiate an Update
                   request immediately. Otherwise, this value MUST be set to
                   False.</t>
 
                   <t></t>
 
-                  <t hangText="destination "></t>
-
-                  <t>The destination which the requester is interested in.
+                  <t hangText="destination"><vspace blankLines='0'/>
+                  The destination which the requester is interested in.
                   This may be any valid destination object, including a
                   Node-ID, opaque ID, or Resource-ID.</t>
 
                   <t></t>
 
-                  <t hangText="overlay_specific_data "></t>
-
-                  <t>Other data as appropriate for the overlay.</t>
+                  <t hangText="overlay_specific_data"><vspace blankLines='0'/>
+                  Other data as appropriate for the overlay.</t>
                 </list></t>
             </section>
 
@@ -3461,24 +3432,21 @@ struct {
               <t><list style="hanging">
                   <t></t>
 
-                  <t hangText="responsible_set"></t>
-
-                  <t>indicates that the peer should Respond with the fraction
+                  <t hangText="responsible_set"><vspace blankLines='0'/>
+                  indicates that the peer should Respond with the fraction
                   of the overlay for which the responding peer is
                   responsible.</t>
 
                   <t></t>
 
-                  <t hangText="num_resources"></t>
-
-                  <t>indicates that the peer should Respond with the number of
+                  <t hangText="num_resources"><vspace blankLines='0'/>
+                  indicates that the peer should Respond with the number of
                   resources currently being stored by the peer.</t>
 
                   <t></t>
 
-                  <t hangText="uptime"></t>
-
-                  <t>indicates that the peer should Respond with how long the
+                  <t hangText="uptime"><vspace blankLines='0'/>
+                  indicates that the peer should Respond with how long the
                   peer has been up in seconds.</t>
                 </list></t>
             </section>
@@ -3649,36 +3617,31 @@ struct {
             <t>The values contained in AttachReqAns are: <list style="hanging">
                 <t></t>
 
-                <t hangText="ufrag "></t>
-
-                <t>The username fragment (from ICE).</t>
-
-                <t></t>
-
-                <t hangText="password "></t>
-
-                <t>The ICE password.</t>
+                <t hangText="ufrag"><vspace blankLines='0'/>
+                The username fragment (from ICE).</t>
 
                 <t></t>
 
-                <t hangText="role "></t>
+                <t hangText="password"><vspace blankLines='0'/>
+                The ICE password.</t>
 
-                <t>An active/passive/actpass attribute from RFC 4145 <xref
+                <t></t>
+
+                <t hangText="role"><vspace blankLines='0'/>
+                An active/passive/actpass attribute from RFC 4145 <xref
                 target="RFC4145"></xref>. This value MUST be 'passive' for the
                 offerer (the peer sending the Attach request) and 'active' for
                 the answerer (the peer sending the Attach response).</t>
 
                 <t></t>
 
-                <t hangText="candidates "></t>
-
-                <t>One or more ICE candidate values, as described below.</t>
+                <t hangText="candidates"><vspace blankLines='0'/>
+                One or more ICE candidate values, as described below.</t>
 
                 <t></t>
 
-                <t hangText="send_update "></t>
-
-                <t>Has the same meaning as the send_update field in
+                <t hangText="send_update"><vspace blankLines='0'/>
+                Has the same meaning as the send_update field in
                 RouteQueryReq.</t>
               </list></t>
 
@@ -3689,16 +3652,14 @@ struct {
             the structure. The remaining values are specified as follows:</t>
 
             <t><list style="hanging">
-                <t hangText="addr_port"></t>
-
-                <t>corresponds to the ICE connection-address and port
+                <t hangText="addr_port"><vspace blankLines='0'/>
+                corresponds to the ICE connection-address and port
                 productions.</t>
 
                 <t></t>
 
-                <t hangText="overlay_link"></t>
-
-                <t>corresponds to the ICE transport production, Overlay Link
+                <t hangText="overlay_link"><vspace blankLines='0'/>
+                corresponds to the ICE transport production, Overlay Link
                 protocols used with No-ICE MUST specify "No-ICE" in their
                 description. Future overlay link values can be added by
                 defining new OverlayLinkType values in the IANA registry in
@@ -3715,34 +3676,29 @@ struct {
 
                 <t></t>
 
-                <t hangText="foundation"></t>
-
-                <t>corresponds to the ICE foundation production.</t>
-
-                <t></t>
-
-                <t hangText="priority"></t>
-
-                <t>corresponds to the ICE priority production.</t>
+                <t hangText="foundation"><vspace blankLines='0'/>
+                corresponds to the ICE foundation production.</t>
 
                 <t></t>
 
-                <t hangText="type"></t>
-
-                <t>corresponds to the ICE cand-type production.</t>
+                <t hangText="priority"><vspace blankLines='0'/>
+                corresponds to the ICE priority production.</t>
 
                 <t></t>
 
-                <t hangText="rel_addr_port"></t>
+                <t hangText="type"><vspace blankLines='0'/>
+                corresponds to the ICE cand-type production.</t>
 
-                <t>corresponds to the ICE rel-addr and rel-port productions. Only
+                <t></t>
+
+                <t hangText="rel_addr_port"><vspace blankLines='0'/>
+                corresponds to the ICE rel-addr and rel-port productions. Only
                 present for types "relay", "srflx" and "prflx".</t>
 
                 <t></t>
 
-                <t hangText="extensions"></t>
-
-                <t>ICE extensions. The name and value fields correspond to
+                <t hangText="extensions"><vspace blankLines='0'/>
+                ICE extensions. The name and value fields correspond to
                 binary translations of the equivalent fields in the ICE
                 extensions.</t>
               </list></t>
@@ -4021,7 +3977,7 @@ struct {
           <section title="Sending Media">
             <t>The procedures of Section 11 of ICE apply to RELOAD as well.
             However, in this case, the "media" takes the form of application
-            layer protocols (e.g. RELOAD) over TLS or DTLS. Consequently, once
+            layer protocols (e.g., RELOAD) over TLS or DTLS. Consequently, once
             ICE processing completes, the agent will begin TLS or DTLS
             procedures to establish a secure connection. The node which sent
             the Attach request MUST be the TLS server. The other node MUST be
@@ -4078,37 +4034,32 @@ struct {
             <list style="hanging">
                 <t></t>
 
-                <t hangText="ufrag "></t>
-
-                <t>The username fragment (from ICE)</t>
-
-                <t></t>
-
-                <t hangText="password "></t>
-
-                <t>The ICE password.</t>
+                <t hangText="ufrag"><vspace blankLines='0'/>
+                The username fragment (from ICE)</t>
 
                 <t></t>
 
-                <t hangText="application "></t>
+                <t hangText="password"><vspace blankLines='0'/>
+                The ICE password.</t>
 
-                <t>A 16-bit application-id as defined in the <xref
+                <t></t>
+
+                <t hangText="application"><vspace blankLines='0'/>
+                A 16-bit application-id as defined in the <xref
                 target="sec.iana.app"></xref>. This number represents the IANA
                 registered application that is going to send data on this
                 connection.</t>
 
                 <t></t>
 
-                <t hangText="role "></t>
-
-                <t>An active/passive/actpass attribute from RFC 4145 <xref
+                <t hangText="role"><vspace blankLines='0'/>
+                An active/passive/actpass attribute from RFC 4145 <xref
                 target="RFC4145"></xref>.</t>
 
                 <t></t>
 
-                <t hangText="candidates "></t>
-
-                <t>One or more ICE candidate values</t>
+                <t hangText="candidates"><vspace blankLines='0'/>
+                One or more ICE candidate values</t>
               </list></t>
 
             <t>The application using connection set up with this request is
@@ -4189,16 +4140,14 @@ struct {
                 style="hanging">
                 <t></t>
 
-                <t hangText="response_id "></t>
-
-                <t>A randomly generated 64-bit response ID. This is used to
+                <t hangText="response_id"><vspace blankLines='0'/>
+                A randomly generated 64-bit response ID. This is used to
                 distinguish Ping responses.</t>
 
                 <t></t>
 
-                <t hangText="time "></t>
-
-                <t>The time when the Ping response was created represented in
+                <t hangText="time"><vspace blankLines='0'/>
+                The time when the Ping response was created represented in
                 the same way as storage_time defined in <xref
                 target="sec-data-protocol"></xref>.</t>
               </list></t>
@@ -4247,25 +4196,21 @@ struct {
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="type"></t>
-
-                <t>The type of the contents of the message. This structure
+                <t hangText="type"><vspace blankLines='0'/>
+                The type of the contents of the message. This structure
                 allows for unknown content types.</t>
 
-                <t hangText="length"></t>
-
-                <t>The length of the remainder of the message. This is
+                <t hangText="length"><vspace blankLines='0'/>
+                The length of the remainder of the message. This is
                 included to preserve backward compatibility and is 32 bits
                 instead of 24 to facilitate easy conversion between network
                 and host byte order.</t>
 
-                <t hangText="config_data (type==config)"></t>
+                <t hangText="config_data (type==config)"><vspace blankLines='0'/>
+                The contents of the configuration document.</t>
 
-                <t>The contents of the configuration document.</t>
-
-                <t hangText="kinds (type==kind)"></t>
-
-                <t>One or more XML kind-block productions (see <xref
+                <t hangText="kinds (type==kind)"><vspace blankLines='0'/>
+                One or more XML kind-block productions (see <xref
                 target="sec-configuration"></xref>). These MUST be encoded
                 with UTF-8 and assume a default namespace of
                 "urn:ietf:params:xml:ns:p2p:config-base".</t>
@@ -4516,16 +4461,14 @@ struct {
           is as follows: <list style="hanging">
               <t></t>
 
-              <t hangText="sequence "></t>
-
-              <t>the sequence number. This increments by 1 for each framed
+              <t hangText="sequence"><vspace blankLines='0'/>
+              the sequence number. This increments by 1 for each framed
               message sent over this transport session.</t>
 
               <t></t>
 
-              <t hangText="message "></t>
-
-              <t>the message that is being transmitted.</t>
+              <t hangText="message"><vspace blankLines='0'/>
+              the message that is being transmitted.</t>
             </list></t>
 
           <t>Each connection has it own sequence number space. Initially the
@@ -4541,15 +4484,13 @@ struct {
               style="hanging">
               <t></t>
 
-              <t hangText="ack_sequence "></t>
-
-              <t>The sequence number of the message being acknowledged.</t>
+              <t hangText="ack_sequence"><vspace blankLines='0'/>
+              The sequence number of the message being acknowledged.</t>
 
               <t></t>
 
-              <t hangText="received "></t>
-
-              <t>A bitmask indicating if each of the previous 32 sequence
+              <t hangText="received"><vspace blankLines='0'/>
+              A bitmask indicating if each of the previous 32 sequence
               numbers before this packet has been among the 32 packets most
               recently received on this connection. When a packet is received
               with a sequence number N, the receiver looks at the sequence
@@ -4793,16 +4734,14 @@ struct {
       <t>The contents of this structure are as follows: <list style="hanging">
           <t></t>
 
-          <t hangText="length "></t>
-
-          <t>The size of the StoredData structure in bytes excluding the size
+          <t hangText="length"><vspace blankLines='0'/>
+          The size of the StoredData structure in bytes excluding the size
           of length itself.</t>
 
           <t></t>
 
-          <t hangText="storage_time "></t>
-
-          <t>The time when the data was stored represented as the number of
+          <t hangText="storage_time"><vspace blankLines='0'/>
+          The time when the data was stored represented as the number of
           milliseconds elapsed since midnight Jan 1, 1970 UTC not counting
           leap seconds. This will have the same values for seconds as standard
           UNIX time or POSIX time. More information can be found at <xref
@@ -4828,23 +4767,20 @@ struct {
 
           <t></t>
 
-          <t hangText="lifetime "></t>
-
-          <t>The validity period for the data, in seconds, starting from the
+          <t hangText="lifetime"><vspace blankLines='0'/>
+          The validity period for the data, in seconds, starting from the
           time the peer receives the StoreReq.</t>
 
           <t></t>
 
-          <t hangText="value "></t>
-
-          <t>The data value itself, as described in <xref
+          <t hangText="value"><vspace blankLines='0'/>
+          The data value itself, as described in <xref
           target="sec-kind-model"></xref>.</t>
 
           <t></t>
 
-          <t hangText="signature "></t>
-
-          <t>A signature as defined in <xref
+          <t hangText="signature"><vspace blankLines='0'/>
+          A signature as defined in <xref
           target="sec-data-sig"></xref>.</t>
         </list></t>
 
@@ -4874,34 +4810,29 @@ struct {
         <t>Where these values are: <list style="hanging">
             <t></t>
 
-            <t hangText="resource_id "></t>
-
-            <t>The Resource-ID where this data is stored.</t>
-
-            <t></t>
-
-            <t hangText="kind "></t>
-
-            <t>The Kind-ID for this data.</t>
+            <t hangText="resource_id"><vspace blankLines='0'/>
+            The Resource-ID where this data is stored.</t>
 
             <t></t>
 
-            <t hangText="storage_time "></t>
-
-            <t>The contents of the storage_time data value.</t>
+            <t hangText="kind"><vspace blankLines='0'/>
+            The Kind-ID for this data.</t>
 
             <t></t>
 
-            <t hangText="StoredDataValue "></t>
+            <t hangText="storage_time"><vspace blankLines='0'/>
+            The contents of the storage_time data value.</t>
 
-            <t>The contents of the stored data value, as described in the
+            <t></t>
+
+            <t hangText="StoredDataValue"><vspace blankLines='0'/>
+            The contents of the stored data value, as described in the
             previous sections.</t>
 
             <t></t>
 
-            <t hangText="SignerIdentity "></t>
-
-            <t>The signer identity as defined in <xref
+            <t hangText="SignerIdentity"><vspace blankLines='0'/>
+            The signer identity as defined in <xref
             target="sec-signature"></xref>.</t>
           </list></t>
 
@@ -4978,9 +4909,8 @@ struct {
           contains the following two elements:</t>
 
           <t><list style="hanging">
-              <t hangText="exists"></t>
-
-              <t>This value indicates whether the value exists at all. If it
+              <t hangText="exists"><vspace blankLines='0'/>
+              This value indicates whether the value exists at all. If it
               is set to False, it means that no value is present. If it is
               True, that means that a value is present. This gives the
               protocol a mechanism for indicating nonexistence as opposed to
@@ -4988,9 +4918,8 @@ struct {
 
               <t></t>
 
-              <t hangText="value"></t>
-
-              <t>The stored data.</t>
+              <t hangText="value"><vspace blankLines='0'/>
+              The stored data.</t>
             </list></t>
         </section>
 
@@ -5020,15 +4949,13 @@ struct {
           <t>The contents of this structure are: <list style="hanging">
               <t></t>
 
-              <t hangText="index"></t>
-
-              <t>The index of the data element in the array.</t>
+              <t hangText="index"><vspace blankLines='0'/>
+              The index of the data element in the array.</t>
 
               <t></t>
 
-              <t hangText="value"></t>
-
-              <t>The stored data.</t>
+              <t hangText="value"><vspace blankLines='0'/>
+              The stored data.</t>
             </list></t>
         </section>
 
@@ -5058,15 +4985,13 @@ struct {
           <t>The contents of this structure are: <list style="hanging">
               <t></t>
 
-              <t hangText="key"></t>
-
-              <t>The dictionary key for this value.</t>
+              <t hangText="key"><vspace blankLines='0'/>
+              The dictionary key for this value.</t>
 
               <t></t>
 
-              <t hangText="value"></t>
-
-              <t>The stored data.</t>
+              <t hangText="value"><vspace blankLines='0'/>
+              The stored data.</t>
             </list></t>
         </section>
       </section>
@@ -5186,15 +5111,13 @@ struct {
                 style="hanging">
                 <t></t>
 
-                <t hangText="resource "></t>
-
-                <t>The resource to store at.</t>
+                <t hangText="resource"><vspace blankLines='0'/>
+                The resource to store at.</t>
 
                 <t></t>
 
-                <t hangText="replica_number "></t>
-
-                <t>The number of this replica. When a storing peer saves
+                <t hangText="replica_number"><vspace blankLines='0'/>
+                The number of this replica. When a storing peer saves
                 replicas to other peers each peer is assigned a replica number
                 starting from 1 and sent in the Store message. This field is
                 set to 0 when a node is storing its own data. This allows
@@ -5202,9 +5125,8 @@ struct {
 
                 <t></t>
 
-                <t hangText="kind_data "></t>
-
-                <t>A series of elements, one for each Kind of data to be
+                <t hangText="kind_data"><vspace blankLines='0'/>
+                A series of elements, one for each Kind of data to be
                 stored.</t>
               </list></t>
 
@@ -5221,24 +5143,21 @@ struct {
                 style="hanging">
                 <t></t>
 
-                <t hangText="kind "></t>
-
-                <t>The Kind-ID. Implementations MUST reject requests
+                <t hangText="kind"><vspace blankLines='0'/>
+                The Kind-ID. Implementations MUST reject requests
                 corresponding to unknown Kinds.</t>
 
                 <t></t>
 
-                <t hangText="generation_counter "></t>
-
-                <t>The expected current state of the generation counter
+                <t hangText="generation_counter"><vspace blankLines='0'/>
+                The expected current state of the generation counter
                 (approximately the number of times this object has been
                 written; see below for details).</t>
 
                 <t></t>
 
-                <t hangText="values "></t>
-
-                <t>The value or values to be stored. This may contain one or
+                <t hangText="values"><vspace blankLines='0'/>
+                The value or values to be stored. This may contain one or
                 more stored_data values depending on the data model associated
                 with each Kind.</t>
               </list></t>
@@ -5347,17 +5266,15 @@ struct {
             <list style="hanging">
                 <t></t>
 
-                <t hangText="Single-value:"></t>
-
-                <t>A store of a new single-value element creates the element
+                <t hangText="Single-value:"><vspace blankLines='0'/>
+                A store of a new single-value element creates the element
                 if it does not exist and overwrites any existing value with
                 the new value.</t>
 
                 <t></t>
 
-                <t hangText="Array:"></t>
-
-                <t>A store of an array entry replaces (or inserts) the given
+                <t hangText="Array:"><vspace blankLines='0'/>
+                A store of an array entry replaces (or inserts) the given
                 value at the location specified by the index. Because arrays
                 are sparse, a store past the end of the array extends it with
                 nonexistent values (exists = False) as required. A store at
@@ -5368,9 +5285,8 @@ struct {
 
                 <t></t>
 
-                <t hangText="Dictionary:"></t>
-
-                <t>A store of a dictionary entry replaces (or inserts) the
+                <t hangText="Dictionary:"><vspace blankLines='0'/>
+                A store of a dictionary entry replaces (or inserts) the
                 given value at the location specified by the dictionary
                 key.</t>
               </list></t>
@@ -5451,22 +5367,19 @@ struct {
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="kind "></t>
-
-                <t>The Kind-ID being represented.</t>
+                <t hangText="kind"><vspace blankLines='0'/>
+                The Kind-ID being represented.</t>
 
                 <t></t>
 
-                <t hangText="generation_counter "></t>
-
-                <t>The current value of the generation counter for that
+                <t hangText="generation_counter"><vspace blankLines='0'/>
+                The current value of the generation counter for that
                 Kind-ID.</t>
 
                 <t></t>
 
-                <t hangText="replicas "></t>
-
-                <t>The list of other peers at which the data was/will be
+                <t hangText="replicas"><vspace blankLines='0'/>
+                The list of other peers at which the data was/will be
                 replicated. In overlays and applications where the responsible
                 peer is intended to store redundant copies, this allows the
                 storing node to independently verify that the replicas have in
@@ -5596,15 +5509,13 @@ struct {
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="resource "></t>
-
-                <t>The Resource-ID to fetch from.</t>
+                <t hangText="resource"><vspace blankLines='0'/>
+                The Resource-ID to fetch from.</t>
 
                 <t></t>
 
-                <t hangText="specifiers "></t>
-
-                <t>A sequence of StoredDataSpecifier values, each specifying
+                <t hangText="specifiers"><vspace blankLines='0'/>
+                A sequence of StoredDataSpecifier values, each specifying
                 some of the data values to retrieve.</t>
               </list></t>
 
@@ -5616,39 +5527,34 @@ struct {
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="kind "></t>
-
-                <t>The Kind-ID of the data being fetched. Implementations
+                <t hangText="kind"><vspace blankLines='0'/>
+                The Kind-ID of the data being fetched. Implementations
                 SHOULD reject requests corresponding to unknown Kinds unless
                 specifically configured otherwise.</t>
 
                 <t></t>
 
-                <t hangText="DataModel "></t>
-
-                <t>The data model of the data. This is not transmitted on the
+                <t hangText="DataModel"><vspace blankLines='0'/>
+                The data model of the data. This is not transmitted on the
                 wire but comes from the definition of the Kind.</t>
 
                 <t></t>
 
-                <t hangText="generation "></t>
-
-                <t>The last generation counter that the requesting node saw.
+                <t hangText="generation"><vspace blankLines='0'/>
+                The last generation counter that the requesting node saw.
                 This may be used to avoid unnecessary fetches or it may be set
                 to zero.</t>
 
                 <t></t>
 
-                <t hangText="length "></t>
-
-                <t>The length of the rest of the structure, thus allowing
+                <t hangText="length"><vspace blankLines='0'/>
+                The length of the rest of the structure, thus allowing
                 extensibility.</t>
 
                 <t></t>
 
-                <t hangText="model_specifier"></t>
-
-                <t>A reference to the data value being requested within the
+                <t hangText="model_specifier"><vspace blankLines='0'/>
+                A reference to the data value being requested within the
                 data model specified for the Kind. For instance, if the data
                 model is "array", it might specify some subset of the
                 values.</t>
@@ -5709,21 +5615,18 @@ struct {
             <list style="hanging">
                 <t></t>
 
-                <t hangText="kind "></t>
-
-                <t>the Kind that this structure is for.</t>
-
-                <t></t>
-
-                <t hangText="generation "></t>
-
-                <t>the generation counter for this Kind.</t>
+                <t hangText="kind"><vspace blankLines='0'/>
+                the Kind that this structure is for.</t>
 
                 <t></t>
 
-                <t hangText="values "></t>
+                <t hangText="generation"><vspace blankLines='0'/>
+                the generation counter for this Kind.</t>
 
-                <t>the relevant values. If the generation counter in the
+                <t></t>
+
+                <t hangText="values"><vspace blankLines='0'/>
+                the relevant values. If the generation counter in the
                 request matches the generation counter in the stored data,
                 then no StoredData values are returned. Otherwise, all
                 relevant data values MUST be returned. A nonexistent value
@@ -5869,29 +5772,25 @@ struct {
             following contents: <list style="hanging">
                 <t></t>
 
-                <t hangText="exists"></t>
-
-                <t>Same as in DataValue</t>
-
-                <t></t>
-
-                <t hangText="value_length"></t>
-
-                <t>The length of the stored value.</t>
+                <t hangText="exists"><vspace blankLines='0'/>
+                Same as in DataValue</t>
 
                 <t></t>
 
-                <t hangText="hash_algorithm"></t>
+                <t hangText="value_length"><vspace blankLines='0'/>
+                The length of the stored value.</t>
 
-                <t>The hash algorithm used to perform the digest of the
+                <t></t>
+
+                <t hangText="hash_algorithm"><vspace blankLines='0'/>
+                The hash algorithm used to perform the digest of the
                 value.</t>
 
                 <t></t>
 
-                <t hangText="hash_value"></t>
-
-                <t>A digest using hash_algorithm on the value field of the
-                   DataValue including its 4 leading length bytes.</t>
+                <t hangText="hash_value"><vspace blankLines='0'/>
+                A digest using hash_algorithm on the value field of the
+                DataValue including its 4 leading length bytes.</t>
               </list></t>
           </section>
         </section>
@@ -5923,15 +5822,13 @@ struct {
             as indicated below: <list style="hanging">
                 <t></t>
 
-                <t hangText="resource "></t>
-
-                <t>The desired Resource-ID</t>
+                <t hangText="resource"><vspace blankLines='0'/>
+                The desired Resource-ID</t>
 
                 <t></t>
 
-                <t hangText="kinds "></t>
-
-                <t>The desired Kind-IDs. Each value MUST only appear once, and
+                <t hangText="kinds"><vspace blankLines='0'/>
+                The desired Kind-IDs. Each value MUST only appear once, and
                 if not the request MUST be rejected with an error.</t>
               </list></t>
           </section>
@@ -5975,15 +5872,13 @@ struct {
             <t><list style="hanging">
                 <t></t>
 
-                <t hangText="kind "></t>
-
-                <t>The Kind-ID.</t>
+                <t hangText="kind"><vspace blankLines='0'/>
+                The Kind-ID.</t>
 
                 <t></t>
 
-                <t hangText="closest "></t>
-
-                <t>The closest Resource-ID to the specified Resource-ID. This
+                <t hangText="closest"><vspace blankLines='0'/>
+                The closest Resource-ID to the specified Resource-ID. This
                 is 0 if no Resource-ID is known.</t>
               </list></t>
 
@@ -6124,15 +6019,13 @@ struct {
       <t>The contents of this structure are as follows: <list style="hanging">
           <t></t>
 
-          <t hangText="iteration"></t>
-
-          <t>the d value</t>
+          <t hangText="iteration"><vspace blankLines='0'/>
+          the d value</t>
 
           <t></t>
 
-          <t hangText="server_address"></t>
-
-          <t>the address at which the TURN server can be contacted.</t>
+          <t hangText="server_address"><vspace blankLines='0'/>
+          the address at which the TURN server can be contacted.</t>
         </list></t>
 
       <t><list style="hanging">
@@ -6452,15 +6345,13 @@ struct {
         <t><list style="hanging">
             <t></t>
 
-            <t hangText="predecessors "></t>
-
-            <t>The predecessor set of the Updating peer.</t>
+            <t hangText="predecessors"><vspace blankLines='0'/>
+            The predecessor set of the Updating peer.</t>
 
             <t></t>
 
-            <t hangText="successors "></t>
-
-            <t>The successor set of the Updating peer.</t>
+            <t hangText="successors"><vspace blankLines='0'/>
+            The successor set of the Updating peer.</t>
           </list></t>
 
         <t>If the message is of type "full", then the contents of the message
@@ -6469,21 +6360,18 @@ struct {
         <t><list style="hanging">
             <t></t>
 
-            <t hangText="predecessors "></t>
-
-            <t>The predecessor set of the Updating peer.</t>
-
-            <t></t>
-
-            <t hangText="successors "></t>
-
-            <t>The successor set of the Updating peer.</t>
+            <t hangText="predecessors"><vspace blankLines='0'/>
+            The predecessor set of the Updating peer.</t>
 
             <t></t>
 
-            <t hangText="fingers "></t>
+            <t hangText="successors"><vspace blankLines='0'/>
+            The successor set of the Updating peer.</t>
 
-            <t>The finger table of the Updating peer, in numerically ascending
+            <t></t>
+
+            <t hangText="fingers"><vspace blankLines='0'/>
+            The finger table of the Updating peer, in numerically ascending
             order.</t>
           </list></t>
 
@@ -6554,7 +6442,7 @@ struct {
               so no change is needed to the neighbor set.</t>
 
               <t>The UpdateReq contains peers x does not know about that
-              should be in x's neighbor table, i.e. they are closer than
+              should be in x's neighbor table, i.e., they are closer than
               entries in the neighbor table.</t>
             </list></t>
 
@@ -6730,9 +6618,8 @@ struct {
             style="hanging">
             <t></t>
 
-            <t hangText="next_peer "></t>
-
-            <t>The peer to which the responding peer would route the message
+            <t hangText="next_peer"><vspace blankLines='0'/>
+            The peer to which the responding peer would route the message
             in order to deliver it to the destination listed in the
             request.</t>
           </list></t>
@@ -9275,7 +9162,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         used to refer to either:</t>
 
         <t><list style="symbols">
-            <t>A peer, e.g. as used in a certificate (see <xref target="sec-credentials" />).</t>
+            <t>A peer, e.g., as used in a certificate (see <xref target="sec-credentials" />).</t>
 
             <t>A resource inside a peer.</t>
           </list></t>
