@@ -7069,7 +7069,9 @@ QgUf4cKBiF+65Ue7hZuDJa2EMv8qW4twEhGDYclpFU9YozyS1OhvUg==
             
             <t hangText="overlay-reliability-timer">Default value for the
             end-to-end retransmission timer for messages, in milliseconds. If
-            not present, the default value is 3000.</t>
+            not present, the default value is 3000. The value MUST be
+            at least 200 milliseconds, which means the minimum time
+            delay before dropping a link is 1000 milliseconds.</t>
 
             <t></t>
             
