@@ -7361,6 +7361,10 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             the allowed range of allowed user names.</t>
           </list></t>
 
+        <t>The SubjectAltName field in the certificate MUST NOT contain any
+        other identities than listed above. The subject distinguished name in
+        the certificate MUST be empty.</t>
+
         <t>The certificate MUST be returned as type "application/pkix-cert" as
         defined in <xref target="RFC2585"></xref>, with an HTTP status code of
         200 OK. </t>
