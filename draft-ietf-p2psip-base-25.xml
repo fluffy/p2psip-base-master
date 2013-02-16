@@ -790,7 +790,12 @@ Transport    |      Link       |     +-------+  +------+
           <t></t>
 
           <t hangText="Maximum Request Lifetime:">The maximum time a request
-          will wait for a response; it defaults to 15 seconds.</t>
+          will wait for a response. This value is equal to the
+          overlay-reliability-timer value defined in
+          <xref target="sec-configuration" /> multiplied by the number of
+          transmissions, as defined in
+          <xref target="sec-request-origination" />, and so defaults to 15
+          seconds.</t>
 
           <t></t> <!-- Defn #12.0 --> 
 
