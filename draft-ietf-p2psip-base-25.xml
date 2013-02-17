@@ -3885,6 +3885,10 @@ struct {
             availability of modern TCP implementations makes them very
             attractive, their performance as an Overlay Link protocol is not
             optimal.</t>
+
+            <t>Note that none of the protocols defined in this document meets
+            these conditions, but it is expected that new Overlay link protocols
+            defined in the future will fill this gap.</t>
           </section>
 
           <section title="Encoding the Attach Message">
