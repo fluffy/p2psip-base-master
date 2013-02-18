@@ -6223,7 +6223,7 @@ struct {
             <t>JN MUST connect to its chosen bootstrap node.</t>
 
             <t>JN SHOULD send an Attach request to the admitting peer (AP) for
-            Node-ID n. The "send_update" flag can be used to acquire the
+            Resource-ID n+1. The "send_update" flag can be used to acquire the
             routing table for AP.</t>
 
             <t>JN SHOULD send Attach requests to initiate connections to each
