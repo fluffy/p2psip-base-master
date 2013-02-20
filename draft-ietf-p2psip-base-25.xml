@@ -1362,7 +1362,7 @@ Dest=Z
         specified routing table defined by the topology plugin algorithm and 
         needs to form new connections if it detects that
         it has fewer direct
-        connections that the specified by the algorithm. This also implies that
+        connections than specified by the algorithm. This also implies that
         peers, in accord with the topology plugin algorithm, need to
         periodically verify that the connected peers are still
         alive and if not try to reform the connection or form an alternate
