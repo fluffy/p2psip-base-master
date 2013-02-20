@@ -4314,6 +4314,16 @@ struct {
         receiver SHOULD close the TLS or DTLS session without sending an
         error.</t>
 
+        <t>The RELOAD mechanism requires that failed links are quickly removed
+        from the routing table so end-to-end retransmission can handle lost
+        messages. Overlay link protocols MUST be designed with a mechanism that
+        quickly signals a likely failure and implementations SHOULD quickly act
+        to remove it from the routing table when receiving this signal. The
+        entry can be restored if it proves to resume functioning, or replaced at
+        some point in the future if necessary.
+        <xref target="sec-finger-failure" /> contains more details specific to
+        the CHORD-RELOAD topology plugin.</t>
+
         <t>The Framing Header (FH) is used to frame messages and provide
         timing when used on a reliable stream-based transport protocol. Simple
         Reliability (SR) makes use of the FH to provide congestion control and
@@ -4329,18 +4339,6 @@ struct {
         replacements for all components of these protocols, including the
         framing header. These three protocols have been chosen for simplicity
         of implementation and reasonable performance.</t>
-
-        <t>Note to implementers: There are inherent tradeoffs in utilizing
-        short timeouts to determine when a link has failed. To balance the
-        tradeoffs, an implementation SHOULD quickly act to remove entries from
-        the routing table when there is reason to suspect the link has failed.
-        For example, in a Chord derived overlay algorithm, a closer finger
-        table entry could be substituted for an entry in the finger table that
-        has experienced a timeout. That entry can be restored if it proves to
-        resume functioning, or replaced at some point in the future if
-        necessary. End-to-end retransmissions will handle any lost messages,
-        but only if the failing entries do not remain in the finger table for
-        subsequent retransmissions.</t>
 
         <section anchor="sec.future-link"
                  title="Future Overlay Link Protocols">
@@ -6431,7 +6429,7 @@ struct {
           SHOULD periodically try to join the DHT.</t>
         </section>
 
-        <section title="Handling Finger Table Entry Failure">
+        <section anchor="sec-finger-failure" title="Handling Finger Table Entry Failure">
           <t>If a finger table entry is found to have failed, all references
           to the failed peer MUST be removed from the finger table and replaced
           with the closest preceding peer from the finger table or neighbor
