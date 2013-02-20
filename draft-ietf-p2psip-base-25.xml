@@ -377,7 +377,7 @@ Check if the qualicom IPR issueed and if anything can be done
             <t></t>
 
             <t hangText="Forwarding and Link Management Layer:">Stores and
-            implements the routing table by providing packet forwarding
+            implements the Routing Table by providing packet forwarding
             services between nodes. It also handles establishing new links
             between nodes, including setting up connections across NATs using
             ICE.</t>
@@ -570,7 +570,7 @@ Transport    |      Link       |     +-------+  +------+
           algorithm Routing Table, which is consulted by the Forwarding and
           Link Management Layer before routing a message. When connections are
           made or broken, the Forwarding and Link Management Layer notifies
-          the Topology Plugin, which adjusts the routing table as appropriate.
+          the Topology Plugin, which adjusts the Routing Table as appropriate.
           The Topology Plugin will also instruct the Forwarding and Link
           Management Layer to form new connections as dictated by the
           requirements of the overlay algorithm Topology. The Topology Plugin
@@ -894,11 +894,11 @@ Transport    |      Link       |     +-------+  +------+
 
           <t hangText="Routing Table:">The set of directly connected peers
           which a node can use to forward overlay messages. In normal
-          operation, these peers will all be on the connection table but not
+          operation, these peers will all be on the Connection Table but not
           vice versa, because some peers may not yet be available for routing.
-          Peers may send messages directly to peers that are in their connection
-          tables but may only forward messages to peers that are not in their
-          connection table through peers that are in the routing table.</t>
+          Peers may send messages directly to peers that are in their Connection
+          Tables but may only forward messages to peers that are not in their
+          Connection Table through peers that are in the Routing Table.</t>
 
           <t></t> <!-- Defn #22.5 --> 
 
@@ -1333,7 +1333,7 @@ Dest=Z
         is assumed that the reader is familiar with ICE.</t>
 
         <t>Say that peer A wishes to form a direct connection to peer B, either
-        to join the overlay or to add more connections in its routing table. It
+        to join the overlay or to add more connections in its Routing Table. It
         gathers ICE candidates and packages them up in an Attach request which
         it sends to B through usual overlay routing procedures. B does its own
         candidate gathering and sends back a response with its candidates. A
@@ -1341,9 +1341,9 @@ Dest=Z
         result is a connection between A and B. At this point, A and B MAY
         send messages directly between
         themselves without going through other overlay peers.
-        In other words, A and B are on each other's connection tables. They
+        In other words, A and B are on each other's Connection Tables. They
         MAY then execute an Update process, resulting in additions to each
-        other's routing tables, and become able to route messages through each
+        other's Routing Tables, and become able to route messages through each
         other to other overlay nodes</t>
 
         <t>There are two cases where Attach is not used. The first is when a
@@ -1363,7 +1363,7 @@ Dest=Z
         connection to some other peer, this is not
         necessarily a disaster; overlays can route correctly even without
         fully connected links. However, a peer needs to try to maintain the
-        specified routing table defined by the topology plugin algorithm and 
+        specified Routing Table defined by the topology plugin algorithm and
         needs to form new connections if it detects that
         it has fewer direct
         connections than specified by the algorithm. This also implies that
@@ -1456,7 +1456,7 @@ Dest=Z
               will need.</t>
 
               <t>AP does Updates to JN and to other peers to tell it about its
-              own routing table. At this point, both JN and AP consider JN
+              own Routing Table. At this point, both JN and AP consider JN
               responsible for some section of the Overlay Instance.</t>
 
               <t>JN makes its own connections to the appropriate peers in the
@@ -1865,9 +1865,9 @@ Dest=Z
           For the CHORD-RELOAD topology, the routing to the most likely
           responsible node is explained in <xref target="sec.chord.routing"/>.
           If the first entry on the destination list
-          is in the peer's connection table, then it MUST forward the
+          is in the peer's Connection Table, then it MUST forward the
           message to that peer directly. Otherwise, the peer consults the
-          routing table to forward the message.</t>
+          Routing Table to forward the message.</t>
 
           <t>Any intermediate peer which forwards a RELOAD request MUST ensure
           that if it receives a response to that message the response can be
@@ -2588,21 +2588,21 @@ Dest=Z
               </list></t>
 
             <t>One possible encoding of the 16 bit integer version as an
-            opaque identifier is to encode an index into a connection table.
+            opaque identifier is to encode an index into a Connection Table.
             To avoid misrouting responses in the event a response is delayed
-            and the connection table entry has changed, the identifier SHOULD
+            and the Connection Table entry has changed, the identifier SHOULD
             be split between an index and a generation counter for that index.
             At startup, the generation counters SHOULD be initialized to
             random values. An implementation MAY use 12 bits for the
-            connection table index and 3 bits for the generation counter.
-            (Note that this does not suggest a 4096 entry connection table for
-            every peer, only the ability to encode for a larger connection
-            table.) When a connection table slot is used for a new connection,
+            Connection Table index and 3 bits for the generation counter.
+            (Note that this does not suggest a 4096 entry Connection Table for
+            every peer, only the ability to encode for a larger Connection
+            Table.) When a Connection Table slot is used for a new connection,
             the generation counter is incremented (with wrapping). Connection
-            table slots are used on a rotating basis to maximize the time
+            Table slots are used on a rotating basis to maximize the time
             interval between uses of the same slot for different connections.
             When routing a message to an entry in the destination list
-            encoding a connection table entry, the peer MUST confirm that the
+            encoding a Connection Table entry, the peer MUST confirm that the
             generation counter matches the current generation counter of that
             index before forwarding the message. If it does not match, the
             message MUST be silently dropped.</t>
@@ -3147,7 +3147,7 @@ struct {
               <t>The response to a message sent to a Resource-ID MUST have
               been sent by a Node-ID which is as close to or closer to the
               target Resource-ID than any node in the requesting node's
-              neighbor table.</t>
+              Neighbor Table.</t>
             </list></t>
 
           <t>The second condition serves as a primitive check for responses
@@ -3305,7 +3305,7 @@ struct {
             replay attacks provided that DTLS anti-replay is used.</t>
 
             <t>Upon receiving a Leave request, a peer MUST update its own
-            routing table, and send the appropriate Store/Update sequences to
+            Routing Table, and send the appropriate Store/Update sequences to
             re-stabilize the overlay.</t>
           </section>
 
@@ -3344,11 +3344,11 @@ struct {
             for the node that the receiving peer would next route to in order
             to get to X. A RouteQuery can also request that the receiving peer
             initiate an Update request to transfer the receiving peer's
-            routing table.</t>
+            Routing Table.</t>
 
             <t>One important use of the RouteQuery request is to support
             iterative routing. The sender selects one of the peers in its
-            routing table and sends it a RouteQuery message with the
+            Routing Table and sends it a RouteQuery message with the
             destination field set to the Node-ID or Resource-ID it wishes to
             route to. The receiving peer responds with information about the
             peers to which the request would be routed. The sending peer MAY
@@ -3362,7 +3362,7 @@ struct {
               <t>A RouteQueryReq message indicates the peer or resource that
               the requesting node is interested in. It also contains a
               "send_update" option allowing the requesting node to request a
-              full copy of the other peer's routing table.</t>
+              full copy of the other peer's Routing Table.</t>
 
               <figure>
                 <!--begin-pdu-->
@@ -3564,7 +3564,7 @@ struct {
           updates.</t>
 
           <t>An Attach in and of itself does not result in updating the
-          routing table of either node. That function is performed by Updates.
+          Routing Table of either node. That function is performed by Updates.
           If node A has Attached to node B, but not received any Updates from
           B, it MAY route messages which are directly addressed to B through
           that channel but MUST NOT route messages through B to other peers
@@ -4606,8 +4606,8 @@ struct {
             entire RTO interval, and then wait for three retransmissions to
             occur beyond that point. If no ACKs have been received by the time
             the third retransmission occurs, it is RECOMMENDED that the link
-            be removed from the routing table. The link MAY be restored to the
-            routing table if ACKs resume before the connection is closed, as
+            be removed from the Routing Table. The link MAY be restored to the
+            Routing Table if ACKs resume before the connection is closed, as
             described above.</t>
 
             <t>A sender MUST wait 10ms between receipt of an ACK and
@@ -4635,7 +4635,7 @@ struct {
           calculate an RTO as specified in Section 2 of <xref
           target="RFC6298"></xref>. The resulting RTO is not used for
           retransmissions, but as a timeout to indicate when the link SHOULD
-          be removed from the routing table. It is RECOMMENDED that such a
+          be removed from the Routing Table. It is RECOMMENDED that such a
           connection be retained for 30s to determine if the failure was
           transient before concluding the link has failed permanently.</t>
 
@@ -6101,19 +6101,19 @@ struct {
           to the performance implications, the cost of NAT traversal dictates
           recursive routing.</t>
 
-          <t>Finger table entries are indexed in opposite order. Original
+          <t>Finger Table entries are indexed in opposite order. Original
           Chord specifies finger[0] as the immediate successor of the peer.
           CHORD-RELOAD specifies finger[0] as the peer 180 degrees around the
           ring from the peer. This change was made to simplify discussion and
-          implementation of variable sized finger tables. However, with either
+          implementation of variable sized Finger Tables. However, with either
           approach no more than O(log N) entries should typically be stored in
-          a finger table.</t>
+          a Finger Table.</t>
 
           <t>The stabilize() and fix_fingers() algorithms in the original
           Chord algorithm are merged into a single periodic process.
           Stabilization is implemented slightly differently because of the
           larger neighborhood, and fix_fingers is not as aggressive to reduce
-          load, nor does it search for optimal matches of the finger table
+          load, nor does it search for optimal matches of the Finger Table
           entries.</t>
 
           <t>RELOAD allows for a 128 bit hash instead of a 160 bit hash, as RELOAD
@@ -6142,34 +6142,34 @@ struct {
 	so that node 2^{k} - 1 is directly before node 0.
 	</t>
 	<t>
-	Each peer keeps track of a finger table and a neighbor
-        table. The neighbor table contains at least the three peers before and
+	Each peer keeps track of a Finger Table and a Neighbor
+        Table. The Neighbor Table contains at least the three peers before and
         after this peer in the DHT ring. There may not be three entries in all
         cases such as small rings or while the ring topology is changing. The
-        first entry in the finger table contains the peer half-way around the
+        first entry in the Finger Table contains the peer half-way around the
         ring from this peer; the second entry contains the peer that is 1/4 of
         the way around; the third entry contains the peer that is 1/8th of the
         way around, and so on. Fundamentally, the Chord DHT can be thought of
         as a doubly-linked list formed by knowing the successors and predecessor
-        peers in the neighbor table, sorted by the Node-ID. As long as the
+        peers in the Neighbor Table, sorted by the Node-ID. As long as the
         successor peers are correct, the DHT will return the correct result.
         The pointers to the prior peers are kept to enable the insertion of
         new peers into the list structure. Keeping multiple predecessor and
         successor pointers makes it possible to maintain the integrity of the
         data structure even when consecutive peers simultaneously fail. The
-        finger table forms a skip list<xref target="wikiSkiplist"/>, so
+        Finger Table forms a skip list<xref target="wikiSkiplist"/>, so
         that entries in the linked list can
         be found in O(log(N)) time instead of the typical O(N) time that a
         linked list would provide where N represents the number of nodes in
         the DHT. </t>
 
-        <t>The neighbor and finger table entries contain logical Node-IDs as
+    <t>The Neighbor Table and Finger Table entries contain logical Node-IDs as
         values but the actual mapping of an IP level addressing information
-        to reach that Node-ID is kept in the connection table.</t>
+        to reach that Node-ID is kept in the Connection Table.</t>
 
         <t>A peer, x, is responsible for a particular Resource-ID k if k is
         less than or equal to x and k is greater than p, where p is the
-        Node-ID of the previous peer in the neighbor table. Care must be taken
+        Node-ID of the previous peer in the Neighbor Table. Care must be taken
         when computing to note that all math is modulo 2^128.</t>
       </section>
 
@@ -6181,13 +6181,13 @@ struct {
       </section>
 
       <section title="Routing" anchor="sec.chord.routing">
-        <t>The routing table is conceptually the union of the neighbor table
-        and the finger table.</t>
+        <t>The Routing Table is conceptually the union of the Neighbor Table
+        and the Finger Table.</t>
 
         <t>If a peer is not responsible for a Resource-ID k, but is directly
         connected to a node with Node-ID k, then it MUST route the message to
         that node. Otherwise, it MUST route the request to the peer in the
-        routing table that has the largest Node-ID that is in the interval
+        Routing Table that has the largest Node-ID that is in the interval
         between the peer and k. If no such node is found, it finds the
         smallest Node-ID that is greater than k and MUST route the message to
         that node.</t>
@@ -6197,11 +6197,11 @@ struct {
         <t>When a peer receives a Store request for Resource-ID k, and it is
         responsible for Resource-ID k, it MUST store the data and returns a
         success response. It MUST then send a Store request to its successor
-        in the neighbor table and to that peer's successor. Note that these
+        in the Neighbor Table and to that peer's successor. Note that these
         Store requests are addressed to those specific peers, even though the
         Resource-ID they are being asked to store is outside the range that
         they are responsible for. The peers receiving these SHOULD check they
-        came from an appropriate predecessor in their neighbor table and that
+        came from an appropriate predecessor in their Neighbor Table and that
         they are in a range that this predecessor is responsible for, and then
         they MUST store the data. They do not themselves perform further
         Stores because they can determine that they are not responsible for
@@ -6230,13 +6230,13 @@ struct {
             routing table of AP.</t>
 
             <t>JN SHOULD send Attach requests to initiate connections to each
-            of the peers in the neighbor table as well as to the desired
-            finger table entries. Note that this does not populate their
-            routing tables, but only their connection tables, so JN will not
+            of the peers in the Neighbor Table as well as to the desired
+            Finger Table entries. Note that this does not populate their
+            Routing Tables, but only their Connection Tables, so JN will not
             get messages that it is expected to route to other nodes.</t>
 
             <t>JN MUST enter all the peers it has successfully contacted into
-            its routing table.</t>
+            its Routing Table.</t>
 
             <t>JN MUST send a Join to AP. The AP MUST send the response to the
             Join.</t>
@@ -6253,16 +6253,16 @@ struct {
             <t>The AP MUST send an Update to all of its neighbors with the new
             values of its neighbor set (including JN).</t>
 
-            <t>The JN MUST send Updates to all the peers in its neighbor
-            table.</t>
+            <t>The JN MUST send Updates to all the peers in its Neighbor
+            Table.</t>
           </list></t>
 
         <t>If JN sends an Attach to AP with send_update, it immediately knows
-        most of its expected neighbors from AP's routing table update and MAY
+        most of its expected neighbors from AP's Routing Table update and MAY
         directly connect to them. This is the RECOMMENDED procedure.</t>
 
-        <t>If for some reason JN does not get AP's routing table, it MAY still
-        populate its neighbor table incrementally. It SHOULD send a Ping
+        <t>If for some reason JN does not get AP's Routing Table, it MAY still
+        populate its Neighbor Table incrementally. It SHOULD send a Ping
         directed at Resource-ID n+1 (directly after its own Resource-ID). This
         allows it to discover its own successor. Call that node p0. It then
         SHOULD send a ping
@@ -6274,24 +6274,24 @@ struct {
         slower if the nodes need to collect ICE candidates, thus reducing
         parallelism.</t>
 
-        <t> In order to set up its i'th finger table entry, JN MUST
+        <t> In order to set up its i'th Finger Table entry, JN MUST
         send an Attach to peer n+2^(128-i). This will be routed to a
         peer in approximately the right location around the ring. (Note the
-        first entry in the finger table has i=1 and not i=0 in this
+        first entry in the Finger Table has i=1 and not i=0 in this
         formulation). </t>
 
         <t>The joining node MUST NOT send any Update message placing itself in
         the overlay until it has successfully completed an Attach with each
-        peer that should be in its neighbor table.</t>
+        peer that should be in its Neighbor Table.</t>
       </section>
 
       <section title="Routing Attaches">
-        <t>When a peer needs to Attach to a new peer in its neighbor table, it
+        <t>When a peer needs to Attach to a new peer in its Neighbor Table, it
         MUST source-route the Attach request through the peer from which it
         learned the new peer's Node-ID. Source-routing these requests allows
         the overlay to recover from instability.</t>
 
-        <t>All other Attach requests, such as those for new finger table
+        <t>All other Attach requests, such as those for new Finger Table
         entries, are routed conventionally through the overlay.</t>
       </section>
 
@@ -6343,7 +6343,7 @@ struct {
             <t></t>
 
             <t hangText="neighbors: ">this version is sent to members of the
-            Chord neighbor table.</t>
+            Chord Neighbor Table.</t>
 
             <t></t>
 
@@ -6383,7 +6383,7 @@ struct {
             <t></t>
 
             <t hangText="fingers"><vspace blankLines='0'/>
-            The finger table of the Updating peer, in numerically ascending
+            The Finger Table of the Updating peer, in numerically ascending
             order.</t>
           </list></t>
 
@@ -6397,18 +6397,18 @@ struct {
 
         <section anchor="sec-neighbor-failure"
                  title="Handling Neighbor Failures">
-          <t>Every time a connection to a peer in the neighbor table is lost
+          <t>Every time a connection to a peer in the Neighbor Table is lost
           (as determined by connectivity pings or the failure of some
-          request), the peer MUST remove the entry from its neighbor table and
+          request), the peer MUST remove the entry from its Neighbor Table and
           replace it with the best match it has from the other peers in its
-          routing table. If using reactive recovery, it MUST send an
+          Routing Table. If using reactive recovery, it MUST send an
           immediate Update to all nodes in its Neighbor Table. The update will
           contain all the Node-IDs of the current entries of the table (after
           the failed one has been removed). Note that when replacing a
           successor the peer SHOULD delay the creation of new replicas for
           successor replacement hold-down time (30 seconds) after removing the
-          failed entry from its neighbor table in order to allow a triggered
-          update to inform it of a better match for its neighbor table.</t>
+          failed entry from its Neighbor Table in order to allow a triggered
+          update to inform it of a better match for its Neighbor Table.</t>
 
           <t>If the neighbor failure affects the peer's range of responsible
           IDs, then the Update MUST be sent to all nodes in its Connection
@@ -6419,44 +6419,44 @@ struct {
           returns or by actively routing a new Attach to the lost peer.
           Details for these procedures are beyond the scope of this document.
           In the case of an attempt to reestablish connectivity with a lost
-          neighbor, the peer MUST be removed from the neighbor table. Such a
-          peer is returned to the neighbor table once connectivity is
+          neighbor, the peer MUST be removed from the Neighbor Table. Such a
+          peer is returned to the Neighbor Table once connectivity is
           reestablished.</t>
 
-          <t>If connectivity is lost to all successor peers in the neighbor
-          table, then this peer SHOULD behave as if it is joining the network
+          <t>If connectivity is lost to all successor peers in the Neighbor
+          Table, then this peer SHOULD behave as if it is joining the network
           and MUST use Pings to find a peer and send it a Join. If connectivity
-          is lost to all the peers in the finger table, this peer SHOULD assume
+          is lost to all the peers in the Finger Table, this peer SHOULD assume
           that it has been disconnected from the rest of the network, and it
           SHOULD periodically try to join the DHT.</t>
         </section>
 
         <section anchor="sec-finger-failure" title="Handling Finger Table Entry Failure">
-          <t>If a finger table entry is found to have failed (as determined by
+          <t>If a Finger Table entry is found to have failed (as determined by
           connectivity pings or the failure of some request), all references
-          to the failed peer MUST be removed from the finger table and replaced
-          with the closest preceding peer from the finger table or neighbor
-          table.</t>
+          to the failed peer MUST be removed from the Finger Table and replaced
+          with the closest preceding peer from the Finger Table or Neighbor
+          Table.</t>
 
           <t>If using reactive recovery, the peer MUST initiate a search for a
-          new finger table entry as described below.</t>
+          new Finger Table entry as described below.</t>
         </section>
 
         <section anchor="sec-processing-updates" title="Receiving Updates">
           <t>When a peer, x, receives an Update request, it examines the
-          Node-IDs in the UpdateReq and at its neighbor table and decides if
-          this UpdateReq would change its neighbor table. This is done by
-          taking the set of peers currently in the neighbor table and
+          Node-IDs in the UpdateReq and at its Neighbor Table and decides if
+          this UpdateReq would change its Neighbor Table. This is done by
+          taking the set of peers currently in the Neighbor Table and
           comparing them to the peers in the update request. There are two
           major cases:</t>
 
           <t><list style="symbols">
-              <t>The UpdateReq contains peers that match x's neighbor table,
+              <t>The UpdateReq contains peers that match x's Neighbor Table,
               so no change is needed to the neighbor set.</t>
 
               <t>The UpdateReq contains peers x does not know about that
-              should be in x's neighbor table, i.e., they are closer than
-              entries in the neighbor table.</t>
+              should be in x's Neighbor Table, i.e., they are closer than
+              entries in the Neighbor Table.</t>
             </list></t>
 
           <t>In the first case, no change is needed.</t>
@@ -6466,7 +6466,7 @@ struct {
           Note that it can maintain the now inferior peers as neighbors, but
           it MUST remember the closer ones.</t>
 
-          <t>After any Pings and Attaches are done, if the neighbor table
+          <t>After any Pings and Attaches are done, if the Neighbor Table
           changes and the peer is using reactive recovery, the peer MUST send an
           Update request to each member of its Connection Table. These Update
           requests are what end up filling in the predecessor/successor tables
@@ -6486,25 +6486,25 @@ struct {
           store.</t>
 
           <t>When a peer discovers that its range of responsible IDs have
-          changed, it MUST send an Update to all entries in its connection
-          table.</t>
+          changed, it MUST send an Update to all entries in its Connection
+          Table.</t>
         </section>
 
         <section title="Stabilization">
           <t>There are four components to stabilization: <list style="numbers">
-              <t>exchange Updates with all peers in its neighbor table to
+              <t>exchange Updates with all peers in its Neighbor Table to
               exchange state.</t>
 
-              <t>search for better peers to place in its finger table.</t>
+              <t>search for better peers to place in its Finger Table.</t>
 
-              <t>search to determine if the current finger table size is
+              <t>search to determine if the current Finger Table size is
               sufficiently large.</t>
 
               <t>search to determine if the overlay has partitioned and needs
               to recover.</t>
             </list></t>
 
-          <section title="Updating neighbor table">
+          <section title="Updating Neighbor Table">
             <t>A peer MUST periodically send an Update request to every peer
             in its Neighbor Table. The purpose of this is to keep the
             predecessor and successor lists up to date and to detect failed
@@ -6515,30 +6515,30 @@ struct {
             they do not occur all at once.</t>
           </section>
 
-          <section anchor="sec-finger-refresh" title="Refreshing finger table">
+          <section anchor="sec-finger-refresh" title="Refreshing Finger Table">
             <t>A peer MUST periodically search for new peers to replace
-            invalid entries in the finger table. For peer x, the i'th finger
-            table entry is valid if it is in the range [ x+2^( 128-i ), x+2^(
-            128-(i-1) )-1 ]. Invalid entries occur in the finger table when a
-            previous finger table entry has failed or when no peer has been
+            invalid entries in the Finger Table. For peer x, the i'th Finger
+            Table entry is valid if it is in the range [ x+2^( 128-i ), x+2^(
+            128-(i-1) )-1 ]. Invalid entries occur in the Finger Table when a
+            previous Finger Table entry has failed or when no peer has been
             found in that range.</t>
 
-            <t>Two possible methods for searching for new peers for the finger
-            table entries are presented:</t>
+            <t>Two possible methods for searching for new peers for the Finger
+            Table entries are presented:</t>
 
-            <t>Alternative 1: A peer selects one entry in the finger table
+            <t>Alternative 1: A peer selects one entry in the Finger Table
             from among the invalid entries. It pings for a new peer for that
-            finger table entry. The selection SHOULD be exponentially weighted
-            to attempt to replace earlier (lower i) entries in the finger
-            table. A simple way to implement this selection is to search
-            through the finger table entries from i=1 and each time an invalid
+            Finger Table entry. The selection SHOULD be exponentially weighted
+            to attempt to replace earlier (lower i) entries in the Finger
+            Table. A simple way to implement this selection is to search
+            through the Finger Table entries from i=1 and each time an invalid
             entry is encountered, send a Ping to replace that entry with
             probability 0.5.</t>
 
             <t>Alternative 2: A peer monitors the Update messages received
             from its connections to observe when an Update indicates a peer
-            that would be used to replace in invalid finger table entry, i,
-            and flags that entry in the finger table. Every
+            that would be used to replace in invalid Finger Table entry, i,
+            and flags that entry in the Finger Table. Every
             "chord-ping-interval" seconds, the peer selects from among those
             flagged candidates using an exponentially weighted probability as
             above.</t>
@@ -6548,10 +6548,10 @@ struct {
             selection is preferred over a search for strictly spaced entries
             to minimize the effect of churn on overlay routing <xref
             target="minimizing-churn-sigcomm06"></xref>. An implementation or
-            subsequent specification MAY choose a method for selecting finger
-            table entries other than choosing randomly within the range. Any
-            such alternate methods SHOULD be employed only on finger table
-            stabilization and not for the selection of initial finger table
+            subsequent specification MAY choose a method for selecting Finger
+            Table entries other than choosing randomly within the range. Any
+            such alternate methods SHOULD be employed only on Finger Table
+            stabilization and not for the selection of initial Finger Table
             entries unless the alternative method is faster and imposes less
             overhead on the overlay.</t>
 
@@ -6561,34 +6561,34 @@ struct {
             hour).</t>
 
             <t>A peer MAY choose to keep connections to multiple peers that
-            can act for a given finger table entry.</t>
+            can act for a given Finger Table entry.</t>
           </section>
 
-          <section anchor="sec-finger-table-size" title="Adjusting finger table size">
-            <t>If the finger table has less than 16 entries, the node SHOULD
+          <section anchor="sec-finger-table-size" title="Adjusting Finger Table size">
+            <t>If the Finger Table has less than 16 entries, the node SHOULD
             attempt to discover more fingers to grow the size of the table to
             16. The value 16 was chosen to ensure high odds of a node
             maintaining connectivity to the overlay even with strange network
             partitions.</t>
 
-            <t>For many overlays, 16 finger table entries will be enough, but
+            <t>For many overlays, 16 Finger Table entries will be enough, but
             as an overlay grows very large, more than 16 entries may be
-            required in the finger table for efficient routing. An
+            required in the Finger Table for efficient routing. An
             implementation SHOULD be capable of increasing the number of
-            entries in the finger table to 128 entries.</t>
+            entries in the Finger Table to 128 entries.</t>
 
             <t>Although log(N) entries are all that are
             required for optimal performance, careful implementation of
             stabilization will result in no additional traffic being generated
-            when maintaining a finger table larger than log(N) entries.
+            when maintaining a Finger Table larger than log(N) entries.
             Implementers are encouraged to make use of RouteQuery and
-            algorithms for determining where new finger table entries may be
+            algorithms for determining where new Finger Table entries may be
             found. Complete details of possible implementations are outside
             the scope of this specification.</t>
 
-            <t>A simple approach to sizing the finger table is to ensure the
-            finger table is large enough to contain at least the final
-            successor in the peer's neighbor table.</t>
+            <t>A simple approach to sizing the Finger Table is to ensure the
+            Finger Table is large enough to contain at least the final
+            successor in the peer's Neighbor Table.</t>
           </section>
 
           <section title="Detecting partitioning">
@@ -6599,7 +6599,7 @@ struct {
             routed through B. If a response is received from a peer S', which
             is not P's successor, then the overlay is partitioned and P SHOULD
             send an Attach to S' routed through B, followed by an Update sent
-            to S'. (Note that S' may not be in P's neighbor table once the
+            to S'. (Note that S' may not be in P's Neighbor Table once the
             overlay is healed, but the connection will allow S' to discover
             appropriate neighbor entries for itself via its own
             stabilization.)</t>
@@ -6644,7 +6644,7 @@ struct {
       <section title="Leaving">
         <t>To support extensions, such as <xref
         target="I-D.ietf-p2psip-self-tuning"></xref>, Peers SHOULD send a
-        Leave request to all members of their neighbor table prior to exiting
+        Leave request to all members of their Neighbor Table prior to exiting
         the Overlay Instance. The overlay_specific_data field MUST contain the
         ChordLeaveData structure defined below: <figure>
             <artwork><![CDATA[
@@ -7553,7 +7553,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>JN also needs to populate its finger table (for the Chord based DHT).
+      <t>JN also needs to populate its Finger Table (for the Chord based DHT).
       It issues an Attach to a variety of locations around the overlay. The
       diagram below shows it sending an Attach halfway around the Chord ring
       to the JN + 2^127.</t>
@@ -7648,7 +7648,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 ]]></artwork>
       </figure>
 
-      <t>In Chord, JN's neighbor table needs to contain its own predecessors.
+      <t>In Chord, JN's Neighbor Table needs to contain its own predecessors.
       It couldn't connect to them previously because it did not yet know their
       addresses. However, now that it has received an Update from AP, as in the
       previous diagram, it has AP's predecessors, which are also its own, so it
@@ -8045,7 +8045,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <section title="Peer Identification and Authentication">
           <t>In general, whenever a peer engages in overlay activity that
-          might affect the routing table it must establish its identity. This
+          might affect the Routing Table it must establish its identity. This
           happens in two ways. First, whenever a peer establishes a direct
           connection to another peer it authenticates via certificate-based
           mutual authentication. All messages between peers are sent over this
