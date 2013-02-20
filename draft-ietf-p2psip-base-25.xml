@@ -734,7 +734,7 @@ Transport    |      Link       |     +-------+  +------+
           <t></t> <!-- Defn #2.0 --> 
 
           <t hangText="Bootstrap Node:">A network node used by Joining Nodes
-          to help locate the Admitting Peer.</t>
+          to help accessing the overlay by forwarding messages to peers.</t>
 
           <t></t> <!-- Defn #3.0 --> 
 
