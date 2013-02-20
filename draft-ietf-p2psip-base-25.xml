@@ -6234,9 +6234,11 @@ struct {
             Resource-ID n+1. The "send_update" flag can be used to acquire the
             routing table of AP.</t>
 
-            <t>JN SHOULD send Attach requests to initiate connections to each
+            <t>JN SHOULD send Attach requests through AP to initiate connections
+            to each
             of the peers in the Neighbor Table as well as to the desired
-            Finger Table entries. Note that this does not populate their
+            Finger Table entries (i.e. for i'th Finger Table entry, JN sends an
+            Attach to peer n+2^(128-i)). Note that this does not populate their
             Routing Tables, but only their Connection Tables, so JN will not
             get messages that it is expected to route to other nodes.</t>
 
