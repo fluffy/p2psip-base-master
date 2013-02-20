@@ -445,7 +445,7 @@ Transport    |      Link       |     +-------+  +------+
         </figure>
 	
 	<t>
-	  In addition to the above components, nodes communicate
+	  In addition to the above components, nodes may communicate
 	  with a central provisioning infrastructure (not shown)
 	  to get configuration information, authentication
 	  credentials, and the initial set of nodes to communicate
