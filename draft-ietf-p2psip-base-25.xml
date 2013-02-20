@@ -749,7 +749,8 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #5.0 --> 
 
-          <t hangText="Connection Table:">The set of nodes to which a node is
+          <t hangText="Connection Table:">Contains connection information for
+          the set of nodes to which a node is
           directly connected, which include nodes that are not yet available
           for routing.</t>
     
