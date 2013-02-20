@@ -7475,11 +7475,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |Attach Dest=JN     |         |         |         |         |
+     |AttachReq Dest=JN  |         |         |         |         |
      |---------------------------------------------------------->|
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |         |         |         |Attach Dest=JN     |         |
+     |         |         |         |AttachReq Dest=JN  |         |
      |         |         |         |<----------------------------|
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7498,7 +7498,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |Update   |         |         |         |         |         |
+     |UpdateReq|         |         |         |         |         |
      |<----------------------------|         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7521,11 +7521,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |Attach NP          |         |         |         |         |
+     |AttachReq NP       |         |         |         |         |
      |---------------------------->|         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |         |         |         |Attach NP|         |         |
+     |         |         |         |AttachReq NP       |         |
      |         |         |         |-------->|         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7533,7 +7533,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |<--------|         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |AttachAns          |         |         |         |         |
+     |AttachAns|         |         |         |         |         |
      |<----------------------------|         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7562,15 +7562,15 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |
      |         |         |         |
      |         |         |         |
-     |Attach JN+2<<126   |         |
+     |AttachReq JN+2<<126|         |
      |-------->|         |         |
      |         |         |         |
      |         |         |         |
-     |         |Attach JN+2<<126   |
+     |         |AttachReq JN+2<<126|
      |         |-------->|         |
      |         |         |         |
      |         |         |         |
-     |         |         |Attach JN+2<<126
+     |         |         |AttachReq JN+2<<126
      |         |         |-------->|
      |         |         |         |
      |         |         |         |
@@ -7659,11 +7659,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |Attach Dest=PP     |         |         |         |         |
+     |AttachReq Dest=PP  |         |         |         |         |
      |---------------------------->|         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |         |         |Attach Dest=PP     |         |         |
+     |         |         |AttachReq Dest=PP  |         |         |
      |         |         |<--------|         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
@@ -7718,7 +7718,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
          |         |         |         |
          |         |         |         |
          |         |         |         |
-         |Update   |         |         |
+         |UpdateReq|         |         |
          |---------------------------->|
          |         |         |         |
          |         |         |         |
