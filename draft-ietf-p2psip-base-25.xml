@@ -8466,7 +8466,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section title="Data Model">
         <t>IANA SHALL create a "RELOAD Data Model" Registry. Entries in this
         registry are strings denoting data models, as described in <xref
-        target="sec-kind-model"></xref>. Code points in this registry SHALL be
+        target="sec-kind-model"></xref>. New entries in this registry SHALL be
         registered via RFC 5226 Standards Action. The initial contents of this
         registry are:</t>
 
