@@ -813,9 +813,9 @@ Transport    |      Link       |     +-------+  +------+
 
           <t hangText="Node-ID:">A value of fixed but configurable length that
           uniquely identifies
-          a node. Node-IDs of all 0s and all 1s are reserved and are invalid
-          Node-IDs. A value of zero is not used in the wire protocol but can
-          be used to indicate an invalid node in implementations and APIs. The
+          a node. Node-IDs of all 0s and all 1s are reserved; a value of zero
+          is not used in the wire protocol but can
+          be used to indicate an invalid node in implementations and APIs; the
           Node-ID of all 1s is used on the wire protocol as a wildcard.</t>
 
           <t></t> <!-- Defn #14.0 --> 
