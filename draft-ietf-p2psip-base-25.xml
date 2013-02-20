@@ -919,9 +919,9 @@ Transport    |      Link       |     +-------+  +------+
 
           <t></t> <!-- Defn #24.0 --> 
  
-          <t hangText="Usage:">An usage is the definition of a set of data
+          <t hangText="Usage:">A usage is the definition of a set of data
           structures (data Kinds) that an application wants to store in the
-          overlay. An usage may also define a set of network protocols
+          overlay. A usage may also define a set of network protocols
           (application IDs) that can be used over direct connections between
           nodes.  E.g., the SIP usage defines a SIP registration data Kind that
           contains information on how to reach a SIP endpoint and two
