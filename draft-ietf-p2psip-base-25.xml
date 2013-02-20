@@ -668,7 +668,8 @@ Transport    |      Link       |     +-------+  +------+
         is permitted or not.</t>
 
         <t>RELOAD also provides an optional shared secret based admission
-        control feature using shared secrets and TLS-PSK. In order to form a
+        control feature using shared secrets and TLS-PSK/TLS-SRP. In order to
+        form a
         TLS connection to any node in the overlay, a new node needs to know
         the shared overlay key, thus restricting access to authorized users
         only. This feature is used together with certificate-based access
