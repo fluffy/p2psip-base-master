@@ -6523,11 +6523,6 @@ struct {
             previous finger table entry has failed or when no peer has been
             found in that range.</t>
 
-            <t>A peer SHOULD NOT send Ping requests looking for new finger
-            table entries more often than the configuration element
-            "chord-ping-interval", which defaults to 3600 seconds (one per
-            hour).</t>
-
             <t>Two possible methods for searching for new peers for the finger
             table entries are presented:</t>
 
@@ -6559,6 +6554,11 @@ struct {
             stabilization and not for the selection of initial finger table
             entries unless the alternative method is faster and imposes less
             overhead on the overlay.</t>
+
+            <t>A peer SHOULD NOT send Ping requests looking for new finger
+            table entries more often than the configuration element
+            "chord-ping-interval", which defaults to 3600 seconds (one per
+            hour).</t>
 
             <t>A peer MAY choose to keep connections to multiple peers that
             can act for a given finger table entry.</t>
