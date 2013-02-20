@@ -888,7 +888,7 @@ Transport    |      Link       |     +-------+  +------+
           <t></t>  <!-- Defn #21.5 --> 
 
           <t hangText="Responsible Peer:">The peer that is responsible for a
-          specific resource, as defined by the plugin algorithm.</t>
+          specific resource, as defined by the topology plugin algorithm.</t>
 
           <t></t> <!-- Defn #22.0 --> 
 
