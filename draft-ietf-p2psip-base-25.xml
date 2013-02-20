@@ -6222,7 +6222,8 @@ struct {
         follows.</t>
 
         <t><list style="numbers">
-            <t>JN MUST connect to its chosen bootstrap node.</t>
+            <t>JN MUST connect to its chosen bootstrap node as specified in
+            <xref target="sec-contacting-bootstrap" />.</t>
 
             <t>JN SHOULD send an Attach request to the admitting peer (AP) for
             Resource-ID n+1. The "send_update" flag can be used to acquire the
@@ -7423,7 +7424,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         </section>
       </section>
 
-      <section title="Contacting a Bootstrap Node">
+      <section anchor="sec-contacting-bootstrap" title="Contacting a Bootstrap Node">
         <t>In order to join the overlay, the joining node MUST contact a node
         in the overlay. Typically this means contacting the bootstrap nodes,
         since they are reachable by the local peer or have public IP
