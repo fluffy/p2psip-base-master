@@ -5137,7 +5137,10 @@ struct {
                 replicas to other peers each peer is assigned a replica number
                 starting from 1 and sent in the Store message. This field is
                 set to 0 when a node is storing its own data. This allows
-                peers to distinguish replica writes from original writes.</t>
+                peers to distinguish replica writes from original writes.
+                Different topologies may choose to allocate or interpret the
+                replica number differently
+                (see <xref target="sec-redundancy" />).</t>
 
                 <t></t>
 
@@ -6198,11 +6201,12 @@ struct {
         that node.</t>
       </section>
 
-      <section title="Redundancy ">
+      <section anchor="sec-redundancy" title="Redundancy ">
         <t>When a peer receives a Store request for Resource-ID k, and it is
         responsible for Resource-ID k, it MUST store the data and returns a
         success response. It MUST then send a Store request to its successor
-        in the Neighbor Table and to that peer's successor. Note that these
+        in the Neighbor Table and to that peer's successor, incrementing the
+        replica number for each successor. Note that these
         Store requests are addressed to those specific peers, even though the
         Resource-ID they are being asked to store is outside the range that
         they are responsible for. The peers receiving these SHOULD check they
@@ -6211,6 +6215,10 @@ struct {
         they MUST store the data. They do not themselves perform further
         Stores because they can determine that they are not responsible for
         the Resource-ID.</t>
+
+        <t>Note that this topology plugin do not use the replica number for
+        other purpose than knowing the difference between a replica and a
+        non-replica.</t>
 
         <t>Managing replicas as the overlay changes is described in <xref
         target="sec-processing-updates"></xref>.</t>
