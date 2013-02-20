@@ -8932,7 +8932,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       </section>
 
       <section anchor="sec-iana-overlay-link" title="Overlay Link Types">
-        <t>IANA SHALL create a "RELOAD Overlay Link Registry". For more
+        <t>IANA SHALL create a "RELOAD Overlay Link Registry". Entries in this
+        registry are 8 bit integers as described in
+        <xref target="sec-connect-request" />. For more
         information on the link types defined here, see <xref
         target="sec-overlay-link"></xref>. New entries SHALL be defined via
         RFC 5226 Standards Action. This registry SHALL be initially populated
