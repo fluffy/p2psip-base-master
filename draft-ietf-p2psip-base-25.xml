@@ -389,7 +389,8 @@ Check if the qualicom IPR issueed and if anything can be done
             <t hangText="Overlay Link Layer:">Responsible for actually
             transporting traffic directly between nodes. TLS
             <xref target="RFC5246" /> and DTLS <xref target="RFC6347"></xref>
-            are the currently defined "link layer" protocols used by RELOAD
+            are the currently defined "overlay link layer" protocols used by
+            RELOAD
             for hop-by-hop communication.  Each such protocol includes the
             appropriate provisions for per-hop framing or hop-by-hop ACKs
             needed by unreliable underlying transports. New protocols can be
