@@ -6227,7 +6227,7 @@ struct {
 
             <t>JN SHOULD send an Attach request to the admitting peer (AP) for
             Resource-ID n+1. The "send_update" flag can be used to acquire the
-            routing table for AP.</t>
+            routing table of AP.</t>
 
             <t>JN SHOULD send Attach requests to initiate connections to each
             of the peers in the neighbor table as well as to the desired
