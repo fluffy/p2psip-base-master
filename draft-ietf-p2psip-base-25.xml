@@ -2400,7 +2400,8 @@ Dest=Z
               <t></t>
 
               <t hangText="length:">The count in bytes of the size of the
-              message, including the header.</t>
+              message including the header, after the eventual fragmentation.
+              </t>
 
               <t></t>
 
@@ -4670,7 +4671,9 @@ struct {
         and ForwardingOptions and MUST contain at least 256 bytes of the
         message body. If these elements cannot fit within the MTU of the
         underlying datagram protocol, RELOAD fragmentation is not performed
-        and IP-layer fragmentation is allowed to occur. When a message must be
+        and IP-layer fragmentation is allowed to occur. The length field MUST
+        contain the size of the message after fragmentation. When a message MUST
+        be
         fragmented, it SHOULD be split into equal-sized fragments that are no
         larger than the PMTU of the next overlay link minus 32 bytes. This is
         to allow the via list to grow before further fragmentation is
