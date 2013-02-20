@@ -1232,8 +1232,8 @@ Transport    |      Link       |     +-------+  +------+
         a path through the overlay to the destination: each peer forwards the
         message closer to its destination. The return path of the response is
         then the same path followed in reverse.
-        If there is a failure on the reverse path caused by topology change
-        since the request was sent, this will be handled by the end-to-end
+        Note that a failure on the reverse path caused by a topology change
+        after the request was sent will be handled by the end-to-end
         retransmission of the response as described in <xref
         target="sec-request-origination"/>.
         For example, a message
