@@ -1316,7 +1316,8 @@ Dest=Z
         <t>RELOAD also supports a basic Iterative "routing" mode (where the
         intermediate peers merely return a response indicating the next hop,
         but do not actually forward the message to that next hop themselves).
-        Iterative "routing" is implemented using the RouteQuery method, which
+        Iterative "routing" is implemented using the RouteQuery method
+        (see <xref target="sec-route-query" />), which
         requests this behavior. Note that iterative "routing" is selected only
         by the initiating node.</t>
       </section>
