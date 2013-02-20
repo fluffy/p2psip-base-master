@@ -380,7 +380,8 @@ Check if the qualicom IPR issueed and if anything can be done
             <t hangText="Forwarding and Link Management Layer:">Stores and
             implements the Routing Table by providing packet forwarding
             services between nodes. It also handles establishing new links
-            between nodes, including setting up connections across NATs using
+            between nodes, including setting up connections for overlay links
+            across NATs using
             ICE.</t>
 
             <t></t>
