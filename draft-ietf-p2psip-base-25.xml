@@ -7433,12 +7433,12 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
         <t>When contacting a bootstrap node, the joining node MUST first form
         the DTLS or TLS connection to the bootstrap node and then sends an
-        Attach request over this connection with the destination Node-ID set
+        Attach request over this connection with the destination Resource-ID set
         to the joining node's Node-ID.</t>
 
         <t>When the requester node finally does receive a response from some
-        responding node, it can note the Node-ID in the response and use this
-        Node-ID to start sending requests to join the Overlay Instance as
+        responding node, it MUST use the Node-ID in the response to start
+        sending requests to join the Overlay Instance as
         described in <xref target="sec-overlay-topology"></xref>.</t>
 
         <t>After a node has successfully joined the overlay network, it will
@@ -7459,7 +7459,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <t>In the following example, we assume that JN has formed a connection
       to one of the bootstrap nodes. JN then sends an Attach through that peer
-      to a resource ID of itself (JN). It gets routed to the admitting peer
+      to a Resource-ID of itself (JN). It gets routed to the admitting peer
       (AP) because JN is not yet part of the overlay. When AP responds, JN and
       AP use ICE to set up a connection and then set up DTLS. Once AP has
       connected to JN, AP sends to JN an Update to populate its Routing Table.
