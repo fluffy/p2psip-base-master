@@ -8138,7 +8138,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
     <section anchor="sec.iana-cons" title="IANA Considerations">
       <t>This section contains the new code points registered by this
-      document. [NOTE TO IANA/RFC-EDITOR: Please replace RFC-AAAA with the RFC
+      document. [NOTE TO IANA/RFC-EDITOR: Please replace RFC-to-be with the RFC
       number for this specification in the following list.]</t>
 
       <section title="Well-Known URI Registration">
@@ -8164,7 +8164,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>Specification document(s):</c>
 
-          <c>[RFC-AAAA]</c>
+          <c>[RFC-to-be]</c>
 
           <c>Related information:</c>
 
@@ -8217,7 +8217,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section title="Overlay Algorithm Types">
         <t>IANA SHALL create a "RELOAD Overlay Algorithm Type" Registry.
         Entries in this registry are strings denoting the names of overlay
-        algorithms as described in <xref target="sec-configuration" />.
+        algorithms as described in <xref target="sec-configuration" /> of [RFC-to-be].
         The registration policy for this registry is RFC 5226 IETF
         Review. The initial contents of this registry are:</t>
 
@@ -8230,11 +8230,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>CHORD-RELOAD</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>EXP-OVERLAY</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value EXP-OVERLAY has been made available for the purposes of
@@ -8246,7 +8246,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
                title="Access Control Policies">
         <t>IANA SHALL create a "RELOAD Access Control Policy" Registry.
         Entries in this registry are strings denoting access control policies,
-        as described in <xref target="sec.access_control"></xref>. New entries
+        as described in <xref target="sec.access_control"/> of [RFC-to-be]. New entries
         in this registry SHALL be registered via RFC 5226 Standards Action.
         The initial contents of this registry are:</t>
 
@@ -8257,23 +8257,23 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>USER-MATCH</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>NODE-MATCH</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>USER-NODE-MATCH</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>NODE-MULTIPLE</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>EXP-MATCH</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
         </texttable>
 
@@ -8285,7 +8285,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section anchor="sec.iana.app" title="Application-ID">
         <t>IANA SHALL create a "RELOAD Application-ID" Registry. Entries in
         this registry are 16-bit integers denoting application-ids as described
-        in <xref target="sec-appattach-details" />. Code
+        in <xref target="sec-appattach-details" /> of [RFC-to-be]. Code
         points in the range 0x0001 to 0x7fff SHALL be registered via RFC 5226
         Standards Action. Code points in the range 0x8000 to 0xf000 SHALL be
         registered via RFC 5226 Expert Review. Code points in the range 0xf001
@@ -8305,7 +8305,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>SIP</c>
 
@@ -8323,19 +8323,19 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0xffff</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
       </section>
 
       <section anchor="sec.iana.kindid" title="Data Kind-ID">
         <t>IANA SHALL create a "RELOAD Data Kind-ID" Registry. Entries in this
         registry are 32-bit integers denoting data Kinds, as described in
-        <xref target="sec-usages"></xref>. Code points in the range 0x00000001
+        <xref target="sec-usages"/> of [RFC-to-be]. Code points in the range 0x00000001
         to 0x7fffffff SHALL be registered via RFC 5226 Standards Action. Code
         points in the range 0x8000000 to 0xf0000000 SHALL be registered via
         RFC 5226 Expert Review. Code points in the range 0xf0000001 to
         0xfffffffe are reserved for private use via the Kind description
-        mechanism described in <xref target="sec-enrollment"></xref>. The
+        mechanism described in <xref target="sec-enrollment"/> of [RFC-to-be]. The
         initial contents of this registry are:</t>
 
         <t></t>
@@ -8351,14 +8351,14 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <!--
          <c>SIP-REGISTRATION</c>
 
          <c>1</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
 -->
 
@@ -8366,112 +8366,112 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>2</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>CERTIFICATE_BY_NODE</c>
 
           <c>3</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <!--
          <c>ROUTING_TABLE_SIZE</c>
 
          <c>4</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>SOFTWARE_VERSION</c>
 
          <c>5</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>MACHINE_UPTIME</c>
 
          <c>6</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>APP_UPTIME</c>
 
          <c>7</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>MEMORY_FOOTPRINT</c>
 
          <c>8</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>DATASIZE_StoreD</c>
 
          <c>9</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>INSTANCES_StoreD</c>
 
          <c>10</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>MESSAGES_SENT_RCVD</c>
 
          <c>11</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>EWMA_BYTES_SENT</c>
 
          <c>12</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>EWMA_BYTES_RCVD</c>
 
          <c>13</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>LAST_CONTACT</c>
 
          <c>14</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 
          <c>RTT</c>
 
          <c>15</c>
 
-         <c>RFC-AAAA</c>
+         <c>RFC-to-be</c>
 -->
 
           <c>CERTIFICATE_BY_USER</c>
 
           <c>16</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Reserved</c>
 
           <c>0x7fffffff</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Reserved</c>
 
           <c>0xfffffffe</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
       </section>
 
       <section title="Data Model">
         <t>IANA SHALL create a "RELOAD Data Model" Registry. Entries in this
         registry are strings denoting data models, as described in <xref
-        target="sec-kind-model"></xref>. New entries in this registry SHALL be
+        target="sec-kind-model"/> of [RFC-to-be]. New entries in this registry SHALL be
         registered via RFC 5226 Standards Action. The initial contents of this
         registry are:</t>
 
@@ -8484,27 +8484,27 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>INVALID</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>SINGLE</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>ARRAY</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>DICTIONARY</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>EXP-DATA</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>RESERVED</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value EXP-DATA has been made available for the purposes of
@@ -8515,7 +8515,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section anchor="sec-iana-messages-codes" title="Message Codes">
         <t>IANA SHALL create a "RELOAD Message Code" Registry. Entries in this
         registry are 16-bit integers denoting method codes as described in
-        <xref target="sec-contents"></xref>. These codes SHALL be registered
+        <xref target="sec-contents"/> of [RFC-to-be]. These codes SHALL be registered
         via RFC 5226 Standards Action. The initial contents of this registry
         are:</t>
 
@@ -8532,31 +8532,31 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>probe_req</c>
 
           <c>1</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>probe_ans</c>
 
           <c>2</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>attach_req</c>
 
           <c>3</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>attach_ans</c>
 
           <c>4</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused</c>
 
@@ -8574,205 +8574,205 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>7</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>store_ans</c>
 
           <c>8</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>fetch_req</c>
 
           <c>9</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>fetch_ans</c>
 
           <c>10</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused (was remove_req)</c>
 
           <c>11</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused (was remove_ans)</c>
 
           <c>12</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>find_req</c>
 
           <c>13</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>find_ans</c>
 
           <c>14</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>join_req</c>
 
           <c>15</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>join_ans</c>
 
           <c>16</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>leave_req</c>
 
           <c>17</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>leave_ans</c>
 
           <c>18</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>update_req</c>
 
           <c>19</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>update_ans</c>
 
           <c>20</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>route_query_req</c>
 
           <c>21</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>route_query_ans</c>
 
           <c>22</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>ping_req</c>
 
           <c>23</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>ping_ans</c>
 
           <c>24</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>stat_req</c>
 
           <c>25</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>stat_ans</c>
 
           <c>26</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused (was attachlite_req)</c>
 
           <c>27</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused (was attachlite_ans)</c>
 
           <c>28</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>app_attach_req</c>
 
           <c>29</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>app_attach_ans</c>
 
           <c>30</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused (was app_attachlite_req)</c>
 
           <c>31</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>unused (was app_attachlite_ans)</c>
 
           <c>32</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>config_update_req</c>
 
           <c>33</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>config_update_ans</c>
 
           <c>34</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp_a_req</c>
 
           <c>35</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp_a_ans</c>
 
           <c>36</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp_b_req</c>
 
           <c>37</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp_b_ans</c>
 
           <c>38</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>reserved</c>
 
           <c>0x8000..0xfffe</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>error</c>
 
           <c>0xffff</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The values exp_a_req, exp_a_ans, exp_b_req, and exp_b_ans have been
@@ -8784,7 +8784,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section anchor="sec-iana-error-codes" title="Error Codes">
         <t>IANA SHALL create a "RELOAD Error Code" Registry. Entries in this
         registry are 16-bit integers denoting error codes as described in
-        <xref target="sec-response-code" />. New entries SHALL
+        <xref target="sec-response-code" /> of [RFC-to-be]. New entries SHALL
         be defined via RFC 5226 Standards Action. The initial contents of this
         registry are:</t>
 
@@ -8801,133 +8801,133 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Unused</c>
 
           <c>1</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Forbidden</c>
 
           <c>2</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Not_Found</c>
 
           <c>3</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Request_Timeout</c>
 
           <c>4</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Generation_Counter_Too_Low</c>
 
           <c>5</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Incompatible_with_Overlay</c>
 
           <c>6</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Unsupported_Forwarding_Option</c>
 
           <c>7</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Data_Too_Large</c>
 
           <c>8</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Data_Too_Old</c>
 
           <c>9</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_TTL_Exceeded</c>
 
           <c>10</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Message_Too_Large</c>
 
           <c>11</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Unknown_Kind</c>
 
           <c>12</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Unknown_Extension</c>
 
           <c>13</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Response_Too_Large</c>
 
           <c>14</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Config_Too_Old</c>
 
           <c>15</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Config_Too_New</c>
 
           <c>16</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_In_Progress</c>
 
           <c>17</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Exp_A</c>
 
           <c>18</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Exp_B</c>
 
           <c>19</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>Error_Invalid_Message</c>
 
           <c>20</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>reserved</c>
 
           <c>0x8000..0xfffe</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The values Error_Exp_A and Error_Exp_B have been made available for
@@ -8939,9 +8939,9 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section anchor="sec-iana-overlay-link" title="Overlay Link Types">
         <t>IANA SHALL create a "RELOAD Overlay Link Registry". Entries in this
         registry are 8 bit integers as described in
-        <xref target="sec-connect-request" />. For more
+        <xref target="sec-connect-request" /> of [RFC-to-be]. For more
         information on the link types defined here, see <xref
-        target="sec-overlay-link"></xref>. New entries SHALL be defined via
+        target="sec-overlay-link"/> of [RFC-to-be]. New entries SHALL be defined via
         RFC 5226 Standards Action. This registry SHALL be initially populated
         with the following values:</t>
 
@@ -8958,43 +8958,43 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>DTLS-UDP-SR</c>
 
           <c>1</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <!-- <c>TLS-TCP-FH</c> -->
 
           <!-- <c>2</c> -->
 
-          <!-- <c>RFC-AAAA</c> -->
+          <!-- <c>RFC-to-be</c> -->
 
           <c>DTLS-UDP-SR-NO-ICE</c>
 
           <c>3</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>TLS-TCP-FH-NO-ICE</c>
 
           <c>4</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>EXP-LINK</c>
 
           <c>5</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>reserved</c>
 
           <c>255</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value EXP-LINK has been made available for the purposes of
@@ -9006,7 +9006,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
                title="Overlay Link Protocols">
         <t>IANA SHALL create an "Overlay Link Protocol Registry".
         Entries in this registry are strings denoting protocols as described in
-        <xref target="sec-configuration" /> and SHALL be defined via RFC 5226
+        <xref target="sec-configuration" /> of [RFC-to-be] and SHALL be defined via RFC 5226
         Standards Action. This registry SHALL be initially populated with the
         following values:</t>
 
@@ -9019,11 +9019,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>TLS</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>EXP-PROTOCOL</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value EXP-PROTOCOL has been made available for the purposes of
@@ -9033,8 +9033,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <section title="Forwarding Options">
         <t>IANA SHALL create a "Forwarding Option Registry". Entries in this
-        registry are 8-bit integer denoting options as described in
-        <xref target="sec-forwarding-options" />. Values between 1 and 127
+        registry are 8-bit integers denoting options as described in
+-        <xref target="sec-forwarding-options" /> of [RFC-to-be]. Values between 1 and 127
         SHALL be defined via RFC 5226 Standards Action. Entries in this
         registry between 128 and 254 SHALL be defined via RFC 5226
         Specification Required. This registry SHALL be initially populated
@@ -9053,19 +9053,19 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp-forward</c>
 
           <c>1</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>reserved</c>
 
           <c>255</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value exp-forward has been made available for the purposes of
@@ -9076,7 +9076,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section title="Probe Information Types">
         <t>IANA SHALL create a "RELOAD Probe Information Type Registry".
         Entries  are 8-bit integers denoting types as described in
-        <xref target="sec-probe-request" /> and SHALL be defined via RFC 5226
+        <xref target="sec-probe-request" /> of [RFC-to-be] and SHALL be defined via RFC 5226
         Standards Action. This registry SHALL be initially populated with the
         following values:</t>
 
@@ -9093,37 +9093,37 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>responsible_set</c>
 
           <c>1</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>num_resources</c>
 
           <c>2</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>uptime</c>
 
           <c>3</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp-probe</c>
 
           <c>4</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>reserved</c>
 
           <c>255</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value exp-probe has been made available for the purposes of
@@ -9134,7 +9134,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       <section anchor="sec-message-extensions" title="Message Extensions">
         <t>IANA SHALL create a "RELOAD Extensions Registry".
         Entries in this registry are 8-bit integers denoting extensions as
-        described in <xref target="sec-contents" /> and SHALL be defined via
+        described in <xref target="sec-contents" /> of [RFC-to-be] and SHALL be defined via
         RFC 5226 Specification Required. This registry SHALL be initially
         populated with the following values:</t>
 
@@ -9151,19 +9151,19 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
           <c>0</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>exp-ext</c>
 
           <c>1</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
 
           <c>reserved</c>
 
           <c>0xFFFF</c>
 
-          <c>RFC-AAAA</c>
+          <c>RFC-to-be</c>
         </texttable>
 
         <t>The value exp-ext has been made available for the purposes of
@@ -9176,7 +9176,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         used to refer to either:</t>
 
         <t><list style="symbols">
-            <t>A peer, e.g., as used in a certificate (see <xref target="sec-credentials" />).</t>
+            <t>A peer, e.g., as used in a certificate (see <xref target="sec-credentials"/> of [RFC-to-be]).</t>
 
             <t>A resource inside a peer.</t>
           </list></t>
@@ -9238,7 +9238,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             <t></t>
             
               <t hangText="URI Scheme Syntax:">see <xref
-              target="sec-reload-uri"></xref> of RFC-AAAA</t>
+              target="sec-reload-uri"></xref> of [RFC-to-be] </t>
 
             <t></t>
             
@@ -9254,13 +9254,13 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
             <t></t>
             
               <t hangText="Applications/protocols that use this URI scheme:">The
-              RELOAD protocol described in RFC-AAAA.</t>
+              RELOAD protocol described in RFC-to-be.</t>
 
-              <t hangText="Interoperability considerations:">See RFC-AAAA.</t>
+              <t hangText="Interoperability considerations:">See RFC-to-be.</t>
 
             <t></t>
             
-              <t hangText="Security considerations:">See RFC-AAAA</t>
+              <t hangText="Security considerations:">See RFC-to-be</t>
 
             <t></t>
             
@@ -9273,7 +9273,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
             <t></t>
             
-              <t hangText="References:">RFC-AAAA</t>
+              <t hangText="References:">RFC-to-be</t>
             </list></t>
         </section>
       </section>
@@ -9297,7 +9297,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         transport information that needs to be kept confidential, however
         there are cases where it is integrity of the information is important.
         For these cases using a digital signature is RECOMMENDED. One way of
-        doing this is specified in RFC-AAAA. In the case when the media
+        doing this is specified in RFC-to-be. In the case when the media
         includes a "shared-secret" element, then the contents of the file MUST
         be kept confidential or else anyone that can see the shared-secret and
         effect the RELOAD overlay network.</t>
@@ -9306,15 +9306,15 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         consideration beyond those identified for application/xml in <xref
         target="RFC3023"></xref>.</t>
 
-        <t>Published specification: RFC-AAAA</t>
+        <t>Published specification: RFC-to-be</t>
 
         <t>Applications that use this media type: The type is used to
-        configure the peer to peer overlay networks defined in RFC-AAAA.</t>
+        configure the peer to peer overlay networks defined in RFC-to-be.</t>
 
         <t>Additional information: The syntax for this media type is specified
-        in <xref target="sec-configuration"></xref> of RFC-AAAA. The contents
+        in <xref target="sec-configuration"/> of [RFC-to-be]. The contents
         MUST be valid XML compliant with the RELAX NG grammar specified in
-        RFC-AAAA and use the UTF-8<xref target="RFC3629"></xref> character
+        RFC-to-be and use the UTF-8<xref target="RFC3629"></xref> character
         encoding.</t>
 
         <t>Magic number(s): none</t>
