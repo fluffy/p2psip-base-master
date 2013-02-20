@@ -461,7 +461,9 @@ Transport    |      Link       |     +-------+  +------+
 
           <t>The architecture diagram shows both a SIP usage and an XMPP
           usage. A single application may require multiple usages; for example
-          a softphone application may also require a voicemail usage. A usage
+          a voicemail feature in a softphone application that stores the
+          messages in the overlay would require a different usage than the type
+          of rendezvous service of XMPP or SIP.  A usage
           may define multiple Kinds of data that are stored in the overlay and
           may also rely on Kinds originally defined by other usages.</t>
 
