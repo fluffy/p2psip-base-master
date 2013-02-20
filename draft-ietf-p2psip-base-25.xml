@@ -602,8 +602,9 @@ Transport    |      Link       |     +-------+  +------+
           Internet paths used to form the link in the overlay. Additionally,
           retransmission is performed to improve the reliability of end-to-end
           transactions. 
-          This layer is to the Message Transport Layer as link-level
-          congestion control and retransmission in modern wireless networks is
+          The relation of this layer to the Message Transport Layer can be
+          likened to the relation of the link-level
+          congestion control and retransmission in modern wireless networks
           to Internet transport protocols.</t>
 
           <t>This layer provides a generic interface that allows the topology
@@ -1366,7 +1367,7 @@ Dest=Z
         needs to form new connections if it detects that
         it has fewer direct
         connections than specified by the algorithm. This also implies that
-        peers, in accord with the topology plugin algorithm, need to
+        peers, in accordance with the topology plugin algorithm, need to
         periodically verify that the connected peers are still
         alive and if not try to reform the connection or form an alternate
         one. See <xref target="sec-finger-table-size" /> for an example on
@@ -6149,7 +6150,7 @@ struct {
         ring from this peer; the second entry contains the peer that is 1/4 of
         the way around; the third entry contains the peer that is 1/8th of the
         way around, and so on. Fundamentally, the Chord DHT can be thought of
-        a doubly-linked list formed by knowing the successors and predecessor
+        as a doubly-linked list formed by knowing the successors and predecessor
         peers in the neighbor table, sorted by the Node-ID. As long as the
         successor peers are correct, the DHT will return the correct result.
         The pointers to the prior peers are kept to enable the insertion of
@@ -9372,7 +9373,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       Roland Bless, and David Bryan. Special thanks to Marc Petit-Huguenin who
       provided an amazing amount of detailed review.</t>
 
-      <t> Dean Willis and Marc Petit-Huguenin help resolve and provided text to
+      <t>Dean Willis and Marc Petit-Huguenin helped resolve and provided text to
       fix many comments received during IESG review.  </t>
 
     </section>
