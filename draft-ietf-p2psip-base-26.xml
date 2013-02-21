@@ -3147,8 +3147,9 @@ struct {
           checked as follows by the requesting node:</t>
 
           <t><list style="numbers">
-              <t>The response to a message sent to a specific Node-ID MUST
-              have been sent by that Node-ID.</t>
+              <t>The response to a message sent to a Node-ID MUST have been sent
+              by that Node-ID, unless it has being sent to the wildcard
+              Node-ID.</t>
 
               <t>The response to a message sent to a Resource-ID MUST have
               been sent by a Node-ID which is as close to or closer to the
