@@ -1152,7 +1152,7 @@ Transport    |      Link       |     +-------+  +------+
       </section>
 
       <section title="Routing">
-        <t>This section will discuss the capabilities of RELOAD's routing
+        <t>This section discusses the capabilities of RELOAD's routing
         layer, the protocol features used to implement them, and a brief
         overview of how they are used. <xref target="sec-route-alt"></xref>
         discusses some alternative designs and the tradeoffs that would be
