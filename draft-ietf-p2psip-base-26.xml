@@ -9394,7 +9394,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
       David Bryan, Dave Craig, and Julian Cain. Extensive last call comments
       were provided by: Jouni Maenpaa, Roni Even, Gonzalo Camarillo, Ari
       Keranen, John Buford, Michael Chen, Frederic-Philippe Met, Mary Barnes,
-      Roland Bless, and David Bryan. Special thanks to Marc Petit-Huguenin who
+      Roland Bless, David Bryan and Polina Goltsman. Special thanks to Marc
+      Petit-Huguenin who
       provided an amazing amount of detailed review.</t>
 
       <t>Dean Willis and Marc Petit-Huguenin helped resolve and provided text to
