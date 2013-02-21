@@ -1113,11 +1113,11 @@ Transport    |      Link       |     +-------+  +------+
               other mechanisms, such as being stored in the overlay by a
               usage. A client connected this way using a certificate with only
               a single Node-ID can proceed to use the connection without
-              performing an Attach. A client wishing to connect using this
+              performing an <xref target="sec-connect-details">Attach</xref>.
+              A client wishing to connect using this
               mechanism with a certificate with multiple Node-IDs can use a
               <xref target="sec.ping">Ping</xref> to probe the Node-ID of the
-              node to which it is connected before doing the
-              <xref target="sec-connect-details">Attach</xref>.</t>
+              node to which it is connected before doing the Attach.</t>
             </list></t>
         </section>
 
