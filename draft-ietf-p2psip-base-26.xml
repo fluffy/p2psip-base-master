@@ -967,7 +967,7 @@ Transport    |      Link       |     +-------+  +------+
             <t>To address the node itself.</t>
 
             <t>To determine its position in the overlay topology (if the
-            overlay is structured; topology plugins do not need to be structured).</t>
+            overlay is structured; overlays do not need to be structured).</t>
 
             <t>To determine the set of resources for which the node is
             responsible.</t>
