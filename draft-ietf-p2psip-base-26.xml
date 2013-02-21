@@ -15,7 +15,7 @@ Check if the qualicom IPR issueed and if anything can be done
 <?rfc rfcedstyle="no" ?>
 <!-- Don't change this. It breaks stuff -->
 <?rfc tocdepth="4"?>
-<rfc category="std" docName="draft-ietf-p2psip-base-25"
+<rfc category="std" docName="draft-ietf-p2psip-base-26"
      ipr="pre5378Trust200902">
   <front>
     <title abbrev="RELOAD Base">REsource LOcation And Discovery (RELOAD) Base
