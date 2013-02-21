@@ -7456,7 +7456,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         file.</t>
 
         <t>When contacting a bootstrap node, the joining node MUST first form
-        the DTLS or TLS connection to the bootstrap node and then sends an
+        the DTLS or TLS connection to the bootstrap node and then send an
         Attach request over this connection with the destination Resource-ID set
         to the joining node's Node-ID.</t>
 
