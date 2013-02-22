@@ -7459,7 +7459,7 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
         <t>When contacting a bootstrap node, the joining node MUST first form
         the DTLS or TLS connection to the bootstrap node and then send an
         Attach request over this connection with the destination Resource-ID set
-        to the joining node's Node-ID.</t>
+        to the joining node's Node-ID plus 1.</t>
 
         <t>When the requester node finally does receive a response from some
         responding node, it MUST use the Node-ID in the response to start
@@ -7484,7 +7484,8 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
 
       <t>In the following example, we assume that JN has formed a connection
       to one of the bootstrap nodes. JN then sends an Attach through that peer
-      to a Resource-ID of itself (JN). It gets routed to the admitting peer
+      to a Resource-ID of itself plus 1 (JN+1). It gets routed to the admitting
+      peer
       (AP) because JN is not yet part of the overlay. When AP responds, JN and
       AP use ICE to set up a connection and then set up DTLS. Once AP has
       connected to JN, AP sends to JN an Update to populate its Routing Table.
@@ -7498,11 +7499,11 @@ parameter &= element chord:chord-reactive { xsd:boolean }?
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |AttachReq Dest=JN  |         |         |         |         |
+     |AttachReq Dest=JN+1|         |         |         |         |
      |---------------------------------------------------------->|
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
-     |         |         |         |AttachReq Dest=JN  |         |
+     |         |         |         |AttachReq Dest=JN+1|         |
      |         |         |         |<----------------------------|
      |         |         |         |         |         |         |
      |         |         |         |         |         |         |
