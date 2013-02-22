@@ -1314,7 +1314,7 @@ Dest=Z
         <t>As before, when B receives the message, B creates a via list
         consisting of [A]. However, instead of sending [A, B], X creates an
         opaque ID X1 which maps internally to [A, B] (perhaps by being an
-        encryption of [A, B] and forwards to Z with only X1 as the via list.
+        encryption of [A, B]) and forwards to Z with only X1 as the via list.
         When the response arrives at X, it maps X1 back to [A, B] and then
         inverts it to produce the new destination list [B, A] and routes it to
         B.</t>
@@ -1692,7 +1692,7 @@ Dest=Z
           strategies are determined by the overlay algorithm, which can base
           the replication strategy on its particular topology. For example,
           Chord places replicas on successor peers, which will take over
-          responsibility if the responsible peer fail <xref
+          responsibility if the responsible peer fails <xref
           target="Chord"></xref>.</t>
 
           <t>If additional replication is needed, for example if data
@@ -1914,10 +1914,10 @@ Dest=Z
           <t>For instance, in the above example, Node D might send E a
           via list containing only the opaque ID I. E would then use the
           destination list [D, I] to send its return message. When D processes
-          this destination list, it would detect that I is a opaque ID,
+          this destination list, it would detect that I is an opaque ID,
           recover the via list [A, B, C], and reverse that to produce the
           correct destination list [C, B, A] before sending it to C. This
-          feature is called List Compression. Possibilities for a opaque ID
+          feature is called List Compression. Possibilities for an opaque ID
           include a compressed version of the original via list or an index
           into a state database containing the original via list, but the
           details are a local matter.</t>
@@ -2535,7 +2535,7 @@ Dest=Z
 
             <t>If the destination structure is a 16 bit integer, then the first
             bit MUST be set to 1 and it MUST be treated as if it were a full
-            structure with a DestinationType of opaque_id_type and a opaque_id
+            structure with a DestinationType of opaque_id_type and an opaque_id
             that was 2 bytes long with the value of the 16 bit integer. If the
             destination structure is starting with DestinationType, then the
             first bit MUST be set to 0 and it is using the TLV structure with
@@ -3308,7 +3308,7 @@ struct {
             <t>Because leaves may only be executed between nodes which are
             directly adjacent, receiving peers MUST verify that any LeaveReq
             they receive arrives from a transport channel that is bound to the
-            Node-ID to be assumed by the leaving peer.) This also prevents
+            Node-ID to be assumed by the leaving peer. This also prevents
             replay attacks provided that DTLS anti-replay is used.</t>
 
             <t>Upon receiving a Leave request, a peer MUST update its own
@@ -3350,7 +3350,7 @@ struct {
             other words, a RouteQuery for a destination X requests the Node-ID
             for the node that the receiving peer would next route to in order
             to get to X. A RouteQuery can also request that the receiving peer
-            initiate an Update request to transfer the receiving peer's
+            initiates an Update request to transfer the receiving peer's
             Routing Table.</t>
 
             <t>One important use of the RouteQuery request is to support
@@ -4255,13 +4255,13 @@ struct {
 
                 <t>The configuration document is correctly digitally signed
                 (see <xref target="sec-enrollment"></xref> for details on
-                signatures.</t>
+                signatures.)</t>
               </list> Otherwise appropriate errors MUST be generated.</t>
 
             <t>If the ConfigUpdateReq is of type "kind" it MUST only be
             processed if it is correctly digitally signed by an acceptable
             Kind signer (i.e., one listed in the current configuration file).
-            Details on kind-signer field in the configuration file is
+            Details on kind-signer field in the configuration file are
             described in <xref target="sec-configuration"></xref>. In
             addition, if the Kind update conflicts with an existing known Kind
             (i.e., it is signed by a different signer), then it should be
