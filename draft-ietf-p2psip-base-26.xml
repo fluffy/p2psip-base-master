@@ -1092,6 +1092,7 @@ Transport    |      Link       |     +-------+  +------+
               firewalls prevent a client
               from forming a direct connection with its responsible peer.
               Note that clients that choose this option need to process Update
+              (<xref target="sec-update" />)
               messages from the peer. Those updates can indicate that the peer
               no longer is responsible for the Client's Node-ID. The client
               would then need to form a connection to the appropriate peer.
@@ -3316,7 +3317,7 @@ struct {
             re-stabilize the overlay.</t>
           </section>
 
-          <section title="Update">
+          <section anchor="sec-update" title="Update">
             <t>Update is the primary overlay-specific maintenance message. It
             is used by the sender to notify the recipient of the sender's view
             of the current state of the overlay (its routing state), and it is
