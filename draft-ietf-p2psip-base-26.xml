@@ -1620,7 +1620,7 @@ Dest=Z
             peer sending the Store request.</t>
           </list></t>
 
-        <t>In order to protect stored data from tampering, by other nodes,
+        <t>In order to protect stored data from tampering by other nodes,
         each stored value is individually digitally signed by the node which
         created it. When a value is retrieved, the digital signature can be
         verified to detect tampering. If the certificate used to verify the
@@ -1813,7 +1813,7 @@ Dest=Z
             is described in <xref target="sec-opaque-Node-ID"></xref>. Note
             that opaque IDs can be distinguished from Node-IDs and
             Resource-IDs on the wire as described in <xref
-            target="sec.dest-via-list"></xref>).</t>
+            target="sec.dest-via-list"></xref>.</t>
           </list></t>
 
         <t>These cases are handled as discussed below.</t>
@@ -1842,7 +1842,7 @@ Dest=Z
               the routing process with the next entry on the destination list.
               If the message is a response and list compression was used, then
               the node first modifies the destination list to reinsert the
-              saved state, e.g., by unpacking any opaque IDS.</t>
+              saved state, e.g., by unpacking any opaque IDs.</t>
 
               <t>If the entry is the wildcard Node-ID (all "1"s), the message
               is destined for this node and it passes it up to the upper layers.
@@ -2412,7 +2412,7 @@ Dest=Z
               disambiguate transactions which are otherwise identical. In
               order to provide a high probability that transaction IDs are
               unique, they MUST be randomly generated. Responses use the same
-              Transaction ID as the request they correspond to. Transaction
+              transaction ID as the request they correspond to. Transaction
               IDs are also used for fragment reassembly. See
               <xref target="sec-frag-reass" /> for details.</t>
 
@@ -3422,7 +3422,7 @@ struct {
             to determine which resources another node is responsible for. A
             probe can be addressed to a specific Node-ID, or the
             peer controlling a given location (by using a Resource-ID). In
-            either case, the target Node-IDs respond with a simple response
+            either case, the target node responds with a simple response
             containing some status information.</t>
 
             <section anchor="sec-probe-request" title="Request Definition">
@@ -3445,7 +3445,7 @@ struct {
 ]]></artwork>
               </figure>
 
-              <t>The currently defined values for ProbeInformation are:</t>
+              <t>The currently defined values for ProbeInformationType are:</t>
 
               <t><list style="hanging">
                   <t></t>
@@ -3487,7 +3487,7 @@ struct {
             uint32             num_resources;                           
 
           case uptime:
-            uint32              uptime;
+            uint32             uptime;
 
           /* This type may be extended */
         };
@@ -5066,7 +5066,8 @@ struct {
 
         <section title="NODE-MULTIPLE">
           <t>In the NODE-MULTIPLE policy, a given value MUST be written (or
-          overwritten) if and only if signer's certificate contains a Node-ID
+          overwritten) if and only if the signer's certificate contains a
+          Node-ID
           such that H(Node-ID || i) is equal to the Resource-ID for some small
           integer value of i and that Node-ID is the one indicated in the
           SignerIdentity value cert_hash. When this policy is in use, the
