@@ -13,6 +13,10 @@ Check if the qualicom IPR issueed and if anything can be done
 <?rfc sortrefs="yes" ?>
 <?rfc colonspace="yes" ?>
 <?rfc rfcedstyle="no" ?>
+
+<?rfc iprnotified="yes" ?> 
+<?rfc rfcedstyle="yes" ?>
+
 <!-- Don't change this. It breaks stuff -->
 <?rfc tocdepth="4"?>
 <rfc category="std" docName="draft-ietf-p2psip-base-26"
@@ -121,7 +125,7 @@ Check if the qualicom IPR issueed and if anything can be done
       </address>
     </author>
 
-    <date day="23" month="February" year="2013" />
+    <date day="24" month="February" year="2013" />
 
     <area>RAI</area>
 
@@ -922,7 +926,7 @@ Transport    |      Link       |     +-------+  +------+
           <t hangText="Usage:">A usage is the definition of a set of data
           structures (data Kinds) that an application wants to store in the
           overlay. A usage may also define a set of network protocols
-          (application IDs) that can be used over direct connections between
+          (application IDs) that can be tunneled over TLS or DTLS direct connections between
           nodes.  E.g., the SIP usage defines a SIP registration data Kind that
           contains information on how to reach a SIP endpoint and two
           application IDs corresponding to the SIP and SIPS protocols.</t>
@@ -1734,8 +1738,8 @@ Dest=Z
           </list></t>
 
         <t>The Kinds defined by a usage may also be applied to other usages.
-        However, a need for different parameters, such as different size
-        limits, would imply the need to create a new Kind.</t>
+        However, a need for different parameters, such as a different access control model, 
+        would imply the need to create a new Kind.</t>
       </section>
 
       <section title="Service Discovery">
@@ -1762,7 +1766,7 @@ Dest=Z
         establish a SIP dialog with another P2PSIP node, it will use AppAttach
         to establish a direct connection with the other node. This new
         connection is separate from the peer protocol connection. It is a
-        dedicated UDP or TCP flow used only for the SIP dialog.</t>
+        dedicated DTLS or TLS flow used only for the SIP dialog.</t>
       </section>
     </section>
 
@@ -3558,7 +3562,7 @@ struct {
 
         <section anchor="sec-connect-details" title="Attach">
           <t>A node sends an Attach request when it wishes to establish a
-          direct TCP or UDP connection to another node for the purpose of
+          direct Overlay Link connection to another node for the purpose of
           sending RELOAD messages. A client that can establish a connection
           directly need not send an Attach as described in the second bullet
           of <xref target="sec-client-routing"></xref></t>
@@ -3682,9 +3686,9 @@ struct {
                 description. Future overlay link values can be added by
                 defining new OverlayLinkType values in the IANA registry in
                 <xref target="sec-iana-overlay-link"></xref>. Future
-                extensions to the encapsulation or framing that provide for
-                backward compatibility with that specified by a previously
-                defined OverlayLinkType values MUST use that previous value.
+                extensions to the encapsulation or framing, that provide for
+                backward compatibility with the previously specified encapsulation or framing,
+                values MUST use that same OverlayLinkType value that was previously defined.
                 OverlayLinkType protocols are defined in <xref
                 target="sec-overlay-link"></xref></t>
 
@@ -3750,7 +3754,7 @@ struct {
                 incomplete Attach request it has sent out: <list
                     style="symbols">
                     <t>If the peer's own Node-ID is smaller when compared as
-                    big-endian unsigned integers, it MUST cancel its own
+                    big-endian unsigned integers, it MUST cancel retransmission of its own
                     incomplete Attach request. It MUST then process this
                     Attach request, generate an AttachReqAns response, and
                     proceed with the corresponding ICE check.</t>
