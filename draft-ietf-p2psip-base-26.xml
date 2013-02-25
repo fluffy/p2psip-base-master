@@ -30,17 +30,10 @@ Check if the qualicom IPR issueed and if anything can be done
 
       <address>
         <postal>
-          <street>170 West Tasman Drive</street>
-
-          <street>MS: SJC-30/2</street>
-
-          <city>San Jose</city>
-
-          <region>CA</region>
-
-          <code>95134</code>
-
-          <country>USA</country>
+          <street>400 3rd Avenue SW, Suite 350</street>
+          <city>Calgary</city>
+          
+          <country>Canada</country>
         </postal>
 
         <email>fluffy@cisco.com</email>
