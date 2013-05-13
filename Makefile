@@ -1,6 +1,6 @@
 
 
-SRC  := $(wildcard draft-*.xml)
+SRC  := $(wildcard draft-*.xml rfc*.xml)
 
 HTML := $(patsubst %.xml,%.html,$(SRC))
 TXT  := $(patsubst %.xml,%.txt,$(SRC))
@@ -13,13 +13,13 @@ clean:
 
 
 %.html: %.xml
-	xml2rfc $^ $@
+	xml2rfc $^ --html -o $@
 
 #%.html: %.xml
 #	xsltproc -o $@ ../rfc2629.xslt $^
 
 %.txt: %.xml
-	xml2rfc $^ $@
+	xml2rfc $^ --text -o  $@
 
 %.diff.html: %.txt
 	htmlwdiff  $^.old $^ >  $@
